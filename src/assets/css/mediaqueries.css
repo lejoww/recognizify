@@ -1,0 +1,26 @@
+@media screen and (max-width: 480px){
+    .navbar-brand {
+        margin-left: -1.4rem;
+    }
+
+    .content-flex {
+        flex-direction: column;
+    }
+
+    .project-card {
+        min-width: 94%;
+        display: inline-block;
+        margin-bottom: 1rem;
+        border-left: 5px solid #5900C6;
+    }
+    .current-profile {
+        display: none
+    }
+    .layoutCard { min-width: 100%; }
+}
+
+@media screen and (max-width: 340px){
+    .content-flex {
+        flex-direction: column;
+    }
+}

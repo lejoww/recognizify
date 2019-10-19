@@ -1,0 +1,113 @@
+
+
+div#login {
+    height: 100vh;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7rem;
+}
+
+div#login .form-container {
+    width: 34%;
+}
+
+div#login .form-content .login-small {
+    font-weight: 700;
+}
+
+div#login .form-images img {
+    display: block;
+    margin: auto
+}
+
+div#login .form-container .loginFormTitle {
+    margin-top: 7px;
+}
+
+div#login .form-container .form-group input {
+    font-weight: 400;
+}
+
+.intructions {
+    color: #121330;
+}
+
+/* welcome */
+.account-complete {
+    width: 47%;
+    margin: 72px auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.account-complete .welcome-title {
+    letter-spacing: -0.6px;
+    color: rgb(83, 65, 199);
+}
+
+.account-complete .photo-container {
+    width: 172px;
+    height: 172px;
+    background-color: #cccccc;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.account-complete .photo-container .photo-profile{
+    width: 100%;
+    height: 100%;
+}
+
+#loginAlert {
+    display: none;
+}
+
+.button-active {
+    background-color: #a575ff;
+    cursor: default;
+}
+
+.button-active:hover {
+    background-color: #a575ff;
+    cursor: default;
+}
+
+@media screen and (max-width: 500px){
+    div#login {
+        padding: 2rem;
+        flex-direction: column;
+    }
+
+    div#login .form-container{
+        width: 100%; 
+    }
+
+    div#login .form-images { display: none; }
+}
+/* 
+input[type="file"]#file {
+    width: 2px;
+    height: 0.1px;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    background-color: green;
+}
+
+label[for="file"] {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #106BA0;
+    display: inline-block;
+    transition: all .5s;
+    cursor: pointer;
+    padding: 15px 40px !important;
+    text-transform: uppercase;
+    width: fit-content;
+    text-align: center;
+} */

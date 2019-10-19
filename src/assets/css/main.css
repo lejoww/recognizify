@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap');
+
+
+@font-face {
+    font-family: 'cooperhewitt_bold';
+    src: url('../fonts/CooperHewitt-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cooperhewitt_book';
+    src: url('../fonts/CooperHewitt-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cooperhewitt_heavy';
+    src: url('../fonts/CooperHewitt-Heavy.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cooperhewitt_light';
+    src: url('../fonts/CooperHewitt-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cooperhewitt_medium';
+    src: url('../fonts/CooperHewitt-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cooperhewitt_semibold';
+    src: url('../fonts/CooperHewitt-Semibold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+/* h1, h2, h3, h4, h5, h6 {
+    font-family: 'Staatliches';
+    text-rendering: geometricPrecision;
+    color: rgba(0,0,0,0.87)
+}
+
+p, small, strong {
+    font-family: 'Lato';
+    font-weight: 400;
+    color: rgba(0,0,0,0.87)
+}
+
+header {
+    background-color: #5142BA;
+    width: 100%;
+    height: 46px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+header .logo {
+    height: 31px;
+    width: 167px
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-family: 'Lato';
+    font-weight: 900;
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: rgba(0,0,0,0.87)
+} */
+
+/* input {
+    width: 328px;
+    padding: 12px 18px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    outline: none;
+    font-family: 'Lato';
+    font-size: 15px
+}
+
+input:focus {
+    animation-name: borderInput;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards
+} */
+
+@keyframes borderInput {
+    to {
+        border: 1px solid #5142BA;
+    }
+}
+
+/* button.btn {
+    background-color: #5142BA;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 18px;
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer
+} */
+/* 
+small {
+    color: #B5B9CE;
+    margin-top: 7px;
+    font-size: 13px
+} */
+
+label {
+    font-weight: 600;
+    font-size: 14px
+}
+
+nav {
+    display: flex;
+    justify-content: space-between
+}
+
+.nav-link {
+    font-size: 14px;
+    font-weight: 400
+}
+
+.current-profile {
+    position: fixed;
+    z-index: 6;
+    top: 12px;
+    right: 16px;
+}
+
+.profile-content {
+    width: 40px;
+    height: 40px;
+}
+
+.profile-content img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 40px
+}
+
+.feed-card-bg {
+    width: 100%;
+    height: 100vh;
+    background: rgb(36,35,73);
+    background: linear-gradient(90deg, rgba(36,35,73,1) 0%, rgba(1,12,46,1) 100%);    
+    justify-content: space-between;
+    align-items: center;
+    /* temporally */
+    display: none
+}
+
+.table-field {
+    width: 54%;
+}
+
+.table-field table thead tr th{
+    font-size: 14px;
+    padding: 8px 11px;
+}
+
+.content-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.form-textarea {
+    width: 100%;
+}
+
+.bg-image {
+    width: 50vw;
+    height: 100vh;
+    position: fixed;
+    background-color: #00001C;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem
+}
+
+.info-inputs {
+    width: 50vw;
+    padding: 3rem;
+    position: absolute;
+    right: 0;
+}
+
+.back-btn {
+    color: #FEFCFF;
+    font-size: 24px;
+    position: fixed;
+    z-index: 1;
+    top: 24px;
+    left: 24px;
+}
+
+#navbar {
+    position: relative;
+    z-index: 0;
+}
+
+.navbar-nav {
+    position: absolute;
+    right: 72px;
+    z-index: .1;
+}
+
+.projectNameOnBrand {
+    padding-left: 1rem; 
+    border-left: 1px solid #000;
+    display: flex;
+    align-items: center;
+}
+
+.profileMenu {
+    border: none;
+    border-radius: 4px;
+    background-color: #fff;
+    display: block;
+    position: fixed;
+    z-index: 5;
+    top: 47px;
+    right: 180px;
+}
+
+.dropdown {
+    position: absolute !important;
+}
+
+.dropdown a {
+    cursor: pointer;
+}
+
+.profileMenu .profileMenuList {
+    list-style: none;
+    box-shadow: 0 2px 14px 0 rgba(0,0,0,0.1);
+}
+
+.profileMenu .profileMenuList .dropdown-item {
+    padding: .6rem 1.4rem;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.modal-header .modal-title {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.modal-body p {
+    width: 76%;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 500;
+}
+
+.memberInvitationCard {
+    padding: 1rem;
+    border: 1px solid #cecece;
+    border-radius: 4px;
+    box-shadow: 0 2px 14px 0 rgba(0,0,0,0.1);
+    /* display: none; */
+}
+
+.memberInvitationCard h6 {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+.stadisticPart {
+    width: 27%;
+}
+
+
+
+.instructCopy {
+    left: 27px;
+    bottom: 24px;
+    position: absolute;
+    color: #c5c5c5;
+    text-align: center;
+}
+
+.stadisticCard {
+    display: none;
+    justify-content: space-around;
+    padding: 2rem;
+    background-color: #140f25;
+    color: #f5f5f5;
+}
+
+.navbar-toggler {
+    margin-right: -23px;
+}
+
+a.router-link-exact-active, a {
+    text-decoration: none;
+    color: #00000080
+}
+
+a.router-link-exact-active:hover, a:hover {
+    color: #14141f
+}
+
+
+/* <a href="https://www.freepik.es/fotos-vectores-gratis/fondo">Vector de Fondo creado por freepik - www.freepik.es</a> */
+/* <a href="https://www.freepik.es/fotos-vectores-gratis/negocios">Vector de Negocios creado por pikisuperstar - www.freepik.es</a> */

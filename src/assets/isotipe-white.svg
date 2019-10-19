@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="333" height="200" viewBox="0 0 333 200">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectángulo_2" data-name="Rectángulo 2" width="286" height="185" transform="translate(163.159 -3.516)"/>
+    </clipPath>
+    <clipPath id="clip-isotipe-white">
+      <rect width="333" height="200"/>
+    </clipPath>
+  </defs>
+  <g id="isotipe-white" clip-path="url(#clip-isotipe-white)">
+    <rect width="333" height="200" fill="rgba(255,255,255,0)"/>
+    <g id="logo-white-cutted" transform="translate(-139.159 11.516)" clip-path="url(#clip-path)">
+      <rect id="Rectángulo_1" data-name="Rectángulo 1" width="286" height="180" transform="translate(163.159 1.484)" fill="rgba(16,0,59,0)"/>
+      <circle id="Elipse_2" data-name="Elipse 2" cx="73.952" cy="73.952" r="73.952" transform="translate(462.848 126.721) rotate(166)" fill="#faf8ff"/>
+      <path id="Trazado_3" data-name="Trazado 3" d="M106.25,15.189a44.561,44.561,0,1,1,0,89.122A73.383,73.383,0,0,1,74.162,95.4c-18.8-10.674-43.9-13.973-54.886-1.718C6.811,109.314,0,40.425,0,30.555c0-9.481,10.287-47.665,33.853-21.6C44.841,22.908,91.115,15.189,106.25,15.189Z" transform="translate(351.163 121.363) rotate(166)" fill="#faf8ff"/>
+      <circle id="Elipse_1" data-name="Elipse 1" cx="74" cy="74" r="74" transform="translate(172.159 33.484)" fill="#c4badc" opacity="0.64"/>
+      <path id="Trazado_2" data-name="Trazado 2" d="M91.619,6.426a44.561,44.561,0,0,1,0,89.122,73.383,73.383,0,0,1-32.088-8.912c-18.8-10.674-43.9-13.973-54.886-1.718-6.457,8.1-32.658-.036-46.078-13.579C-53.219,59.446-52.5,42.532-52.5,37.776c0-4.917,3.739-22.754,20-34.636C-18.368-7.2,7.885-12.343,19.224.2,30.211,14.146,76.484,6.426,91.619,6.426Z" transform="translate(295.542 74.044)" fill="#c4badc" opacity="0.64"/>
+    </g>
+  </g>
+</svg>

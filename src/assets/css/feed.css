@@ -1,0 +1,381 @@
+/* Dashboard order */
+
+.dashboardContent {
+    width: 94%;
+    position: absolute;
+    right: 0;
+}
+
+.layoutContainer {
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardsContent {
+    display: flex;
+}
+
+/* Project Feed Order */
+
+.projectHeader {
+    width: 100%;
+    height: 142px;
+    background-size: cover;
+    background-position: center
+}
+
+.projectHeaderBackground {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(41, 41, 41, 0.589);
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+}
+
+.projectSummaryData {
+    width: 76%;
+    display: flex;
+    padding: 22px;
+    margin: 0 auto;
+}
+
+.projectSummaryCard {
+    width: auto;
+    height: auto;
+    padding: 21px;
+    margin: .5em;
+    background-color: #ffff;
+    border: 1px solid #ececec;
+    border-radius: 6px;
+    display: block;
+}
+
+.projectSummaryCard .usersList {
+    width: 278px;
+    list-style: none;
+}
+
+.projectSummaryCard .usersList li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.projectSummaryCard .usersList li .userInfo {
+    margin-left: 1em;
+}
+
+/* .projectSummaryCard .usersList li .userInfo span {
+    
+} */
+
+.projectSummaryCard .usersList li .userPhoto {
+    width: 37px;
+    height: 37px;
+    text-align: center;
+    line-height: 37px;
+    border-radius: 50%;
+    background-color: #e4c6ff;
+    color: #5c169e;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.projectSummaryCard .usersList li .userName {
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    font-size: 14px;
+    margin: -2px 0 0 0;
+}
+
+.projectSummaryCard .usersList li .userName span {
+    font-family: 'Open Sans';
+    font-weight: 600;
+    margin-left: 3px;
+}
+
+.statisticalCard {
+    width: 432px;
+}
+
+.rowContent {
+    display: flex;
+    align-items: center;
+}
+
+.fade-scale {
+  transform: scale(0);
+  opacity: 0;
+  -webkit-transition: all .25s linear;
+  -o-transition: all .25s linear;
+  transition: all .25s linear;
+}
+
+.fade-scale.in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.projectSummaryImageOnCard {
+    position: relative;
+    left: -21px;
+    bottom: -21px;
+}
+
+.projectSummaryPurpleCard {
+    background-color: #5900C6;
+    width: 72%;
+    height: 400px;
+    padding: 32px 32px 49px 32px;
+    margin: .5em auto;
+    border-radius: 6px;
+}
+
+.projectBoard {
+    width: 100%;
+    padding: 1rem 3rem;
+}
+
+.form-control-special:focus {
+    background-color: transparent;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    border: 0 solid rgb(0, 0, 0);
+}
+
+.content-instruct {
+    width: 62%;
+    color: #CECEDD;
+}
+
+.projectsField {
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#projectsField {
+    display: flex;
+    flex-direction: column;
+}
+
+.projectsField .card-nwp {
+    height: 12rem;
+    width: 18rem; 
+    background-color: #FFEB38; 
+    border: none;
+}
+
+.projectsField .card-nwp .card-body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.projectsField .project-card:hover {
+    animation: borderActive 300ms forwards;
+}
+
+@keyframes borderActive {
+    to {
+        border: 1px solid #5900C6;
+        box-shadow: 0 2px 14px 0 rgba(0,0,0,0.1)
+    }
+}
+
+#projectsField {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap
+}
+
+.preloader-wall {
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.preloader {
+    width: 82px;
+    height: 82px;
+    border: 7px solid #f1f1f1;
+    border-top: 7px solid #5900C6;
+    border-radius: 50%;
+    animation-name: rotate;
+    animation-duration: 800ms;
+    animation-iteration-count: infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.preloader .planet {
+    width: 44px;
+    height: 32px;
+    position: relative;
+}
+
+.layoutCard {
+    width: 97vw;
+    margin: 12px auto;
+    padding: 2rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.061)
+}
+
+.instruct {
+    font-weight: 700;
+    color: white;
+    margin-left: 2rem;
+    margin-bottom: 0;
+}
+
+.card.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.card.project-card .card-body .card-title {
+    margin: 0;
+}
+
+.card-body {
+    padding: 11px 17px;
+    display: flex;
+    align-items: center;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.muted-gray {
+    color: #9797ac;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 14px;
+}
+
+
+.lateral-menu-container{
+    width: 6vw;
+    height: 100vh;
+    /* background-image: url("../ilustrations/menu-bg.jpg"); */
+    background-size: cover;
+    position: fixed;
+    top: 0;
+}
+
+.lateral-menu-container .lateral-menu-bg-correction {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(24, 20, 32);
+}
+
+.lateral-menu-container .lateral-menu-bg-correction .lateralPanelOption {
+    display: block;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.lateral-menu-container .lateral-menu-bg-correction .logo {
+    margin: 2rem auto 4rem auto;
+}
+
+.lateral-menu-container .lateral-menu-bg-correction .markup-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.lateral-menu-container .lateral-menu-bg-correction .projectTitle {
+    font-family: 'cooperhewitt_bold';
+    width: 100%;
+    color: #fff;
+    margin: .3em;
+    padding: 0  0 1em 20px;
+    text-transform: capitalize;
+}
+
+.lateral-menu-container .lateral-menu-bg-correction .stadistic-card {
+    width: 94%;
+    padding: .3em 1em;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    color: white;
+    display: none;
+}
+
+.lateral-menu-container .lateral-menu-bg-correction .stadistic-card .project-count {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center
+}
+
+.lateral-menu-container .lateral-menu-bg-correction .project-count h6 {
+    margin-top: 4px;
+}
+
+.lateral-menu-container .lateral-menu-bg-correction .buttons-row {
+    display: flex;
+    width: 94%;
+    margin: 12px auto;
+}
+
+.lateral-menu-container .lateral-menu-bg-correction .buttons-row .btn-gradient {
+    font-family: 'cooperhewitt_heavy';
+    background: rgb(174,0,221);
+    background: linear-gradient(90deg, rgba(174,0,221,1) 0%, rgba(255,0,176,1) 100%);
+    color: white;
+}
+
+.lateral-menu-container .lateral-menu-bg-correction .stadistic-part-bottom {
+    position: absolute;
+    bottom: 12px;
+}
+
+.card-body .card-title {
+    font-weight: 700;
+    letter-spacing: -0.4px
+}
+
+.card-body a {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.projects-field-title {
+    letter-spacing: -0.2px; 
+    text-transform: none;
+    font-size: 15px;
+}
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media screen and (max-width: 340px) {
+      .card-body {
+        padding: 12px;
+      }
+  }
