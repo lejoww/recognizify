@@ -51,20 +51,22 @@
             <!-- there are other projects -->
             <!-- ------------------------ -->
 
-            <a href="/create/project">
-              <div class="card project-card" style="width: 22rem; margin-right: 1rem">
-                <div class="card-body">
+            <a href="#">
+              <router-link to="/create/project">
+                <div class="card project-card" style="width: 22rem; margin-right: 1rem">
+                  <div class="card-body">
 
-                  <h6 class="card-title">
-                    <span>
-                      <svg id="i-plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="#14141f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5">
-                        <path d="M16 2 L16 30 M2 16 L30 16" />
-                      </svg>
-                    </span>
-                    Agrega un nuevo proyecto
-                  </h6>
+                    <h6 class="card-title">
+                      <span>
+                        <svg id="i-plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="#14141f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5">
+                          <path d="M16 2 L16 30 M2 16 L30 16" />
+                        </svg>
+                      </span>
+                      Agrega un nuevo proyecto
+                    </h6>
+                  </div>
                 </div>
-              </div>
+              </router-link>
             </a>
 
           </div>
