@@ -1,1 +1,0 @@
-let profilePhotoButton = document.querySelector('#profileMenuButton')

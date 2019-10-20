@@ -3,7 +3,7 @@
 
     <div class="preloader-wall" id="preloaderWall">
       <div class="preloader">
-        <img src="@/assets/Brand-planet.png" class="planet">
+        <img src="@/assets/isotipe-color.svg" class="planet">
       </div>
     </div>
 

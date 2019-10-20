@@ -1,134 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap');
 
-
-@font-face {
-    font-family: 'cooperhewitt_bold';
-    src: url('../fonts/CooperHewitt-Bold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'cooperhewitt_book';
-    src: url('../fonts/CooperHewitt-Book.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'cooperhewitt_heavy';
-    src: url('../fonts/CooperHewitt-Heavy.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'cooperhewitt_light';
-    src: url('../fonts/CooperHewitt-Light.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'cooperhewitt_medium';
-    src: url('../fonts/CooperHewitt-Medium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'cooperhewitt_semibold';
-    src: url('../fonts/CooperHewitt-Semibold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box
 }
 
-/* h1, h2, h3, h4, h5, h6 {
-    font-family: 'Staatliches';
-    text-rendering: geometricPrecision;
-    color: rgba(0,0,0,0.87)
-}
-
-p, small, strong {
-    font-family: 'Lato';
-    font-weight: 400;
-    color: rgba(0,0,0,0.87)
-}
-
-header {
-    background-color: #5142BA;
-    width: 100%;
-    height: 46px;
-    padding: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center
-}
-
-header .logo {
-    height: 31px;
-    width: 167px
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    font-family: 'Lato';
-    font-weight: 900;
-    font-size: 13px;
-    margin-bottom: 6px;
-    color: rgba(0,0,0,0.87)
-} */
-
-/* input {
-    width: 328px;
-    padding: 12px 18px;
-    border: 1px solid #cccccc;
-    border-radius: 3px;
-    outline: none;
-    font-family: 'Lato';
-    font-size: 15px
-}
-
-input:focus {
-    animation-name: borderInput;
-    animation-duration: 300ms;
-    animation-fill-mode: forwards
-} */
-
 @keyframes borderInput {
     to {
         border: 1px solid #5142BA;
     }
 }
-
-/* button.btn {
-    background-color: #5142BA;
-    border: none;
-    border-radius: 4px;
-    padding: 12px 18px;
-    font-family: 'Lato';
-    font-weight: 700;
-    font-size: 14px;
-    color: #fff;
-    cursor: pointer
-} */
-/* 
-small {
-    color: #B5B9CE;
-    margin-top: 7px;
-    font-size: 13px
-} */
 
 label {
     font-weight: 600;
@@ -333,7 +215,3 @@ a.router-link-exact-active, a {
 a.router-link-exact-active:hover, a:hover {
     color: #14141f
 }
-
-
-/* <a href="https://www.freepik.es/fotos-vectores-gratis/fondo">Vector de Fondo creado por freepik - www.freepik.es</a> */
-/* <a href="https://www.freepik.es/fotos-vectores-gratis/negocios">Vector de Negocios creado por pikisuperstar - www.freepik.es</a> */
