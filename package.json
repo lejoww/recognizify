@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "start": "node server.js"
+    "build": "vue-cli-service build"
   },
   "dependencies": {
     "chart.js": "^2.8.0",
@@ -32,7 +31,6 @@
     "vue-template-compiler": "^2.6.10"
   },
   "description": "Por el momento no hay instrucciones para la aplicación porque se encuentra en **estado de desarrollo,** si desea ejecutar la app y es un desarrollador use ``` npm run serve ```",
-  "main": "src/main.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rgaezsd/recogniApp.git"
