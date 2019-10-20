@@ -22,6 +22,8 @@
 <script>
 
     import firebase from 'firebase';
+    import '@/assets/css/mediaqueries.css'
+
     export default {
         data(){
             return {   

@@ -300,13 +300,16 @@ nav {
     width: 27%;
 }
 
-
+.credits-banner {
+    padding: 1rem;
+    background-color: rgba(203, 157, 255, 0.452);
+}
 
 .instructCopy {
     left: 27px;
     bottom: 24px;
     position: absolute;
-    color: #c5c5c5;
+    color: #7c7788;
     text-align: center;
 }
 

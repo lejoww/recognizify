@@ -23,7 +23,7 @@
         </div>
 
         <div class="instructCopy">
-            <small class="text-gray">Las imagenes en la aplicación no son de nuestra autoría. Si deseas saber más, ingresa a <a href="#" style="color: #b2b2b2">nuestro sitio de referencias.</a></small>
+            <small class="text-gray">Las imagenes en la aplicación no son de nuestra autoría. Si deseas saber más, ingresa a <router-link to="/credits" style="color: #362f46">nuestro sitio de referencias.</router-link></small>
         </div>
     </div>
 </template>

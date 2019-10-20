@@ -49,11 +49,11 @@
           <div id="projectsField">
 
             <ul style="list-style: none">
-              <li v-for="project in projects" :key="project">
+              <li class="project-el" v-for="project in projects" :key="project">
                 <router-link :to="`/project/${project.id}/feed`">
                   <div class="card project-card" style="width: 17rem; margin-right: 1rem">
                     <div class="card-body">
-                      <h6 class="card-title">{{project['name']}}<span class="badge badge-pill badge-secondary"><strong>Activo</strong></span></h6>
+                      <h6 class="card-title">{{project['name']}} <span class="badge badge-pill badge-secondary"><strong>Activo</strong></span></h6>
                     </div>
                   </div>
                 </router-link>
@@ -63,7 +63,7 @@
             <!-- there are other projects -->
             <!-- ------------------------ -->
 
-            <a href="#">
+
               <router-link to="/create/project">
                 <div class="card project-card" style="width: 22rem; margin-right: 1rem">
                   <div class="card-body">
@@ -79,7 +79,6 @@
                   </div>
                 </div>
               </router-link>
-            </a>
 
           </div>
         </div>
