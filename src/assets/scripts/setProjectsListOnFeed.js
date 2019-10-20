@@ -9,13 +9,15 @@ firebase.auth().onAuthStateChanged(user => {
                 if(project.data()['admin'][0] == user.uid){
                     let accountFeed = document.getElementById('projectsField')
                     let cardToInsert = `
-                        <a href="/project/${project.id}/feed">
+                    <router-link to="/project/${project.id}/feed">
+                        <a href="#">
                             <div class="card project-card" style="width: 17rem; margin-right: 1rem">
                                 <div class="card-body">
                                     <h6 class="card-title">${project.data()['shortName']} <span class="badge badge-pill badge-secondary"><strong>Activo</strong></span></h6>
                                 </div>
                             </div>
                         </a>
+                    </router-link>
                         `
                         accountFeed.insertAdjacentHTML('afterbegin', cardToInsert)
                         count += 1

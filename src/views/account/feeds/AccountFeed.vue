@@ -47,6 +47,18 @@
         <div class="projectsField" id="projectsContent">
           <h2>¿Qué idea vas a potenciar ahora?</h2><br>
           <div id="projectsField">
+
+            <ul style="list-style: none">
+              <li v-for="project in projects" :key="project">
+                <router-link :to="`/project/${project.id}/feed`">
+                  <div class="card project-card" style="width: 17rem; margin-right: 1rem">
+                    <div class="card-body">
+                      <h6 class="card-title">{{project['name']}}<span class="badge badge-pill badge-secondary"><strong>Activo</strong></span></h6>
+                    </div>
+                  </div>
+                </router-link>
+              </li>
+            </ul>
             
             <!-- there are other projects -->
             <!-- ------------------------ -->
@@ -84,18 +96,24 @@
 
 </template>
 <script>
+  
+  // import '@/assets/scripts/setProjectsListOnFeed.js'
 
   import UserNavbar from '@/components/UserNavbar.vue'
   import LateralPanel from '@/components/LateralPanel.vue'
   import Profile from '@/components/Profile.vue'
   import firebase from 'firebase'
 
-  import '@/assets/scripts/setProjectsListOnFeed.js'
   import '@/assets/css/feed.css'
   import '@/assets/css/mediaqueries.css'
 
   export default {
     name: 'account_feed',
+    data(){
+      return {
+        projects: []
+      }
+    },
     components: {
       UserNavbar,
       LateralPanel,
@@ -104,6 +122,37 @@
     mounted: function() {
       let preloaderWall = document.querySelector('#preloaderWall')
       setTimeout(() => preloaderWall.style.display = 'none', 2000)
+      this.setProjectsOnListFeed()
+    },
+    methods: {
+      setProjectsOnListFeed: function(){
+        
+        firebase.auth().onAuthStateChanged(user => {
+          firebase.firestore().collection('projects').get()
+            .then(projects => {
+              let count = 0
+              projects.forEach(project => {
+                if(project.data()['admin'][0] == user.uid){
+
+                    this.projects.push({
+                      name: project.data()['shortName'],
+                      id: project.id
+                    })
+
+                    count += 1
+                }
+              })
+
+              if (count == 0){
+                let bannerForZeroProjects = document.getElementById('bgNoneProjects')
+                bannerForZeroProjects.style.display = 'flex'
+              } if(count >= 1) {
+                  let screenToSelectaProject = document.getElementById('projectLayout')
+                  screenToSelectaProject.style.display = 'flex'
+                }
+            })
+        })
+      }
     }
   }
 
