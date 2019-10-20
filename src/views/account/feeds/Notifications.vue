@@ -6,6 +6,8 @@
            <Profile/>
 
            <div class="notificationsContent" id="notificationsContent">
+            <h2>Notificaciones</h2>
+            <p>Puede haber cosas aquí que no salgan muy bien. Recuerda que estamos en versión BETA.</p>
                
            </div>
        </div>

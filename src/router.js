@@ -58,6 +58,11 @@ const routes = [
     path: '/credits',
     name: 'accept_invitation',
     component: () => import('./views/entry/Credits.vue')
+  },
+  {
+    path: '/account/configuration',
+    name: 'account_config',
+    component: () => import('./views/account/config/Configuration.vue')
   }
 ]
 

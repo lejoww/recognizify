@@ -190,6 +190,10 @@
     animation: borderActive 300ms forwards;
 }
 
+.notificationsContent {
+    padding: 4rem;
+}
+
 @keyframes borderActive {
     to {
         border: 1px solid #5900C6;
@@ -386,4 +390,8 @@ a:hover {
       .card-body {
         padding: 12px;
       }
+  }
+
+  .configurationView {
+      padding: 2rem;
   }
