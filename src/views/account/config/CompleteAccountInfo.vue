@@ -75,7 +75,7 @@
                             bio: this.bio,
                             user: this.user
                         })
-                            .then(() => window.location = '/feed')
+                            .then(() => this.$router.push('/feed'))
                             .catch(err => console.log('Ha ocurrido un error'))
                     }
                 })
