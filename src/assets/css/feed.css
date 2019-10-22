@@ -285,10 +285,7 @@ a:hover {
 .lateral-menu-container{
     width: 5vw;
     height: 100vh;
-    /* background-image: url("../ilustrations/menu-bg.jpg"); */
-    background-size: cover;
     position: fixed;
-    top: 0;
 }
 
 .lateral-menu-container .lateral-menu-bg-correction {
@@ -314,7 +311,6 @@ a:hover {
 }
 
 .lateral-menu-container .lateral-menu-bg-correction .projectTitle {
-    font-family: 'cooperhewitt_bold';
     width: 100%;
     color: #fff;
     margin: .3em;

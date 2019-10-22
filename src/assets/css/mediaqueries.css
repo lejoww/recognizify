@@ -68,7 +68,14 @@
     }
 
     .lateral-menu-container {
-        min-width: 14vw
+        min-width: 100vw;
+        max-height: 100px;
+        top: unset;
+        bottom: 0;
+    }
+
+    .lateral-menu-container .lateral-menu-bg-correction .markup-container {
+        
     }
 
     .dashboardContent {
