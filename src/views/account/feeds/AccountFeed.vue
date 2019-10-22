@@ -25,7 +25,7 @@
     </div>
 
     <LateralPanel/>
-    <!-- <Profile/> -->
+    <Profile/>
 
     <div class="dashboardContent">
 

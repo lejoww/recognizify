@@ -20,14 +20,6 @@
       min-width: 8vw
   }
 
-  .current-profile {
-      left: 92px;
-  }
-
-  .profileMenu {
-      right: 0;
-      left: 180px;
-  }
 }
 
 @media screen and (max-width: 767px) {
@@ -93,10 +85,6 @@
         display: inline-block;
         margin-bottom: 1rem;
         border-left: 5px solid #5900c6;
-    }
-
-    .current-profile {
-        display: none;
     }
 
     .layoutCard {
