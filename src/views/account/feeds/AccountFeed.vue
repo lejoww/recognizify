@@ -25,7 +25,7 @@
     </div>
 
     <LateralPanel/>
-    <Profile/>
+    <!-- <Profile/> -->
 
     <div class="dashboardContent">
 
@@ -65,7 +65,7 @@
 
 
               <router-link to="/create/project">
-                <div class="card project-card" style="width: 22rem; margin-right: 1rem">
+                <div class="card project-card" style="width: 22rem; margin-right: 1rem;">
                   <div class="card-body">
 
                     <h6 class="card-title">
