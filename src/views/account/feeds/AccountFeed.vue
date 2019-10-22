@@ -43,54 +43,44 @@
         </div>
       </div>
 
-      <div class="layoutContainer" id="projectLayout">
-        <div class="projectsField" id="projectsContent">
-          <h2>¿Qué idea vas a potenciar ahora?</h2><br>
-          <div id="projectsField">
+      <div class="projectsField" id="projectsContent">
+        <h2>¿Qué idea vas a potenciar ahora?</h2><br>
+        <div id="projectsField">
 
-            <ul style="list-style: none">
-              <li class="project-el" v-for="project in projects" :key="project">
-                <router-link :to="`/project/${project.id}/feed`">
-                  <div class="card project-card" style="width: 17rem; margin-right: 1rem">
-                    <div class="card-body">
-                      <h6 class="card-title">{{project['name']}} <span class="badge badge-pill badge-secondary"><strong>Activo</strong></span></h6>
-                    </div>
+          <ul style="list-style: none">
+            <li class="project-el" v-for="project in projects" :key="project">
+              <router-link :to="`/project/${project.id}/feed`">
+                <div class="card project-card" style="width: 17rem; margin-right: 1rem">
+                  <div class="card-body">
+                    <h6 class="card-title">{{project['name']}} <span class="badge badge-pill badge-secondary"><strong>Activo</strong></span></h6>
                   </div>
-                </router-link>
-              </li>
-            </ul>
+                </div>
+              </router-link>
+            </li>
+          </ul>
             
             <!-- there are other projects -->
             <!-- ------------------------ -->
 
 
-              <router-link to="/create/project">
-                <div class="card project-card" style="width: 22rem; margin-right: 1rem;">
-                  <div class="card-body">
+          <router-link to="/create/project">
+            <div class="card project-card" style="width: 22rem; margin-right: 1rem;">
+              <div class="card-body">
+                <h6 class="card-title">
+                  <span>
+                    <svg id="i-plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="#14141f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5">
+                      <path d="M16 2 L16 30 M2 16 L30 16" />
+                    </svg>
+                  </span>
+                  Agrega un nuevo proyecto
+                </h6>
+              </div>
+            </div>
+          </router-link>
 
-                    <h6 class="card-title">
-                      <span>
-                        <svg id="i-plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="#14141f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5">
-                          <path d="M16 2 L16 30 M2 16 L30 16" />
-                        </svg>
-                      </span>
-                      Agrega un nuevo proyecto
-                    </h6>
-                  </div>
-                </div>
-              </router-link>
-
-          </div>
         </div>
-<!-- 
-          <div class="layoutCard bg-primary" style="color: #fff">
-            <h6 style="font-weight: 600">Hola, Bienvenido a Beta</h6>
-            <p>RecognizifyBETA es el proyecto de la aplicación para que los usuarios puedan calificar nuestra aplicación en varias áreas, de este modo, nosotros podemos recolectar datos y mejorar lo que sea necesario para la salida de la aplicación oficial.</p>
-            <button class="btn btn-warning btn-sm">Calificar la app</button>
-          </div> -->
       </div>
     </div>
-
   </div>
 
 </template>
@@ -103,8 +93,8 @@
   import Profile from '@/components/Profile.vue'
   import firebase from 'firebase'
 
-  import '@/assets/css/feed.css'
   import '@/assets/css/mediaqueries.css'
+  import '@/assets/css/feed.css'
 
   export default {
     name: 'account_feed',
@@ -145,6 +135,9 @@
               if (count == 0){
                 let bannerForZeroProjects = document.getElementById('bgNoneProjects')
                 bannerForZeroProjects.style.display = 'flex'
+
+                let projectListOnScreen = document.getElementById('projectsContent')
+                projectListOnScreen.style.display = 'none'
               } if(count >= 1) {
                   let screenToSelectaProject = document.getElementById('projectLayout')
                   screenToSelectaProject.style.display = 'flex'

@@ -1,9 +1,13 @@
 /* Dashboard order */
 
 .dashboardContent {
-    width: 94%;
+    width: 95%;
+    height: 100%;
     position: absolute;
     right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .layoutContainer {
@@ -153,7 +157,6 @@
 
 .projectsField {
     margin: 0 auto;
-    padding: 2rem;
     display: flex;
     flex-direction: column;
 }
@@ -283,7 +286,7 @@ a:hover {
 
 
 .lateral-menu-container{
-    width: 5vw;
+    width: 5%;
     height: 100vh;
     position: fixed;
 }
