@@ -24,60 +24,60 @@
         </div>
     </div>
 
-    <LateralPanel/>
-    <Profile/>
 
-    <div class="dashboardContent">
+    <div class="screenContent">
 
-      <div class="feed-card-bg" id="bgNoneProjects">
-        <div class="image-representation">
-          <img src="@/assets/ilustrations/born-robot.png" alt="Robot despertando">
+      <Profile/>
+
+      <div class="dashboardContent">
+      <LateralPanel/>
+
+        <div class="feed-card-bg" id="bgNoneProjects">
+          <div class="image-representation">
+            <img src="@/assets/ilustrations/born-robot.png" alt="Robot despertando">
+          </div>
+          <div class="content-instruct">
+            <h3 style="color: #f2f2f2">Parece que aún no tienes proyectos nuevos</h3>
+            <p>¿Qué te parece si empezamos de una vez?</p><br>
+
+            <a href="#" class="btn btn-success btn-lg" style="width: 318px; display: flex; justify-content: space-around; align-items: center">
+              <router-link to="/create/project">Crea un nuevo proyecto</router-link>
+            </a>
+          </div>
         </div>
-        <div class="content-instruct">
-          <h3 style="color: #f2f2f2">Parece que aún no tienes proyectos nuevos</h3>
-          <p>¿Qué te parece si empezamos de una vez?</p><br>
 
-          <a href="#" class="btn btn-success btn-lg" style="width: 318px; display: flex; justify-content: space-around; align-items: center">
-            <router-link to="/create/project">Crea un nuevo proyecto</router-link>
-          </a>
-        </div>
-      </div>
+        <div class="projectsField" id="projectsContent">
+          <h2>¿Qué idea vas a potenciar ahora?</h2><br>
+          <div id="projectsField">
 
-      <div class="projectsField" id="projectsContent">
-        <h2>¿Qué idea vas a potenciar ahora?</h2><br>
-        <div id="projectsField">
-
-          <ul style="list-style: none">
-            <li class="project-el" v-for="project in projects" :key="project">
-              <router-link :to="`/project/${project.id}/feed`">
-                <div class="card project-card" style="width: 17rem; margin-right: 1rem">
-                  <div class="card-body">
-                    <h6 class="card-title">{{project['name']}} <span class="badge badge-pill badge-secondary"><strong>Activo</strong></span></h6>
+            <ul style="list-style: none">
+              <li class="project-el" v-for="project in projects" :key="project">
+                <router-link :to="`/project/${project.id}/feed`">
+                  <div class="card project-card" style="width: 17rem; margin-right: 1rem">
+                    <div class="card-body">
+                      <h6 class="card-title">{{project['name']}} <span class="badge badge-pill badge-secondary"><strong>Activo</strong></span></h6>
+                    </div>
                   </div>
+                </router-link>
+              </li>
+            </ul> 
+
+            <!-- <router-link to="/create/project">
+              <div class="card project-card" style="width: 22rem; margin-right: 1rem;">
+                <div class="card-body">
+                  <h6 class="card-title">
+                    <span>
+                      <svg id="i-plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="#14141f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5">
+                        <path d="M16 2 L16 30 M2 16 L30 16" />
+                      </svg>
+                    </span>
+                    Agrega un nuevo proyecto
+                  </h6>
                 </div>
-              </router-link>
-            </li>
-          </ul>
-            
-            <!-- there are other projects -->
-            <!-- ------------------------ -->
-
-
-          <router-link to="/create/project">
-            <div class="card project-card" style="width: 22rem; margin-right: 1rem;">
-              <div class="card-body">
-                <h6 class="card-title">
-                  <span>
-                    <svg id="i-plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="#14141f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5">
-                      <path d="M16 2 L16 30 M2 16 L30 16" />
-                    </svg>
-                  </span>
-                  Agrega un nuevo proyecto
-                </h6>
               </div>
-            </div>
-          </router-link>
+            </router-link> -->
 
+          </div>
         </div>
       </div>
     </div>
@@ -93,8 +93,8 @@
   import Profile from '@/components/Profile.vue'
   import firebase from 'firebase'
 
-  import '@/assets/css/mediaqueries.css'
   import '@/assets/css/feed.css'
+  import '@/assets/css/mediaqueries.css'
 
   export default {
     name: 'account_feed',

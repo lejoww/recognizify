@@ -1,8 +1,8 @@
 <template>
     <div id="configuration">
         <LateralPanel/>
+        <UserNavbar/>
         <div class="dashboardContent">
-            <UserNavbar/>
             <Profile/>
 
             <div class="alert alert-secondary" role="alert" style="display: none" id="alert-success">
