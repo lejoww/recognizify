@@ -50,6 +50,12 @@ nav {
     width: 54%;
 }
 
+.scrollable {
+    overflow: scroll;
+    overflow-x: hidden;
+    max-height: 81%;
+}
+
 .table-field table thead tr th{
     font-size: 14px;
     padding: 8px 11px;

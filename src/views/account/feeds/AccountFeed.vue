@@ -26,9 +26,7 @@
 
 
     <div class="screenContent">
-
       <Profile/>
-
       <div class="dashboardContent">
       <LateralPanel/>
 

@@ -1,13 +1,12 @@
 <template>
   <div id="feed">
-    <LateralPanel />
+    <div class="screenContent">
+      <Profile />
 
-    <div class="dashboardContent">
-      <div id="projectSummary">
-        <UserNavbar />
-        <Profile />
+      <div class="dashboardContent">
+        <LateralPanel/>
 
-        <div class="projectSummaryPurpleCard statisticalCard">
+        <div class="projectSummaryPurpleCard">
           <h2 class="text-white" v-text="projectName"></h2>
           <p class="text-white">Próximamente aquí tendrás estadisticas de tu proyecto.</p>
           <!-- <canvas width="100%" height="100%" id="canvas"></canvas> -->
@@ -17,22 +16,20 @@
           <div class="projectSummaryCard">
             <h4 class="muted-gray">Usuarios registrados</h4>
             <hr />
-            <ol class="usersList" id="usersList"></ol>
+            <div class="scrollable">
+              <ol class="usersList" id="usersList"></ol>
+            </div>
           </div>
 
           <div class="projectSummaryCard">
-            <div class="rowContent">
-              <div style="width: 40%; margin-right: 1rem">
-                <h2>Boards</h2>
-                <h4 class="muted-gray">Visita uno de los módulos. Accede desde el menú superior</h4>
-              </div>
-            </div>
-            <img
+            <h2>Boards</h2>
+            <h4 class="muted-gray">Visita uno de los módulos. Accede desde el menú superior</h4>
+            <!-- <img
               class="projectSummaryImageOnCard"
               src="@/assets/ilustrations/meeting.png"
               alt="Meeting de empresa"
               width="312px"
-            />
+            /> -->
           </div>
         </div>
       </div>
