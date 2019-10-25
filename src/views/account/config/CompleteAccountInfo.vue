@@ -1,30 +1,34 @@
 <template>
     <div class="view-content">
         <div id="welcomeAccountComplete" class="account-complete">
-            <h1 class="welcome-title">Comenzarás a hacer de tu proyecto un éxito</h1>
-            <strong>Solo falta que completes algunos datos</strong><br><br>
+            <h1 class="text-white">Comenzarás a hacer de tu proyecto un éxito</h1>
+            <p class="text-white">Solo falta que completes algunos datos</p><br><br>
 
             <div class="photo-container">
                 <img v-bind:src="urlPhotoPath" class="photo-profile">    
             </div><br>
-            <input type="file" v-on:change="checkUrlPath" id="file"><br>
+
             <div class="form-content">
                 <div class="form-row">
-                    <div class="form-group" style="margin-right: 12px">
-                        <label>¿Cómo quieres que te llamemos?</label>
-                        <input type="text" v-model="username" class="form-control" placeholder="Ejm. Pepito Gonzáles">
+                    <label class="text-white" for="file">Tu foto de perfil (selecciona un archivo)</label>
+                    <input class="text-white" type="file" v-on:change="checkUrlPath" id="file">
+                </div><br>
+                <div class="form-row">
+                    <div class="form-group" style="width: 100%">
+                        <label class="text-white">¿Cómo quieres que te llamemos?</label>
+                        <input type="text" v-model="username" class="form-control" placeholder="Ejm. Pepito Gonzáles" spellcheck="false" autocomplete="off">
                     </div>
-                    <div class="form-group">
-                        <label>Descríbete tal y como eres</label>
-                        <input type="text" v-model="bio" class="form-control" placeholder="Autentico">
+                    <div class="form-group" style="width: 100%">
+                        <label class="text-white">Descríbete tal y como eres</label>
+                        <input type="text" v-model="bio" class="form-control" placeholder="Autentico" spellcheck="false" autocomplete="off">
                     </div>
-                    <div class="form-group">
-                        <label>Escoge un nombre de usuario</label>
-                        <input type="text" v-model="user" class="form-control" value="@">
+                    <div class="form-group" style="width: 100%">
+                        <label class="text-white">Escoge un nombre de usuario</label>
+                        <input type="text" v-model="user" class="form-control" value="@" spellcheck="false" autocomplete="off">
                     </div>
                 </div>
             </div>
-            <button @click="saveInfoOnDatabase" class="btn btn-primary">Continuar</button>
+            <button @click="saveInfoOnDatabase" class="btn btn-secondary">Continuar</button>
         </div>
     </div>
 </template>

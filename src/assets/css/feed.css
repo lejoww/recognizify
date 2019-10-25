@@ -307,7 +307,6 @@ a:hover {
 .lateral-menu-container {
     grid-column: 1 / 2;
     grid-row: 1 / 13;
-    position: relative;
 }
 
 .lateral-menu-container .lateral-menu-bg-correction {
@@ -455,6 +454,10 @@ a:hover {
         grid-column: 1 / 19;
     }
 
+    .markup-container img {
+        margin: 0;
+    }
+
     .lateral-menu-container .lateral-menu-bg-correction {
         max-width: 100vw;
         height: 100%;
@@ -476,6 +479,7 @@ a:hover {
     .image-representation img {
         width: 277px;
     }
+    
 
     .current-profile .profile-content img {
         border: 3px solid rgba(219, 217, 217, 0.349);
@@ -510,7 +514,12 @@ a:hover {
 
     .feed-card-bg {
         grid-column: 1 / 19;
-        grid-row: 1 / 3;
+        grid-row: 1 / 12;
+    }
+
+    
+    .feed-card-bg .content-instruct {
+        width: 82%;
     }
 
     .navbar-brand {

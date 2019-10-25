@@ -35,23 +35,24 @@ div#login .form-container .form-group input {
 }
 
 /* welcome */
-.account-complete {
-    width: 47%;
-    margin: 72px auto;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center
+.view-content {
+    background-image: url('../ilustrations/desk.jpg');
+    background-size: cover;
 }
 
-.account-complete .welcome-title {
-    letter-spacing: -0.6px;
-    color: rgb(83, 65, 199);
+.account-complete {
+    width: 100vw;
+    height: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.376);
 }
 
 .account-complete .photo-container {
-    width: 172px;
-    height: 172px;
+    min-width: 172px;
+    min-height: 172px;
     background-color: #cccccc;
     border-radius: 50%;
     overflow: hidden;

@@ -2,9 +2,9 @@
   <div id="feed">
     <div class="screenContent">
       <Profile />
-
+      
       <div class="dashboardContent">
-        <LateralPanel/>
+      <LateralPanel/>
 
         <div class="projectSummaryPurpleCard">
           <h2 class="text-white" v-text="projectName"></h2>
