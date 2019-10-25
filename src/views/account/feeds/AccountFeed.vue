@@ -39,7 +39,7 @@
             <p>¿Qué te parece si empezamos de una vez?</p><br>
 
             <a href="#" class="btn btn-success btn-lg" style="width: 318px; display: flex; justify-content: space-around; align-items: center">
-              <router-link to="/create/project">Crea un nuevo proyecto</router-link>
+              <router-link class="text-white" to="/create/project">Crea un nuevo proyecto</router-link>
             </a>
           </div>
         </div>

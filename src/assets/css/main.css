@@ -63,8 +63,18 @@ nav {
 
 .content-flex {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    grid-column: 1 / 19;
+    grid-row: 1 / 13;
+}
+
+@media screen and (max-width: 767px) {
+    .content-flex {
+        flex-direction: column;
+    }
+
+    .content-flex .bg-image {
+        display: none;
+    }
 }
 
 .form-textarea {
@@ -72,8 +82,6 @@ nav {
 }
 
 .bg-image {
-    width: 50vw;
-    height: 100vh;
     position: fixed;
     background-color: #00001C;
     display: flex;
@@ -83,7 +91,6 @@ nav {
 }
 
 .info-inputs {
-    width: 50vw;
     padding: 3rem;
     position: absolute;
     right: 0;

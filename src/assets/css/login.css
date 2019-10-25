@@ -35,10 +35,6 @@ div#login .form-container .form-group input {
 }
 
 /* welcome */
-.view-content {
-    background-image: url('../ilustrations/desk.jpg');
-    background-size: cover;
-}
 
 .account-complete {
     width: 100vw;
@@ -47,7 +43,6 @@ div#login .form-container .form-group input {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.376);
 }
 
 .account-complete .form-content .form-row .form-group {
@@ -57,7 +52,6 @@ div#login .form-container .form-group input {
 @media screen and (min-width: 680px) {
     .account-complete {
         text-align: center;
-        background-color: rgba(0, 0, 0, 0.664);
     }
 
     .account-complete .form-content .form-row .form-group {
@@ -69,7 +63,9 @@ div#login .form-container .form-group input {
 .account-complete .photo-container {
     min-width: 172px;
     min-height: 172px;
-    background-color: #cccccc;
+    border: 1px solid #e2e9f1;
+    background-image: url('../ilustrations/profile.png');
+    background-size: cover;
     border-radius: 50%;
     overflow: hidden;
 }
