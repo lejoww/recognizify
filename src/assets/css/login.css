@@ -42,12 +42,28 @@ div#login .form-container .form-group input {
 
 .account-complete {
     width: 100vw;
-    height: 100%;
+    height: 100vh;
     padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.376);
+}
+
+.account-complete .form-content .form-row .form-group {
+    width: 90%;
+}
+
+@media screen and (min-width: 680px) {
+    .account-complete {
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.664);
+    }
+
+    .account-complete .form-content .form-row .form-group {
+        width: auto;
+        margin: 0 0.5em 1em 0.5em;
+    }
 }
 
 .account-complete .photo-container {

@@ -1,8 +1,8 @@
 <template>
     <div class="view-content">
         <div id="welcomeAccountComplete" class="account-complete">
-            <h1 class="text-white">Comenzarás a hacer de tu proyecto un éxito</h1>
-            <p class="text-white">Solo falta que completes algunos datos</p><br><br>
+            <h1 class="text-white" style="width: 100%">Comenzarás a hacer de tu proyecto un éxito</h1>
+            <p class="text-white" style="width: 100%">Solo falta que completes algunos datos</p><br><br>
 
             <div class="photo-container">
                 <img v-bind:src="urlPhotoPath" class="photo-profile">    
@@ -11,18 +11,18 @@
             <div class="form-content">
                 <div class="form-row">
                     <label class="text-white" for="file">Tu foto de perfil (selecciona un archivo)</label>
-                    <input class="text-white" type="file" v-on:change="checkUrlPath" id="file">
+                    <input class="text-white form-control-file" type="file" v-on:change="checkUrlPath" id="file">
                 </div><br>
                 <div class="form-row">
-                    <div class="form-group" style="width: 100%">
+                    <div class="form-group">
                         <label class="text-white">¿Cómo quieres que te llamemos?</label>
                         <input type="text" v-model="username" class="form-control" placeholder="Ejm. Pepito Gonzáles" spellcheck="false" autocomplete="off">
                     </div>
-                    <div class="form-group" style="width: 100%">
+                    <div class="form-group">
                         <label class="text-white">Descríbete tal y como eres</label>
                         <input type="text" v-model="bio" class="form-control" placeholder="Autentico" spellcheck="false" autocomplete="off">
                     </div>
-                    <div class="form-group" style="width: 100%">
+                    <div class="form-group">
                         <label class="text-white">Escoge un nombre de usuario</label>
                         <input type="text" v-model="user" class="form-control" value="@" spellcheck="false" autocomplete="off">
                     </div>
