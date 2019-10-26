@@ -10,9 +10,10 @@
         </a>
         <div class="profileMenu">
             <div class="dropdown-menu profileMenuList" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Mi cuenta</a>
+                <a class="dropdown-item" href="#"><router-link to="/select">Mis proyectos</router-link></a>
+                <a class="dropdown-item" href="#"><router-link to="/notifications">Notificaciones</router-link></a>
+                <a class="dropdown-item" href="#"><router-link to="/account/configuration">Configuración</router-link></a>
                 <a class="dropdown-item" href="#">Sobre Recognizify</a>
-                <a class="dropdown-item" href="#">Configuración</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#" @click="closeSession" style="color: #FF524C">Cerrar sesión</a>
         </div>
@@ -34,6 +35,15 @@
             firebase.auth().onAuthStateChanged(user => {
                 firebase.storage().ref(`profile_photos/${user.uid}`).getDownloadURL()
                     .then(path => this.urlPhotoPath = path)
+            })
+            firebase.auth().onAuthStateChanged(user => {
+                firebase.firestore().collection('users').doc(user.uid).collection('invitations').get()
+                    .then(invitations => {
+                    if (invitations.docs.length >= 1) {
+                        let invitationsBadge = document.getElementById('invitationsLink')
+                        invitationsBadge.insertAdjacentHTML('beforeend', `<span class="badge badge-secondary">${invitations.docs.length}</span>`)
+                    }
+                })
             })
         },
         methods: {

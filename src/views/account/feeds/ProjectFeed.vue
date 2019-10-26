@@ -61,6 +61,10 @@
       Profile
     },
     mounted: function() {
+      if (this.$router.history.current.params["projectId"] == 'undefined') {
+        this.$router.push('/select')
+      }
+
       this.getProjectMembers();
       this.setProjectImageAndName();
       this.setYourselfOnList();

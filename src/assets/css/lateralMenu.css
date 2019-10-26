@@ -1,0 +1,34 @@
+
+.lateral-menu-container {
+    grid-column: 1 / 4;
+    grid-row: 1 / 13;
+    padding: 1.5rem 2rem;
+    background-color: #ffffff00;
+}
+
+.lateral-menu-container .lateral-menu-body {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.lateral-menu-container .lateral-menu-body .lateralPanelOption {
+    width: 100%;
+    margin: 1em 0;
+}
+
+.lateral-menu-container .lateral-menu-body .lateralPanelOption .lateralMenuLink {
+    color: #14141f;
+    font-weight: 700;
+    font-size: 14px;
+    margin-left: 8px;
+    letter-spacing: -0.4px;
+}
+
+.lateral-menu-container .lateral-menu-body .lateralPanelOption .lateralMenuLink:hover {
+    animation: standOutColor 300ms forwards;
+}
+
+@keyframes standOutColor {
+    to { color: #6610f2 }
+}

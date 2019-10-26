@@ -46,19 +46,10 @@ nav {
     border-radius: 40px
 }
 
-.table-field {
-    width: 54%;
-}
-
 .scrollable {
     overflow: scroll;
     overflow-x: hidden;
     max-height: 81%;
-}
-
-.table-field table thead tr th{
-    font-size: 14px;
-    padding: 8px 11px;
 }
 
 .content-flex {
@@ -170,39 +161,8 @@ nav {
 
 .profileMenu .profileMenuList .dropdown-item {
     padding: .6rem 1.4rem;
-    font-size: 12px;
-    font-weight: 600;
-}
-
-.modal-header .modal-title {
-    width: 100%;
-    text-align: center;
-    margin-top: 1rem;
-}
-
-.modal-body p {
-    width: 76%;
-    margin: 0 auto;
-    text-align: center;
-    font-weight: 500;
-}
-
-.memberInvitationCard {
-    padding: 1rem;
-    border: 1px solid #cecece;
-    border-radius: 4px;
-    box-shadow: 0 2px 14px 0 rgba(0,0,0,0.1);
-    /* display: none; */
-}
-
-.memberInvitationCard h6 {
     font-size: 14px;
-    font-weight: 700;
-    letter-spacing: -0.3px;
-}
-
-.stadisticPart {
-    width: 27%;
+    font-weight: 600;
 }
 
 .credits-banner {
@@ -218,14 +178,6 @@ nav {
     text-align: center;
 }
 
-.stadisticCard {
-    display: none;
-    justify-content: space-around;
-    padding: 2rem;
-    background-color: #140f25;
-    color: #f5f5f5;
-}
-
 .navbar-toggler {
     margin-right: -23px;
 }
@@ -237,4 +189,34 @@ a.router-link-exact-active, a {
 
 a.router-link-exact-active:hover, a:hover {
     color: #14141f
+}
+
+.feather-light {
+    width: 24px;
+    height: 24px;
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+.feather-dark {
+    width: 24px;
+    height: 24px;
+    stroke: #000;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+.feather-menu {
+    width: 20px;
+    height: 20px;
+    stroke: #645e80;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
 }

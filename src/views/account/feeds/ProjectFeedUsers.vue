@@ -1,10 +1,12 @@
 <template>
     <div id="users">
-        <UserNavbar/>
-        <LateralPanel/>
-        <div class="dashboardContent">
-            <UserRegistry/>
+        <div class="screenContent">
             <Profile/>
+            
+            <div class="dashboardContent">
+                <LateralPanel/>
+                <UserRegistry/>
+            </div>
         </div>
     </div>
 </template>

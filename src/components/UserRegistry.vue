@@ -1,6 +1,6 @@
 <template>
-  <div id="usersRegistry" style="margin: 0 1rem">
-    <!-- modal start -->
+  <div id="usersRegistry">
+    
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -24,9 +24,8 @@
         </div>
       </div>
     </div>
-    <!-- modal end -->
 
-    <!-- modal start -->
+
     <div class="modal fade" id="invitationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -44,28 +43,35 @@
         </div>
       </div>
     </div>
-    <!-- modal end -->
 
+      <!-- <div class="usersListTable">
+        <h6>Usuarios en tu proyecto</h6>
+        <button class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">Nuevo miembro</button>
+        <table class="table" style="width: 56%">
+          <thead class="thead-dark">
+            <tr style="font-size: 14px">
+              <th scope="col">Nombre</th>
+              <th scope="col">Usuario</th>
+              <th scope="col">Rol</th>
+            </tr>
+          </thead>
+          <tbody id="projectUsersField"></tbody>
+        </table>
+      </div> -->
 
-    <h6>Usuarios en tu proyecto</h6>
-    <button class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">Nuevo miembro</button>
-    <table class="table" style="width: 56%">
-      <thead class="thead-dark">
-        <tr style="font-size: 14px">
-          <th scope="col">Nombre</th>
-          <th scope="col">Usuario</th>
-          <th scope="col">Rol</th>
-        </tr>
-      </thead>
-      <tbody id="projectUsersField"></tbody>
-    </table>
-  </div>
+      <div class="bannerNonUsers">
+        <div>
+          <h3>Parece que no has invitado a nadie a tu proyecto</h3>
+          <p>Puedes agregar a tu primer usuario en el proyecto si conoces su nombre de usuario.</p>
+          <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModal">Invitar a alguien</button>
+        </div>
+      </div>
+    </div>
 </template>
 <script>
 
   import firebase from 'firebase'
-  import '@/assets/scripts/getUsersOfAnProject.js'
-  import '@/assets/css/main.css'
+  import '@/assets/css/userRegistry.css'
   export default {
     data(){
       return {

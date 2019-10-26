@@ -41,6 +41,11 @@
                 password: ''
             }
         },
+        mounted: function (){
+            firebase.auth().onAuthStateChanged(user => {
+                user ? this.$router.push('/select') : console.log('Usuario existente');
+            })
+        },
         methods: {
             signInWithEmailAndPassword: function(){
                 var loginButton = document.getElementById('dynamicButton')
@@ -56,7 +61,7 @@
                                     this.$router.push('/welcome/account')
                                 } else {
                                     console.log('Sin función de configuración')
-                                    this.$router.push('/feed')
+                                    this.$router.push('/select')
                                 }
                             })
                     })

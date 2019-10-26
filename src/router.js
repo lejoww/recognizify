@@ -15,6 +15,11 @@ const routes = [
     component: () => import('./views/account/feeds/AccountFeed.vue')
   },
   {
+    path: '/select',
+    name: 'select_project',
+    component: () => import('./views/account/config/selectProject.vue')
+  },
+  {
     path: '/notifications',
     name: 'account_notifications',
     component: () => import('./views/account/feeds/Notifications.vue')

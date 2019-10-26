@@ -46,14 +46,7 @@
                 boardPath: ""
             };
         },
-        created: function() {
-            firebase.auth().onAuthStateChanged(user => {
-              const projectCode = this.$router.history.current.params.projectId
-              this.usersPath = `/project/${projectCode}/membership`
-              this.feedPath = `/project/${projectCode}/feed`
-              this.boardPath = `/project/${projectCode}/board`
-            })
-        },
+
         methods: {
             closeSession: function() {
                 firebase.auth().signOut()

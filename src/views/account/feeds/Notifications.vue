@@ -1,22 +1,22 @@
 <template>
     <div id="notifications">
-       <LateralPanel/>
-
-       <div class="dashboardContent">
-           <Profile/>
-
-           <div class="notificationsContent" id="notificationsContent">
-            <h2>Notificaciones</h2>
-            <p>Puede haber cosas aquí que no salgan muy bien. Recuerda que estamos en versión BETA.</p>
+        <div class="screenContent">
+            <Profile/>
+            
+            <div class="dashboardContent">
+                <LateralPanel />
+                <div class="notificationsContent" id="notificationsContent">
+                    <h2>Notificaciones</h2>
+                    <p>Puede haber cosas aquí que no salgan muy bien. Recuerda que estamos en versión BETA.</p>
                
-           </div>
-       </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 <script>
     
     import firebase from 'firebase'
-
     import LateralPanel from '@/components/LateralPanel.vue'
     import Profile from '@/components/Profile.vue'
 
@@ -36,17 +36,23 @@
                     firebase.firestore().collection('users').doc(user.uid).collection('invitations').get()
                         .then(invitations => {
                             let notificationsContent = document.getElementById('notificationsContent')
-                            invitations.forEach(invitation => {
-                                notificationsContent.insertAdjacentHTML('beforeend', `
-                                    <div class="card w-75">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Te acaban de invitar a ${invitation.data()['pname']}</h5>
-                                            <p class="card-text">Esto es una solicitud hacia el proyecto de alguien que probablemente te conoce. Tu decides aceptarla o rechazarla</p>
-                                            <a href="/account/${invitation.id}/accept" class="btn btn-warning">Aceptar</a>
+                            if(invitations.docs.length >= 1){
+                                invitations.forEach(invitation => {
+                                    notificationsContent.insertAdjacentHTML('beforeend', `
+                                        <div class="card w-75">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Te acaban de invitar a ${invitation.data()['pname']}</h5>
+                                                <p class="card-text">Esto es una solicitud hacia el proyecto de alguien que probablemente te conoce. Tu decides aceptarla o rechazarla</p>
+                                                <a href="/account/${invitation.id}/accept" class="btn btn-warning">Aceptar</a>
+                                            </div>
                                         </div>
-                                    </div>
+                                    `)
+                                })
+                            } else {
+                                notificationsContent.insertAdjacentHTML('beforeend', `
+                                    <p>Aún no tienes invitaciones a otros proyectos</p>
                                 `)
-                            })
+                            }
                         })
                 })
             },
