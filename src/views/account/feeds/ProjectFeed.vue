@@ -21,9 +21,9 @@
             </div>
           </div>
 
-          <div class="projectSummaryCard">
+          <div class="projectSummaryCard" style="margin-bottom: 8rem">
             <h2>Boards</h2>
-            <h4 class="muted-gray">Visita uno de los módulos. Accede desde el menú superior</h4>
+            <h4 class="muted-gray">Visita uno de los módulos. Accede desde el menú</h4>
             <!-- <img
               class="projectSummaryImageOnCard"
               src="@/assets/ilustrations/meeting.png"
@@ -47,6 +47,7 @@
   import Profile from "@/components/Profile.vue";
 
   import "@/assets/css/main.css";
+  import "@/assets/css/feed.css";
   export default {
     data() {
       return {

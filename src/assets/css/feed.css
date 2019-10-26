@@ -343,37 +343,29 @@ a:hover {
 /* mediaqueries  */
 
 @media screen and (max-width: 991px) {
-    .feed-card-bg {
-        flex-direction: column;
-        justify-content: space-around;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .image-representation img {
-        width: 277px;
-    }
-    
-    .current-profile .profile-content img {
-        border: 3px solid rgba(219, 217, 217, 0.349);
-    }
-
     .projectSummaryPurpleCard {
         margin: 0;
-        grid-row: 1 / 7;
+        border-radius: 0 !important;
         grid-column: 1 / 19;
     }
 
+    .feed-card-bg {
+        flex-direction: column;
+        justify-content: space-around;
+        grid-column: 1 / 19;
+        grid-row: 1 / 12;
+    }
+
     .projectSummaryData {
-        grid-row: 7 / 12;
         grid-column: 1 / 19;
         flex-direction: column;
         padding: 0 !important;
     }
-    
-    .feed-card-bg {
-        grid-column: 1 / 19;
-        grid-row: 1 / 12;
+}
+
+@media screen and (max-width: 767px) {
+    .current-profile .profile-content img {
+        border: 3px solid rgba(219, 217, 217, 0.349);
     }
 }
 

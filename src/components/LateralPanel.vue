@@ -1,7 +1,7 @@
 <template>
     <div class="lateral-menu-container">
         <div class="lateral-menu-header">
-          <img src="@/assets/logo-common-cutted.svg" width="147px" alt="Logotipo de Recognizify">
+          <div class="logotype"></div>
         </div>
 
         <div class="lateral-menu-body">
@@ -16,14 +16,14 @@
             <svg class="feather-menu">
               <use xlink:href="@/assets/svg/feather-sprite.svg#settings" />
             </svg>
-            <span class="lateralMenuLink">Configuración</span>
+            <span class="lateralMenuLink">Ajustes</span>
           </router-link>
 
           <router-link to="#" class="lateralPanelOption">
             <svg class="feather-menu">
               <use xlink:href="@/assets/svg/feather-sprite.svg#package" />
             </svg>
-            <span class="lateralMenuLink">Tienda de paquetes</span>
+            <span class="lateralMenuLink">Paquetes</span>
           </router-link>
 
           <br><div class="text-muted">Módulos</div>
