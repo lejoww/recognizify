@@ -11,7 +11,7 @@
         <div class="profileMenu">
             <div class="dropdown-menu profileMenuList" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="#"><router-link to="/select">Mis proyectos</router-link></a>
-                <a class="dropdown-item" href="#"><router-link to="/notifications">Notificaciones</router-link></a>
+                <a class="dropdown-item" href="#"><router-link to="/notifications" id="invitationsLink">Notificaciones</router-link></a>
                 <a class="dropdown-item" href="#"><router-link to="/account/configuration">Configuración</router-link></a>
                 <a class="dropdown-item" href="#">Sobre Recognizify</a>
             <div class="dropdown-divider"></div>
@@ -41,7 +41,7 @@
                     .then(invitations => {
                     if (invitations.docs.length >= 1) {
                         let invitationsBadge = document.getElementById('invitationsLink')
-                        invitationsBadge.insertAdjacentHTML('beforeend', `<span class="badge badge-secondary">${invitations.docs.length}</span>`)
+                        invitationsBadge.insertAdjacentHTML('beforeend', ` <span class="badge badge-danger">${invitations.docs.length}</span>`)
                     }
                 })
             })
