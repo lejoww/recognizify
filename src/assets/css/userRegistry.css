@@ -5,7 +5,7 @@
 }
 
 #usersRegistry .usersListTable {
- /* todo */
+    display: none;
 }
 
 #usersRegistry .bannerNonUsers {

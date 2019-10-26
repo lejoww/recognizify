@@ -4,12 +4,17 @@
         <div class="screenContent">
             <Profile/>
             <div class="dashboardContent">
-
-                <LateralPanel/>
                 <!-- <div class="alert alert-secondary" role="alert" style="display: none" id="alert-success">
                     Bien! Tus datos han sido correctamente cambiados.
                 </div> -->
                 <div class="configurationView">
+                    <a href="javascript: history.go(-1)" style="display: flex; margin-bottom: 1rem">
+                        <svg class="feather-dark">
+                            <use xlink:href="@/assets/svg/feather-sprite.svg#arrow-left"/>
+                        </svg>
+                        <h6>Volver atrás</h6>
+                    </a>
+
                     <h2>Configuración</h2><br>
 
                     <div class="row tabSelector">

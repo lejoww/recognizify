@@ -44,9 +44,8 @@
       </div>
     </div>
 
-      <!-- <div class="usersListTable">
+      <div class="usersListTable" id="usersListTable">
         <h6>Usuarios en tu proyecto</h6>
-        <button class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">Nuevo miembro</button>
         <table class="table" style="width: 56%">
           <thead class="thead-dark">
             <tr style="font-size: 14px">
@@ -57,12 +56,12 @@
           </thead>
           <tbody id="projectUsersField"></tbody>
         </table>
-      </div> -->
+      </div>
 
-      <div class="bannerNonUsers">
+      <div class="bannerNonUsers" id="bannerNonUsers">
         <div>
-          <h3>Parece que no has invitado a nadie a tu proyecto</h3>
-          <p>Puedes agregar a tu primer usuario en el proyecto si conoces su nombre de usuario.</p>
+          <h3>Invita a más personas a tu proyecto</h3>
+          <p>Puedes agregar a más usuarios en el proyecto si conoces su nombre de usuario.</p>
           <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModal">Invitar a alguien</button>
         </div>
       </div>
@@ -88,16 +87,25 @@
         let projectCode = this.$router.history.current.params['projectId']
         firebase.firestore().collection('projects').doc(projectCode).collection('members').get()
           .then(users => {
-            let usersTable = document.getElementById('projectUsersField')
-            users.forEach(user => {
-              usersTable.insertAdjacentHTML('beforeend', `
-                <tr>
-                  <td>${user.data()['name']}</td>
-                  <td>${user.data()['user'] ? '@' + user.data()['user'] : 'No tiene un usuario'}</td>
-                  <td>${user.data()['role'] ? user.data()['role'] : 'No tiene rol asignado'}</td>
-                </tr>
-              `)
-            })
+            console.log(users.docs.length)
+            if(users.docs.length >= 1){
+              let tableContainer = document.getElementById('usersListTable')
+              let usersTable = document.getElementById('projectUsersField')
+
+              tableContainer.style.display = 'block'
+              users.forEach(user => {
+                usersTable.insertAdjacentHTML('beforeend', `
+                  <tr>
+                    <td>${user.data()['name']}</td>
+                    <td>${user.data()['user'] ? '@' + user.data()['user'] : 'No tiene un usuario'}</td>
+                    <td>${user.data()['role'] ? user.data()['role'] : 'No tiene rol asignado'}</td>
+                  </tr>
+                `)
+              })
+            } if (users.docs.length < 1) {
+              let bannerNonUsers = document.getElementById('bannerNonUsers')
+              bannerNonUsers.style.display = 'none'
+            }
           })
       },
       proposeAnUserWithSearch: function(){

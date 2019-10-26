@@ -68,12 +68,9 @@
             UserNavbar
         },
         mounted: function(){
-            // firebase.auth().onAuthStateChanged(user => {
-            //     firebase.firestore().collection('users').doc(user.uid).get()
-            //         .then(res => {
-                        
-            //         })
-            // })
+            if (this.$router.history.current.params["projectId"] == 'undefined') {
+                this.$router.push('/select')
+            }
         }
     }
 

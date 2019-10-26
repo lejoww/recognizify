@@ -19,6 +19,8 @@
       </div>
     </div>
     <div class="projectsField" id="projectsContent">
+      <Profile/>
+
       <img src="@/assets/ilustrations/selection.png" alt="Personas seleccionando una opción entre una lista" width="417px">
       <h2>¿En qué idea trabajarás ahora?</h2>
       <p>Selecciona uno de tus proyectos o de los que haces parte</p>
@@ -48,11 +50,17 @@
 <script>
     import firebase from "firebase";
     import '@/assets/css/feed.css'
+
+    import Profile from '@/components/Profile.vue'
+
     export default {
     data() {
         return {
         projects: []
         };
+    },
+    components: {
+      Profile
     },
     mounted: function() {
         let preloaderWall = document.querySelector("#preloaderWall");

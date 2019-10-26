@@ -22,7 +22,7 @@
                         role: ''
                     })
                     .then(() => {
-                        this.$router.push('/feed')
+                        this.$router.push('/select')
                     })
                 })
             })

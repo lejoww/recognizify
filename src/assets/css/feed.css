@@ -210,7 +210,7 @@
 }
 
 .notificationsContent {
-    grid-column: 4 / 19;
+    grid-column: 1 / 19;
     grid-row: 1 / 13;
     padding: 4rem;
 }
@@ -328,6 +328,7 @@ a:hover {
 }
 
 .configurationView {
+    grid-column: 1 / 19;
     padding: 2rem;
 }
 

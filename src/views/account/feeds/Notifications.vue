@@ -4,8 +4,15 @@
             <Profile/>
             
             <div class="dashboardContent">
-                <LateralPanel />
+                <br>
                 <div class="notificationsContent" id="notificationsContent">
+                    <a href="javascript: history.go(-1)" style="display: flex; margin-bottom: 1rem">
+                        <svg class="feather-dark">
+                            <use xlink:href="@/assets/svg/feather-sprite.svg#arrow-left"/>
+                        </svg>
+                        <h6>Volver atrás</h6>
+                    </a>
+
                     <h2>Notificaciones</h2>
                     <p>Puede haber cosas aquí que no salgan muy bien. Recuerda que estamos en versión BETA.</p>
                

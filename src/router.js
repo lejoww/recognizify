@@ -10,11 +10,6 @@ const routes = [
     component: () => import('./views/entry/Login.vue')
   },
   {
-    path: '/feed',
-    name: 'account_feed',
-    component: () => import('./views/account/feeds/AccountFeed.vue')
-  },
-  {
     path: '/select',
     name: 'select_project',
     component: () => import('./views/account/config/selectProject.vue')
@@ -33,11 +28,6 @@ const routes = [
     path: '/create/project',
     name: 'create_project',
     component: () => import('./views/account/config/CreateProject.vue')
-  },
-  {
-    path: '/users',
-    name: 'users',
-    component: () => import('./views/account/feeds/Users.vue')
   },
   {
     path: '/project/:projectId/feed',
