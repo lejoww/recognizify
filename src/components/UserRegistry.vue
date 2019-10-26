@@ -46,7 +46,7 @@
 
       <div class="usersListTable" id="usersListTable">
         <h6>Usuarios en tu proyecto</h6>
-        <table class="table" style="width: 56%">
+        <table class="table">
           <thead class="thead-dark">
             <tr style="font-size: 14px">
               <th scope="col">Nombre</th>

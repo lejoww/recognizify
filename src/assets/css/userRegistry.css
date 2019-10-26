@@ -5,6 +5,7 @@
 }
 
 #usersRegistry .usersListTable {
+    width: 100%;
     display: none;
 }
 
@@ -15,4 +16,23 @@
     border: 1px solid #ebe9ec;
     border-radius: 6px;
     display: flex;
+}
+
+.table {
+    width: 56%;
+}
+
+@media screen and (max-width: 991px) {
+    .dashboardContent {
+        grid-column: 1 / 19;
+    }
+    .table {
+        width: 100%;
+    }
+    #usersRegistry .bannerNonUsers {
+        min-width: 100%;
+    }
+    #usersRegistry {
+        grid-column: 1 / 19;
+    }
 }

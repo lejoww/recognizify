@@ -18,6 +18,7 @@
     import Profile from '@/components/Profile.vue'
 
     import '@/assets/css/feed.css'
+    import '@/assets/css/userRegistry.css'
 
     export default {
         components: {
