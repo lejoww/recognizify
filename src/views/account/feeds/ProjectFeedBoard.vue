@@ -29,7 +29,8 @@
 
                 <div class="projectBoard">
                     <div class="row">
-                        <input type="text" class="form-control-special form-control-xl" spellcheck="false" placeholder="Escribe el nombre del tablero">
+                        <input type="text" v-model="newBoardName" class="form-control-special form-control-xl" spellcheck="false" placeholder="Escribe el nombre del tablero" @click="showSaveButtonForBoardNameInput">
+                        <button class="btn btn-danger btn-sm btn-save" @click="saveNewBoardName">Guardar nombre del tablero</button>
                     </div>
                     <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                         <div class="toast-header">
@@ -43,6 +44,19 @@
                         <div class="toast-body">
                             Hola, bienvenido al módulo de Boards de Recognizify. Aquí todo tu equipo puede dejar notas y contribuir.
                             <a href="#" data-toggle="modal" data-target="#helpingModal">Da click aquí para saber más</a>
+                        </div>
+                    </div>
+                    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <img src="@/assets/isotipe-color.svg" class="rounded mr-2" width="32px" height="32px" alt="...">
+                            <strong class="mr-auto">Recognizify</strong>
+                            <!-- <small class="text-muted">11 mins ago</small> -->
+                            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="toast-body">
+                            Próximamente podrás escribir notas en el tablero, escalarlas y convertirlas en lo que quieras.
                         </div>
                     </div>
                 </div>
@@ -62,6 +76,11 @@
     import '@/assets/css/board.css'
 
     export default {
+        data(){
+            return {
+                newBoardName: ''
+            }
+        },
         components: {
             LateralPanel,
             Profile,
@@ -70,6 +89,27 @@
         mounted: function(){
             if (this.$router.history.current.params["projectId"] == 'undefined') {
                 this.$router.push('/select')
+            }
+        },
+        created: function(){
+            const currentProjectUid = this.$router.history.current.params["projectId"]
+            firebase.firestore().collection('projects').doc(currentProjectUid).collection('boards').doc('data').get()
+            .then(res => this.newBoardName = res.data()['boardName'])
+        },
+        methods: {
+            showSaveButtonForBoardNameInput: function(){
+                let $saveBoardNameButton = document.querySelector('.btn-save')
+                $saveBoardNameButton.style.display = 'flex'
+            },
+            saveNewBoardName: function(){
+                const currentProjectUid = this.$router.history.current.params["projectId"]
+                firebase.firestore().collection('projects').doc(currentProjectUid).collection('boards').doc('data').set({
+                    boardName: this.newBoardName
+                })
+                .then(() => {
+                    let $saveBoardNameButton = document.querySelector('.btn-save')
+                    $saveBoardNameButton.style.display = 'none'
+                })
             }
         }
     }

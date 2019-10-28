@@ -150,11 +150,6 @@
     border-radius: 6px;
 }
 
-.projectBoard {
-    width: 100%;
-    padding: 1rem 3rem;
-}
-
 .form-control-special:focus {
     background-color: transparent;
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);

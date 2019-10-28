@@ -1,3 +1,20 @@
 .projectBoard {
     grid-column: 4 / 19;
 }
+
+.btn-save {
+    margin: 1.2em;
+    display: none;
+}
+
+@media screen and (max-width: 991px) {
+    .projectBoard {
+        margin: 1em;
+        grid-column: 1 / 19;
+    }
+
+    .projectBoard {
+        margin: 1em;
+        grid-column: 1 / 19;
+    }
+}
