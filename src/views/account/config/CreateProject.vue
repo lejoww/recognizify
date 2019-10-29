@@ -85,7 +85,7 @@
                         description: this.description,
                         admin: [ user.uid ]
                     })
-                    .then(() => this.$router.push('/feed'))
+                    .then(() => this.$router.push('/select'))
                     .catch(err => console.log(`Has tenido un error llamado ${err.name}`))
                 })
             },

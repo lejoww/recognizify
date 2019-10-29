@@ -80,7 +80,7 @@
                             bio: this.bio,
                             user: this.user
                         })
-                            .then(() => this.$router.push('/feed'))
+                            .then(() => this.$router.push('/select'))
                             .catch(err => console.log('Ha ocurrido un error'))
                     }
                 })
