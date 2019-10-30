@@ -1,5 +1,6 @@
 <template>
   <div id="select-project">
+    <Profile/>
     <div class="feed-card-bg" id="bgNoneProjects">
       <div class="image-representation">
         <img src="@/assets/ilustrations/born-robot.png" alt="Robot despertando" />
@@ -20,7 +21,6 @@
       </div>
     </div>
     <div class="projectsField" id="projectsContent">
-      <Profile/>
 
       <img src="@/assets/ilustrations/selection.png" alt="Personas seleccionando una opción entre una lista" width="417px">
       <h2>¿En qué idea trabajarás ahora?</h2>
