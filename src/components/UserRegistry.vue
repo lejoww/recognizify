@@ -102,9 +102,9 @@
                   </tr>
                 `)
               })
-            } if (users.docs.length < 1) {
+            } if (users.docs.length == 0) {
               let bannerNonUsers = document.getElementById('bannerNonUsers')
-              bannerNonUsers.style.display = 'none'
+              bannerNonUsers.style.display = 'block'
             }
           })
       },
