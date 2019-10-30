@@ -89,7 +89,7 @@ div#login .form-container .form-group input {
     cursor: default;
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 991px){
     div#login {
         padding: 2rem;
         flex-direction: column;

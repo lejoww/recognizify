@@ -5,9 +5,10 @@
         <img src="@/assets/ilustrations/born-robot.png" alt="Robot despertando" />
       </div>
       <div class="content-instruct">
+        <img src="@/assets/logo-white-cutted.png" alt="Logotipo de Recognizify" width="162px" style="margin-bottom: 16px">
         <h3 style="color: #f2f2f2">Parece que aún no tienes proyectos nuevos</h3>
         <p>¿Qué te parece si empezamos de una vez?</p>
-        <br />
+        <br/>
 
         <a
           href="#"
@@ -37,6 +38,21 @@
                     <span class="badge badge-pill badge-secondary">
                       <strong>Activo</strong>
                     </span>
+                  </h6>
+                </div>
+              </div>
+            </router-link>
+          </li>
+          
+          <li class="project-el">
+            <router-link to="/create/project">
+              <div class="card project-card" style="width: 17rem; margin-right: 1rem; background: #7100EA;">
+                <div class="card-body">
+                  <h6 class="card-title text-white">
+                    <svg class="feather-light">
+                      <use xlink:href="@/assets/svg/feather-sprite.svg#plus"></use>
+                    </svg>
+                    Agregar un proyecto
                   </h6>
                 </div>
               </div>

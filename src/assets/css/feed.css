@@ -127,8 +127,8 @@
 }
 
 .feed-card-bg {
-    grid-row: 1 / 13;
-    grid-column: 4 / 19;
+    width: 100%;
+    height: 100vh;
     background: rgb(36, 35, 73);
     background: linear-gradient(
         90deg,
@@ -169,6 +169,11 @@
     display: flex;
     flex-direction: column;
     padding: 2rem;
+}
+
+#select-project {
+    width: 100%;
+    height: 100%;
 }
 
 #projectsField {
@@ -347,9 +352,9 @@ a:hover {
     .feed-card-bg {
         flex-direction: column;
         justify-content: space-around;
-        grid-column: 1 / 19;
-        grid-row: 1 / 12;
     }
+
+
 
     .projectSummaryData {
         grid-column: 1 / 19;
