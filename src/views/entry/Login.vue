@@ -5,7 +5,7 @@
             <img src="@/assets/ilustrations/leader-people.png" alt="Personas hablando y admirando estadísticas">
         </div>
         <div class="form-container">
-            <img src="@/assets/logo-common-cutted.svg" alt="Logotipo de Recognizify" width="148px">
+            <img src="@/assets/logo-common-cutted.png" alt="Logotipo de Recognizify" width="148px">
             <h2 style="margin-top: 1em">Conéctate de nuevo.</h2>
                 <div class="form-group">
                     <label>Correo electrónico</label>
