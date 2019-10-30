@@ -105,7 +105,7 @@
                     firebase.firestore().collection('users').doc(user.uid).update({
                         name: this.name,
                         bio: this.description,
-                        user: `@${this.user}`
+                        user: this.user
                     }).then(() => {
                         let alert = document.getElementById('alert-success')
                         alert.style.display = 'block'
