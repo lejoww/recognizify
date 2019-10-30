@@ -48,7 +48,11 @@
                 user:''
             }
         },
-        mounted: function (){},
+        mounted: function (){
+            firebase.auth().onAuthStateChanged(user => {
+                !user ? this.$router.push('/') : console.log('Complete los datos')
+            })
+        },
         methods: {
             checkUrlPath(e) {
                 firebase.auth().onAuthStateChanged(user => {
