@@ -5,11 +5,6 @@
 
         <div class="dashboardContent">
             <div class="content-flex">
-                <a href="/feed">
-                    <svg id="i-arrow-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" style="margin: 12px">
-                        <path d="M10 6 L2 16 10 26 M2 16 L30 16" />
-                    </svg>
-                </a>
                 <div class="bg-image">
                     <div>
                         <img src="@/assets/ilustrations/office-work.png"><br>
@@ -18,6 +13,12 @@
                     </div>
                 </div>
                 <div class="info-inputs">
+                    <a href="javascript: history.go(-1)" style="display: flex; align-items: center">
+                        <svg class="feather-dark">
+                            <use xlink:href="@/assets/svg/feather-sprite.svg#arrow-left"/>
+                        </svg>
+                        <h6>Volver atrás</h6>
+                    </a><br>
                     <h2>Crea un nuevo proyecto.</h2>
                     <h5>Puedes comenzar por aquí</h5><br>
                     <div class="form-container">
@@ -49,7 +50,6 @@
 </template>
 <script>
 
-    import UserNavbar from '@/components/UserNavbar.vue'
     import Profile from '@/components/Profile.vue'
 
     import firebase from 'firebase'
@@ -68,7 +68,6 @@
             }
         },
         components: {
-            UserNavbar,
             Profile
         },
         methods: {

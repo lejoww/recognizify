@@ -58,9 +58,7 @@
         methods: {
             checkUrlPath(e) {
                 firebase.auth().onAuthStateChanged(user => {
-                    if (!user){
-                        console.log('El usuario no existe')
-                    } else {
+                    if (user){
                         let profilePictureObtained = e.target.files[0]
                         let profilePhotoStorage = firebase.storage().ref(`profile_photos/${user.uid}`)
                         
@@ -71,16 +69,9 @@
                 })
             },
 
-            setPhotoProfileSelectedOnField(uidCode) {
-                let url = firebase.storage().ref(`profile_photos/${uidCode}`).getDownloadURL()
-                    .then(picture => this.urlPhotoPath = picture)
-                    .catch(err => console.log(err))
-            },
-
             saveInfoOnDatabase() {
                 firebase.auth().onAuthStateChanged(user => {
-                    if (!user){}
-                    else {
+                    if (user){
                         firebase.firestore().collection('users').doc(user.uid).set({
                             name: this.username,
                             bio: this.bio,

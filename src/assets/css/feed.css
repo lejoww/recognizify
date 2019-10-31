@@ -332,6 +332,11 @@ a:hover {
     padding: 2rem;
 }
 
+.configurationView .configurationAlignment {
+    width: 57%;
+    margin: 0 auto;
+}
+
 .tabSelector {
     grid-column: 1 / 19;
 }
@@ -354,8 +359,6 @@ a:hover {
         justify-content: space-around;
     }
 
-
-
     .projectSummaryData {
         grid-column: 1 / 19;
         flex-direction: column;
@@ -366,6 +369,14 @@ a:hover {
 @media screen and (max-width: 767px) {
     .current-profile .profile-content img {
         border: 3px solid rgba(219, 217, 217, 0.349);
+    }
+
+    .image-representation img {
+        width: 432px;
+    }
+    
+    .configurationView .configurationAlignment {
+        width: 100%;
     }
 }
 

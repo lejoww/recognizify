@@ -1,6 +1,11 @@
 <template>
   <div id="select-project">
     <Profile/>
+    <div class="preloader-wall" id="preloaderWall">
+      <div class="preloader">
+        <img class="planet" src="@/assets/isotipe-color.svg" alt="Isotipo de Recognizify">
+      </div>
+    </div>
     <div class="feed-card-bg" id="bgNoneProjects">
       <div class="image-representation">
         <img src="@/assets/ilustrations/born-robot.png" alt="Robot despertando" />
@@ -9,13 +14,9 @@
         <img src="@/assets/logo-white-cutted.png" alt="Logotipo de Recognizify" width="162px" style="margin-bottom: 16px">
         <h3 style="color: #f2f2f2">Parece que aún no tienes proyectos nuevos</h3>
         <p>¿Qué te parece si empezamos de una vez?</p>
-        <br/>
+        <br>
 
-        <a
-          href="#"
-          class="btn btn-success btn-lg"
-          style="width: 318px; display: flex; justify-content: space-around; align-items: center"
-        >
+        <a href="#" class="btn btn-success btn-lg" style="width: 318px; display: flex; justify-content: space-around; align-items: center">
           <router-link class="text-white" to="/create/project">Crea un nuevo proyecto</router-link>
         </a>
       </div>
@@ -25,11 +26,11 @@
       <img src="@/assets/ilustrations/selection.png" alt="Personas seleccionando una opción entre una lista" width="417px">
       <h2>¿En qué idea trabajarás ahora?</h2>
       <p>Selecciona uno de tus proyectos o de los que haces parte</p>
-      <br />
+      <br>
 
       <div id="projectsField">
         <ul style="list-style: none">
-          <li class="project-el" v-for="project in projects" :key="project">
+          <li class="project-el" :key="project" v-for="project in projects">
             <router-link :to="`/project/${project.id}/feed`">
               <div class="card project-card" style="width: 17rem; margin-right: 1rem">
                 <div class="card-body">
@@ -71,17 +72,17 @@
 
     export default {
     data() {
-        return {
+      return {
         projects: []
-        };
+      }
     },
     components: {
       Profile
     },
     mounted: function() {
-        let preloaderWall = document.querySelector("#preloaderWall");
-        setTimeout(() => (preloaderWall.style.display = "none"), 2000);
-        this.setProjectsOnListFeed();
+      let preloaderWall = document.querySelector("#preloaderWall")
+      setTimeout(() => (preloaderWall.style.display = "none"), 700)
+      this.setProjectsOnListFeed()
     },
     methods: {
         setProjectsOnListFeed: function() {
@@ -93,30 +94,20 @@
             .then(projects => {
                 let count = 0;
                 projects.forEach(project => {
-                if (project.data()["admin"][0] == user.uid) {
-                    this.projects.push({
-                    name: project.data()["shortName"],
-                    id: project.id
-                    });
-                    count += 1;
-                }
+                  if (project.data()["admin"][0] == user.uid) {
+                      this.projects.push({
+                        name: project.data()["shortName"],
+                        id: project.id
+                      })
+                      count += 1;
+                  }
                 });
 
                 if (count == 0) {
-                let bannerForZeroProjects = document.getElementById(
-                    "bgNoneProjects"
-                );
-                bannerForZeroProjects.style.display = "flex";
-                let projectListOnScreen = document.getElementById(
-                    "projectsContent"
-                );
-                projectListOnScreen.style.display = "none";
-                }
-                if (count >= 1) {
-                let screenToSelectaProject = document.getElementById(
-                    "projectLayout"
-                );
-                screenToSelectaProject.style.display = "flex";
+                  let bannerForZeroProjects = document.getElementById("bgNoneProjects")
+                  bannerForZeroProjects.style.display = "flex"
+                  let projectListOnScreen = document.getElementById("projectsContent")
+                  projectListOnScreen.style.display = "none"
                 }
             })
         })
