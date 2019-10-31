@@ -4,10 +4,12 @@
             <img src="@/assets/logo-common-cutted.svg" alt="Logotipo de Recognizify" width="148px"><br>
             <h3 style="width: 100%">Comenzarás a hacer de tu proyecto un éxito</h3>
             <p style="width: 100%">Solo falta que completes algunos datos, queremos conocerte.</p><br><br>
-
-            <div class="photo-container">
-                <img v-bind:src="urlPhotoPath" class="photo-profile">    
-            </div><br>
+<!-- 
+            <div class="account-image">
+                <div class="photo-container">
+                    <img v-bind:src="urlPhotoPath" class="photo-profile">    
+                </div>
+            </div> -->
 
             <div class="form-content">
                 <div class="form-row">
@@ -63,7 +65,7 @@
                         let profilePhotoStorage = firebase.storage().ref(`profile_photos/${user.uid}`)
                         
                         profilePhotoStorage.put(profilePictureObtained)
-                            .then(() => this.setPhotoProfileSelectedOnField(user.uid))
+                            .then(() => console.log('Foto subida correctamente'))
                             .catch((err) => console.log(`No se ha podido subir la foto de perfil por ${err}`))
                     }
                 })
