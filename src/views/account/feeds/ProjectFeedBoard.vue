@@ -155,21 +155,20 @@
                 firebase.auth().onAuthStateChanged(user => {
                     firebase.firestore().collection('users').doc(user.uid).get()
                         .then(data => {
-                            firebase.auth().onAuthStateChanged(user => {
-                                firebase.firestore()
-                                .collection('projects')
-                                .doc(this.currentProjectUid)
-                                .collection('boards')
-                                .doc('data')
-                                .collection('notes')
-                                .doc(this.newToastCode)
-                                .set({
-                                    userNamePublish: data.data()['name'],
-                                    uidUserPublish: user.uid,
-                                    notePublish: this.newMessage
-                                })
-                                .then(() => window.location.reload())
+                            let username = data.data()['name']
+                            firebase.firestore()
+                            .collection('projects')
+                            .doc(this.currentProjectUid)
+                            .collection('boards')
+                            .doc('data')
+                            .collection('notes')
+                            .doc(this.newToastCode)
+                            .set({
+                                userNamePublish: username,
+                                uidUserPublish: user.uid,
+                                notePublish: this.newMessage
                             })
+                            .then(() => window.location.reload())
                         })
                 })
             },
