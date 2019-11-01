@@ -64,11 +64,11 @@
                     </div>
 
                     <!-- other notes -->
-                    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" :key="noteData" v-for="noteData in notesData">
+                    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" :key="name" v-for="(noteData, name, message) in notesData">
                         <div class="toast-header" style="padding: 6px 12px">
-                            <strong class="mr-auto">{{noteData['name']}}</strong>
+                            <strong class="mr-auto" :key="name">{{noteData['name']}}</strong>
                         </div>
-                        <div class="toast-body">
+                        <div class="toast-body" :key="message">
                             {{noteData['message']}}
                         </div>
                     </div>
@@ -155,7 +155,6 @@
                 firebase.auth().onAuthStateChanged(user => {
                     firebase.firestore().collection('users').doc(user.uid).get()
                         .then(data => {
-                            let username = data.data()['name']
                             firebase.firestore()
                             .collection('projects')
                             .doc(this.currentProjectUid)
@@ -164,7 +163,7 @@
                             .collection('notes')
                             .doc(this.newToastCode)
                             .set({
-                                userNamePublish: username,
+                                userNamePublish: data.data()['name'],
                                 uidUserPublish: user.uid,
                                 notePublish: this.newMessage
                             })
@@ -191,7 +190,7 @@
             },
             closeToast: function(){
                 firebase.auth().onAuthStateChanged(user => {
-                    firebase.firestore().collection('users').doc(user.uid).set({
+                    firebase.firestore().collection('users').doc(user.uid).update({
                         recognizifyHelpToastOnBoardDesactivated: true 
                     }).then(() => {
                         let $recognizifyHelpToast = document.querySelector('.toast-info')
