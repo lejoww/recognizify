@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="projectBoard">
-                    <div class="row">
+                    <div>
                         <input type="text" v-model="newBoardName" class="form-control-special form-control-xl" spellcheck="false" placeholder="Escribe el nombre del tablero" @click="showSaveButtonForBoardNameInput">
                         <button class="btn btn-danger btn-sm btn-save" @click="saveNewBoardName">Guardar nombre del tablero</button>
                     </div>
@@ -37,8 +37,10 @@
                             <img src="@/assets/isotipe-color.svg" class="rounded mr-2" width="32px" height="32px" alt="...">
                             <strong class="mr-auto">Recognizify</strong>
                             <!-- <small class="text-muted">11 mins ago</small> -->
-                            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+                            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close" id="toastClose">
+                                <svg class="feather-menu">
+                                    <use xlink:href="@/assets/svg/feather-sprite.svg#x"/>
+                                </svg>
                             </button>
                         </div>
                         <div class="toast-body">
@@ -46,17 +48,28 @@
                             <a href="#" data-toggle="modal" data-target="#helpingModal">Da click aquí para saber más</a>
                         </div>
                     </div>
-                    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                        <div class="toast-header">
-                            <img src="@/assets/isotipe-color.svg" class="rounded mr-2" width="32px" height="32px" alt="...">
-                            <strong class="mr-auto">Recognizify</strong>
-                            <!-- <small class="text-muted">11 mins ago</small> -->
-                            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
+                    <div class="toast toast-special" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header" style="padding: 6px 12px">
+                            <strong class="mr-auto">Escribe una nota para tu equipo</strong>
                         </div>
                         <div class="toast-body">
-                            Próximamente podrás escribir notas en el tablero, escalarlas y convertirlas en lo que quieras.
+                            <div class="toast-row">
+                                <div class="profileImageContainer">
+                                    <img :src="currentProfilePhoto" class="profilePhoto">
+                                </div>
+                                <input type="text" class="form-control form-control-sm" placeholder="Tu mensaje..." v-model="newMessage">
+                            </div>
+                            <button class="btn btn-success btn-sm button-send" @click="publishNote">Publicar</button>
+                        </div>
+                    </div>
+
+                    <!-- other notes -->
+                    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" :key="noteData" v-for="noteData in notesData">
+                        <div class="toast-header" style="padding: 6px 12px">
+                            <strong class="mr-auto">{{noteData['name']}}</strong>
+                        </div>
+                        <div class="toast-body">
+                            {{noteData['message']}}
                         </div>
                     </div>
                 </div>
@@ -75,10 +88,17 @@
     import '@/assets/css/feed.css'
     import '@/assets/css/board.css'
 
+    import uuidv1 from 'uuid/v1'
+
     export default {
         data(){
             return {
-                newBoardName: ''
+                newBoardName: '',
+                newToastCode: '',
+                currentProfilePhoto: '',
+                currentProjectUid: '',
+                newMessage: '',
+                notesData: []
             }
         },
         components: {
@@ -92,9 +112,12 @@
             }
         },
         created: function(){
-            const currentProjectUid = this.$router.history.current.params["projectId"]
-            firebase.firestore().collection('projects').doc(currentProjectUid).collection('boards').doc('data').get()
+            this.currentProjectUid = this.$router.history.current.params["projectId"]
+            firebase.firestore().collection('projects').doc(this.currentProjectUid).collection('boards').doc('data').get()
             .then(res => this.newBoardName = res.data()['boardName'])
+
+            this.updateNotes()
+            this.setProfilePhotoOnToastBody()
         },
         methods: {
             showSaveButtonForBoardNameInput: function(){
@@ -102,13 +125,62 @@
                 $saveBoardNameButton.style.display = 'flex'
             },
             saveNewBoardName: function(){
-                const currentProjectUid = this.$router.history.current.params["projectId"]
-                firebase.firestore().collection('projects').doc(currentProjectUid).collection('boards').doc('data').set({
+                firebase.firestore().collection('projects').doc(this.currentProjectUid).collection('boards').doc('data').set({
                     boardName: this.newBoardName
                 })
                 .then(() => {
                     let $saveBoardNameButton = document.querySelector('.btn-save')
                     $saveBoardNameButton.style.display = 'none'
+                })
+            },
+            setProfilePhotoOnToastBody: function(){
+                firebase.auth().onAuthStateChanged(user => {
+                    firebase.storage().ref(`/profile_photos/${user.uid}`).getDownloadURL()
+                        .then(photo => this.currentProfilePhoto = photo)
+                })
+            },
+            publishNote: function(){
+                this.newToastCode = uuidv1()
+
+                firebase.auth().onAuthStateChanged(user => {
+                    firebase.firestore().collection('users').doc(user.uid).get()
+                        .then(data => {
+                            firebase.auth().onAuthStateChanged(user => {
+                                firebase.firestore()
+                                .collection('projects')
+                                .doc(this.currentProjectUid)
+                                .collection('boards')
+                                .doc('data')
+                                .collection('notes')
+                                .doc(this.newToastCode)
+                                .set({
+                                    userNamePublish: data.data()['name'],
+                                    uidUserPublish: user.uid,
+                                    notePublish: this.newMessage
+                                })
+                                .then(() => {
+                                    this.updateNotes()
+                                    this.newMessage = ''
+                                })
+                            })
+                        })
+                })
+            },
+            updateNotes: function(){
+                firebase.firestore()
+                .collection('projects')
+                .doc(this.currentProjectUid)
+                .collection('boards')
+                .doc('data')
+                .collection('notes')
+                .get()
+                .then(notes => {
+                    notes.docs.forEach(note => {
+                        this.notesData.push({
+                            name: note.data()['userNamePublish'],
+                            message: note.data()['notePublish']
+                        })
+                    })
                 })
             }
         }

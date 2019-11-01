@@ -7,6 +7,31 @@
     display: none;
 }
 
+.toast .toast-body .profileImageContainer {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.toast .toast-body .profileImageContainer .profilePhoto {
+    width: 100%;
+}
+
+.toast-special .toast-body input {
+    width: 87%;
+}
+
+.toast-special .toast-body .toast-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.toast-special .toast-body button.button-send {
+    margin: 12px 0;
+    float: right;
+}
+
 @media screen and (max-width: 991px) {
     .projectBoard {
         margin: 1em;
