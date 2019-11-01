@@ -32,12 +32,12 @@
                         <input type="text" v-model="newBoardName" class="form-control-special form-control-xl" spellcheck="false" placeholder="Escribe el nombre del tablero" @click="showSaveButtonForBoardNameInput">
                         <button class="btn btn-danger btn-sm btn-save" @click="saveNewBoardName">Guardar nombre del tablero</button>
                     </div>
-                    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast toast-info" role="alert" aria-live="assertive" aria-atomic="true">
                         <div class="toast-header">
                             <img src="@/assets/isotipe-color.svg" class="rounded mr-2" width="32px" height="32px" alt="...">
                             <strong class="mr-auto">Recognizify</strong>
                             <!-- <small class="text-muted">11 mins ago</small> -->
-                            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close" id="toastClose">
+                            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close" id="toastClose" @click="closeToast">
                                 <svg class="feather-menu">
                                     <use xlink:href="@/assets/svg/feather-sprite.svg#x"/>
                                 </svg>
@@ -116,6 +116,16 @@
             firebase.firestore().collection('projects').doc(this.currentProjectUid).collection('boards').doc('data').get()
             .then(res => this.newBoardName = res.data()['boardName'])
 
+            firebase.auth().onAuthStateChanged(user => {
+                firebase.firestore().collection('users').doc(user.uid).get()
+                .then(res => {
+                    if(!res.data()['recognizifyHelpToastOnBoardDesactivated']) {
+                        let $recognizifyHelpToast = document.querySelector('.toast-info')
+                        $recognizifyHelpToast.style.display = 'block'
+                    }
+                })
+            })
+
             this.updateNotes()
             this.setProfilePhotoOnToastBody()
         },
@@ -158,10 +168,7 @@
                                     uidUserPublish: user.uid,
                                     notePublish: this.newMessage
                                 })
-                                .then(() => {
-                                    this.updateNotes()
-                                    this.newMessage = ''
-                                })
+                                .then(() => window.location.reload())
                             })
                         })
                 })
@@ -180,6 +187,16 @@
                             name: note.data()['userNamePublish'],
                             message: note.data()['notePublish']
                         })
+                    })
+                })
+            },
+            closeToast: function(){
+                firebase.auth().onAuthStateChanged(user => {
+                    firebase.firestore().collection('users').doc(user.uid).set({
+                        recognizifyHelpToastOnBoardDesactivated: true 
+                    }).then(() => {
+                        let $recognizifyHelpToast = document.querySelector('.toast-info')
+                        $recognizifyHelpToast.style.display = 'none'
                     })
                 })
             }
