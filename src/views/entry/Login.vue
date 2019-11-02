@@ -16,7 +16,7 @@
                     <input type="password" class="form-control form-control-lg form-control-login" v-on:keyup.enter="signInWithEmailAndPassword" v-model="password" placeholder="Tu clave personal e intransferible" value="test123">
                 </div>
             <button class="btn btn-primary btn-login" id="dynamicButton" v-on:click="signInWithEmailAndPassword">Iniciar sesión</button>
-            <button class="btn btn-warning btn-login" v-on:click="signInWithEmailAndPasswordofTest">Iniciar con cuenta de prueba</button>
+            <!-- <button class="btn btn-warning btn-login" v-on:click="signInWithEmailAndPasswordofTest">Iniciar con cuenta de prueba</button> -->
         </div>
 
         <div class="alert alert-warning" id="loginAlert" role="alert">
@@ -72,27 +72,26 @@
                     $loginAlert.style.display = 'block'
                 })
             },
-            signInWithEmailAndPasswordofTest: function(){
-                firebase.auth().signInWithEmailAndPassword('test@recognizify.com', 'test123')
-                    .then(() => {
-                        firebase.auth().onAuthStateChanged(user => {
-                            firebase.firestore().collection('users').doc(user.uid).get()
-                                .then(res => {
-                                    if (res.data() == null | res.data() == undefined){
-                                        console.log('Accediendo a configuración de cuenta')
-                                        this.$router.push('/welcome/account')
-                                    } else {
-                                        console.log('Sin función de configuración')
-                                        this.$router.push('/select')
-                                    }
-                                })
-                        })
-                    })
-            }
+            // signInWithEmailAndPasswordofTest: function(){
+            //     firebase.auth().signInWithEmailAndPassword('test@recognizify.com', 'test123')
+            //         .then(() => {
+            //             firebase.auth().onAuthStateChanged(user => {
+            //                 firebase.firestore().collection('users').doc(user.uid).get()
+            //                     .then(res => {
+            //                         if (res.data() == null | res.data() == undefined){
+            //                             console.log('Accediendo a configuración de cuenta')
+            //                             this.$router.push('/welcome/account')
+            //                         } else {
+            //                             console.log('Sin función de configuración')
+            //                             this.$router.push('/select')
+            //                         }
+            //                     })
+            //             })
+            //         })
+            // }
         }
     }
 
     // <a href="https://www.freepik.es/fotos-vectores-gratis/fondo">Vector de Fondo creado por pikisuperstar - www.freepik.es</a>
 
 </script>
-
