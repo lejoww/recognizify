@@ -37,6 +37,15 @@
       Sentry.init({
         dsn: 'https://0c68947d76d94ace9d73404cba4b4ce1@sentry.io/1805391',
         integrations: [new Integrations.Vue({Vue, attachProps: true})],
+        // beforeSend(event, hint) {
+        //   if (event.exception) {
+        //     Sentry.showReportDialog({
+        //       title: "¿Acabas de encontrar un error?",
+        //       eventId: event.event_id
+        //     });
+        //   }
+        //   return event;
+        // }
       })
     }
   }

@@ -106,15 +106,17 @@
             Profile,
             UserNavbar
         },
-        mounted: function(){
+        created: function(){
             if (this.$router.history.current.params["projectId"] == 'undefined') {
                 this.$router.push('/select')
             }
         },
-        created: function(){
+        mounted: function(){
             this.currentProjectUid = this.$router.history.current.params["projectId"]
             firebase.firestore().collection('projects').doc(this.currentProjectUid).collection('boards').doc('data').get()
-            .then(res => this.newBoardName = res.data()['boardName'])
+            .then(res => { 
+                res.data()['boardName'] != undefined ? this.newBoardName = res.data()['boardName'] : this.newBoardName = '';
+            })
 
             firebase.auth().onAuthStateChanged(user => {
                 firebase.firestore().collection('users').doc(user.uid).get()
