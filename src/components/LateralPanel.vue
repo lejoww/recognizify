@@ -27,11 +27,12 @@
             <span class="lateralMenuLink">Paquetes</span>
           </router-link>
 
-          <router-link to="#" class="lateralPanelOption">
-            <svg class="feather-menu">
+          <router-link to="/notifications" class="lateralPanelOption">
+            <svg class="feather-menu" id="invitationsIcon">
               <use xlink:href="@/assets/svg/feather-sprite.svg#bell" />
             </svg>
-            <span class="lateralMenuLink">Invitaciones</span>
+            <span class="badge badge-danger" v-if="invitations > 0" v-text="invitations">1</span>
+            <span class="lateralMenuLink" id="invitationsLink">Invitaciones</span>
           </router-link>
 
           <br><div class="overline">Módulos</div>
@@ -66,10 +67,12 @@
           currentProjectName: '',
           usersPath: '',
           feedPath: '',
-          boardPath: ''
+          boardPath: '',
+          invitations: ''
         }
       },
       created(){
+        this.setInvitationsNumber()
         this.getAndSetActiveProjects()
         firebase.auth().onAuthStateChanged(user => {
           const projectCode = this.$router.history.current.params.projectId
@@ -84,6 +87,20 @@
             firebase.firestore().collection('users').doc(user.uid).collection('projects').get()
               .then(activeProjects => {
                 this.activeProjects = activeProjects.docs.length
+              })
+          })
+        },
+        setInvitationsNumber: function(){
+          firebase.auth().onAuthStateChanged(user => {
+            firebase.firestore().collection('users').doc(user.uid).collection('invitations').get()
+              .then(invitations => {
+                if (invitations.docs.length > 0) {
+                  this.invitations = invitations.docs.length
+                  let invitationsLink = document.getElementById('invitationsLink')
+                  let invitationsIcon = document.getElementById('invitationsIcon')
+                  invitationsLink.style.color = '#FF524C'
+                  invitationsIcon.style.stroke = '#FF524C'
+                }
               })
           })
         }

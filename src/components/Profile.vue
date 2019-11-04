@@ -36,15 +36,6 @@
                 firebase.storage().ref(`profile_photos/${user.uid}`).getDownloadURL()
                     .then(path => this.urlPhotoPath = path)
             })
-            firebase.auth().onAuthStateChanged(user => {
-                firebase.firestore().collection('users').doc(user.uid).collection('invitations').get()
-                    .then(invitations => {
-                    if (invitations.docs.length >= 1) {
-                        let invitationsBadge = document.getElementById('invitationsLink')
-                        invitationsBadge.insertAdjacentHTML('beforeend', ` <span class="badge badge-danger">${invitations.docs.length}</span>`)
-                    }
-                })
-            })
         },
         methods: {
             closeSession: function(){

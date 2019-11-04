@@ -31,6 +31,7 @@
         },
         created: function(){
             this.getProjectMembers()
+            this.setYourselfOnList()
         },
         methods: {    
             getProjectMembers: function() {
@@ -46,8 +47,6 @@
                                     name: member.data()['name'],
                                     user: `@${member.data()['user']}`
                                 })
-
-                                this.setYourselfOnList()
                             })
                         })
                 })
@@ -59,7 +58,6 @@
                         .doc(user.uid)
                         .get()
                         .then(userdata => {
-                            let memberField = document.getElementById("usersList");
                             this.usersInProject.push({
                                 name: userdata.data()["name"],
                                 user: `@${userdata.data()["user"]}`
