@@ -24,6 +24,11 @@
     margin: 1em 0;
 }
 
+.lateral-menu-container .lateral-menu-body .modules {
+    display: flex;
+    flex-direction: column;
+}
+
 .lateral-menu-container .lateral-menu-body .lateralPanelOption .lateralMenuLink {
     color: #48485B;
     font-weight: 700;
@@ -43,6 +48,21 @@ div.overline {
     text-transform: uppercase;
     letter-spacing: 1.7px;
 }
+
+.dropdown-menu {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(110px);
+    transition: .3s ease all;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.157);
+}
+.dropdown-menu.show {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition: .3s ease all;}
 
 @keyframes standOutColor {
     to { color: #6610f2 }
@@ -66,15 +86,24 @@ div.overline {
     }
 
     .lateral-menu-container .lateral-menu-body .lateralPanelOption {
-        width: 27%;
         display: flex;
         flex-direction: column;
         align-items: center;
         margin: 0 12px;
     }
 
-    div.overline {
+    .lateral-menu-container .lateral-menu-body .lateralPanelOption.dropdownOption {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    div.overline,
+    .lateral-menu-container .lateral-menu-body .modules {
         display: none;
+    }
+
+    .modulesDropdown {
+        display: block;
     }
 }
 

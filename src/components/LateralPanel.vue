@@ -37,19 +37,50 @@
 
           <br><div class="overline">Módulos</div>
 
-          <router-link :to="boardPath" class="lateralPanelOption">
-            <svg class="feather-menu">
-              <use xlink:href="@/assets/svg/feather-sprite.svg#message-square" />
-            </svg>
-            <span class="lateralMenuLink">Boards</span>
-          </router-link>
+          <div class="modules">
+            <router-link :to="boardPath" class="lateralPanelOption">
+              <svg class="feather-menu">
+                <use xlink:href="@/assets/svg/feather-sprite.svg#message-square" />
+              </svg>
+              <span class="lateralMenuLink">Boards</span>
+            </router-link>
 
-          <router-link :to="usersPath" class="lateralPanelOption">
-            <svg class="feather-menu">
-              <use xlink:href="@/assets/svg/feather-sprite.svg#users" />
-            </svg>
-            <span class="lateralMenuLink">Usuarios</span>
-          </router-link>
+            <router-link :to="usersPath" class="lateralPanelOption">
+              <svg class="feather-menu">
+                <use xlink:href="@/assets/svg/feather-sprite.svg#users" />
+              </svg>
+              <span class="lateralMenuLink">Usuarios</span>
+            </router-link>
+          </div>
+
+          <div class="btn-group dropup">
+            <a class="lateralPanelOption modulesDropdown" id="dropdownModules" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <svg class="feather-menu">
+                <use xlink:href="@/assets/svg/feather-sprite.svg#zap" />
+              </svg>
+              <span class="lateralMenuLink">Módulos</span>
+            </a>
+
+            <div class="dropdown-menu animate slideIn" aria-labelledby="dropdownModules">
+              <a class="dropdown-item">
+                <router-link :to="boardPath" class="lateralPanelOption dropdownOption">
+                  <svg class="feather-menu">
+                    <use xlink:href="@/assets/svg/feather-sprite.svg#message-square" />
+                  </svg>
+                  <span class="lateralMenuLink">Boards</span>
+                </router-link>
+              </a>
+
+              <a class="dropdown-item">
+                <router-link :to="usersPath" class="lateralPanelOption dropdownOption">
+                  <svg class="feather-menu">
+                    <use xlink:href="@/assets/svg/feather-sprite.svg#users" />
+                  </svg>
+                  <span class="lateralMenuLink">Usuarios</span>
+                </router-link>
+              </a>
+            </div>
+          </div>
         </div>
 
     </div>
