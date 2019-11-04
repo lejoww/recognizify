@@ -7,10 +7,10 @@
 }
 
 .lateral-menu-container .lateral-menu-header .logotype {
-    width: 172px;
-    height: 30px;
+    width: 152px;
+    height: 27px;
     background-image: url('../logo-common-cutted.png');
-    background-size: 172px ;
+    background-size: 152px;
 }
 
 .lateral-menu-container .lateral-menu-body {
@@ -25,7 +25,7 @@
 }
 
 .lateral-menu-container .lateral-menu-body .lateralPanelOption .lateralMenuLink {
-    color: #14141f;
+    color: #48485B;
     font-weight: 700;
     font-size: 14px;
     margin-left: 8px;
@@ -34,6 +34,14 @@
 
 .lateral-menu-container .lateral-menu-body .lateralPanelOption .lateralMenuLink:hover {
     animation: standOutColor 300ms forwards;
+}
+
+div.overline {
+    font-size: 12px;
+    font-weight: 700;
+    color: #8B92A8;
+    text-transform: uppercase;
+    letter-spacing: 1.7px;
 }
 
 @keyframes standOutColor {
@@ -57,16 +65,16 @@
         margin-top: 0;
     }
 
-    .lateral-menu-container .lateral-menu-body .text-muted {
-        display: none;
-    }
-
     .lateral-menu-container .lateral-menu-body .lateralPanelOption {
         width: 27%;
         display: flex;
         flex-direction: column;
         align-items: center;
         margin: 0 12px;
+    }
+
+    div.overline {
+        display: none;
     }
 }
 

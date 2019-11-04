@@ -5,6 +5,7 @@
         </div>
 
         <div class="lateral-menu-body">
+          <div class="overline">General</div>
           <router-link :to="feedPath" class="lateralPanelOption">
             <svg class="feather-menu">
               <use xlink:href="@/assets/svg/feather-sprite.svg#home"/>
@@ -26,7 +27,15 @@
             <span class="lateralMenuLink">Paquetes</span>
           </router-link>
 
-          <br><div class="text-muted">Módulos</div>
+          <router-link to="#" class="lateralPanelOption">
+            <svg class="feather-menu">
+              <use xlink:href="@/assets/svg/feather-sprite.svg#bell" />
+            </svg>
+            <span class="lateralMenuLink">Invitaciones</span>
+          </router-link>
+
+          <br><div class="overline">Módulos</div>
+
           <router-link :to="boardPath" class="lateralPanelOption">
             <svg class="feather-menu">
               <use xlink:href="@/assets/svg/feather-sprite.svg#message-square" />

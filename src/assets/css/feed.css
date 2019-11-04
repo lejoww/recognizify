@@ -142,12 +142,20 @@
 }
 
 .projectSummaryPurpleCard {
-    background-color: #5900c6;
+    background: #6610f2;
+    background: -moz-linear-gradient(-45deg, #6610f2 0%, #5900c6 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, #6610f2), color-stop(100%, #5900c6));
+    background: -webkit-linear-gradient(-45deg, #6610f2 0%, #5900c6 100%);
+    background: -o-linear-gradient(-45deg, #6610f2 0%, #5900c6 100%);
+    background: -ms-linear-gradient(-45deg, #6610f2 0%, #5900c6 100%);
+    background: linear-gradient(135deg, #6610f2 0%, #5900c6 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6610f2', endColorstr='#5900c6', GradientType=1 );
     grid-column: 4 / 17;
     grid-row: 1 / 7;
     padding: 32px;
     margin: 12px;
     border-radius: 6px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
 }
 
 .form-control-special:focus {
