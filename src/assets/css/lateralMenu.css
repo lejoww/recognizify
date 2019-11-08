@@ -4,6 +4,8 @@
     grid-row: 1 / 13;
     padding: 1.5rem 2rem;
     background-color: #ffffff00;
+    position: relative;
+    z-index: 10;
 }
 
 .lateral-menu-container .lateral-menu-header .logotype {
@@ -57,12 +59,18 @@ div.overline {
     transition: .3s ease all;
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.157);
 }
+
 .dropdown-menu.show {
     display: block;
     visibility: visible;
     opacity: 1;
     transform: translateY(0);
-    transition: .3s ease all;}
+    transition: .3s ease all;
+}
+
+.modulesDropdown {
+    display: none
+}
 
 @keyframes standOutColor {
     to { color: #6610f2 }
@@ -132,5 +140,11 @@ div.overline {
     .lateral-menu-container .lateral-menu-body {
         width: 100%;
         justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .lateral-menu-container .lateral-menu-body .lateralPanelOption {
+        margin: 0 4px;
     }
 }

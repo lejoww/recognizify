@@ -32,44 +32,46 @@
                         <input type="text" v-model="newBoardName" class="form-control-special form-control-xl" spellcheck="false" placeholder="Escribe el nombre del tablero" @click="showSaveButtonForBoardNameInput">
                         <button class="btn btn-danger btn-sm btn-save" @click="saveNewBoardName">Guardar nombre del tablero</button>
                     </div>
-                    <div class="toast toast-info" role="alert" aria-live="assertive" aria-atomic="true">
-                        <div class="toast-header">
-                            <img src="@/assets/isotipe-color.svg" class="rounded mr-2" width="32px" height="32px" alt="...">
-                            <strong class="mr-auto">Recognizify</strong>
-                            <!-- <small class="text-muted">11 mins ago</small> -->
-                            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close" id="toastClose" @click="closeToast">
-                                <svg class="feather-menu">
-                                    <use xlink:href="@/assets/svg/feather-sprite.svg#x"/>
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="toast-body">
-                            Hola, bienvenido al módulo de Boards de Recognizify. Aquí todo tu equipo puede dejar notas y contribuir.
-                            <a href="#" data-toggle="modal" data-target="#helpingModal">Da click aquí para saber más</a>
-                        </div>
-                    </div>
-                    <div class="toast toast-special" role="alert" aria-live="assertive" aria-atomic="true">
-                        <div class="toast-header" style="padding: 6px 12px">
-                            <strong class="mr-auto">Escribe una nota para tu equipo</strong>
-                        </div>
-                        <div class="toast-body">
-                            <div class="toast-row">
-                                <div class="profileImageContainer">
-                                    <img :src="currentProfilePhoto" class="profilePhoto">
-                                </div>
-                                <input type="text" class="form-control form-control-sm" placeholder="Tu mensaje..." v-model="newMessage">
+                        <div class="toast toast-info" role="alert" aria-live="assertive" aria-atomic="true">
+                            <div class="toast-header">
+                                <img src="@/assets/isotipe-color.svg" class="rounded mr-2" width="32px" height="32px" alt="...">
+                                <strong class="mr-auto">Recognizify</strong>
+                                <!-- <small class="text-muted">11 mins ago</small> -->
+                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close" id="toastClose" @click="closeToast">
+                                    <svg class="feather-menu">
+                                        <use xlink:href="@/assets/svg/feather-sprite.svg#x"/>
+                                    </svg>
+                                </button>
                             </div>
-                            <button class="btn btn-success btn-sm button-send" @click="publishNote">Publicar</button>
+                            <div class="toast-body">
+                                Hola, bienvenido al módulo de Boards de Recognizify. Aquí todo tu equipo puede dejar notas y contribuir.
+                                <a href="#" data-toggle="modal" data-target="#helpingModal">Da click aquí para saber más</a>
+                            </div>
                         </div>
-                    </div>
+                    <div class="notes">
+                        <div class="toast toast-special" role="alert" aria-live="assertive" aria-atomic="true">
+                            <div class="toast-header" style="padding: 6px 12px">
+                                <strong class="mr-auto">Escribe una nota para tu equipo</strong>
+                            </div>
+                            <div class="toast-body">
+                                <div class="toast-row">
+                                    <div class="profileImageContainer">
+                                        <img :src="currentProfilePhoto" class="profilePhoto">
+                                    </div>
+                                    <input type="text" class="form-control form-control-sm" placeholder="Tu mensaje..." v-model="newMessage">
+                                </div>
+                                <button class="btn btn-success btn-sm button-send" @click="publishNote">Publicar</button>
+                            </div>
+                        </div>
 
-                    <!-- other notes -->
-                    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" :key="name" v-for="(noteData, name, message) in notesData">
-                        <div class="toast-header" style="padding: 6px 12px">
-                            <strong class="mr-auto" :key="name">{{noteData['name']}}</strong>
-                        </div>
-                        <div class="toast-body" :key="message">
-                            {{noteData['message']}}
+                        <!-- other notes -->
+                        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" :key="name" v-for="(noteData, name, message) in notesData">
+                            <div class="toast-header" style="padding: 6px 12px">
+                                <strong class="mr-auto" :key="name">{{noteData['name']}}</strong>
+                            </div>
+                            <div class="toast-body" :key="message">
+                                {{noteData['message']}}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -89,6 +91,7 @@
     import '@/assets/css/board.css'
 
     import uuidv1 from 'uuid/v1'
+    import { AddPoints } from '@/assets/scripts/addActivityPoints.js'
 
     export default {
         data(){
@@ -106,6 +109,7 @@
             Profile,
             UserNavbar
         },
+        mixins: [AddPoints],
         created: function(){
             if (this.$router.history.current.params["projectId"] == 'undefined') {
                 this.$router.push('/select')
@@ -169,7 +173,10 @@
                                 uidUserPublish: user.uid,
                                 notePublish: this.newMessage
                             })
-                            .then(() => window.location.reload())
+                            .then(() => {
+                                this.addActivityPoint()
+                                // window.location.reload()
+                            })
                         })
                 })
             },

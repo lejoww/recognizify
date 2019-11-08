@@ -44,7 +44,7 @@
         },
         mounted: function (){
             firebase.auth().onAuthStateChanged(user => {
-                user ? this.$router.push('/select') : console.log('Usuario existente');
+                if (user) this.$router.push('/select');
             })
         },
         methods: {
@@ -58,10 +58,8 @@
                         firebase.firestore().collection('users').doc(user.uid).get()
                             .then(res => {
                                 if (res.data() == null | res.data() == undefined){
-                                    console.log('Accediendo a configuración de cuenta')
                                     this.$router.push('/welcome/account')
                                 } else {
-                                    console.log('Sin función de configuración')
                                     this.$router.push('/select')
                                 }
                             })
@@ -70,6 +68,7 @@
                 .catch(err => {
                     let $loginAlert = document.querySelector('#loginAlert')
                     $loginAlert.style.display = 'block'
+                    loginButton.innerHTML = 'Iniciar sesión'
                 })
             },
             // signInWithEmailAndPasswordofTest: function(){

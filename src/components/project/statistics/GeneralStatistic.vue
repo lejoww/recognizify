@@ -1,35 +1,89 @@
 <template>
     <div class="projectSummaryPurpleCard">
-        <h2 class="text-white" v-text="projectName"></h2>
-        <p class="text-white">Próximamente aquí tendrás estadisticas de tu proyecto.</p>
-        <!-- <canvas width="100%" height="100%" id="canvas"></canvas> -->
+        <canvas width="820" height="240" id="canvas"></canvas>
     </div>
 </template>
 <script>
 
     import firebase from 'firebase'
-    import Chart from "chart.js";
+    import Chart from 'chart.js'
 
     export default {
         data: function(){
             return {
                 projectName: '',
-                projectUid: this.$route.params["projectId"]
+                projectUid: this.$route.params["projectId"],
+                activityPoints: [],
+                activityDates: []
             }
         },
-        created: function() {
-            this.setProjectName()
+        mounted: function() {
+            this.setChartData()
         },
         methods: {
-            setProjectName: function() {
-                firebase.auth().onAuthStateChanged(user => {
-                    firebase.firestore()
-                        .collection("projects")
-                        .doc(this.projectUid)
-                        .get()
-                        .then(res => {
-                            this.projectName = res.data()["shortName"]
-                        })
+            setChart: function() {
+                var ctx = document.getElementById('canvas').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: this.activityDates,
+                        datasets: [{
+                            data: this.activityPoints,
+                            // backgroundColor: 'rgb(0, 157, 255)',
+                            borderColor: 'rgb(0, 194, 255)',
+                            borderWidth: 3
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        legend: {
+                            display: false,
+                            labels: {
+                                display: false
+                            }
+                        },
+                        scales: {
+                            yAxes: [{
+                                gridLines: {
+                                    drawOnChartArea: false,
+                                    drawTicks: false
+                                },
+                                ticks: {
+                                    beginAtZero: true,
+                                    display: false
+                                    // showLabelBackdrop: false
+                                }
+                            }],
+                            xAxes: [{
+                                gridLines :{
+                                    drawOnChartArea: false,
+                                    drawTicks: false
+                                },
+                                ticks: {
+                                    display: false
+                                }
+                            }]
+                        }
+                    }
+                })
+            },
+            setChartData: function(){
+                firebase.firestore()
+                .collection("projects")
+                .doc(this.projectUid)
+                .collection("dates")
+                .get()
+                .then(dates => {
+                    for(let i = 0; i <= dates.docs.length; i++) {
+                        this.activityDates.push(i)
+                    }
+
+                    this.activityPoints.push(0)
+                    dates.forEach(date => {
+                        this.activityPoints.push(date.data()['activityPoints'])
+                    })
+
+                    this.setChart()
                 })
             }
         }

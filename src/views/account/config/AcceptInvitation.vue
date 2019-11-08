@@ -21,11 +21,13 @@
 <script>
 
     import firebase from 'firebase'
+    import { AddPoints } from '@/assets/scripts/addActivityPoints.js'
 
     export default {
+        mixins: [AddPoints],
         mounted: function() {
             firebase.auth().onAuthStateChanged(user => {
-                let projectCode = this.$router.history.current.params['projectId']
+                let projectCode = this.$route.params.projectId
                 firebase.firestore().collection('users').doc(user.uid).get()
                 .then(res => {
                     firebase.firestore().collection('projects').doc(projectCode).collection('members').doc(user.uid).set({
@@ -33,7 +35,9 @@
                         user: res.data()['user'],
                         member: true,
                         role: ''
-                    }).then(() => {
+                    })
+                    .then(() => {
+                        this.addActivityPoint()
                         firebase.firestore().collection('users').doc(user.uid).collection('invitations').doc(projectCode).delete()
                             .then(() => {
                                 this.$router.push('/select')

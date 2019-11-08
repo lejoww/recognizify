@@ -71,6 +71,8 @@
 
   import firebase from 'firebase'
   import '@/assets/css/userRegistry.css'
+  import { AddPoints } from '@/assets/scripts/addActivityPoints.js'
+
   export default {
     data(){
       return {
@@ -82,6 +84,7 @@
     mounted: function(){
       this.getUsersOnThisProject()
     },
+    mixins: [AddPoints],
     methods: {
       getUsersOnThisProject: function(){
         let projectCode = this.$router.history.current.params['projectId']
@@ -132,6 +135,7 @@
 
                 firebase.firestore().collection('projects').doc(projectCode).get()
                   .then(data => {
+                    this.addActivityPoint()
                     firebase.firestore().collection('users').doc(uidForNewMember).collection('invitations').doc(projectCode).set({
                       pname: data.data()['shortName']
                     })

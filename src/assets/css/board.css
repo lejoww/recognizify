@@ -7,6 +7,11 @@
     display: none;
 }
 
+.toast {
+    margin: 0 6px;
+    display: table;
+}
+
 .toast .toast-body .profileImageContainer {
     width: 32px;
     height: 32px;
@@ -19,7 +24,7 @@
 }
 
 .toast-special .toast-body input {
-    width: 87%;
+    width: 82%;
 }
 
 .toast-special .toast-body .toast-row {
@@ -34,6 +39,12 @@
 
 .toast-info {
     display: none;
+}
+
+.notes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 @media screen and (max-width: 991px) {

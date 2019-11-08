@@ -35,9 +35,9 @@
             <span class="lateralMenuLink" id="invitationsLink">Invitaciones</span>
           </router-link>
 
-          <br><div class="overline">Módulos</div>
 
-          <div class="modules">
+          <div class="modules" id="modulesContainer">
+            <br><div class="overline">Módulos</div>
             <router-link :to="boardPath" class="lateralPanelOption">
               <svg class="feather-menu">
                 <use xlink:href="@/assets/svg/feather-sprite.svg#message-square" />
