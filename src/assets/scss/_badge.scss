@@ -16,6 +16,7 @@
   vertical-align: baseline;
   @include border-radius($badge-border-radius);
   @include transition($badge-transition);
+  letter-spacing: normal;
 
   @at-root a#{&} {
     @include hover-focus {

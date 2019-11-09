@@ -9,10 +9,11 @@
         <div class="projectSummaryTitle">
           <h3 v-text="projectName"></h3>
         </div>
-        <GeneralStatistic/>
+        <FeaturedGoal/>
 
         <div class="projectSummaryData">
           <ProjectUsers/>
+          <GeneralStatistic/>
         </div>
       </div>
 
@@ -28,6 +29,7 @@
   import Profile from "@/components/Profile.vue";
   import GeneralStatistic from "@/components/project/statistics/GeneralStatistic.vue";
   import ProjectUsers from "@/components/project/statistics/ProjectUsers.vue";
+  import FeaturedGoal from "@/components/project/FeaturedGoal.vue";
 
   import Vue from 'vue'
 
@@ -45,7 +47,8 @@
       LateralPanel,
       Profile,
       GeneralStatistic,
-      ProjectUsers
+      ProjectUsers,
+      FeaturedGoal
     },
     created: function() {
       if (this.$route.params["projectId"] == 'undefined') {

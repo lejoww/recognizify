@@ -45,13 +45,18 @@ const routes = [
     component: () => import('./views/account/feeds/ProjectFeedBoard.vue')
   },
   {
+    path: '/project/:projectId/goals',
+    name: 'project_goals',
+    component: () => import('./views/account/feeds/ProjectFeedGoals.vue')
+  },
+  {
     path: '/account/:projectId/accept',
     name: 'accept_invitation',
     component: () => import('./views/account/config/AcceptInvitation.vue')
   },
   {
     path: '/credits',
-    name: 'accept_invitation',
+    name: 'credits',
     component: () => import('./views/entry/Credits.vue')
   },
   {

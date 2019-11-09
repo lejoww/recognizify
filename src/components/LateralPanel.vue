@@ -38,6 +38,14 @@
 
           <div class="modules" id="modulesContainer">
             <br><div class="overline">Módulos</div>
+
+            <router-link :to="goalsPath" class="lateralPanelOption">
+              <svg class="feather-menu">
+                <use xlink:href="@/assets/svg/feather-sprite.svg#flag" />
+              </svg>
+              <span class="lateralMenuLink">Goals</span>
+            </router-link>
+
             <router-link :to="boardPath" class="lateralPanelOption">
               <svg class="feather-menu">
                 <use xlink:href="@/assets/svg/feather-sprite.svg#message-square" />
@@ -49,7 +57,7 @@
               <svg class="feather-menu">
                 <use xlink:href="@/assets/svg/feather-sprite.svg#users" />
               </svg>
-              <span class="lateralMenuLink">Usuarios</span>
+              <span class="lateralMenuLink">Users</span>
             </router-link>
           </div>
 
@@ -70,13 +78,22 @@
                   <span class="lateralMenuLink">Boards</span>
                 </router-link>
               </a>
+              
+              <a class="dropdown-item">
+                <router-link :to="goalsPath" class="lateralPanelOption dropdownOption">
+                  <svg class="feather-menu">
+                    <use xlink:href="@/assets/svg/feather-sprite.svg#flag" />
+                  </svg>
+                  <span class="lateralMenuLink">Goals</span>
+                </router-link>
+              </a>
 
               <a class="dropdown-item">
                 <router-link :to="usersPath" class="lateralPanelOption dropdownOption">
                   <svg class="feather-menu">
                     <use xlink:href="@/assets/svg/feather-sprite.svg#users" />
                   </svg>
-                  <span class="lateralMenuLink">Usuarios</span>
+                  <span class="lateralMenuLink">Users</span>
                 </router-link>
               </a>
             </div>
@@ -99,6 +116,7 @@
           usersPath: '',
           feedPath: '',
           boardPath: '',
+          goalsPath: '',
           invitations: ''
         }
       },
@@ -110,6 +128,7 @@
           this.usersPath = `/project/${projectCode}/membership`
           this.feedPath = `/project/${projectCode}/feed`
           this.boardPath = `/project/${projectCode}/board`
+          this.goalsPath = `/project/${projectCode}/goals`
         })
       },
       methods: {

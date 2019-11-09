@@ -1826,7 +1826,6 @@ pre code {
   height: calc(1.5em + 0.75rem + 2px);
   padding: 0.375rem 0.75rem;
   font-family: "Open Sans";
-  font-weight: 700;
   font-size: 0.83125rem;
   line-height: 1.5;
   color: #494961;
@@ -4534,6 +4533,7 @@ input[type=button].btn-block {
   vertical-align: baseline;
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  letter-spacing: normal;
 }
 @media (prefers-reduced-motion: reduce) {
   .badge {

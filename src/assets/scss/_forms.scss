@@ -10,7 +10,6 @@
   height: $input-height;
   padding: $input-padding-y $input-padding-x;
   font-family: "Open Sans";
-  font-weight: 700;
   @include font-size($input-font-size);
   line-height: $input-line-height;
   color: $input-color;

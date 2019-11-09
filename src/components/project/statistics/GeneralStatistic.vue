@@ -1,6 +1,6 @@
 <template>
     <div class="projectSummaryPurpleCard">
-        <canvas width="820" height="240" id="canvas"></canvas>
+        <canvas width="800" height="240" id="canvas"></canvas>
     </div>
 </template>
 <script>
@@ -29,7 +29,6 @@
                         labels: this.activityDates,
                         datasets: [{
                             data: this.activityPoints,
-                            // backgroundColor: 'rgb(0, 157, 255)',
                             borderColor: 'rgb(0, 194, 255)',
                             borderWidth: 3
                         }]
@@ -51,7 +50,6 @@
                                 ticks: {
                                     beginAtZero: true,
                                     display: false
-                                    // showLabelBackdrop: false
                                 }
                             }],
                             xAxes: [{
@@ -69,22 +67,22 @@
             },
             setChartData: function(){
                 firebase.firestore()
-                .collection("projects")
-                .doc(this.projectUid)
-                .collection("dates")
-                .get()
-                .then(dates => {
-                    for(let i = 0; i <= dates.docs.length; i++) {
-                        this.activityDates.push(i)
-                    }
+                    .collection("projects")
+                    .doc(this.projectUid)
+                    .collection("dates")
+                    .get()
+                    .then(dates => {
+                        for(let i = 0; i <= dates.docs.length; i++) {
+                            this.activityDates.push(i)
+                        }
 
-                    this.activityPoints.push(0)
-                    dates.forEach(date => {
-                        this.activityPoints.push(date.data()['activityPoints'])
+                        this.activityPoints.push(0)
+                        dates.forEach(date => {
+                            this.activityPoints.push(date.data()['activityPoints'])
+                        })
+
+                        this.setChart()
                     })
-
-                    this.setChart()
-                })
             }
         }
     }
