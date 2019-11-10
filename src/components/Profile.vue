@@ -10,12 +10,12 @@
         </a>
         <div class="profileMenu">
             <div class="dropdown-menu profileMenuList" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#"><router-link to="/select">Mis proyectos</router-link></a>
-                <a class="dropdown-item" href="#"><router-link to="/notifications" id="invitationsLink">Notificaciones</router-link></a>
-                <a class="dropdown-item" href="#"><router-link to="/account/configuration">Configuración</router-link></a>
-                <a class="dropdown-item" href="#">Sobre Recognizify</a>
+                <a class="dropdown-item" href="#"><router-link class="text-dark" to="/select">Mis proyectos</router-link></a>
+                <a class="dropdown-item" href="#"><router-link class="text-dark" to="/notifications" id="invitationsLink">Notificaciones</router-link></a>
+                <a class="dropdown-item" href="#"><router-link class="text-dark" to="/account/configuration">Configuración</router-link></a>
+                <a class="dropdown-item text-dark" href="#">Sobre Recognizify</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#" @click="closeSession" style="color: #FF524C">Cerrar sesión</a>
+            <a class="dropdown-item text-danger" href="#" @click="closeSession"><strong>Cerrar sesión</strong></a>
         </div>
         </div>
     </div>

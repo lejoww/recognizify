@@ -190,6 +190,19 @@
     border-radius: 10px;
 }
 
+.projectSummaryGoalNotice .goalNoticeContent .goalNonNoticeOpacity {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 10, 24, 0.651);
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    text-align: center;
+}
+
 @keyframes showGoalNotice {
     0% { opacity: 0; }
     100% { opacity: 1; }
