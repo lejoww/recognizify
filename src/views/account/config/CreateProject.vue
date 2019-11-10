@@ -1,10 +1,9 @@
 <template>
     <div id="create-form">
         <div class="screenContent">
-        <Profile/>
+            <Profile/>
 
-        <div class="dashboardContent">
-            <div class="content-flex">
+            <div class="dashboardContent">
                 <div class="bg-image">
                     <div>
                         <img src="@/assets/ilustrations/office-work.png"><br>
@@ -44,7 +43,6 @@
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </div>
 </template>

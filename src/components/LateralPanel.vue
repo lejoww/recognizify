@@ -20,13 +20,6 @@
             <span class="lateralMenuLink">Ajustes</span>
           </router-link>
 
-          <router-link to="#" class="lateralPanelOption">
-            <svg class="feather-menu">
-              <use xlink:href="@/assets/svg/feather-sprite.svg#package" />
-            </svg>
-            <span class="lateralMenuLink">Paquetes</span>
-          </router-link>
-
           <router-link to="/notifications" class="lateralPanelOption">
             <svg class="feather-menu" id="invitationsIcon">
               <use xlink:href="@/assets/svg/feather-sprite.svg#bell" />
@@ -68,7 +61,6 @@
               </svg>
               <span class="lateralMenuLink">Módulos</span>
             </a>
-
             <div class="dropdown-menu animate slideIn" aria-labelledby="dropdownModules">
               <a class="dropdown-item">
                 <router-link :to="boardPath" class="lateralPanelOption dropdownOption">

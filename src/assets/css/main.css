@@ -92,8 +92,8 @@ nav {
 }
 
 .bg-image {
-    position: fixed;
-    height: 100%;
+    grid-row: 1 / 13;
+    grid-column: 1 / 9;
     background-color: #00001C;
     display: flex;
     align-items: center;
@@ -102,10 +102,12 @@ nav {
     padding: 3rem
 }
 
+.bg-image img { width: 396px; }
+
 .info-inputs {
-    padding: 3rem;
-    position: absolute;
-    right: 0;
+    grid-column: 9 / 19;
+    grid-row: 1 / 13;
+    margin: 2rem;
 }
 
 .back-btn {

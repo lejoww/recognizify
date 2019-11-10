@@ -17,7 +17,7 @@ const routes = [
   {
     path: '/notifications',
     name: 'account_notifications',
-    component: () => import('./views/account/feeds/Notifications.vue')
+    component: () => import('./views/account/config/Notifications.vue')
   },
   {
     path: '/welcome/account',
@@ -32,22 +32,22 @@ const routes = [
   {
     path: '/project/:projectId/feed',
     name: 'project_feed',
-    component: () => import('./views/account/feeds/ProjectFeed.vue')
+    component: () => import('./views/account/feeds/project/Feed.vue')
   },
   {
     path: '/project/:projectId/membership',
     name: 'project_membership',
-    component: () => import('./views/account/feeds/ProjectFeedUsers.vue')
+    component: () => import('./views/account/feeds/project/Users.vue')
   },
   {
     path: '/project/:projectId/board',
     name: 'project_board',
-    component: () => import('./views/account/feeds/ProjectFeedBoard.vue')
+    component: () => import('./views/account/feeds/project/Board.vue')
   },
   {
     path: '/project/:projectId/goals',
     name: 'project_goals',
-    component: () => import('./views/account/feeds/ProjectFeedGoals.vue')
+    component: () => import('./views/account/feeds/project/Goals.vue')
   },
   {
     path: '/account/:projectId/accept',

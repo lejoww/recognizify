@@ -112,6 +112,7 @@ div.overline {
 
     .modulesDropdown {
         display: block;
+        padding: 0 12px;
     }
 }
 
@@ -139,7 +140,15 @@ div.overline {
 
     .lateral-menu-container .lateral-menu-body {
         width: 100%;
-        justify-content: space-between;
+        justify-content: space-around;
+    }
+
+    .lateral-menu-container .lateral-menu-body .lateralPanelOption {
+        margin: 0;
+    }
+
+    .lateral-menu-container .lateral-menu-body .lateralPanelOption .lateralMenuLink {
+        margin: 0;
     }
 }
 
