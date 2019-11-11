@@ -75,10 +75,11 @@
                         firebase.firestore().collection('users').doc(user.uid).set({
                             name: this.username,
                             bio: this.bio,
-                            user: this.user
+                            user: this.user,
+                            betaAccess: localStorage.betaAccess
                         })
                             .then(() => this.$router.push('/select'))
-                            .catch(err => console.log('Ha ocurrido un error'))
+                            .catch(err => console.error(err))
                     }
                 })
             }

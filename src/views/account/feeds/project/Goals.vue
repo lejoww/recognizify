@@ -51,12 +51,19 @@
                         </button>
                     </h3><br>
                 </div>
-                <div class="goalsField">
+                <div class="goalsField" v-if="goals.length > 0">
                     <div class="card goalCard" style="width: 18rem;" :key="goalData['name']" v-for="(goalData, name, motivation) in goals">
                         <div class="card-body">
                             <h5 class="card-title" :key="name">{{goalData['name']}}</h5>
                             <p class="card-text" :key="motivation">{{goalData['motivation']}}</p>
                         </div>
+                    </div>
+                </div>
+
+                <div class="nonGoalsField" v-if="goals.length == 0">
+                    <div>
+                        <h3 style="color: #9e95aa;">No tienes nuevas metas</h3>
+                        <p style="color: #9e95aa;">Las metas te ayudan a que todo lo que hagas dentro de Recognizify gire en torno a ellas.</p>
                     </div>
                 </div>
             </div>

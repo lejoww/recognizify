@@ -9,6 +9,22 @@ div#login {
     padding: 0 7rem;
 }
 
+div#register {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+div#register .form-container {
+    width: 39%;
+}
+
+div#register .form-images img {
+    width: 590px;
+}
+
 div#login .form-container {
     width: 34%;
 }
@@ -49,7 +65,7 @@ div#login .form-container .form-group input {
     width: 90%;
 }
 
-@media screen and (min-width: 680px) {
+@media screen and (max-width: 680px) {
     .account-complete {
         text-align: center;
     }
@@ -58,6 +74,8 @@ div#login .form-container .form-group input {
         width: auto;
         margin: 0 0.5em 1em 0.5em;
     }
+    
+    .betacheckbox p { max-width: 82%; }
 }
 
 .account-image {
@@ -105,27 +123,79 @@ div#login .form-container .form-group input {
     }
 
     div#login .form-images { display: none; }
-}
-/* 
-input[type="file"]#file {
-    width: 2px;
-    height: 0.1px;
-    overflow: hidden;
-    position: absolute;
-    z-index: -1;
-    background-color: green;
+
+    div#register {
+        flex-direction: column
+    }
+
+    div#register .form-images img {
+        width: 332px;
+    }
+
+    div#register .form-container {
+        width: 100%;
+        padding: 2rem;
+    }
 }
 
-label[for="file"] {
-    font-size: 14px;
-    font-weight: 600;
-    color: #fff;
-    background-color: #106BA0;
-    display: inline-block;
-    transition: all .5s;
+.betaswitch {
+    position: relative;
+    display: block;
+    width: 56px;
+    height: 28px;
+}
+
+.betacheckbox { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.betacheckbox p { width: 87%; }
+/* .betacheckbox label { margin-right: 12px; } */
+
+.betaswitch input {
+    display: none;
+}
+   
+.slider {
+    position: absolute;
     cursor: pointer;
-    padding: 15px 40px !important;
-    text-transform: uppercase;
-    width: fit-content;
-    text-align: center;
-} */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .2s;
+    transition: .4s;
+}
+   
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+   
+input:checked + .slider {
+    background-color: #6610f2;
+}
+   
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+   
+.slider.round:before {
+    border-radius: 50%;
+}

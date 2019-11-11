@@ -10,9 +10,23 @@
     margin: 5px;
 }
 
+.nonGoalsField {
+    grid-column: 4 / 19;
+    grid-row: 2 / 13;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 @media screen and (max-width: 991px) {
     .goalsField {
         grid-column: 1 / 19;
         padding: 0 2rem;
+    }
+
+    .nonGoalsField {
+        grid-column: 1 / 19;
+        grid-row: 1 / 12;
     }
 }

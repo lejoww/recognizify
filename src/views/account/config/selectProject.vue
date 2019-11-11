@@ -10,7 +10,7 @@
       <div class="dashboardContent">
 
         <LateralPanel/>
-        <div class="feed-card-bg" id="bgNoneProjects">
+        <div class="nonProjectsBanner" id="bgNoneProjects" v-if="projects.length == 0">
           <div class="image-representation">
             <img src="@/assets/ilustrations/born-robot.png" alt="Robot despertando" />
           </div>

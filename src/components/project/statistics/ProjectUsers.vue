@@ -1,6 +1,9 @@
 <template>
     <div class="projectSummaryCard">
-        <h4 class="muted-gray">Usuarios registrados</h4>
+        <div class="row" style="align-items:center; justify-content: space-between; padding: 0 1em">
+            <h4 class="muted-gray">Usuarios registrados</h4>
+            <button class="btn btn-warning btn-sm">Administrar</button>
+        </div>
         <hr>
         <div class="scrollable">
             <ol class="usersList" id="usersList">
@@ -17,6 +20,7 @@
                 </li>
             </ol>
         </div>
+        
     </div>
 </template>
 <script>
