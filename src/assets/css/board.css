@@ -57,4 +57,8 @@
         margin: 1em;
         grid-column: 1 / 19;
     }
+
+    .form-control-variable {
+        font-size: 24px;
+    }
 }

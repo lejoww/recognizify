@@ -21,13 +21,15 @@
           </router-link>
 
           <router-link to="/notifications" class="lateralPanelOption">
-            <div class="row">
-              <svg class="feather-menu" id="invitationsIcon">
-                <use xlink:href="@/assets/svg/feather-sprite.svg#bell" />
-              </svg>
-              <span class="badge badge-danger" v-if="invitations > 0" v-text="invitations">1</span>
+            <div class="stackable">
+              <div class="littleStack">
+                <svg class="feather-menu" id="invitationsIcon">
+                  <use xlink:href="@/assets/svg/feather-sprite.svg#bell" />
+                </svg>
+                <span class="badge badge-danger" v-if="invitations > 0" v-text="invitations"></span>
+              </div>
+              <span class="lateralMenuLink" id="invitationsLink">Invitaciones</span>
             </div>
-            <span class="lateralMenuLink" id="invitationsLink">Invitaciones</span>
           </router-link>
 
 

@@ -1,7 +1,7 @@
 <template>
     <div class="projectSummaryPurpleCard">
-        <canvas width="800" height="240" id="canvas" v-if="activityDates.length > 1"></canvas>
-        <div class="nonActivityPoints" v-if="activityDates.length == 0 || activityDates.length == 1">
+        <!-- <canvas width="800" height="240" id="canvas" v-if="activityDates.length > 1"></canvas> -->
+        <div class="nonActivityPoints"> <!--  v-if="activityDates.length == 0 || activityDates.length == 1" -->
             <p class="text-white"><strong>Aquí aparece la actividad de tu proyecto en estadísticas, comienza a usar más la app y poco a poco aparecerán nuevos puntos</strong></p>
         </div>
     </div>
@@ -20,7 +20,7 @@
                 activityDates: []
             }
         },
-        mounted: function() {
+        created: function() {
             this.setChartData()
         },
         methods: {

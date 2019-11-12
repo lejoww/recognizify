@@ -2,8 +2,8 @@
     <div class="view-content">
         <div id="welcomeAccountComplete" class="account-complete">
             <img src="@/assets/logo-common-cutted.svg" alt="Logotipo de Recognizify" width="148px"><br>
-            <h3 style="width: 100%">Comenzarás a hacer de tu proyecto un éxito</h3>
-            <p style="width: 100%">Solo falta que completes algunos datos, queremos conocerte.</p><br><br>
+            <h3 style="width: 100%">Solo falta que completes algunos datos</h3>
+            <p style="width: 100%">Comenzarás a hacer de tu proyecto un éxito, queremos conocerte.</p><br><br>
 <!-- 
             <div class="account-image">
                 <div class="photo-container">

@@ -75,15 +75,39 @@
                         this.projectuid = uuidv1()
                     }
 
-                    firebase.firestore().collection('projects').doc(this.projectuid)
+                    firebase.firestore()
+                    .collection('projects')
+                    .doc(this.projectuid)
                     .set({
                         name: this.largeName,
                         shortName: this.shortName,
                         description: this.description,
                         admin: [ user.uid ]
                     })
-                    .then(() => this.$router.push('/select'))
-                    .catch(err => console.log(`Has tenido un error llamado ${err.name}`))
+                    .then(() => {
+                        firebase.firestore()
+                        .collection('users')
+                        .doc(user.uid)
+                        .get()
+                        .then(userdata => {
+                            firebase.firestore()
+                            .collection('projects')
+                            .doc(this.projectuid)
+                            .collection('members')
+                            .doc(user.uid)
+                            .set({
+                                name: userdata.data()['name'],
+                                user: userdata.data()['user'],
+                                member: true,
+                                role: ''
+                            })
+                            .then(() => this.$router.push('/select'))
+                            .catch(err => console.error(err))
+                        })
+                        .catch(err => console.error(err))
+
+                    })
+                    .catch(err => console.error(err))
                 })
             },
             uploadImageToServer: function(e, code){

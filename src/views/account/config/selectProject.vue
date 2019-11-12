@@ -17,7 +17,7 @@
           <div class="content-instruct">
             <img src="@/assets/logo-white-cutted.png" alt="Logotipo de Recognizify" width="162px" style="margin-bottom: 16px">
             <h3 style="color: #f2f2f2">Parece que aún no tienes proyectos nuevos</h3>
-            <p>¿Qué te parece si empezamos de una vez?</p>
+            <p style="text-align: left">¿Qué te parece si empezamos de una vez?</p>
             <br>
 
             <a href="#" class="btn btn-success btn-lg" style="width: 318px; display: flex; justify-content: space-around; align-items: center">
@@ -26,7 +26,7 @@
           </div>
         </div>
 
-        <div class="projectsField" id="projectsContent">
+        <div class="projectsField" id="projectsContent" v-if="projects.length >= 1">
           <img src="@/assets/ilustrations/selection.png" alt="Personas seleccionando una opción entre una lista" width="347px">
           <h2>¿En qué idea trabajarás ahora?</h2>
           <p>Selecciona uno de tus proyectos o de los que haces parte</p>
@@ -114,14 +114,6 @@
                         }
                       })
                     })
-
-                  if (project.data()["admin"][0] == user.uid) {
-                      this.projects.push({
-                        name: project.data()["shortName"],
-                        id: project.id
-                      })
-                      count += 1;
-                  }
                 })
 
                 if (count == 0) {

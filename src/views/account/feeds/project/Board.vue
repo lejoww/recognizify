@@ -29,7 +29,7 @@
 
                 <div class="projectBoard">
                     <div>
-                        <input type="text" v-model="newBoardName" class="form-control-special form-control-xl" spellcheck="false" placeholder="Escribe el nombre del tablero" @click="showSaveButtonForBoardNameInput">
+                        <input type="text" v-model="newBoardName" class="form-control-special form-control-xl form-control-variable" spellcheck="false" placeholder="Escribe el nombre del tablero" @click="showSaveButtonForBoardNameInput">
                         <button class="btn btn-danger btn-sm btn-save" @click="saveNewBoardName">Guardar nombre del tablero</button>
                     </div>
                         <div class="toast toast-info" role="alert" aria-live="assertive" aria-atomic="true">
@@ -175,7 +175,7 @@
                             })
                             .then(() => {
                                 this.addActivityPoint()
-                                // window.location.reload()
+                                window.location.reload()
                             })
                         })
                 })

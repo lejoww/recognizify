@@ -2,7 +2,9 @@
     <div class="projectSummaryCard">
         <div class="row" style="align-items:center; justify-content: space-between; padding: 0 1em">
             <h4 class="muted-gray">Usuarios registrados</h4>
-            <button class="btn btn-warning btn-sm">Administrar</button>
+            <button class="btn btn-warning btn-sm">
+                <router-link class="text-white" :to="`/project/${this.$route.params.projectId}/membership`">Administrar</router-link>
+            </button>
         </div>
         <hr>
         <div class="scrollable">
@@ -36,6 +38,7 @@
         created: function(){
             this.getProjectMembers()
             this.setYourselfOnList()
+            console.log(this.usersInProject)
         },
         methods: {    
             getProjectMembers: function() {
@@ -54,21 +57,7 @@
                             })
                         })
                 })
-            },
-            setYourselfOnList: function() {
-                firebase.auth().onAuthStateChanged(user => {
-                    firebase.firestore()
-                        .collection("users")
-                        .doc(user.uid)
-                        .get()
-                        .then(userdata => {
-                            this.usersInProject.push({
-                                name: userdata.data()["name"],
-                                user: `@${userdata.data()["user"]}`
-                            })
-                        })
-                    })
-                }
             }
         }
+    }
 </script>

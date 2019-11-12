@@ -14,7 +14,7 @@
                     </a>
 
                     <h2>Notificaciones</h2>
-                    <p>Puede haber cosas aquí que no salgan muy bien. Recuerda que estamos en versión BETA.</p>
+                    <p style="text-align: left">Puede haber cosas aquí que no salgan muy bien. Recuerda que estamos en versión BETA.</p>
                
                 </div>
             </div>
@@ -49,7 +49,7 @@
                                         <div class="card w-75">
                                             <div class="card-body">
                                                 <h5 class="card-title">Te acaban de invitar a ${invitation.data()['pname']}</h5>
-                                                <p class="card-text">Esto es una solicitud hacia el proyecto de alguien que probablemente te conoce. Tu decides aceptarla o rechazarla</p>
+                                                <p class="card-text" style="text-align: left">Esto es una solicitud hacia el proyecto de alguien que probablemente te conoce. Tu decides aceptarla o rechazarla</p>
                                                 <a href="/account/${invitation.id}/accept" class="btn btn-warning">Aceptar</a>
                                             </div>
                                         </div>
