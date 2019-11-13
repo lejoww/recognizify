@@ -1,101 +1,77 @@
 <template>
-    <div class="lateral-menu-container">
-        <div class="lateral-menu-header">
-          <div class="logotype"></div>
+    <div class="sidebarMenu">
+      <div class="sidebarWrapper">
+        <div class="sidebarBrand">
+          <img src="@/assets/logo-white-cutted.svg" width="152px">
         </div>
-
-        <div class="lateral-menu-body">
-          <div class="overline">General</div>
-          <router-link :to="feedPath" class="lateralPanelOption">
-            <svg class="feather-menu">
-              <use xlink:href="@/assets/svg/feather-sprite.svg#home"/>
-            </svg>
-            <span class="lateralMenuLink">Resumen</span>
-          </router-link>
+        <div class="sidebarAccount">
+          <Profile/>
+        </div>
+        <ul class="sidebarNav">
           
-          <router-link to="/account/configuration" class="lateralPanelOption">
-            <svg class="feather-menu">
-              <use xlink:href="@/assets/svg/feather-sprite.svg#settings" />
-            </svg>
-            <span class="lateralMenuLink">Ajustes</span>
-          </router-link>
+          <div class="overline">General</div>
+          <li>
+            <router-link :to="feedPath" class="lateralPanelOption">
+              <svg class="feather-menu">
+                <use xlink:href="@/assets/svg/feather-sprite.svg#home"/>
+              </svg>
+              <span class="lateralMenuLink">Resumen</span>
+            </router-link>
+          </li>
 
-          <router-link to="/notifications" class="lateralPanelOption">
-            <div class="stackable">
-              <div class="littleStack">
-                <svg class="feather-menu" id="invitationsIcon">
-                  <use xlink:href="@/assets/svg/feather-sprite.svg#bell" />
-                </svg>
-                <span class="badge badge-danger" v-if="invitations > 0" v-text="invitations"></span>
+          <li>
+            <router-link to="/account/configuration" class="lateralPanelOption">
+              <svg class="feather-menu">
+                <use xlink:href="@/assets/svg/feather-sprite.svg#settings" />
+              </svg>
+              <span class="lateralMenuLink">Ajustes</span>
+            </router-link>
+          </li>
+
+          <li>
+            <router-link to="/notifications" class="lateralPanelOption">
+              <div class="stackable">
+                <div class="littleStack">
+                  <svg class="feather-menu" id="invitationsIcon">
+                    <use xlink:href="@/assets/svg/feather-sprite.svg#bell" />
+                  </svg>
+                  <span class="badge badge-danger" v-if="invitations > 0" v-text="invitations"></span>
+                </div>
+                <span class="lateralMenuLink" id="invitationsLink">Invitaciones</span>
               </div>
-              <span class="lateralMenuLink" id="invitationsLink">Invitaciones</span>
-            </div>
-          </router-link>
+            </router-link>
+          </li>
 
-
-          <div class="modules" id="modulesContainer">
-            <br><div class="overline">Módulos</div>
-
+          <br><div class="overline">Módulos</div>
+          <li>
             <router-link :to="goalsPath" class="lateralPanelOption">
               <svg class="feather-menu">
                 <use xlink:href="@/assets/svg/feather-sprite.svg#flag" />
               </svg>
               <span class="lateralMenuLink">Goals</span>
             </router-link>
+          </li>
 
+          <li>
             <router-link :to="boardPath" class="lateralPanelOption">
               <svg class="feather-menu">
                 <use xlink:href="@/assets/svg/feather-sprite.svg#message-square" />
               </svg>
               <span class="lateralMenuLink">Boards</span>
             </router-link>
+          </li>
 
+          <li>
             <router-link :to="usersPath" class="lateralPanelOption">
               <svg class="feather-menu">
                 <use xlink:href="@/assets/svg/feather-sprite.svg#users" />
               </svg>
               <span class="lateralMenuLink">Users</span>
             </router-link>
-          </div>
+          </li>
 
-          <div class="btn-group dropup">
-            <a class="lateralPanelOption modulesDropdown" id="dropdownModules" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <svg class="feather-menu">
-                <use xlink:href="@/assets/svg/feather-sprite.svg#zap" />
-              </svg>
-              <span class="lateralMenuLink">Módulos</span>
-            </a>
-            <div class="dropdown-menu animate slideIn" aria-labelledby="dropdownModules">
-              <a class="dropdown-item">
-                <router-link :to="boardPath" class="lateralPanelOption dropdownOption">
-                  <svg class="feather-menu">
-                    <use xlink:href="@/assets/svg/feather-sprite.svg#message-square" />
-                  </svg>
-                  <span class="lateralMenuLink">Boards</span>
-                </router-link>
-              </a>
-              
-              <a class="dropdown-item">
-                <router-link :to="goalsPath" class="lateralPanelOption dropdownOption">
-                  <svg class="feather-menu">
-                    <use xlink:href="@/assets/svg/feather-sprite.svg#flag" />
-                  </svg>
-                  <span class="lateralMenuLink">Goals</span>
-                </router-link>
-              </a>
-
-              <a class="dropdown-item">
-                <router-link :to="usersPath" class="lateralPanelOption dropdownOption">
-                  <svg class="feather-menu">
-                    <use xlink:href="@/assets/svg/feather-sprite.svg#users" />
-                  </svg>
-                  <span class="lateralMenuLink">Users</span>
-                </router-link>
-              </a>
-            </div>
-          </div>
-        </div>
-
+        </ul>
+      </div>
     </div>
 </template>
 <script>
@@ -103,6 +79,8 @@
     import firebase from 'firebase'
     import '@/assets/css/lateralMenu.css'
     import '@/assets/css/mediaqueries.css'
+
+    import Profile from '@/components/Profile.vue'
 
     export default {
       data(){
@@ -115,6 +93,9 @@
           goalsPath: '',
           invitations: ''
         }
+      },
+      components: {
+        Profile
       },
       created(){
         this.setInvitationsNumber()

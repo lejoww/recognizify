@@ -1,43 +1,59 @@
 <template>
-    <div class="dropdown">
-        <a id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">    
-            <div class="current-profile">
-                <div class="profile-content">
-                    <img v-bind:src="urlPhotoPath">
+    <div class="sidebarProfile">
+        <div class="profileWrapper">
+            <div class="profileData">
+                <div class="profileContent">
+                    <img class="profilePicture" v-bind:src="urlPhotoPath">
                 </div>
-                <!-- <strong v-text="username"></strong> -->
+                <div class="profileIdentity">
+                    <span class="profileName text-white" v-text="currentAccount.name"></span>
+                    <span class="profileUsername" v-text="'@' + currentAccount.username"></span>
+                </div>
             </div>
-        </a>
-        <div class="profileMenu">
-            <div class="dropdown-menu profileMenuList" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#"><router-link class="text-dark" to="/select">Mis proyectos</router-link></a>
-                <a class="dropdown-item" href="#"><router-link class="text-dark" to="/notifications" id="invitationsLink">Notificaciones</router-link></a>
-                <a class="dropdown-item" href="#"><router-link class="text-dark" to="/account/configuration">Configuración</router-link></a>
-                <a class="dropdown-item text-dark" href="#">Sobre Recognizify</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-danger" href="#" @click="closeSession"><strong>Cerrar sesión</strong></a>
-        </div>
+            <div class="profileOptions">
+                <svg class="feather-menu">
+                    <use xlink:href="@/assets/svg/feather-sprite.svg#settings"/>
+                </svg>
+            </div>
         </div>
     </div>
 </template>
 <script>
 
     import firebase from 'firebase';
+    import '@/assets/css/profile.css'
     import '@/assets/css/mediaqueries.css'
 
     export default {
-        data(){
+        data: function(){
             return {   
                 urlPhotoPath: '',
+                currentAccount: {
+                    name: '',
+                    username: ''
+                }
             }
         },
         mounted: function(){
-            firebase.auth().onAuthStateChanged(user => {
-                firebase.storage().ref(`profile_photos/${user.uid}`).getDownloadURL()
-                    .then(path => this.urlPhotoPath = path)
-            })
+            this.setProfilePicture()
+            this.setIdentityData()
         },
         methods: {
+            setProfilePicture: function(){
+                firebase.auth().onAuthStateChanged(user => {
+                    firebase.storage().ref(`profile_photos/${user.uid}`).getDownloadURL()
+                    .then(path => this.urlPhotoPath = path)
+                })
+            },
+            setIdentityData: function(){
+                firebase.auth().onAuthStateChanged(user => {
+                    firebase.firestore().collection('users').doc(user.uid).get()
+                    .then(data => {
+                        this.currentAccount.name = data.data()['name']
+                        this.currentAccount.username = data.data()['user']
+                    })
+                })
+            },
             closeSession: function(){
                 firebase.auth().signOut()
                 window.location = '/'

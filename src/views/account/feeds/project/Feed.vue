@@ -1,22 +1,26 @@
 <template>
   <div id="feed">
-    <div class="screenContent">
-      <Profile />
+    <div class="baseLayout">
+      <LateralPanel/>
       
-      <div class="dashboardContent">
-        <LateralPanel/>
+      <!-- <div class="screenContent">
+        <Profile />
         
-        <div class="projectSummaryTitle">
-          <h3 v-text="projectName"></h3>
-        </div>
-        <FeaturedGoal/>
+        <div class="dashboardContent">
+          <LateralPanel/>
+          
+          <div class="projectSummaryTitle">
+            <h3 v-text="projectName"></h3>
+          </div>
+          <FeaturedGoal/>
 
-        <div class="projectSummaryData">
-          <ProjectUsers/>
-          <GeneralStatistic/>
+          <div class="projectSummaryData">
+            <ProjectUsers/>
+            <GeneralStatistic/>
+          </div>
         </div>
-      </div>
 
+      </div> -->
     </div>
   </div>
 </template>

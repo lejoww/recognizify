@@ -1,18 +1,13 @@
 
-.lateral-menu-container {
-    grid-column: 1 / 4;
-    grid-row: 1 / 13;
-    padding: 1.5rem 2rem;
-    background-color: #ffffff00;
+.sidebarMenu {
+    width: 21vw;
+    height: 100vh;
+    background-color: #11091C;
     position: relative;
-    z-index: 10;
 }
 
-.lateral-menu-container .lateral-menu-header .logotype {
-    width: 152px;
-    height: 27px;
-    background-image: url('../logo-common-cutted.png');
-    background-size: 152px;
+.sidebarMenu .sidebarWrapper {
+    padding: 2rem;
 }
 
 .lateral-menu-container .lateral-menu-body {
