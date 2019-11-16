@@ -1,10 +1,9 @@
 <template>
     <div id="users">
-        <div class="screenContent">
-            <Profile/>
-            
+        <div class="baseLayout">
+            <BurgerMenu/>
+            <LateralPanel/>
             <div class="dashboardContent">
-                <LateralPanel/>
                 <UserRegistry/>
             </div>
         </div>
@@ -12,20 +11,18 @@
 </template>
 <script>
 
-    import UserNavbar from '@/components/UserNavbar.vue'
     import UserRegistry from '@/components/UserRegistry.vue'
     import LateralPanel from '@/components/LateralPanel.vue'
-    import Profile from '@/components/Profile.vue'
+    import BurgerMenu from '@/components/BurgerMenu.vue'
 
     import '@/assets/css/feed.css'
     import '@/assets/css/userRegistry.css'
 
     export default {
         components: {
-            UserNavbar,
             UserRegistry,
             LateralPanel,
-            Profile
+            BurgerMenu
         },
         created: function(){
             if (this.$router.history.current.params["projectId"] == 'undefined') {

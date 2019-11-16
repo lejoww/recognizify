@@ -11,13 +11,13 @@
                 </div>
             </div>
             <div class="profileOptions">
-                <router-link to="/account/configuration">
+                <router-link to="/account/configuration" >
                     <svg class="feather-menu">
                         <use xlink:href="@/assets/svg/feather-sprite.svg#settings"/>
                     </svg>
                 </router-link>
-                <a href="#" @click="closeSession" style="margin-left: 12px">
-                    <svg class="feather-menu">
+                <a href="#" @click="closeSession" style="margin-left: 7px" data-toggle="tooltip" data-placement="top" title="Cerrar sesión">
+                    <svg class="feather-red">
                         <use xlink:href="@/assets/svg/feather-sprite.svg#log-out"/>
                     </svg>
                 </a>

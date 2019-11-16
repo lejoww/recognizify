@@ -1,22 +1,23 @@
 <template>
     <div id="configuration">
-
-        <div class="screenContent">
-            <Profile/>
+        <div class="baseLayout">
+            <BurgerMenu/>
+            <LateralPanel/>
             <div class="dashboardContent">
-                <div class="alert alert-secondary" role="alert" style="display: none" id="alert-success">
-                    Bien! Tus datos han sido correctamente cambiados.
-                </div>
-                <div class="configurationView">
-                    <div class="configurationAlignment">
-                        <a href="javascript: history.go(-1)" style="display: flex; margin-bottom: 1rem">
-                            <svg class="feather-dark">
-                                <use xlink:href="@/assets/svg/feather-sprite.svg#arrow-left"/>
-                            </svg>
-                            <h6>Volver atrás</h6>
-                        </a>
+                <div class="dashboardContent">
+                    <div class="alert alert-secondary" role="alert" style="display: none" id="alert-success">
+                        Bien! Tus datos han sido correctamente cambiados.
+                    </div>
+                    <div class="configurationView">
+                        <div class="configurationAlignment">
+                            <a href="javascript: history.go(-1)" style="display: flex; margin-bottom: 1rem">
+                                <svg class="feather-dark">
+                                    <use xlink:href="@/assets/svg/feather-sprite.svg#arrow-left"/>
+                                </svg>
+                                <h6>Volver atrás</h6>
+                            </a>
 
-                        <h2>Configuración</h2><br>
+                            <h2>Configuración</h2><br>
 
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
@@ -78,16 +79,14 @@
     import firebase from 'firebase'
 
     import LateralPanel from '@/components/LateralPanel.vue'
-    import Profile from '@/components/Profile.vue'
-    import UserNavbar from '@/components/UserNavbar.vue'
+    import BurgerMenu from '@/components/BurgerMenu.vue'
 
     import '@/assets/css/feed.css'
 
     export default {
         components: {
             LateralPanel,
-            Profile,
-            UserNavbar
+            BurgerMenu
         },
         data(){
             return {

@@ -3,7 +3,6 @@
     <div class="baseLayout">
       <BurgerMenu/>
       <LateralPanel/>
-      
       <div class="dashboardContent">
 
           <!-- <div class="projectSummaryTitle">
@@ -14,7 +13,6 @@
             <ProjectUsers/>
             <GeneralStatistic/>
           </div>
-
       </div>
     </div>
   </div>

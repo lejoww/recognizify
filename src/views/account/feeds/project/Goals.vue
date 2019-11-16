@@ -34,12 +34,11 @@
                 </div>
             </div>
         </div>
-        <div class="screenContent">
-            <Profile/>
 
+        <div class="baseLayout">
+            <BurgerMenu/>
+            <LateralPanel/>
             <div class="dashboardContent">
-                <LateralPanel/>
-
                 <div class="projectSummaryTitle">
                     <h3>
                         Metas
@@ -59,7 +58,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="nonGoalsField" v-if="goals.length == 0">
                     <div>
                         <h3 style="color: #9e95aa;">No tienes nuevas metas</h3>
@@ -76,6 +74,7 @@
 
     import Profile from '@/components/Profile.vue'
     import LateralPanel from '@/components/LateralPanel.vue'
+    import BurgerMenu from '@/components/BurgerMenu.vue'
 
     import '@/assets/css/feed.css'
     import '@/assets/css/goals.css'
@@ -101,7 +100,8 @@
         },
         components: {
             Profile,
-            LateralPanel
+            LateralPanel,
+            BurgerMenu
         },
         methods: {
             saveGoal: function(){

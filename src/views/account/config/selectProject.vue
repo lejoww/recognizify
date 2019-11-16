@@ -1,14 +1,11 @@
 <template>
   <div id="select-project">
-    <div class="preloader-wall" id="preloaderWall">
-      <div class="preloader">
-        <img class="planet" src="@/assets/isotipe-color.svg" alt="Isotipo de Recognizify">
-      </div>
-    </div>
-    <div class="screenContent">
+    <div class="baseLayout">
+      <BurgerMenu/>
+      <LateralPanel/>
+
       <div class="dashboardContent">
 
-        <LateralPanel/>
         <div class="nonProjectsBanner" id="bgNoneProjects" v-if="projects.length == 0">
           <div class="image-representation">
             <img src="@/assets/ilustrations/born-robot.png" alt="Robot despertando" />
@@ -24,7 +21,7 @@
             </a>
           </div>
         </div>
-
+        
         <div class="projectsField" id="projectsContent" v-if="projects.length >= 1">
           <img src="@/assets/ilustrations/selection.png" alt="Personas seleccionando una opción entre una lista" width="347px">
           <h2>¿En qué idea trabajarás ahora?</h2>
@@ -67,6 +64,11 @@
         </div>
       </div>
     </div>
+    <!-- <div class="preloader-wall" id="preloaderWall">
+      <div class="preloader">
+        <img class="planet" src="@/assets/isotipe-color.svg" alt="Isotipo de Recognizify">
+      </div>
+    </div> -->
   </div>
 </template>
 <script>
@@ -75,6 +77,7 @@
 
     import Profile from '@/components/Profile.vue'
     import LateralPanel from '@/components/LateralPanel.vue'
+    import BurgerMenu from '@/components/BurgerMenu.vue'
 
     export default {
     data() {
@@ -84,11 +87,12 @@
     },
     components: {
       Profile,
-      LateralPanel
+      LateralPanel,
+      BurgerMenu
     },
     mounted: function() {
-      let preloaderWall = document.querySelector("#preloaderWall")
-      setTimeout(() => (preloaderWall.style.display = "none"), 700)
+      // let preloaderWall = document.querySelector("#preloaderWall")
+      // setTimeout(() => (preloaderWall.style.display = "none"), 700)
       this.setProjectsOnListFeed()
     },
     methods: {

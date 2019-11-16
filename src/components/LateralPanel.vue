@@ -20,15 +20,6 @@
           </li>
 
           <li>
-            <router-link to="/account/configuration" class="lateralPanelOption">
-              <svg class="feather-menu">
-                <use xlink:href="@/assets/svg/feather-sprite.svg#settings" />
-              </svg>
-              <span class="lateralMenuLink">Ajustes</span>
-            </router-link>
-          </li>
-
-          <li>
             <router-link to="/notifications" class="lateralPanelOption">
               <div class="stackable">
                 <div class="littleStack">

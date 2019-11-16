@@ -61,7 +61,7 @@ div#login .form-container .form-group input {
     align-items: center;
 }
 
-.account-complete h3, p {
+.account-complete h3, .account-complete p {
     text-align: center
 }
 

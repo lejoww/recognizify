@@ -1,10 +1,9 @@
 <template>
     <div id="notifications">
-        <div class="screenContent">
-            <Profile/>
-            
+        <div class="baseLayout">
+            <BurgerMenu/>
+            <LateralPanel/>
             <div class="dashboardContent">
-                <br>
                 <div class="notificationsContent" id="notificationsContent">
                     <a href="javascript: history.go(-1)" style="display: flex; margin-bottom: 1rem">
                         <svg class="feather-dark">
@@ -15,7 +14,7 @@
 
                     <h2>Notificaciones</h2>
                     <p style="text-align: left">Puede haber cosas aquí que no salgan muy bien. Recuerda que estamos en versión BETA.</p>
-               
+                
                 </div>
             </div>
         </div>
@@ -25,14 +24,14 @@
     
     import firebase from 'firebase'
     import LateralPanel from '@/components/LateralPanel.vue'
-    import Profile from '@/components/Profile.vue'
+    import BurgerMenu from '@/components/BurgerMenu.vue'
 
     import '@/assets/css/feed.css'
 
     export default {
         components: {
             LateralPanel,
-            Profile
+            BurgerMenu
         },
         mounted: function() {
             this.getInvitations()
