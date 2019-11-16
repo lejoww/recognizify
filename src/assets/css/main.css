@@ -204,3 +204,13 @@ a.router-link-exact-active:hover, a:hover {
     stroke-linejoin: round;
     fill: none;
 }
+
+.feather-burger {
+    width: 32px;
+    height: 32px;
+    stroke: #0B0B14;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}

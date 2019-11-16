@@ -1,5 +1,5 @@
 <template>
-    <div class="sidebarMenu">
+    <div class="sidebarMenu" id="sidebarMenu">
       <div class="sidebarWrapper">
         <div class="sidebarBrand">
           <img src="@/assets/logo-white-cutted.svg" width="152px">

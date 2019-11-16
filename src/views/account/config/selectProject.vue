@@ -1,6 +1,5 @@
 <template>
   <div id="select-project">
-    <Profile/>
     <div class="preloader-wall" id="preloaderWall">
       <div class="preloader">
         <img class="planet" src="@/assets/isotipe-color.svg" alt="Isotipo de Recognizify">

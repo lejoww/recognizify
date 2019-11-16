@@ -1,26 +1,21 @@
 <template>
   <div id="feed">
     <div class="baseLayout">
+      <BurgerMenu/>
       <LateralPanel/>
       
-      <!-- <div class="screenContent">
-        <Profile />
-        
-        <div class="dashboardContent">
-          <LateralPanel/>
-          
-          <div class="projectSummaryTitle">
-            <h3 v-text="projectName"></h3>
-          </div>
-          <FeaturedGoal/>
+      <div class="dashboardContent">
 
+          <!-- <div class="projectSummaryTitle">
+            <h3 v-text="projectName"></h3>
+          </div> -->
+          <FeaturedGoal/>
           <div class="projectSummaryData">
             <ProjectUsers/>
             <GeneralStatistic/>
           </div>
-        </div>
 
-      </div> -->
+      </div>
     </div>
   </div>
 </template>
@@ -34,11 +29,13 @@
   import GeneralStatistic from "@/components/project/statistics/GeneralStatistic.vue";
   import ProjectUsers from "@/components/project/statistics/ProjectUsers.vue";
   import FeaturedGoal from "@/components/project/FeaturedGoal.vue";
+  import BurgerMenu from "@/components/BurgerMenu.vue"
 
   import Vue from 'vue'
 
   import "@/assets/css/main.css";
   import "@/assets/css/feed.css";
+  import "@/assets/css/lateralMenu.css";
 
   export default {
     data() {
@@ -52,7 +49,8 @@
       Profile,
       GeneralStatistic,
       ProjectUsers,
-      FeaturedGoal
+      FeaturedGoal,
+      BurgerMenu
     },
     created: function() {
       if (this.$route.params["projectId"] == 'undefined') {

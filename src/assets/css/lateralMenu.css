@@ -1,9 +1,9 @@
 
 .sidebarMenu {
-    width: 21vw;
-    height: 100vh;
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
     background-color: #11091C;
-    position: relative;
+    display: none;
 }
 
 .sidebarMenu .sidebarWrapper {
@@ -18,7 +18,7 @@
 
 .lateral-menu-container .lateral-menu-body .lateralPanelOption {
     width: 100%;
-    margin: 1em 0;
+    margin: 22.4px 0;
 }
 
 .lateral-menu-container .lateral-menu-body .modules {
@@ -26,12 +26,11 @@
     flex-direction: column;
 }
 
-.lateral-menu-container .lateral-menu-body .lateralPanelOption .lateralMenuLink {
-    color: #48485B;
+.lateralPanelOption .lateralMenuLink {
+    color: #F2F2F2;
     font-weight: 700;
-    font-size: 14px;
-    margin-left: 8px;
-    letter-spacing: -0.4px;
+    font-size: 12.5px;
+    margin-left: 12px;
 }
 
 .lateral-menu-container .lateral-menu-body .lateralPanelOption .lateralMenuLink:hover {
@@ -44,6 +43,7 @@ div.overline {
     color: #8B92A8;
     text-transform: uppercase;
     letter-spacing: 1.7px;
+    margin-bottom: 17px;
 }
 
 .dropdown-menu {
@@ -71,97 +71,69 @@ div.overline {
     display: flex
 }
 
+.sidebarNav li {
+    margin: 0 0 22px 0;
+}
+
+.sidebarActive {
+    display: block;
+    animation: slideFromLeft 700ms forwards;
+}
+
+#menu {
+    display: none;
+    padding: 14px;
+}
+
+@keyframes slideFromLeft {
+    0% {
+        left: -680px;
+    }
+    100% {
+        left: 0;
+    }
+}
+
 @keyframes standOutColor {
     to { color: #6610f2 }
 }
 
-@media screen and (max-width: 991px) {
-    .lateral-menu-container {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: #fff;
-        position: fixed;
-        bottom: 0;
-        border-top: 1px solid #cccccc;
-    }
-
-    .lateral-menu-container .lateral-menu-body {
-        flex-direction: row;
-        margin-top: 0;
-    }
-
-    .lateral-menu-container .lateral-menu-body .lateralPanelOption {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0 12px;
-    }
-
-    .lateral-menu-container .lateral-menu-body .lateralPanelOption.dropdownOption {
-        flex-direction: row;
-        align-items: flex-start;
-    }
-
-    div.overline,
-    .lateral-menu-container .lateral-menu-body .modules {
-        display: none;
-    }
-
-    .modulesDropdown {
+@media screen and (min-width: 1284px){
+    .sidebarMenu {
         display: block;
-        padding: 0 16px;
-    }
-
-    .stackable {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .littleStack {
-        display: flex;
     }
 }
+
+@media screen and (max-width: 1284px){
+    .sidebarMenu { 
+        grid-row: 1 / 5;
+        position: relative;
+        z-index: 1;
+    }
+
+    .sidebarMenu .sidebarWrapper {
+        padding: 1rem;
+    }
+
+    #menu {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 952px) {
+    .sidebarMenu {
+        width: 81vw;
+    }
+}
+
+/* @media screen and (max-width: 991px) {
+
+} */
 
 @media screen and (max-width: 767px) {
-    .lateral-menu-container .lateral-menu-header .logotype {
-        width: 48px;
-        background-image: url('../isotipe-color.svg');
-        background-size: 48px;
-    }
-
-    .lateral-menu-container .lateral-menu-body .lateralPanelOption {
-        margin: 0 6px;
-        font-size: 13px;
-    }
-
-    .lateral-menu-container {
-        padding: 1em;
-    }
-}
-
-@media screen and (max-width: 512px) {
-    .lateral-menu-container .lateral-menu-header {
-        display: none;
-    }
-
-    .lateral-menu-container .lateral-menu-body {
-        width: 100%;
-        justify-content: space-around;
-    }
-
-    .lateral-menu-container .lateral-menu-body .lateralPanelOption {
-        margin: 0;
-    }
-
-    .lateral-menu-container .lateral-menu-body .lateralPanelOption .lateralMenuLink {
-        margin: 0;
-    }
+    .sidebarMenu { width: 81vw; }
 }
 
 @media screen and (max-width: 479px) {
-    .lateral-menu-container .lateral-menu-body .lateralPanelOption {
-        margin: 0 4px;
-    }
+    /* .sidebarMenu { width: 25vw; } */
 }
