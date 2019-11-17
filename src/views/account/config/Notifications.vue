@@ -1,8 +1,5 @@
 <template>
     <div id="notifications">
-        <div class="baseLayout">
-            <BurgerMenu/>
-            <LateralPanel/>
             <div class="dashboardContent">
                 <div class="notificationsContent" id="notificationsContent">
                     <a href="javascript: history.go(-1)" style="display: flex; margin-bottom: 1rem">
@@ -17,7 +14,6 @@
                 
                 </div>
             </div>
-        </div>
     </div>
 </template>
 <script>

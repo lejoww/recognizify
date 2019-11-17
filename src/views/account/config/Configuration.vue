@@ -1,8 +1,5 @@
 <template>
     <div id="configuration">
-        <div class="baseLayout">
-            <BurgerMenu/>
-            <LateralPanel/>
             <div class="dashboardContent">
                 <div class="dashboardContent">
                     <div class="alert alert-secondary" role="alert" style="display: none" id="alert-success">
@@ -70,7 +67,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
 </template>

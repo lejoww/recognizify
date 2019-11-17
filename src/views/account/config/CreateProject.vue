@@ -101,7 +101,7 @@
                                 member: true,
                                 role: ''
                             })
-                            .then(() => this.$router.push('/select'))
+                            .then(() => this.$router.push('/dashboard/select'))
                             .catch(err => console.error(err))
                         })
                         .catch(err => console.error(err))

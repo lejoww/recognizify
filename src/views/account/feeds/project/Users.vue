@@ -1,11 +1,7 @@
 <template>
     <div id="users">
-        <div class="baseLayout">
-            <BurgerMenu/>
-            <LateralPanel/>
-            <div class="dashboardContent">
-                <UserRegistry/>
-            </div>
+        <div class="dashboardContent">
+            <UserRegistry/>
         </div>
     </div>
 </template>

@@ -2,7 +2,7 @@
     <div class="sidebarMenu" id="sidebarMenu">
       <div class="sidebarWrapper">
         <div class="sidebarBrand">
-          <img src="@/assets/logo-white-cutted.svg" width="152px">
+          <img src="@/assets/logo-white-cutted.svg" width="142px">
         </div>
         <div class="sidebarAccount">
           <Profile/>
@@ -20,7 +20,7 @@
           </li>
 
           <li>
-            <router-link to="/notifications" class="lateralPanelOption">
+            <router-link to="/account/notifications" class="lateralPanelOption">
               <div class="stackable">
                 <div class="littleStack">
                   <svg class="feather-menu" id="invitationsIcon">
@@ -93,10 +93,10 @@
         this.getAndSetActiveProjects()
         firebase.auth().onAuthStateChanged(user => {
           const projectCode = this.$router.history.current.params.projectId
-          this.usersPath = `/project/${projectCode}/membership`
-          this.feedPath = `/project/${projectCode}/feed`
-          this.boardPath = `/project/${projectCode}/board`
-          this.goalsPath = `/project/${projectCode}/goals`
+          this.usersPath = `/dashboard/project/${projectCode}/membership`
+          this.feedPath = `/dashboard/project/${projectCode}/feed`
+          this.boardPath = `/dashboard/project/${projectCode}/board`
+          this.goalsPath = `/dashboard/project/${projectCode}/goals`
         })
       },
       methods: {

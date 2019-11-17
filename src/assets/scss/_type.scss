@@ -12,9 +12,9 @@ h1, h2, h3, h4, h5, h6,
   color: $gray-900;
 }
 
-// h1, h2, h3 {
-//   letter-spacing: -1.5px;
-// }
+h1, h2, h3 {
+  letter-spacing: -1.5px;
+}
 
 h1, .h1 { 
   @include font-size($h1-font-size); 

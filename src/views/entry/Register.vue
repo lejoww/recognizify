@@ -61,9 +61,9 @@
                             .then(res => {
                                 if (res.data() == null | res.data() == undefined){
                                     localStorage.betaAccess = checkbox
-                                    this.$router.push('/welcome/account')
+                                    this.$router.push('/account/welcome')
                                 } else {
-                                    this.$router.push('/select')
+                                    this.$router.push('/dashboard/select')
                                 }
                             })
                         })

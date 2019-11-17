@@ -30,11 +30,11 @@
 
 .profileData .profileIdentity .profileName {
     font-weight: 700;
-    font-size: 12.5px;
+    font-size: 14px;
 }
 
 .profileData .profileIdentity .profileUsername {
     font-weight: 700;
-    font-size: 12px;
+    font-size: 13px;
     color: rgba(179, 185, 203, 0.7)
 }

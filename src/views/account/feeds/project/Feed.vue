@@ -1,8 +1,5 @@
 <template>
   <div id="feed">
-    <div class="baseLayout">
-      <BurgerMenu/>
-      <LateralPanel/>
       <div class="dashboardContent">
 
           <!-- <div class="projectSummaryTitle">
@@ -14,7 +11,6 @@
             <GeneralStatistic/>
           </div>
       </div>
-    </div>
   </div>
 </template>
 <script>
@@ -52,7 +48,7 @@
     },
     created: function() {
       if (this.$route.params["projectId"] == 'undefined') {
-        this.$router.push('/select')
+        this.$router.push('/dashboard/select')
       } else {
         this.setProjectName()
       }

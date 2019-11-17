@@ -21,24 +21,21 @@
     margin: 22.4px 0;
 }
 
-.lateral-menu-container .lateral-menu-body .modules {
-    display: flex;
-    flex-direction: column;
-}
-
 .lateralPanelOption .lateralMenuLink {
     color: #F2F2F2;
-    font-weight: 700;
-    font-size: 12.5px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
     margin-left: 12px;
 }
 
-.lateral-menu-container .lateral-menu-body .lateralPanelOption .lateralMenuLink:hover {
+.lateralPanelOption .lateralMenuLink:hover {
     animation: standOutColor 300ms forwards;
 }
 
 div.overline {
-    font-size: 12px;
+    font-family: "Open sans";
+    font-size: 11px;
     font-weight: 700;
     color: #8B92A8;
     text-transform: uppercase;
@@ -95,7 +92,7 @@ div.overline {
 }
 
 @keyframes standOutColor {
-    to { color: #6610f2 }
+    to { color: #b0a2c7 }
 }
 
 @media screen and (min-width: 1284px){
@@ -112,7 +109,7 @@ div.overline {
     }
 
     .sidebarMenu .sidebarWrapper {
-        padding: 1rem;
+        padding: 1.6rem;
     }
 
     #menu {

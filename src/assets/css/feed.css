@@ -410,6 +410,7 @@ a:hover {
 @media screen and (max-width: 1284px) {
     .baseLayout {
         grid-template-rows: 62px 312px repeat(2, 1fr);
+        grid-template-columns: 21vw 79vw;
     }
 
     .dashboardContent {

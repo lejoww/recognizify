@@ -40,7 +40,7 @@
                         this.addActivityPoint()
                         firebase.firestore().collection('users').doc(user.uid).collection('invitations').doc(projectCode).delete()
                             .then(() => {
-                                this.$router.push('/select')
+                                this.$router.push('/dashboard/select')
                             })   
                     })
                 })

@@ -1,6 +1,5 @@
 <template>
     <div id="board">
-        <div class="baseLayout">
             <div class="modal fade in" id="helpingModal" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -23,9 +22,6 @@
                     </div>
                 </div>
             </div>
-
-            <BurgerMenu/>
-            <LateralPanel/>
             <div class="dashboardContent">
                 <div class="projectBoard">
                     <div>
@@ -77,7 +73,6 @@
                 </div>
             </div>
         </div>
-    </div>
 </template>
 <script>
 
@@ -110,7 +105,7 @@
         mixins: [AddPoints],
         created: function(){
             if (this.$router.history.current.params["projectId"] == 'undefined') {
-                this.$router.push('/select')
+                this.$router.push('/dashboard/select')
             }
         },
         mounted: function(){

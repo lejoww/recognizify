@@ -35,9 +35,6 @@
             </div>
         </div>
 
-        <div class="baseLayout">
-            <BurgerMenu/>
-            <LateralPanel/>
             <div class="dashboardContent">
                 <div class="projectSummaryTitle">
                     <h3>
@@ -65,7 +62,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     </div>
 </template>
 <script>
@@ -93,7 +89,7 @@
         },
         created: function(){
             if (this.$router.history.current.params["projectId"] == 'undefined') {
-                this.$router.push('/select')
+                this.$router.push('/dashboard/select')
             } else {
                 this.getGoals()
             }

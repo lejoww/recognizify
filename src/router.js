@@ -15,59 +15,65 @@ const routes = [
     component: () => import('./views/entry/Register.vue')
   },
   {
-    path: '/select',
-    name: 'select_project',
-    component: () => import('./views/account/config/selectProject.vue')
-  },
-  {
-    path: '/notifications',
-    name: 'account_notifications',
-    component: () => import('./views/account/config/Notifications.vue')
-  },
-  {
-    path: '/welcome/account',
-    name: 'welcome_account_complete',
-    component: () => import('./views/account/config/CompleteAccountInfo.vue')
-  },
-  {
-    path: '/create/project',
-    name: 'create_project',
-    component: () => import('./views/account/config/CreateProject.vue')
-  },
-  {
-    path: '/project/:projectId/feed',
-    name: 'project_feed',
-    component: () => import('./views/account/feeds/project/Feed.vue')
-  },
-  {
-    path: '/project/:projectId/membership',
-    name: 'project_membership',
-    component: () => import('./views/account/feeds/project/Users.vue')
-  },
-  {
-    path: '/project/:projectId/board',
-    name: 'project_board',
-    component: () => import('./views/account/feeds/project/Board.vue')
-  },
-  {
-    path: '/project/:projectId/goals',
-    name: 'project_goals',
-    component: () => import('./views/account/feeds/project/Goals.vue')
-  },
-  {
-    path: '/account/:projectId/accept',
-    name: 'accept_invitation',
-    component: () => import('./views/account/config/AcceptInvitation.vue')
-  },
-  {
     path: '/credits',
     name: 'credits',
     component: () => import('./views/entry/Credits.vue')
   },
+
   {
-    path: '/account/configuration',
-    name: 'account_config',
-    component: () => import('./views/account/config/Configuration.vue')
+    path: '/dashboard',
+    name: 'base_dashboard',
+    component: () => import('./views/account/feeds/Dashboard.vue'),
+    children: [
+      {
+        path: 'select', 
+        component: () => import('./views/account/config/selectProject.vue')
+      },
+      {
+        path: 'project/:projectId/feed', 
+        component: () => import('./views/account/feeds/project/Feed.vue')
+      },
+      {
+        path: 'project/:projectId/membership', 
+        component: () => import('./views/account/feeds/project/Users.vue')
+      },
+      {
+        path: 'project/:projectId/board', 
+        component: () => import('./views/account/feeds/project/Board.vue')
+      },
+      {
+        path: 'project/:projectId/goals', 
+        component: () => import('./views/account/feeds/project/Goals.vue')
+      },
+    ]
+  },
+  {
+    path: '/account',
+    name: 'base_onboarding',
+    component: () => import('./views/account/feeds/Dashboard.vue'),
+    children: [
+      {
+        path: 'notifications',
+        component: () => import('./views/account/config/Notifications.vue')
+      },
+      {
+        path: 'welcome',
+        name: 'welcome_account_complete',
+        component: () => import('./views/account/config/CompleteAccountInfo.vue')
+      },
+      {
+        path: 'create/project',
+        component: () => import('./views/account/config/CreateProject.vue')
+      },
+      {
+        path: ':projectId/accept',
+        component: () => import('./views/account/config/AcceptInvitation.vue')
+      },
+      {
+        path: 'configuration',
+        component: () => import('./views/account/config/Configuration.vue')
+      }
+    ]
   }
 ]
 

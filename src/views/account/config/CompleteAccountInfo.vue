@@ -78,7 +78,7 @@
                             user: this.user,
                             betaAccess: localStorage.betaAccess
                         })
-                            .then(() => this.$router.push('/select'))
+                            .then(() => this.$router.push('/dashboard/select'))
                             .catch(err => console.error(err))
                     }
                 })

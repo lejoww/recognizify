@@ -44,12 +44,13 @@
         data (){
             return {
                 email: '',
-                password: ''
+                password: '',
+                account: true
             }
         },
         mounted: function (){
             firebase.auth().onAuthStateChanged(user => {
-                if (user) this.$router.push('/select');
+                if (user) this.$router.push('/dashboard/select');
             })
         },
         methods: {
@@ -63,9 +64,9 @@
                         firebase.firestore().collection('users').doc(user.uid).get()
                             .then(res => {
                                 if (res.data() == null | res.data() == undefined){
-                                    this.$router.push('/welcome/account')
+                                    this.$router.push('/account/welcome')
                                 } else {
-                                    this.$router.push('/select')
+                                    this.$router.push('/dashboard/select')
                                 }
                             })
                     })
