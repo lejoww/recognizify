@@ -57,7 +57,7 @@
 
 .projectSummaryCard {
     /* grid-column: 4 / 10; */
-    padding: 21px;
+    padding: 14px 17px;
     margin: 0.5em;
     background-color: #ffff;
     border: 1px solid #D5D3D3;
@@ -96,14 +96,12 @@
 }
 
 .projectSummaryCard .usersList li .userName {
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: -0.2px;
-    font-size: 14px;
     margin: -2px 0 0 0;
 }
 
 .projectSummaryCard .usersList li .userName span {
-    font-family: "Open Sans";
     font-weight: 600;
     margin-left: 3px;
 }
@@ -345,10 +343,12 @@ a:hover {
 
 .muted-gray {
     color: #9797ac;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: none;
-    font-size: 14px;
+    font-size: 15px;
 }
+
+.stronger { font-weight: 700; }
 
 .card-body .card-title {
     font-weight: 700;

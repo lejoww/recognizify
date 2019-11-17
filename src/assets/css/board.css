@@ -1,5 +1,6 @@
 .projectBoard {
     grid-column: 4 / 19;
+    padding: 1rem;
 }
 
 .btn-save {

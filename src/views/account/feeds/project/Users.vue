@@ -22,7 +22,7 @@
         },
         created: function(){
             if (this.$router.history.current.params["projectId"] == 'undefined') {
-                this.$router.push('/select')
+                this.$router.push('/dashboard/select')
             }
         }
     }

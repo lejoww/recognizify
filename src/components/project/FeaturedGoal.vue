@@ -3,12 +3,12 @@
         <div class="goalNoticeContent">
             <div class="goalNoticeOpacity" v-if="featuredGoal.name != ''">
                 <h1><span class="badge badge-secondary">Tu principal objetivo</span></h1>
-                <h1 class="text-white" v-text="featuredGoal.name"></h1>
+                <h2 class="text-white" v-text="featuredGoal.name"></h2>
                 <p class="text-white" v-text="featuredGoal.motivation"></p>
             </div>
 
             <div class="goalNonNoticeOpacity" v-if="featuredGoal.name == ''">
-                <h1 class="text-white">Calcula hasta dónde puedes llegar</h1>
+                <h2 class="text-white">Calcula hasta dónde puedes llegar</h2>
                 <p class="text-white">Crea metas y motívate en ellas todos los días, el éxito comienza hoy.</p>
                 <a href="#" class="btn btn-warning btn-sm">
                     <router-link class="text-white" :to="`/project/${this.$route.params.projectId}/goals`">

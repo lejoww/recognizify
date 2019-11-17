@@ -1,12 +1,14 @@
 <template>
     <div class="projectSummaryCard">
         <div class="row" style="align-items:center; justify-content: space-between; padding: 0 1em">
-            <h4 class="muted-gray">Usuarios registrados</h4>
-            <button class="btn btn-warning btn-sm">
-                <router-link class="text-white" :to="`/project/${this.$route.params.projectId}/membership`">Administrar</router-link>
-            </button>
+            <span class="muted-gray">Usuarios registrados</span>
+            <span>
+                <router-link class="text-warning stronger" :to="`/dashboard/project/${this.$route.params.projectId}/membership`">
+                    Administrar
+                </router-link>
+            </span>
         </div>
-        <hr>
+        <br>
         <div class="scrollable">
             <ol class="usersList" id="usersList">
                 <li :key="userInProject['name']" v-for="(userInProject, name, user) in usersInProject">

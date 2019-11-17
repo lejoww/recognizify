@@ -92,7 +92,7 @@
         this.setInvitationsNumber()
         this.getAndSetActiveProjects()
         firebase.auth().onAuthStateChanged(user => {
-          const projectCode = this.$router.history.current.params.projectId
+          const projectCode = this.$route.params.projectId
           this.usersPath = `/dashboard/project/${projectCode}/membership`
           this.feedPath = `/dashboard/project/${projectCode}/feed`
           this.boardPath = `/dashboard/project/${projectCode}/board`
