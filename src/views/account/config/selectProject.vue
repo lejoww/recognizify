@@ -1,5 +1,4 @@
 <template>
-  <div id="select-project">
       <div class="dashboardContent">
 
         <div class="nonProjectsBanner" id="bgNoneProjects" v-if="projects.length == 0">
@@ -27,7 +26,7 @@
           <div id="projectsField">
             <ul style="list-style: none">
               <li class="project-el" :key="project" v-for="project in projects">
-                <router-link :to="`/dashboard/project/${project.id}/feed`">
+                <a :href="`/dashboard/project/${project.id}/feed`">
                   <div class="card project-card" style="width: 17rem; margin-right: 1rem">
                     <div class="card-body">
                       <h6 class="card-title">
@@ -38,7 +37,7 @@
                       </h6>
                     </div>
                   </div>
-                </router-link>
+                </a>
               </li>
               
               <li class="project-el">
@@ -64,7 +63,6 @@
         <img class="planet" src="@/assets/isotipe-color.svg" alt="Isotipo de Recognizify">
       </div>
     </div> -->
-  </div>
 </template>
 <script>
     import firebase from "firebase";

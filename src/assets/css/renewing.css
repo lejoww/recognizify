@@ -1,0 +1,39 @@
+
+.renewingOfferContainer {
+    width: 46%;
+    padding: 18px;
+    margin: 7px 0 3rem 0;
+    background: #FF524C;
+    border-radius: 5px;
+}
+
+.renewingOfferContainer .renewingOfferPurpose {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+}
+
+.renewingOfferContainer .renewingOfferPurpose .renewingOfferTitle {
+    margin-top: 1rem;
+}
+
+.renewingOfferContainer .renewingOfferPurpose .buttonWrapper {
+    display: block;
+    position: relative;
+    right: 0;
+}
+
+@media screen and (max-width: 991px) {
+    .renewingOfferContainer { width: 96%; }
+}
+
+@media screen and (max-width: 767px) {
+    .renewingOfferContainer { 
+        margin: 0 7px;
+    }
+    .renewingOfferContainer .renewingOfferPurpose {
+        position: static;
+    }
+}

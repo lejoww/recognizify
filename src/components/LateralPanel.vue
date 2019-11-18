@@ -88,9 +88,10 @@
       components: {
         Profile
       },
-      created(){
+      mounted: function(){
         this.setInvitationsNumber()
         this.getAndSetActiveProjects()
+        
         firebase.auth().onAuthStateChanged(user => {
           const projectCode = this.$route.params.projectId
           this.usersPath = `/dashboard/project/${projectCode}/membership`

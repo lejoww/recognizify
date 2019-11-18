@@ -6,7 +6,7 @@
                     <img class="profilePicture" v-bind:src="urlPhotoPath">
                 </div>
                 <div class="profileIdentity">
-                    <span class="profileName text-white" v-text="currentAccount.name"></span>
+                    <span class="profileName text-white" v-text="currentAccount.nickname"></span>
                     <span class="profileUsername" v-text="'@' + currentAccount.username"></span>
                 </div>
             </div>
@@ -36,7 +36,7 @@
             return {   
                 urlPhotoPath: '',
                 currentAccount: {
-                    name: '',
+                    nickname: '',
                     username: ''
                 }
             }
@@ -56,7 +56,7 @@
                 firebase.auth().onAuthStateChanged(user => {
                     firebase.firestore().collection('users').doc(user.uid).get()
                     .then(data => {
-                        this.currentAccount.name = data.data()['name']
+                        this.currentAccount.nickname = data.data()['nickname']
                         this.currentAccount.username = data.data()['user']
                     })
                 })

@@ -1,16 +1,19 @@
 <template>
-  <div id="feed">
-      <div class="dashboardContent">
+  <div class="dashboardContent">
 
-          <!-- <div class="projectSummaryTitle">
-            <h3 v-text="projectName"></h3>
-          </div> -->
-          <FeaturedGoal/>
-          <div class="projectSummaryData">
-            <ProjectUsers/>
-            <GeneralStatistic/>
-          </div>
+    <!-- <div class="projectSummaryTitle">
+      <h3 v-text="projectName"></h3>
+    </div> -->
+    <FeaturedGoal/>
+    <div class="projectSummaryData">
+      <div class="rank">
+        <ProjectUsers/>
+        <GeneralStatistic/>
       </div>
+      <div class="rank">
+        <Renewing/>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -23,7 +26,8 @@
   import GeneralStatistic from "@/components/project/statistics/GeneralStatistic.vue";
   import ProjectUsers from "@/components/project/statistics/ProjectUsers.vue";
   import FeaturedGoal from "@/components/project/FeaturedGoal.vue";
-  import BurgerMenu from "@/components/BurgerMenu.vue"
+  import BurgerMenu from "@/components/BurgerMenu.vue";
+  import Renewing from "@/components/offers/Renewing.vue"
 
   import Vue from 'vue'
 
@@ -44,7 +48,8 @@
       GeneralStatistic,
       ProjectUsers,
       FeaturedGoal,
-      BurgerMenu
+      BurgerMenu,
+      Renewing
     },
     created: function() {
       if (this.$route.params["projectId"] == 'undefined') {

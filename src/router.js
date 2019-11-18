@@ -19,6 +19,16 @@ const routes = [
     name: 'credits',
     component: () => import('./views/entry/Credits.vue')
   },
+  {
+    path: '/register/info',
+    name: 'welcome_account_complete',
+    component: () => import('./views/account/config/CompleteAccountInfo.vue')
+  },
+  {
+    path: '/register/nickname',
+    name: 'welcome_account_nickname',
+    component: () => import('./views/account/config/RegisterNickname.vue')
+  },
 
   {
     path: '/dashboard',
@@ -55,11 +65,6 @@ const routes = [
       {
         path: 'notifications',
         component: () => import('./views/account/config/Notifications.vue')
-      },
-      {
-        path: 'welcome',
-        name: 'welcome_account_complete',
-        component: () => import('./views/account/config/CompleteAccountInfo.vue')
       },
       {
         path: 'create/project',

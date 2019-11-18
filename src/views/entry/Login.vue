@@ -64,7 +64,7 @@
                         firebase.firestore().collection('users').doc(user.uid).get()
                             .then(res => {
                                 if (res.data() == null | res.data() == undefined){
-                                    this.$router.push('/account/welcome')
+                                    this.$router.push('/register/info')
                                 } else {
                                     this.$router.push('/dashboard/select')
                                 }

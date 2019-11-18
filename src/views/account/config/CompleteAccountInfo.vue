@@ -18,7 +18,7 @@
                 </div><br>
                 <div class="form-row">
                     <div class="form-group">
-                        <label>¿Cómo quieres que te llamemos?</label>
+                        <label>¿Cuál es tu nombre?</label>
                         <input type="text" v-model="username" class="form-control" placeholder="Ejm. Pepito Gonzáles" spellcheck="false" autocomplete="off">
                     </div>
                     <div class="form-group">
@@ -27,7 +27,12 @@
                     </div>
                     <div class="form-group">
                         <label>Escoge un nombre de usuario</label>
-                        <input type="text" v-model="user" class="form-control" value="@" spellcheck="false" autocomplete="off">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">@</span>
+                            </div>
+                            <input type="text" class="form-control" v-model="user" placeholder="Escribe un nombre de usuario" spellcheck="false" autocomplete="off">
+                        </div>
                     </div>
                 </div>
             </div>
