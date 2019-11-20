@@ -6,8 +6,8 @@
                     <img class="profilePicture" v-bind:src="urlPhotoPath">
                 </div>
                 <div class="profileIdentity">
-                    <span class="profileName text-white" v-text="currentAccount.nickname"></span>
-                    <span class="profileUsername" v-text="'@' + currentAccount.username"></span>
+                    <span class="profileName text-white">{{this.currentAccount.nickname}}</span>
+                    <span class="profileUsername">{{'@' + currentAccount.username}}</span>
                 </div>
             </div>
             <div class="profileOptions">
@@ -41,9 +41,10 @@
                 }
             }
         },
-        mounted: function(){
+        created: function(){
             this.setProfilePicture()
             this.setIdentityData()
+            this.checkExistentIdentity()
         },
         methods: {
             setProfilePicture: function(){
@@ -58,8 +59,21 @@
                     .then(data => {
                         this.currentAccount.nickname = data.data()['nickname']
                         this.currentAccount.username = data.data()['user']
+                        console.log(this.currentAccount.nickname)
                     })
                 })
+            },
+            checkExistentIdentity: function(){
+                if (this.currentAccount.nickname == '' ||
+                    this.currentAccount.nickname == undefined ||
+                    this.currentAccount.nickname == null ||
+
+                    this.currentAccount.username == '' ||
+                    this.currentAccount.username == undefined ||
+                    this.currentAccount.username == null
+                ){
+                    this.$route.push('/register/info')
+                }
             },
             closeSession: function(){
                 firebase.auth().signOut()
