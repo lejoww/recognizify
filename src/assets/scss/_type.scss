@@ -6,7 +6,7 @@
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Open Sans";
+  font-family: $font-family-headings;
   font-weight: $font-weight-bolder;
   line-height: 1;
   color: $gray-900;

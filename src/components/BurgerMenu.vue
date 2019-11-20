@@ -1,9 +1,9 @@
 <template>
-    <a @click="openMenu" id="menu">
-        <svg class="feather-burger">
-            <use xlink:href="@/assets/svg/feather-sprite.svg#menu"/>
+    <div @click="openMenu" id="menu">
+        <svg class="feather-dark">
+            <use xlink:href="@/assets/svg/feather-sprite.svg#light"/>
         </svg>
-    </a>
+    </div>
 </template>
 <script>
 

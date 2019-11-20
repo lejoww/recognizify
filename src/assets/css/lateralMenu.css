@@ -2,7 +2,7 @@
 .headerMenu {
     width: 100vw;
     grid-row: 1 / 2;
-    background-color: #11091C;
+    background-color: #223A46;
     /* padding: 6px 12px; */
     /* display: flex; */
 }
@@ -16,7 +16,7 @@
 
 .headerBrand {
     grid-column: 1 / 2;
-    padding: 6px;
+    padding: 9px;
     display: flex;
     align-items: center;
 }
@@ -33,6 +33,11 @@
     font-weight: 600;
     font-size: 14px;
     margin-left: 12px;
+}
+
+.lateralMenuDropdownLink {
+    font-weight: 600;
+    margin: 0;
 }
 
 .lateralPanelOption .lateralMenuLink:hover {
@@ -110,7 +115,7 @@ div.overline {
     animation: slideFromLeft 700ms forwards;
 }
 
-#menu {
+.headerBurger {
     display: none;
     padding: 14px;
 }
@@ -125,7 +130,7 @@ div.overline {
 }
 
 @keyframes standOutColor {
-    to { color: #b0a2c7 }
+    to { color: #ABC0C9 }
 }
 
 @media screen and (min-width: 1284px){
@@ -134,26 +139,30 @@ div.overline {
     }
 }
 
-@media screen and (max-width: 1284px){
-    .headerMenu { 
-        grid-row: 1 / 5;
-        position: relative;
-        z-index: 1;
-    }
-
+@media screen and (max-width: 991px) {
     .headerMenu .headerWrapper {
-        padding: 1.6rem;
+        grid-template-columns: 142px 1fr;
     }
 
-    #menu {
-        display: block;
+    .headerMenu .headerWrapper .headerNav {
+        grid-column: 2 / 3;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
     }
-}
 
-@media screen and (max-width: 952px) {
-    .headerMenu {
-        width: 81vw;
+    .headerMenu .headerWrapper .headerBrand {
+        grid-column: 1 / 2;
     }
+
+    .headerMenu .headerWrapper .headerAccount {
+        margin-left: 2rem;
+    }
+
+    .headerMenu .headerWrapper .headerSearch {
+        display: none;
+    }
+
 }
 
 /* @media screen and (max-width: 991px) {
@@ -161,9 +170,16 @@ div.overline {
 } */
 
 @media screen and (max-width: 767px) {
-    .headerMenu { width: 81vw; }
+    .headerMenu .headerWrapper .headerNav {
+        display: none;
+    }
+
+    .headerBurger {
+        display: block;
+        position: absolute;
+        z-index: 100;
+        top: 60px;
+    }
 }
 
-@media screen and (max-width: 479px) {
-    /* .headerMenu { width: 25vw; } */
-}
+@media screen and (max-width: 479px) {}

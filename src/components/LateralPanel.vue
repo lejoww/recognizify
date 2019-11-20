@@ -33,43 +33,41 @@
 
               <!-- <br><div class="overline">Módulos</div> -->
               <div class="dropdown">
-                <a class="dropdown-toggle lateralPanelOption" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="lateralPanelOption" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="lateralMenuLink text-white">Módulos</span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item" href="#">
                     <router-link :to="goalsPath" class="lateralPanelOption">
-                      <svg class="feather-menu">
-                        <use xlink:href="@/assets/svg/feather-sprite.svg#flag" />
-                      </svg>
-                      <span class="lateralMenuLink text-dark">Goals</span>
+                      <span class="lateralMenuDropdownLink text-dark">Goals</span>
+                      <div><small>Controla los objetivos</small></div>
                     </router-link>
                   </a>
                   <a class="dropdown-item" href="#">
                     <router-link :to="boardPath" class="lateralPanelOption">
-                      <svg class="feather-menu">
-                        <use xlink:href="@/assets/svg/feather-sprite.svg#message-square" />
-                      </svg>
-                      <span class="lateralMenuLink text-dark">Boards</span>
+                      <span class="lateralMenuDropdownLink text-dark">Boards</span>
+                      <div><small>Llama ideas en un tablero</small></div>
                     </router-link>
                   </a>
                   <a class="dropdown-item" href="#">
                     <router-link :to="usersPath" class="lateralPanelOption">
-                      <svg class="feather-menu">
-                        <use xlink:href="@/assets/svg/feather-sprite.svg#users" />
-                      </svg>
-                      <span class="lateralMenuLink text-dark">Users</span>
+                      <span class="lateralMenuDropdownLink text-dark">Users</span>
+                      <div><small>Administra usuarios</small></div>
                     </router-link>
                   </a>
                 </div>
               </div>
             </div>
-            <div class="headerAccount">
+            <!-- <div class="headerAccount">
               <Profile/>
-            </div>
+            </div> -->
+          </div>
+          <div class="headerBurger">
+            <BurgerMenu/>
           </div>
         </div>
       </div>
+      <!-- <BurgerMenu/> -->
     </div>
 </template>
 <script>
@@ -79,6 +77,7 @@
     import '@/assets/css/mediaqueries.css'
 
     import Profile from '@/components/Profile.vue'
+    import BurgerMenu from '@/components/BurgerMenu.vue'
 
     export default {
       data(){
@@ -93,7 +92,8 @@
         }
       },
       components: {
-        Profile
+        Profile,
+        BurgerMenu
       },
       mounted: function(){
         this.setInvitationsNumber()
