@@ -1,7 +1,7 @@
 <template>
     <div @click="openMenu" id="menu">
-        <svg class="feather-dark">
-            <use xlink:href="@/assets/svg/feather-sprite.svg#light"/>
+        <svg class="feather-light">
+            <use xlink:href="@/assets/svg/feather-sprite.svg#menu"/>
         </svg>
     </div>
 </template>
@@ -11,7 +11,10 @@ export default {
     methods: {
         openMenu: function(){
             let menu = document.getElementById('sidebarMenu')
-            menu.classList.toggle('sidebarActive')
+            let drawableContent = document.getElementById('drawable')
+            menu.classList.remove('headerMenu')
+            menu.classList.add('headerMobileMenu')
+            drawableContent.style.display = 'block'
         }
     }
 }
