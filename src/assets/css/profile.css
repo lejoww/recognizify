@@ -1,6 +1,3 @@
-.sidebarProfile {
-    margin: 2rem 0;
-} 
 
 .profileContent {
     width: 40px;
@@ -25,6 +22,7 @@
 .profileData .profileIdentity {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin-left: 12px;
 }
 
@@ -37,4 +35,10 @@
     font-weight: 700;
     font-size: 13px;
     color: rgba(179, 185, 203, 0.7)
+}
+
+.profileOptions {
+    display: flex;
+    align-items: center;
+    margin-left: 12px;
 }

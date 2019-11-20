@@ -1,13 +1,13 @@
 <template>
-    <div class="sidebarProfile">
+    <div class="headerProfile">
         <div class="profileWrapper">
             <div class="profileData">
                 <div class="profileContent">
                     <img class="profilePicture" v-bind:src="urlPhotoPath">
                 </div>
                 <div class="profileIdentity">
-                    <span class="profileName text-white">{{this.currentAccount.nickname}}</span>
-                    <span class="profileUsername">{{'@' + currentAccount.username}}</span>
+                    <span class="profileName text-white">Hola, {{this.currentAccount.nickname}}</span>
+                    <!-- <span class="profileUsername">{{'@' + currentAccount.username}}</span> -->
                 </div>
             </div>
             <div class="profileOptions">

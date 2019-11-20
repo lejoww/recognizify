@@ -170,6 +170,48 @@ select.form-control {
   }
 }
 
+.form-control-navbar {
+  display: block;
+  width: 100%;
+  height: $input-height;
+  padding: $input-padding-y $input-padding-x;
+  font-family: "Source Sans Pro";
+  font-weight: 600;
+  @include font-size($input-font-size);
+  line-height: $input-line-height;
+  color: $input-color;
+  background-color: rgba(237, 226, 248, 0.2);
+  border: none;
+  border-radius: 6px;
+
+  &::-ms-expand {
+    background-color: transparent;
+    border: 0;
+  }
+
+  &:focus {
+    outline: 0;
+    color: $gray-100;
+  }
+
+  &::placeholder {
+    color: $input-placeholder-color;
+    // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+    opacity: 1;
+  }
+  // Disabled and read-only inputs
+  //
+  // HTML5 says that controls under a fieldset > legend:first-child won't be
+  // disabled if the fieldset is disabled. Due to implementation difficulty, we
+  // don't honor that edge case; we style them as disabled anyway.
+  &:disabled,
+  &[readonly] {
+    background-color: $input-disabled-bg;
+    // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
+    opacity: 1;
+  }
+}
+
 select.form-control {
   &:focus::-ms-value {
     // Suppress the nested default white text on blue background highlight given to

@@ -1,67 +1,74 @@
 <template>
-    <div class="sidebarMenu" id="sidebarMenu">
-      <div class="sidebarWrapper">
-        <div class="sidebarBrand">
-          <img src="@/assets/logo-white-cutted.svg" width="142px">
-        </div>
-        <div class="sidebarAccount">
-          <Profile/>
-        </div>
-        <ul class="sidebarNav">
-          
-          <div class="overline">General</div>
-          <li>
-            <router-link :to="feedPath" class="lateralPanelOption">
-              <svg class="feather-menu">
-                <use xlink:href="@/assets/svg/feather-sprite.svg#home"/>
-              </svg>
-              <span class="lateralMenuLink">Resumen</span>
-            </router-link>
-          </li>
+    <div class="headerMenu" id="sidebarMenu">
+      <div class="headerCentre">
+        <div class="headerWrapper">
+          <div class="headerBrand">
+            <img src="@/assets/logo-white-cutted.svg" width="142px">
+          </div>
 
-          <li>
-            <router-link to="/account/notifications" class="lateralPanelOption">
-              <div class="stackable">
-                <div class="littleStack">
-                  <svg class="feather-menu" id="invitationsIcon">
-                    <use xlink:href="@/assets/svg/feather-sprite.svg#bell" />
-                  </svg>
-                  <span class="badge badge-danger" v-if="invitations > 0" v-text="invitations"></span>
-                </div>
-                <span class="lateralMenuLink" id="invitationsLink">Invitaciones</span>
+          <div class="headerSearch">
+            <div class="searchInput">
+              <input class="form-control-navbar" type="text" placeholder="Buscar en tus proyectos..." aria-label="Search" spellcheck="false" autocomplete="off">
+            <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+            </div>
+          </div>
+          <div class="headerNav">
+            <div class="headerNavList">
+              <div>
+                <router-link :to="feedPath" class="lateralPanelOption">
+                  <span class="lateralMenuLink">Resumen</span>
+                </router-link>
               </div>
-            </router-link>
-          </li>
 
-          <br><div class="overline">Módulos</div>
-          <li>
-            <router-link :to="goalsPath" class="lateralPanelOption">
-              <svg class="feather-menu">
-                <use xlink:href="@/assets/svg/feather-sprite.svg#flag" />
-              </svg>
-              <span class="lateralMenuLink">Goals</span>
-            </router-link>
-          </li>
+              <div>
+                <router-link to="/account/notifications" class="lateralPanelOption">
+                  <div class="stackable">
+                    <div class="littleStack">
+                      <span class="badge badge-danger" v-if="invitations > 0" v-text="invitations"></span>
+                    </div>
+                    <span class="lateralMenuLink" id="invitationsLink">Invitaciones</span>
+                  </div>
+                </router-link>
+              </div>
 
-          <li>
-            <router-link :to="boardPath" class="lateralPanelOption">
-              <svg class="feather-menu">
-                <use xlink:href="@/assets/svg/feather-sprite.svg#message-square" />
-              </svg>
-              <span class="lateralMenuLink">Boards</span>
-            </router-link>
-          </li>
-
-          <li>
-            <router-link :to="usersPath" class="lateralPanelOption">
-              <svg class="feather-menu">
-                <use xlink:href="@/assets/svg/feather-sprite.svg#users" />
-              </svg>
-              <span class="lateralMenuLink">Users</span>
-            </router-link>
-          </li>
-
-        </ul>
+              <!-- <br><div class="overline">Módulos</div> -->
+              <div class="dropdown">
+                <a class="dropdown-toggle lateralPanelOption" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="lateralMenuLink text-white">Módulos</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">
+                    <router-link :to="goalsPath" class="lateralPanelOption">
+                      <svg class="feather-menu">
+                        <use xlink:href="@/assets/svg/feather-sprite.svg#flag" />
+                      </svg>
+                      <span class="lateralMenuLink text-dark">Goals</span>
+                    </router-link>
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <router-link :to="boardPath" class="lateralPanelOption">
+                      <svg class="feather-menu">
+                        <use xlink:href="@/assets/svg/feather-sprite.svg#message-square" />
+                      </svg>
+                      <span class="lateralMenuLink text-dark">Boards</span>
+                    </router-link>
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <router-link :to="usersPath" class="lateralPanelOption">
+                      <svg class="feather-menu">
+                        <use xlink:href="@/assets/svg/feather-sprite.svg#users" />
+                      </svg>
+                      <span class="lateralMenuLink text-dark">Users</span>
+                    </router-link>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="headerAccount">
+              <Profile/>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 </template>
