@@ -23,6 +23,8 @@
     
     import firebase from 'firebase'
 
+    import '@/assets/css/featuredGoal.css'
+
     export default {
         data(){
             return {

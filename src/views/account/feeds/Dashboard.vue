@@ -1,6 +1,7 @@
 <template>
     <div class="baseLayout">
         <LateralPanel/>
+        <OverlayMenu/>
         <router-view></router-view>
     </div>
 </template>
@@ -9,12 +10,12 @@
     import '@/assets/css/feed.css'
     import '@/assets/css/lateralMenu.css'
     import LateralPanel from '@/components/LateralPanel.vue'
-    import BurgerMenu from '@/components/BurgerMenu.vue'
+    import OverlayMenu from '@/components/OverlayMenu.vue'
 
     export default {
         components: {
             LateralPanel,
-            BurgerMenu
+            OverlayMenu
         }    
     }
 

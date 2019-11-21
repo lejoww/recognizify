@@ -1,31 +1,31 @@
 /* Dashboard order */
 .baseLayout {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: grid;
-    grid-template-rows: 52px 312px repeat(2, 1fr);
+    grid-template-rows: 52px 1fr;
 }
 
 .dashboardContent {
-    width: 100vw;
-    grid-row: 2 / 5;
-    height: auto;
-    right: 0;
+    width: 100%;
+    grid-row: 2 / 3;
 }
 
-.layoutContainer {
+.feedLayout {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 72% 28%;
+    grid-template-rows: 312px repeat(2, 1fr);
+}
+
+/* .layoutContainer {
     width: 100%;
     height: 100vh;
     display: none;
     justify-content: center;
     align-items: center;
-}
-
-.cardsContent {
-    display: flex;
-}
-
-/* Project Feed Order */
+} */
 
 .projectHeader {
     width: 100%;
@@ -44,8 +44,8 @@
 }
 
 .projectSummaryData {
-    grid-column: 2 / 3;
-    grid-row: 2 / 4;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
     display: flex;
     flex-direction: column;
     /* padding: 22px;
@@ -166,54 +166,7 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6610f2', endColorstr='#5900c6', GradientType=1 );
 }
 
-.projectSummaryGoalNotice {
-    width: 100%;
-    height: 312px;
-    background-color: #000;
-    /* grid-column: 4 / 17;
-    grid-row: 2 / 8; */
-    border-radius: 6px;
-    box-shadow: 0 2px 14px 0 rgba(0, 0, 0, .1);
-    display: flex;
-    align-items: flex-end;
-}
 
-.projectSummaryGoalNotice .goalNoticeContent {
-    width: 100%;
-    height: 100%;
-    background-image: url('https://source.unsplash.com/featured/?productivity,desk,products,work');
-    background-size: cover;
-    background-position: center;
-    animation: showGoalNotice 2s forwards;
-}
-
-.projectSummaryGoalNotice .goalNoticeContent .goalNoticeOpacity {
-    width: 100%;
-    height: 100%;
-    background: rgb(3,0,46);
-    background: linear-gradient(180deg, rgba(3,0,46,0) 0%, rgba(0,0,0,1) 100%);
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
-.projectSummaryGoalNotice .goalNoticeContent .goalNonNoticeOpacity {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(13, 10, 24, 0.651);
-    padding: 2em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-@keyframes showGoalNotice {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
 
 .form-control-special:focus {
     background-color: transparent;
@@ -386,11 +339,6 @@ a:hover {
 
 /* mediaqueries  */
 @media screen and (max-width: 1284px) {
-    .baseLayout {
-        grid-template-rows: 62px 312px repeat(2, 1fr);
-        grid-template-columns: 21vw 79vw;
-    }
-
     .projectsField {
         grid-template-columns: 184px repeat(2, 1fr) 184px;
     }
@@ -483,11 +431,11 @@ a:hover {
         padding: 1em;
     }
 
-    .baseLayout {
+    /* .baseLayout {
         grid-template-columns: none;
     }
 
     .headerMenu .headerWrapper .headerNav {
         display: none;
-    }
+    } */
 }

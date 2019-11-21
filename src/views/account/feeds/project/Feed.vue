@@ -4,14 +4,16 @@
     <!-- <div class="projectSummaryTitle">
       <h3 v-text="projectName"></h3>
     </div> -->
-    <FeaturedGoal/>
-    <div class="projectSummaryData">
-      <div class="rank">
-        <ProjectUsers/>
-        <GeneralStatistic/>
-      </div>
-      <div class="rank">
-        <Renewing/>
+    <div class="feedLayout">
+      <FeaturedGoal/>
+      <div class="projectSummaryData">
+        <div class="rank">
+          <ProjectUsers/>
+          <GeneralStatistic/>
+        </div>
+        <div class="rank">
+          <Renewing/>
+        </div>
       </div>
     </div>
   </div>

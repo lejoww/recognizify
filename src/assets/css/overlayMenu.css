@@ -1,0 +1,82 @@
+
+.overlayMenu {
+    width: 21%;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    padding: 2rem;
+    background-color: #162933;
+    display: none;
+    /* right: -21%; */
+}
+
+.overlayMenu.show {
+    display: block;
+}
+
+.overline {
+    text-transform: uppercase;
+    color: #aab9c2;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-rendering: optimizeLegibility;
+    margin-bottom: 1.4rem;
+}
+
+.overlayMenu .overlayMenuSearch {
+    display: none;
+}
+
+.overlayMenu .overlayMenuOption {
+    display: flex;
+    align-items: center;
+}
+
+.overlayMenu .overlayMenuOption .overlayMenuLink {
+    font-weight: 600;
+    color: #F2F2F2;
+}
+
+.optionContent {
+    display: flex; 
+    flex-direction: column;
+    margin-left: 12px;
+    margin-bottom: 12px;
+    color: rgb(150, 169, 172);
+}
+
+@media screen and (max-width: 1284px) {
+    .overlayMenu {
+        width: 32%;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .overlayMenu {
+        width: 42%;
+    }
+
+    .overlayMenu .overlayMenuSearch {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 756px) {
+    .overlayMenu {
+        width: 52%;
+    }
+}
+
+@media screen and (max-width: 567px) {
+    .overlayMenu {
+        width: 67%;
+    }
+}
+
+
+@media screen and (max-width: 432px) {
+    .overlayMenu {
+        width: 87%;
+    }
+}

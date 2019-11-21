@@ -19,7 +19,6 @@
           
           <div class="projectsField" id="projectsContent" v-if="projects.length >= 1">
             <div class="projectsBanner">
-              <!-- <img src="@/assets/ilustrations/selection.png" alt="Personas seleccionando una opción entre una lista" width="347px"> -->
               <h3>¿En qué idea trabajarás ahora?</h3>
               <span class="text-muted">Selecciona uno de tus proyectos o de los que haces parte</span>
             </div>
@@ -47,9 +46,6 @@
                     <div class="card project-card" style="width: 17rem; margin-right: 1rem; background: #7100EA;">
                       <div class="card-body">
                         <h6 class="card-title text-white">
-                          <!-- <svg class="feather-light">
-                            <use xlink:href="@/assets/svg/feather-sprite.svg#plus"></use>
-                          </svg> -->
                           Agregar un proyecto
                         </h6>
                       </div>
