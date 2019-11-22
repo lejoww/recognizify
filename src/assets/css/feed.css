@@ -16,7 +16,7 @@
     height: 100%;
     display: grid;
     grid-template-columns: 72% 28%;
-    grid-template-rows: 312px repeat(2, 1fr);
+    grid-template-rows: 312px 1fr;
 }
 
 /* .layoutContainer {
@@ -55,7 +55,6 @@
 .projectSummaryData .rank {
     width: 100%;
     display: flex;
-    padding: 0 2rem;
 }
 
 .projectSummaryCard {

@@ -28,7 +28,7 @@
                 <use xlink:href="@/assets/svg/feather-sprite.svg#message-square" />
             </svg>
             <div class="optionContent">
-                <router-link class="overlayMenuLink" :to="`/dashboard/${routesPath}/boards`">Boards</router-link>
+                <router-link class="overlayMenuLink" :to="`/dashboard/project/${routesPath}/board`">Boards</router-link>
                 <small>Concentra las ideas en un tablero</small>
             </div>
         </div>
@@ -37,7 +37,7 @@
                 <use xlink:href="@/assets/svg/feather-sprite.svg#flag" />
             </svg>
             <div class="optionContent">
-                <router-link class="overlayMenuLink" :to="`/dashboard/${routesPath}/goals`">Goals</router-link>
+                <router-link class="overlayMenuLink" :to="`/dashboard/project/${routesPath}/goals`">Goals</router-link>
                 <small>Mantén tus objetivos presentes</small>
             </div>
         </div>
@@ -46,7 +46,7 @@
                 <use xlink:href="@/assets/svg/feather-sprite.svg#users" />
             </svg>
             <div class="optionContent">
-                <router-link class="overlayMenuLink" :to="`/dashboard/${routesPath}/users`">Users</router-link>
+                <router-link class="overlayMenuLink" :to="`/dashboard/project/${routesPath}/membership`">Users</router-link>
                 <small>Administra amigos en tu proyecto</small>
             </div>
         </div>
@@ -67,9 +67,7 @@
             Profile,
         },
         mounted: function(){
-            firebase.auth().onAuthStateChanged(user => {
-                this.routesPath = this.$route.params.projectId
-            })        
+            this.routesPath = this.$route.params.projectId
         },
         methods: {
             closeOverlayMenu: function(){

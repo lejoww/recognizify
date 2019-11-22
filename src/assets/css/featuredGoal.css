@@ -6,7 +6,6 @@
     background-color: #000;
     /* grid-column: 4 / 17;
     grid-row: 2 / 8; */
-    border-radius: 6px;
     box-shadow: 0 2px 14px 0 rgba(0, 0, 0, .1);
     display: flex;
     align-items: flex-end;
@@ -14,13 +13,30 @@
     z-index: -10;
 }
 
+@-webkit-keyframes dynamicGradient {
+    0%{background-position:0% 31%}
+    50%{background-position:100% 70%}
+    100%{background-position:0% 31%}
+}
+@keyframes dynamicGradient {
+    0%{background-position:0% 31%}
+    50%{background-position:100% 70%}
+    100%{background-position:0% 31%}
+}
+
 .projectSummaryGoalNotice .goalNoticeContent {
     width: 100%;
     height: 100%;
-    background-image: url('https://source.unsplash.com/featured/?productivity,desk,products,work');
+    /* background-image: url('https://source.unsplash.com/featured/?productivity,desk,products,work');
     background-size: cover;
-    background-position: center;
-    animation: showGoalNotice 2s forwards;
+    background-position: center; */
+    background: linear-gradient(153deg, #5b00d1, #007dff, #f531a5, #f5b731);
+    background-size: 800% 800%;
+    
+    -webkit-animation: dynamicGradient 49s ease infinite;
+    animation: dynamicGradient 10s ease infinite;
+
+    /* animation: showGoalNotice 2s forwards; */
 }
 
 .projectSummaryGoalNotice .goalNoticeContent .goalNoticeOpacity {

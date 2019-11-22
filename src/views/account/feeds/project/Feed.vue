@@ -15,6 +15,8 @@
           <Renewing/>
         </div>
       </div>
+
+      <TasksPanel/>
     </div>
   </div>
 </template>
@@ -22,14 +24,12 @@
 
   import firebase from 'firebase'
 
-  import UserNavbar from "@/components/UserNavbar.vue";
   import LateralPanel from "@/components/LateralPanel.vue";
-  import Profile from "@/components/Profile.vue";
   import GeneralStatistic from "@/components/project/statistics/GeneralStatistic.vue";
   import ProjectUsers from "@/components/project/statistics/ProjectUsers.vue";
   import FeaturedGoal from "@/components/project/FeaturedGoal.vue";
-  import BurgerMenu from "@/components/BurgerMenu.vue";
   import Renewing from "@/components/offers/Renewing.vue"
+  import TasksPanel from "@/components/project/TasksPanel.vue"
 
   import Vue from 'vue'
 
@@ -44,14 +44,12 @@
       }
     },
     components: {
-      UserNavbar,
       LateralPanel,
-      Profile,
       GeneralStatistic,
       ProjectUsers,
       FeaturedGoal,
-      BurgerMenu,
-      Renewing
+      Renewing,
+      TasksPanel
     },
     created: function() {
       if (this.$route.params["projectId"] == 'undefined') {

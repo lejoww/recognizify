@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div class="profileOptions">
-                <router-link to="/account/configuration" >
+                <router-link to="/account/configuration">
                     <svg class="feather-menu">
                         <use xlink:href="@/assets/svg/feather-sprite.svg#settings"/>
                     </svg>
@@ -59,7 +59,6 @@
                     .then(data => {
                         this.currentAccount.nickname = data.data()['nickname']
                         this.currentAccount.username = data.data()['user']
-                        console.log(this.currentAccount.nickname)
                     })
                 })
             },

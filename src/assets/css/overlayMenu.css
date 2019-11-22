@@ -7,10 +7,11 @@
     padding: 2rem;
     background-color: #162933;
     display: none;
+    z-index: 10;
     /* right: -21%; */
 }
 
-.overlayMenu.show {
+.show {
     display: block;
 }
 

@@ -1,0 +1,48 @@
+
+
+.tasksPanel {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    background-color: #FFF;
+}
+
+.tasksPanelWrapper {
+    margin: 21px;
+}
+
+.tasksPanelTitle {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.taskCard {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #E9E8E8;
+    border-radius: 4px;
+    margin-top: 12px;
+}
+
+.taskToDo {
+    line-height: 1.4;
+}
+
+.taskPublisher {
+    color: #9797AC;
+    font-size: 12.5px;
+}
+
+.taskSetting {
+    position: relative;
+    z-index: 0;
+    padding: 12px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.taskSettingInput {
+    padding: 4px 9px;
+    border: 1px solid #E0E0E0;
+    border-radius: 4px;
+    outline: none;
+}
