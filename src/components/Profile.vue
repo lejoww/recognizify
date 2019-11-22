@@ -63,16 +63,21 @@
                 })
             },
             checkExistentIdentity: function(){
-                if (this.currentAccount.nickname == '' ||
-                    this.currentAccount.nickname == undefined ||
-                    this.currentAccount.nickname == null ||
-
-                    this.currentAccount.username == '' ||
-                    this.currentAccount.username == undefined ||
-                    this.currentAccount.username == null
-                ){
-                    this.$route.push('/register/info')
-                }
+                setTimeout(() => {
+                    if (this.currentAccount.nickname == '' ||
+                        this.currentAccount.nickname == undefined ||
+                        this.currentAccount.nickname == null
+                    ){
+                        this.$router.push('/register/nickname')
+                    }
+                    if(
+                        this.currentAccount.username == '' ||
+                        this.currentAccount.username == undefined ||
+                        this.currentAccount.username == null
+                    ){
+                        this.$router.push('/register/info')
+                    }
+                }, 4000)
             },
             closeSession: function(){
                 firebase.auth().signOut()

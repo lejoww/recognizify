@@ -1,7 +1,7 @@
 <template>
       <div class="dashboardContent">
 
-          <!-- <div class="nonProjectsBanner" id="bgNoneProjects" v-if="projects.length == 0">
+          <div class="nonProjectsBanner" id="bgNoneProjects" v-if="projects.length == 0">
             <div class="image-representation">
               <img src="@/assets/ilustrations/born-robot.png" alt="Robot despertando" />
             </div>
@@ -11,11 +11,11 @@
               <p style="text-align: left">¿Qué te parece si empezamos de una vez?</p>
               <br>
 
-              <a href="#" class="btn btn-success btn-lg" style="width: 318px; display: flex; justify-content: space-around; align-items: center">
-                <router-link class="text-white" to="/create/project">Crea un nuevo proyecto</router-link>
+              <a href="#" class="btn btn-success btn-lg" style="width: 318px; display: flex; justify-content: space-around; align-items: center; cursor: pointer;">
+                <router-link class="text-white" to="/account/create/project">Crea un nuevo proyecto</router-link>
               </a>
             </div>
-          </div> -->
+          </div>
           
           <div class="projectsField" id="projectsContent" v-if="projects.length >= 1">
             <div class="projectsBanner">

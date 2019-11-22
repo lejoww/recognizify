@@ -29,7 +29,10 @@ const routes = [
     name: 'welcome_account_nickname',
     component: () => import('./views/account/config/RegisterNickname.vue')
   },
-
+  {
+    path: '/verify',
+    component: () => import('./views/account/config/VerifyAccount.vue')
+  },
   {
     path: '/dashboard',
     name: 'base_dashboard',
