@@ -8,13 +8,13 @@
             </div>
 
             <div class="goalNonNoticeOpacity" v-if="featuredGoal.name == ''">
-                <h2 class="text-white">Calcula hasta dónde puedes llegar</h2>
-                <p class="text-white">Crea metas y motívate en ellas todos los días, el éxito comienza hoy.</p>
-                <a href="#" class="btn btn-warning btn-sm">
-                    <router-link class="text-white" :to="`/project/${this.$route.params.projectId}/goals`">
-                        Crea nuevas metas
-                    </router-link>
-                </a>
+                    <h2 class="text-white">Calcula hasta dónde puedes llegar</h2>
+                    <p class="text-white">Crea metas y motívate en ellas todos los días, el éxito comienza hoy.</p>
+                    <a href="#" class="btn btn-warning btn-sm">
+                        <router-link class="text-white" :to="`/dashboard/project/${this.$route.params.projectId}/goals`">
+                            Crea nuevas metas
+                        </router-link>
+                    </a>
             </div>
         </div>
     </div>

@@ -36,6 +36,19 @@ nav {
     max-height: 81%;
 }
 
+/* .scrollable::-webkit-scrollbar-thumb {
+    background-color: green;
+}
+
+.scrollable::-webkit-scrollbar-track {
+    width: 8px;
+    background-color: green;
+}
+
+.scrollable::-webkit-scrollbar-corner {
+    background-color: green !important;
+} */
+
 .content-flex {
     width: 100%;
     display: flex;
@@ -203,4 +216,15 @@ a.router-link-exact-active:hover, a:hover {
     stroke-linecap: round;
     stroke-linejoin: round;
     fill: none;
+}
+
+.feather-like-options {
+    width: 17px;
+    height: 17px;
+    stroke: rgb(117, 113, 121);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    margin-left: 7px;
 }

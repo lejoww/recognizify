@@ -9,13 +9,9 @@
       <div class="projectSummaryData">
         <div class="rank">
           <ProjectUsers/>
-          <GeneralStatistic/>
-        </div>
-        <div class="rank">
           <Renewing/>
         </div>
       </div>
-
       <TasksPanel/>
     </div>
   </div>
