@@ -1,12 +1,16 @@
 <template>
     <div class="tasksPanel">
         <div class="tasksPanelWrapper">
-                <svg class="feather-menu">
-                    <use xlink:href="@/assets/svg/feather-sprite.svg#check-circle" />
-                </svg>
-                <span class="tasksPanelTitle"> Tareas de tu equipo</span>
-            <div class="tasksPanelList">
+            <svg class="feather-menu">
+                <use xlink:href="@/assets/svg/feather-sprite.svg#check-circle" />
+            </svg>
+            <span class="tasksPanelTitle"> Tareas de tu equipo</span>
+            <div class="tasksPanelList" v-if="tasks.length > 0">
                 <Task :key="task" v-for="task in tasks" :todo="task.message" :publisher="`por ${task.name}`"/>
+            </div>
+
+            <div class="tasksPanelList" v-if="tasks.length == 0">
+                <Task todo="Mantente sincronizado ⌚ con nuevas tareas para tu equipo aquí 🚀. Agrega alguna 💡." :publisher="`por Recognizify`"/>
             </div>
         </div>
         <br>

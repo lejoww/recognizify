@@ -47,11 +47,11 @@
                 account: true
             }
         },
-        mounted: function (){
-            firebase.auth().onAuthStateChanged(user => {
-                if (user) this.$router.push('/dashboard/select');
-            })
-        },
+        // mounted: function (){
+        //     firebase.auth().onAuthStateChanged(user => {
+        //         if (user) this.$router.push('/dashboard/select');
+        //     })
+        // },
         methods: {
             signInWithEmailAndPassword: function(){
                 var loginButton = document.getElementById('dynamicButton')

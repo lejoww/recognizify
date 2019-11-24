@@ -76,9 +76,6 @@
 
     import firebase from 'firebase'
 
-    import LateralPanel from '@/components/LateralPanel.vue'
-    import BurgerMenu from '@/components/BurgerMenu.vue'
-
     import '@/assets/css/feed.css'
     import '@/assets/css/board.css'
 
@@ -95,10 +92,6 @@
                 newMessage: '',
                 notesData: []
             }
-        },
-        components: {
-            LateralPanel,
-            BurgerMenu
         },
         mixins: [AddPoints],
         created: function(){

@@ -50,6 +50,15 @@
                 <small>Administra amigos en tu proyecto</small>
             </div>
         </div>
+        <div class="overlayMenuOption" @click="closeOverlayMenu">
+            <svg class="feather-menu">
+                <use xlink:href="@/assets/svg/feather-sprite.svg#clock" />
+            </svg>
+            <div class="optionContent">
+                <router-link class="overlayMenuLink" :to="`/dashboard/project/${routesPath}/tasks`">Tasks</router-link>
+                <small>Sincronizate con tareas de tu equipo</small>
+            </div>
+        </div>
     </div>
 </template>
 <script>

@@ -56,6 +56,7 @@
                 firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
                     .then(() => {
                         firebase.auth().onAuthStateChanged(user => {
+                            user.sendEmailVerification()           
                             if (user.emailVerified){
                                 firebase.firestore().collection('users').doc(user.uid).get()
                                     .then(res => {

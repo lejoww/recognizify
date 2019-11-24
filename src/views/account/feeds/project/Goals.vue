@@ -36,29 +36,31 @@
         </div>
 
             <div class="dashboardContent">
-                <div class="projectSummaryTitle">
-                    <h3>
-                        Metas
-                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addGoalModal">
-                            <svg width="18" height="18" stroke="#ffffff" stroke-width="2">
-                                <use xlink:href="@/assets/svg/feather-sprite.svg#plus"/>
-                            </svg>
-                            Crear una meta
-                        </button>
-                    </h3><br>
-                </div>
-                <div class="goalsField" v-if="goals.length > 0">
-                    <div class="card goalCard" style="width: 18rem;" :key="goalData['name']" v-for="(goalData, name, motivation) in goals">
-                        <div class="card-body">
-                            <h5 class="card-title" :key="name">{{goalData['name']}}</h5>
-                            <p class="card-text" :key="motivation">{{goalData['motivation']}}</p>
+                <div class="goalsLayout">
+                    <div class="projectSummaryTitle">
+                        <h3>
+                            Metas
+                            <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addGoalModal">
+                                <svg width="18" height="18" stroke="#ffffff" stroke-width="2">
+                                    <use xlink:href="@/assets/svg/feather-sprite.svg#plus"/>
+                                </svg>
+                                Crear una meta
+                            </button>
+                        </h3><br>
+                    </div>
+                    <div class="goalsField" v-if="goals.length > 0">
+                        <div class="card goalCard" style="width: 18rem;" :key="goalData['name']" v-for="(goalData, name, motivation) in goals">
+                            <div class="card-body">
+                                <h5 class="card-title" :key="name">{{goalData['name']}}</h5>
+                                <p class="card-text" :key="motivation">{{goalData['motivation']}}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="nonGoalsField" v-if="goals.length == 0">
-                    <div>
-                        <h3 style="color: #9e95aa;">No tienes nuevas metas</h3>
-                        <p style="color: #9e95aa;">Las metas te ayudan a que todo lo que hagas dentro de Recognizify gire en torno a ellas.</p>
+                    <div class="nonGoalsField" v-if="goals.length == 0">
+                        <div>
+                            <h3 style="color: #9e95aa;">No tienes nuevas metas</h3>
+                            <p style="color: #9e95aa;">Las metas te ayudan a que todo lo que hagas dentro de Recognizify gire en torno a ellas.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -67,10 +69,6 @@
 <script>
 
     import firebase from 'firebase'
-
-    import Profile from '@/components/Profile.vue'
-    import LateralPanel from '@/components/LateralPanel.vue'
-    import BurgerMenu from '@/components/BurgerMenu.vue'
 
     import '@/assets/css/feed.css'
     import '@/assets/css/goals.css'
@@ -93,11 +91,6 @@
             } else {
                 this.getGoals()
             }
-        },
-        components: {
-            Profile,
-            LateralPanel,
-            BurgerMenu
         },
         methods: {
             saveGoal: function(){

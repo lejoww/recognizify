@@ -12,11 +12,14 @@
     import LateralPanel from '@/components/LateralPanel.vue'
     import OverlayMenu from '@/components/OverlayMenu.vue'
 
+    import { CheckEmailVerification } from '@/assets/scripts/checkVerificatedEmail.js'
+
     export default {
         components: {
             LateralPanel,
             OverlayMenu
-        }    
+        },
+        mixins: [CheckEmailVerification]
     }
 
 </script>

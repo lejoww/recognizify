@@ -40,13 +40,6 @@
     import '@/assets/css/feed.css';
 
     export default {
-        mounted: function(){
-            firebase.auth().onAuthStateChanged(user => {
-                if (user) {
-                    user.sendEmailVerification()
-                }
-            })
-        },
         methods: {
             restoreAccountToCheckVerification: function(){
                 firebase.auth().signOut()
