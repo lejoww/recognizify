@@ -14,8 +14,8 @@
                     <label>Contraseña</label>
                     <input type="password" class="form-control form-control-lg form-control-login" v-on:keyup.enter="signInWithEmailAndPassword" v-model="password" placeholder="Tu clave personal e intransferible">
                 </div>
-            <button class="btn btn-success" id="dynamicButton" v-on:click="signInWithEmailAndPassword">Iniciar sesión</button>
-            <button class="btn btn-warning" style="margin-left: .7em">
+            <button class="btn btn-success btn-login" id="dynamicButton" v-on:click="signInWithEmailAndPassword">Iniciar sesión</button>
+            <button class="btn btn-warning btn-login" style="margin-left: .7em">
                 <router-link to="/signup" class="text-white">
                     Registrarse
                 </router-link>

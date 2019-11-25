@@ -20,26 +20,38 @@
         },
         methods: {
             saveTask: function() {
-                firebase.auth().onAuthStateChanged(user => {
-                    firebase.firestore()
-                    .collection('users')
-                    .doc(user.uid)
-                    .get()
-                    .then((userdata) => {
+                if (this.checkTaskContent()) {
+                    firebase.auth().onAuthStateChanged(user => {
                         firebase.firestore()
-                        .collection('projects')
-                        .doc(this.$route.params.projectId)
-                        .collection('tasks')
-                        .add({
-                            name: userdata.data()['name'],
-                            task: this.task
-                        }).then(() => window.location.reload());
-                    })
-                    .catch((err) => {
-                        console.log(err);
+                        .collection('users')
+                        .doc(user.uid)
+                        .get()
+                        .then((userdata) => {
+                            firebase.firestore()
+                            .collection('projects')
+                            .doc(this.$route.params.projectId)
+                            .collection('tasks')
+                            .add({
+                                name: userdata.data()['name'],
+                                task: this.task.trim()
+                            }).then(() => window.location.reload());
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        });
                     });
-                });
+                } else {
+                    console.log('Debes escribir algo');
+                }
             },
+
+            checkTaskContent: function () {
+                if (/^\s+$/.test(this.task) || this.task == '' || this.task == undefined){
+                    return false;
+                } else {
+                    return true;
+                }
+            }
         }
     }
 
