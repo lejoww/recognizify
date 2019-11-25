@@ -2702,6 +2702,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-lg, .btn-group-lg > .btn {
+  height: 48px;
   padding: 0.5rem 1rem;
   font-size: 1.1875rem;
   line-height: 1.5;
@@ -2709,6 +2710,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-sm, .btn-group-sm > .btn {
+  height: 21px;
   padding: 0.25rem 0.5rem;
   font-size: 0.83125rem;
   line-height: 1.5;

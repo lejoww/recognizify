@@ -101,10 +101,12 @@ fieldset:disabled a.btn {
 //
 
 .btn-lg {
+  height: 48px;
   @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
 }
 
 .btn-sm {
+  height: 21px;
   @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
 }
 
