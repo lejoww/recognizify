@@ -5,6 +5,7 @@
 //
 
 .btn {
+  height: 32px;
   display: inline-block;
   font-family: $btn-font-family;
   font-weight: $btn-font-weight;
@@ -13,21 +14,22 @@
   vertical-align: middle;
   user-select: none;
   background-color: transparent;
-  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 4px solid rgba(0, 0, 0, 0.2);
   @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
   @include transition($btn-transition);
 
   @include hover {
-    color: rgba(255, 255, 255, 1) !important;
-    box-shadow: 0 2px 14px 0 rgba(0,0,0,0.2);
     transition: all 0.2s ease;
-    text-decoration: none
+    text-decoration: none;
+    border: 1px solid rgba(0, 0, 0, 0.356);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.356);
   }
 
   &.disabled,
   &:disabled {
     opacity: $btn-disabled-opacity;
-    @include box-shadow(none);
+    // @include box-shadow(none);
   }
 
   &:not(:disabled):not(.disabled):active,
@@ -40,7 +42,6 @@
   }
 }
 
-// Future-proof disabling of clicks on `<a>` elements
 a.btn.disabled,
 fieldset:disabled a.btn {
   pointer-events: none;
@@ -57,11 +58,11 @@ fieldset:disabled a.btn {
   }
 }
 
-@each $color, $value in $theme-colors {
-  .btn-outline-#{$color} {
-    @include button-outline-variant($value);
-  }
-}
+// @each $color, $value in $theme-colors {
+//   .btn-outline-#{$color} {
+//     @include button-outline-variant($value);
+//   }
+// }
 
 
 //

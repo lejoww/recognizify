@@ -49,6 +49,10 @@ nav {
     background-color: green !important;
 } */
 
+router-link, a, button {
+    text-decoration: none !important;
+}
+
 .content-flex {
     width: 100%;
     display: flex;
