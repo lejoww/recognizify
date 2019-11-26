@@ -29,7 +29,6 @@
 
     import firebase from 'firebase';
     import '@/assets/css/profile.css'
-    import '@/assets/css/mediaqueries.css'
 
     export default {
         data: function(){

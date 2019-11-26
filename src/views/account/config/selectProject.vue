@@ -58,23 +58,15 @@
       </div>
 </template>
 <script>
+
     import firebase from "firebase";
     import '@/assets/css/feed.css'
-
-    import Profile from '@/components/Profile.vue'
-    import LateralPanel from '@/components/LateralPanel.vue'
-    import BurgerMenu from '@/components/BurgerMenu.vue'
 
     export default {
     data() {
       return {
         projects: []
       }
-    },
-    components: {
-      Profile,
-      LateralPanel,
-      BurgerMenu
     },
     mounted: function() {
       // let preloaderWall = document.querySelector("#preloaderWall")

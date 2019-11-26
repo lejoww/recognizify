@@ -36,7 +36,6 @@
 
     import firebase from 'firebase'
     import '@/assets/css/login.css'
-    // import '@/assets/scripts/serverConnection.js'
 
     export default {
         name: 'login_entry',

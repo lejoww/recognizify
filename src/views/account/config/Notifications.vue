@@ -19,16 +19,9 @@
 <script>
     
     import firebase from 'firebase'
-    import LateralPanel from '@/components/LateralPanel.vue'
-    import BurgerMenu from '@/components/BurgerMenu.vue'
-
     import '@/assets/css/feed.css'
 
     export default {
-        components: {
-            LateralPanel,
-            BurgerMenu
-        },
         mounted: function() {
             this.getInvitations()
         },

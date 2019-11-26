@@ -43,8 +43,6 @@
 </template>
 <script>
 
-    import Profile from '@/components/Profile.vue'
-
     import firebase from 'firebase'
     import uuidv1 from 'uuid/v1'
     
@@ -59,9 +57,6 @@
                 description: '',
                 projectuid: ''
             }
-        },
-        components: {
-            Profile
         },
         methods: {
             createProjectOnDatabase: function(){

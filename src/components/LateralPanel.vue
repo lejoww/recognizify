@@ -21,7 +21,6 @@
 
     import firebase from 'firebase'
     import '@/assets/css/lateralMenu.css'
-    import '@/assets/css/mediaqueries.css'
 
     import Profile from '@/components/Profile.vue'
     import BurgerMenu from '@/components/BurgerMenu.vue'

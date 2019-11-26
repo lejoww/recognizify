@@ -34,6 +34,10 @@ const routes = [
     component: () => import('./views/account/config/VerifyAccount.vue')
   },
   {
+    path: '/boards',
+    component: () => import('./views/presentations/BoardsPresentation.vue')
+  },
+  {
     path: '/dashboard',
     name: 'base_dashboard',
     component: () => import('./views/account/feeds/Dashboard.vue'),

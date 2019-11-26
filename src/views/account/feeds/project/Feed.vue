@@ -20,7 +20,6 @@
 
   import firebase from 'firebase'
 
-  import LateralPanel from "@/components/LateralPanel.vue";
   import GeneralStatistic from "@/components/project/statistics/GeneralStatistic.vue";
   import ProjectUsers from "@/components/project/statistics/ProjectUsers.vue";
   import FeaturedGoal from "@/components/project/FeaturedGoal.vue";
@@ -31,7 +30,6 @@
 
   import "@/assets/css/main.css";
   import "@/assets/css/feed.css";
-  import "@/assets/css/lateralMenu.css";
 
   export default {
     data() {
@@ -40,7 +38,6 @@
       }
     },
     components: {
-      LateralPanel,
       GeneralStatistic,
       ProjectUsers,
       FeaturedGoal,
