@@ -64,6 +64,7 @@
 <script>
 
     import '@/assets/css/overlayMenu.css'
+    import '@/assets/css/main.css'
     import Profile from '@/components/Profile.vue'
 
     export default {

@@ -44,7 +44,7 @@ const routes = [
     children: [
       {
         path: 'select', 
-        component: () => import('./views/account/config/selectProject.vue')
+        component: () => import('./views/account/config/SelectProject.vue')
       },
       {
         path: 'project/:projectId/feed', 

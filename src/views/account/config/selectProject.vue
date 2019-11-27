@@ -8,7 +8,7 @@
             <div class="content-instruct">
               <img src="@/assets/logo-white-cutted.png" alt="Logotipo de Recognizify" width="162px" style="margin-bottom: 16px">
               <h3 style="color: #f2f2f2">Parece que aún no tienes proyectos nuevos</h3>
-              <p style="text-align: left">¿Qué te parece si empezamos de una vez?</p>
+              <p style="text-align: left">¿Qué tal si empezamos de una vez?</p>
               <br>
 
               <a href="#" class="btn btn-success btn-lg" style="width: 318px; display: flex; justify-content: space-around; align-items: center; cursor: pointer;">
@@ -19,39 +19,38 @@
           
           <div class="projectsField" id="projectsContent" v-if="projects.length >= 1">
             <div class="projectsBanner">
-              <h3>¿En qué idea trabajarás ahora?</h3>
-              <span class="text-muted">Selecciona uno de tus proyectos o de los que haces parte</span>
+              <h2>Tus proyectos</h2>
+              <span class="muted-gray">¿En que idea trabajarás ahora? Selecciona uno de tus proyectos.</span>
             </div>
 
             <br>
             <div class="projectsList">
-              <ul style="list-style: none">
-                <li class="project-el" :key="project" v-for="project in projects">
-                  <a :href="`/dashboard/project/${project.id}/feed`">
-                    <div class="card project-card" style="width: 17rem; margin-right: 1rem">
-                      <div class="card-body">
-                        <h6 class="card-title">
-                          {{project['name']}}
-                          <span class="badge badge-pill badge-secondary">
-                            <strong>Activo</strong>
-                          </span>
-                        </h6>
+              <ul class="projectListElements" style="list-style: none">
+                <ProjectCard 
+                  :key="project" 
+                  v-for="project in projects"
+                  :projectName="project['name']"
+                  :projectPhotoUrl="project['photoUrl']"
+                  :projectId="project['id']"
+                  lastActivity="7 minutos"
+                />
+
+                <li class="project-el">
+                  <a :href="`/account/create/project`">
+                    <div class="card projectCard mb-3" style="width: 380px; background: #0c1532; padding-left: 1em">
+                      <div style="display: flex; align-items: center">
+                        <div>
+                          <img class="card-img projectIcon" src="@/assets/ilustrations/modules/AirplaneIcon.png">
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title text-white" style="font-weight: 800">Crea un nuevo proyecto</h5>
+                          <p class="card-text"><small class="text-white">Deja ver tus ideas</small></p>
+                        </div>
                       </div>
                     </div>
                   </a>
                 </li>
-                
-                <li class="project-el">
-                  <router-link to="/account/create/project">
-                    <div class="card project-card" style="width: 17rem; margin-right: 1rem; background: #7100EA;">
-                      <div class="card-body">
-                        <h6 class="card-title text-white">
-                          Agregar un proyecto
-                        </h6>
-                      </div>
-                    </div>
-                  </router-link>
-                </li>
+
               </ul>
             </div>
         </div>
@@ -60,7 +59,9 @@
 <script>
 
     import firebase from "firebase";
-    import '@/assets/css/feed.css'
+    import ProjectCard from '@/components/ProjectCard.vue';
+
+    import '@/assets/css/select.css'
 
     export default {
     data() {
@@ -68,45 +69,50 @@
         projects: []
       }
     },
-    mounted: function() {
-      // let preloaderWall = document.querySelector("#preloaderWall")
-      // setTimeout(() => (preloaderWall.style.display = "none"), 700)
-      this.setProjectsOnListFeed()
+    components: {
+      ProjectCard
+    },
+    beforeMount: function() {
+      this.getProjects()
     },
     methods: {
-        setProjectsOnListFeed: function() {
-          firebase.auth().onAuthStateChanged(user => {
+      getProjects: function() {
+          firebase.firestore()
+          .collection("projects")
+          .get()
+          .then(projects => this.checkProjectsProperty(projects))
+      },
+      checkProjectsProperty: function(data){
+        firebase.auth().onAuthStateChanged(user => {
+          let count = 0;
+          data.forEach(project => {
             firebase.firestore()
             .collection("projects")
+            .doc(project.id)
+            .collection("members")
             .get()
-            .then(projects => {
-                let count = 0;
-                projects.forEach(project => {
-                  firebase.firestore().collection("projects").doc(project.id).collection("members").get()
-                    .then(members => {
-                      members.forEach(member => {
-                        if (member.id == user.uid) {
-                          this.projects.push({
-                            name: project.data()["shortName"],
-                            id: project.id
-                          })
-                          
-                          count += 1;
-                        }
-                      })
+            .then(members => {
+              members.forEach(member => {
+                if (member.id == user.uid) {
+                  firebase.storage().ref(`projects/${project.id}/project_photo`).getDownloadURL()
+                  .then(url => {
+                    this.projects.push({
+                      name: project.data()["shortName"],
+                      id: project.id,
+                      photoUrl: url
                     })
-                })
-
-                if (count == 0) {
-                  let bannerForZeroProjects = document.getElementById("bgNoneProjects")
-                  bannerForZeroProjects.style.display = "flex"
-                  let projectListOnScreen = document.getElementById("projectsContent")
-                  projectListOnScreen.style.display = "none"
+                  })
+                  count += 1;
                 }
+              })
             })
-
           })
-        }
+        })
+      },
+      showNonProjectsBanner: function(){
+        document.getElementById("bgNoneProjects").style.display = "flex";
+        document.getElementById("projectsContent").style.display = "none";
+      }
     }
-    }
+  }
 </script>

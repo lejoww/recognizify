@@ -31,6 +31,8 @@
   import "@/assets/css/main.css";
   import "@/assets/css/feed.css";
 
+  import CheckProjectMember from '@/assets/scripts/checkProjectMember.js'
+
   export default {
     data() {
       return {
@@ -51,6 +53,7 @@
         this.setProjectName()
       }
     },
+    // mixins: [CheckProjectMember],
     methods: {
       setProjectName: function() {
           firebase.firestore()

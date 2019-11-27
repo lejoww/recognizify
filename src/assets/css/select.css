@@ -1,0 +1,102 @@
+
+.projectsField {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 6rem;
+}
+
+.projectsField .projectsBanner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 12px;
+}
+
+.projectsField .projectsList .projectListElements {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.projectsField .projectsList ul {
+    margin: 0 auto;
+}
+
+.project-el {
+    margin-right: 7px;
+    margin-bottom: 7px;
+}
+
+.card.projectCard:hover {
+    animation: toBorder 400ms forwards;
+}
+
+@keyframes toBorder {
+    to {
+        border: 1px solid #5900C6;
+    }
+}
+
+.card.project-card {
+    margin-bottom: 12px;
+}
+
+.projectImageContainer {
+    overflow: hidden;
+    position: relative;
+}
+
+.projectImage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.projectIcon {
+    width: 80px;
+    height: 78px;
+}
+
+.projectCard {
+    width: 380px;
+}
+
+@media screen and (max-width: 991px) {
+    .projectsField {
+        padding: 3rem;
+    }
+
+    .projectCard {
+        width: 320px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .project-el {
+        width: 100%;
+    }
+
+    .projectCard {
+        width: 100%;
+    }
+
+    .projectsField {
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 536px) {
+    .projectsField {
+        padding: 1rem;
+    }
+
+    .project-el {
+        margin-right: 0;
+        margin-bottom: 4px;
+    }
+
+    .projectCard {
+        box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08);
+    }
+}

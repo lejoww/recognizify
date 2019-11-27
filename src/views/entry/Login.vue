@@ -36,6 +36,7 @@
 
     import firebase from 'firebase'
     import '@/assets/css/login.css'
+    import '@/assets/css/main.css'
 
     export default {
         name: 'login_entry',

@@ -76,7 +76,7 @@ $colors: map-merge(
 $primary:       $purple !default;
 $secondary:     $yellow !default;
 $success:       $bright-purple !default;
-$info:          $gray-400 !default;
+$info:          $gray-200 !default;
 $warning:       $pink !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
@@ -397,7 +397,7 @@ $input-btn-line-height:       $line-height-base !default;
 
 $input-btn-focus-width:       .2rem !default;
 $input-btn-focus-color:       rgba($component-active-bg, .25) !default;
-$input-btn-focus-box-shadow:  0 2px 14px 0 $input-btn-focus-color !default;
+$input-btn-focus-box-shadow:  0 3px 6px rgba(0, 0, 0, 0.1) !default;
 
 $input-btn-padding-y-sm:      .25rem !default;
 $input-btn-padding-x-sm:      .5rem !default;
@@ -480,7 +480,7 @@ $input-disabled-bg:                     $gray-200 !default;
 $input-color:                           $gray-900 !default;
 $input-border-color:                    $gray-400 !default;
 $input-border-width:                    $input-btn-border-width !default;
-$input-box-shadow:                      inset 0 1px 1px rgba($black, .075) !default;
+$input-box-shadow:                      inset 0 3px 12px rgba(0, 0, 0, 0) !default;
 
 $input-border-radius:                   $border-radius !default;
 $input-border-radius-lg:                $border-radius-lg !default;
