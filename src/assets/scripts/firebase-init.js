@@ -1,7 +1,6 @@
 
 import firebase from 'firebase'
 
-// development
 var firebaseConfig = {
   apiKey: "AIzaSyDjGdRG78Qa5X_vaAZYGi0fz5RsxBTxiHY",
   authDomain: "recognizify-app.firebaseapp.com",
