@@ -35,6 +35,7 @@
 @keyframes toBorder {
     to {
         border: 1px solid #5900C6;
+        box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08);
     }
 }
 
@@ -60,6 +61,35 @@
 
 .projectCard {
     width: 380px;
+}
+
+.projectLastActivity {
+    font-size: 12.5px;
+    font-weight: 700;
+}
+
+button.projectCardMenuOptions {
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    background: transparent;
+    border: none;
+}
+
+.dropdown-item {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.dropdownOverline {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #788692;
+    margin-top: 6px;
+    margin-bottom: 7px;
+    margin-left: 21px;
 }
 
 @media screen and (max-width: 991px) {

@@ -138,14 +138,6 @@ router-link, a, button {
     align-items: center;
 }
 
-.dropdown {
-    position: absolute !important;
-}
-
-.dropdown a {
-    cursor: pointer;
-}
-
 .credits-banner {
     padding: 1rem;
     background-color: rgba(203, 157, 255, 0.452);
