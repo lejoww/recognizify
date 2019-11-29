@@ -47,29 +47,12 @@
                 password: ''
             }
         },
-        created: function(){
-            this.checkbox()
-        },
         methods: {
             createAccountWithEmailAndPassword: function(){
-                let checkbox = document.getElementById('checkbox').checked
+                // let checkbox = document.getElementById('checkbox').checked
                 firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
                     .then(() => {
-                        firebase.auth().onAuthStateChanged(user => {
-                            user.sendEmailVerification()           
-                            if (user.emailVerified){
-                                firebase.firestore().collection('users').doc(user.uid).get()
-                                    .then(res => {
-                                        if (res.data() == null | res.data() == undefined){
-                                            this.$router.push('/register/info')
-                                        } else {
-                                            this.$router.push('/dashboard/select')
-                                        }
-                                    })
-                            } else {
-                                this.$router.push('/verify')
-                            }
-                        })
+                        this.$router.push('/verify')
                     })
                     .catch(err => {
                         let $loginAlert = document.querySelector('#loginAlert')

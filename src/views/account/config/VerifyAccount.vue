@@ -9,10 +9,9 @@
             <p>Nos importa la seguridad. Por lo tanto, para poder continuar debes verificar tu correo electrónico para continuar.</p>
             <span class="muted-gray">Cuando haya verificado su cuenta, haga clic en el botón</span>
             <br>
-            <button class="btn btn-danger" @click="restoreAccountToCheckVerification">
-                Continuar
+            <button class="btn btn-danger" @click="sendEmailVerification">
+                Enviar correo de verificación
             </button>
-            <a class="link text-success" @click="sendEmailVerification">Reenviar correo de verificación</a>
         </div>
     </div>
 </template>
