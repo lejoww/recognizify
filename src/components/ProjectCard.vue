@@ -1,5 +1,6 @@
 <template>
     <li class="project-el">
+        <a :href="`/dashboard/project/${this.projectId}/feed`">
         <!-- <a :href="`/dashboard/project/${this.projectId}/feed`">-->
             <div class="card projectCard mb-3">
                 <ProjectOptionsDropdown :projectId="this.projectId" />
@@ -20,8 +21,9 @@
                     </div>
                 </div>
             </div>
-        <!-- </a> -->
+        </a>
     </li>
+
 </template>
 <script>
 
