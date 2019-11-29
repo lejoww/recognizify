@@ -49,7 +49,6 @@
         },
         methods: {
             createAccountWithEmailAndPassword: function(){
-                // let checkbox = document.getElementById('checkbox').checked
                 firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
                     .then(() => {
                         this.$router.push('/verify')
@@ -57,7 +56,6 @@
                     .catch(err => {
                         let $loginAlert = document.querySelector('#loginAlert')
                         $loginAlert.style.display = 'block'
-                        loginButton.innerHTML = 'Iniciar sesión'
                     })
             }
         }

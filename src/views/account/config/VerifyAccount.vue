@@ -11,11 +11,18 @@
             <br>
             <button class="btn btn-danger" @click="sendEmailVerification">
                 Enviar correo de verificación
+            </button><br>
+            <button class="btn btn-outline-dark">
+                Comprobar verificación
             </button>
         </div>
     </div>
 </template>
 <style>
+
+    .verifyScreen {
+        padding: 2rem;
+    }
 
     .wrapCenter {
         width: 100vw;
@@ -23,7 +30,8 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center
+        align-items: center;
+        text-align: left;
     }
 
     .link {
@@ -45,13 +53,7 @@
                 .then(() => this.$router.push('/'))
             },
             sendEmailVerification: function(){
-                firebase.auth().onAuthStateChanged(user => {
-                    if (user) {
-                        user.sendEmailVerification().then(() => {
-                            document.getElementById('sendingAlert').style.display = 'block'
-                        })
-                    }
-                })
+                firebase.auth().currentUser.sendEmailVerification()
             }
         }
     }
