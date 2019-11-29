@@ -8,8 +8,8 @@
 <script>
 
     import '@/assets/css/feed.css'
-    import '@/assets/css/lateralMenu.css'
-    import LateralPanel from '@/components/LateralPanel.vue'
+    import '@/assets/css/HeaderMenu.css'
+    import LateralPanel from '@/components/HeaderMenu.vue'
     import OverlayMenu from '@/components/OverlayMenu.vue'
 
     import { CheckEmailVerification } from '@/assets/scripts/checkVerificatedEmail.js'

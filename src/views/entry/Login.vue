@@ -20,7 +20,6 @@
                     Registrarse
                 </router-link>
             </button>
-            <!-- <button class="btn btn-warning btn-login" v-on:click="signInWithEmailAndPasswordofTest">Iniciar con cuenta de prueba</button> -->
         </div>
 
         <div class="alert alert-warning" id="loginAlert" role="alert">
@@ -47,11 +46,6 @@
                 account: true
             }
         },
-        // mounted: function (){
-        //     firebase.auth().onAuthStateChanged(user => {
-        //         if (user) this.$router.push('/dashboard/select');
-        //     })
-        // },
         methods: {
             signInWithEmailAndPassword: function(){
                 var loginButton = document.getElementById('dynamicButton')

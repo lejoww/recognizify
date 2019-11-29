@@ -5,7 +5,6 @@
 //
 
 .btn {
-  height: 32px;
   display: inline-block;
   font-family: $btn-font-family;
   font-weight: $btn-font-weight;
@@ -14,16 +13,13 @@
   vertical-align: middle;
   user-select: none;
   background-color: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-bottom: 4px solid rgba(0, 0, 0, 0.2);
-  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
+  border: none;
+  @include button-size(5px, 12px, 12.5px, 1.5, 4px);
   @include transition($btn-transition);
 
   @include hover {
     transition: all 0.2s ease;
     text-decoration: none;
-    border: 1px solid rgba(0, 0, 0, 0.356);
-    border-bottom: 2px solid rgba(0, 0, 0, 0.356);
   }
 
   &.disabled,
@@ -131,4 +127,40 @@ input[type="button"] {
   &.btn-block {
     width: 100%;
   }
+}
+
+.btn-outline-dark {
+  display: inline-block;
+  font-size: 12.5px;
+  font-family: $btn-font-family;
+  font-weight: 500;
+  color: $gray-700;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid #dbdbdb;
+  padding: 4px 11px;
+  border-radius: 3px;
+
+  @include hover {
+    transition: all 0.2s ease;
+    border: 1px solid #2a2c30;
+    color: $black;
+  }
+
+  // &.disabled,
+  // &:disabled {
+  //   opacity: $btn-disabled-opacity;
+  //   // @include box-shadow(none);
+  // }
+
+  // &:not(:disabled):not(.disabled):active,
+  // &:not(:disabled):not(.disabled).active {
+  //   @include box-shadow($btn-active-box-shadow);
+
+  //   &:focus {
+  //     @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+  //   }
+  // } 
 }

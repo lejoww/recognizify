@@ -1,0 +1,40 @@
+.nonProjectsBanner {
+    width: 100%;
+    height: 100%;
+    background-color: #F2F2F2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bannerInstructions {
+    width: 42%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.bannerInstructions p {
+    font-size: 17px;
+}
+
+.actionButton {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 991px){
+    .nonProjectsBanner {
+        justify-content: center;
+        grid-column: 1 / 19;
+        grid-row: 1 / 12;
+    }
+}
+
+@media screen and (max-width: 787px){
+    .nonProjectsBanner { flex-direction: column; }
+    .bannerInstructions { width: 89%; }
+}
+
+@media screen and (max-width: 479px){
+    .nonProjectsBanner .content-instruct { width: 82%; }
+}

@@ -17,6 +17,7 @@
     "feather-icons": "^4.24.1",
     "firebase": "^6.3.4",
     "graceful-fs": "^4.2.2",
+    "ibm-watson": "^5.1.0",
     "jquery": "^3.4.1",
     "module": "^1.2.5",
     "mongodb": "^3.3.2",

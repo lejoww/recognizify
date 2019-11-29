@@ -133,20 +133,6 @@
     bottom: -21px;
 }
 
-.nonProjectsBanner {
-    width: 100%;
-    height: 100%;
-    background: rgb(36, 35, 73);
-    background: linear-gradient(
-        90deg,
-        rgba(36, 35, 73, 1) 0%,
-        rgba(1, 12, 46, 1) 100%
-    );
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .projectSummaryPurpleCard {
     /* grid-column: 10 / 18; */
     border-radius: 7px;
@@ -355,12 +341,6 @@ a:hover {
         width: 312px;
     }
 
-    .nonProjectsBanner {
-        justify-content: center;
-        grid-column: 1 / 19;
-        grid-row: 1 / 12;
-    }
-
     .projectSummaryData { grid-row: 2 / 3; }
 
     .feedLayout {
@@ -387,8 +367,6 @@ a:hover {
         display: none;
     }
 
-    .nonProjectsBanner { flex-direction: column; }
-    .image-representation img { width: 292px; }
     .configurationView .configurationAlignment { width: 100%; }
 
     .projectSummaryData .rank {
@@ -398,7 +376,5 @@ a:hover {
 }
 
 @media screen and (max-width: 479px) {
-    .nonProjectsBanner .content-instruct { width: 82%; }
-
     .content-flex { flex-direction: column; }
 }

@@ -1,22 +1,7 @@
 <template>
       <div class="dashboardContent">
-
-          <div class="nonProjectsBanner" id="bgNoneProjects" v-if="projects.length == 0">
-            <div class="image-representation">
-              <img src="@/assets/ilustrations/born-robot.png" alt="Robot despertando" />
-            </div>
-            <div class="content-instruct">
-              <img src="@/assets/logo-white-cutted.png" alt="Logotipo de Recognizify" width="162px" style="margin-bottom: 16px">
-              <h3 style="color: #f2f2f2">Parece que aún no tienes proyectos nuevos</h3>
-              <p style="text-align: left">¿Qué tal si empezamos de una vez?</p>
-              <br>
-
-              <a href="#" class="btn btn-success btn-lg" style="width: 318px; display: flex; justify-content: space-around; align-items: center; cursor: pointer;">
-                <router-link class="text-white" to="/account/create/project">Crea un nuevo proyecto</router-link>
-              </a>
-            </div>
-          </div>
           
+          <NonProjectsBanner v-if="projects.length == 0"/>
           <div class="projectsField" id="projectsContent" v-if="projects.length >= 1">
             <div class="projectsBanner">
               <h2>Tus proyectos</h2>
@@ -60,6 +45,7 @@
 
     import firebase from "firebase";
     import ProjectCard from '@/components/ProjectCard.vue';
+    import NonProjectsBanner from '@/components/project/NonProjectsBanner.vue'
 
     import '@/assets/css/select.css'
 
@@ -70,7 +56,8 @@
       }
     },
     components: {
-      ProjectCard
+      ProjectCard,
+      NonProjectsBanner
     },
     beforeMount: function() {
       this.getProjects()
@@ -108,10 +95,6 @@
             })
           })
         })
-      },
-      showNonProjectsBanner: function(){
-        document.getElementById("bgNoneProjects").style.display = "flex";
-        document.getElementById("projectsContent").style.display = "none";
       }
     }
   }
