@@ -27,7 +27,7 @@
                         </div>
                         <div class="form-group">
                             <label>¿De qué se trata el proyecto?</label>
-                            <textarea class="form-control form-textarea" v-model="description" rows="7"></textarea>
+                            <input type="text" class="form-control" v-model="description" placeholder="Trata de ser específico y claro"/>
                         </div>
                         <div class="form-group">
                             <label>Agrega una foto que represente el proyecto</label>
@@ -72,7 +72,7 @@
                         name: this.largeName,
                         shortName: this.shortName,
                         description: this.description,
-                        admin: [ user.uid ]
+                        admin: [ user.uid ] 
                     })
                     .then(() => {
                         firebase.firestore()

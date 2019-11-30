@@ -82,18 +82,21 @@
               members.forEach(member => {
                 if (member.id == user.uid) {
                   firebase.storage().ref(`projects/${project.id}/project_photo`).getDownloadURL()
-                  .then(url => {
-                    this.projects.push({
-                      name: project.data()["shortName"],
-                      id: project.id,
-                      photoUrl: url
-                    })
-                  })
+                  .then(url => this.setProjectOnArray(project.data()["shortName"], project.id, url))
+                  .catch(() => this.setProjectOnArray(project.data()["shortName"], project.id, 'https://source.unsplash.com/800x500/?work,innovation,friends'))
+                  
                   count += 1;
                 }
               })
             })
           })
+        })
+      },
+      setProjectOnArray: function(name, id, url){
+        this.projects.push({
+          name: name,
+          id: id,
+          photoUrl: url
         })
       }
     }

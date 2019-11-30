@@ -282,13 +282,11 @@ a:hover {
     grid-column: 1 / 20;
 }
 
-/* projects list */
-
 .formLayout .projectAd {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     text-align: center;
-    background-color: rgb(6, 66, 177);
+    background-color: #0b1529;
 }
 
 .formLayout .projectAd .projectAdWrapper {
@@ -296,10 +294,10 @@ a:hover {
 }
 
 .formLayout .projectForm {
-    height: 103%;
+    /* height: 103%; */
     grid-column: 2 / 3;
     grid-row: 1 / 2;
-    overflow: scroll;
+    overflow-y: scroll;
     padding: 2rem;
 }
 

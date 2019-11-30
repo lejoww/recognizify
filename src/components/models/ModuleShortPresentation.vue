@@ -6,9 +6,9 @@
         <span class="presentationSummary">
             {{this.presentationSummary}}
         </span>
-        <a :href="this.callToActionRef" class="btn btn-blue btn-lg text-white">
+        <button :href="this.callToActionRef" class="btn btn-dark btn-lg" style="font-weight: 800; margin: 1em 0">
             {{this.callToAction}}
-        </a>
+        </button>
     </div>
 </template>
 <script>
