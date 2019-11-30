@@ -20,6 +20,10 @@ const routes = [
     component: () => import('./views/entry/Credits.vue')
   },
   {
+    path: '/surveys/beta/last',
+    component: () => import('./views/surveys/Survey.vue')
+  },
+  {
     path: '/register/info',
     name: 'welcome_account_complete',
     component: () => import('./views/account/config/CompleteAccountInfo.vue')

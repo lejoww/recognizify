@@ -1,6 +1,7 @@
 <template>
       <div class="dashboardContent">
           
+          <BetaProgramSurvey/>
           <NonProjectsBanner v-if="projects.length == 0"/>
           <div class="projectsField" id="projectsContent" v-if="projects.length >= 1">
             <div class="projectsBanner">
@@ -46,6 +47,7 @@
     import firebase from "firebase";
     import ProjectCard from '@/components/ProjectCard.vue';
     import NonProjectsBanner from '@/components/project/NonProjectsBanner.vue'
+    import BetaProgramSurvey from '@/components/modals/BetaProgramSurvey.vue'
 
     import '@/assets/css/select.css'
 
@@ -57,10 +59,14 @@
     },
     components: {
       ProjectCard,
-      NonProjectsBanner
+      NonProjectsBanner,
+      BetaProgramSurvey
     },
     beforeMount: function() {
       this.getProjects()
+      $(document).ready(function(){
+        $("#surveyModal").modal("show");
+      });
     },
     methods: {
       getProjects: function() {
