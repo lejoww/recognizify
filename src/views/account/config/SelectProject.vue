@@ -64,9 +64,6 @@
     },
     beforeMount: function() {
       this.getProjects()
-      $(document).ready(function(){
-        $("#surveyModal").modal("show");
-      });
     },
     methods: {
       getProjects: function() {

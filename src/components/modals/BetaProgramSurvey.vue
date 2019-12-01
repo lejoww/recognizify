@@ -30,6 +30,10 @@
 </template>
 <script>
 
-    export default {}
+    export default {
+        mounted: function() {
+            $("#surveyModal").modal("show");
+        }
+    }
 
 </script>

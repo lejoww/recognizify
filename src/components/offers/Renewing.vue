@@ -6,8 +6,8 @@
         <div class="renewingOfferPurpose">
             <h4 class="renewingOfferTitle text-white">Nos estamos renovando. Ayudanos a mejorar dandonos tu opinión</h4>
             <div>
-                <button class="btn btn-danger" disabled>Aplicar encuesta</button>
-                <small class="text-white" style="margin-left: 12px">Disponible próximamente</small>
+                <a href="/surveys/beta/last" class="btn btn-danger">Aplicar encuesta</a>
+                <small class="text-white" style="margin-left: 12px">Disponible ahora mismo</small>
             </div>
         </div>
     </div>
