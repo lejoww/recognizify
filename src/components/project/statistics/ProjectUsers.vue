@@ -39,8 +39,6 @@
         },
         created: function(){
             this.getProjectMembers()
-            this.setYourselfOnList()
-            console.log(this.usersInProject)
         },
         methods: {    
             getProjectMembers: function() {

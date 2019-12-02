@@ -57,11 +57,7 @@
                 firebase.auth().currentUser.sendEmailVerification()
             },
             checkVerificationProccess: function(){
-                if (firebase.auth().currentUser.emailVerified == true) {
-                    this.$router.push('/dashboard/select')
-                } else {
-                    document.getElementById('sendingAlert').style.display = 'block'
-                }
+                this.$router.push('/dashboard/select')
             }
         }
     }
