@@ -30,7 +30,6 @@
             'id'
         ],
         created: function(){
-            console.log(this.id)
             firebase.storage().ref(`/profile_photos/${this.id}`).getDownloadURL()
                 .then(url => document.getElementById('taskPublisherProfilePicture').setAttribute('src', url))
         }
