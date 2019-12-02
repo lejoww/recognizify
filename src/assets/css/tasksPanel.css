@@ -1,7 +1,7 @@
 
 
 .tasksPanel {
-    height: 92vh;
+    height: 100%;
     display: block;
     grid-column: 2 / 3;
     grid-row: 1 / 3;
@@ -25,19 +25,21 @@
 }
 
 .tasksPanelWrapper {
-    margin: 21px;
+    margin: 12px;
 }
 
 .tasksPanelTitle {
     font-size: 16px;
-    font-weight: 800;
+    font-weight: 600;
     margin-left: 7px;
+    line-height: 1.2;
+    vertical-align: middle;
 }
 
 .taskCard {
     width: 100%;
     padding: 12px;
-    border: 1px solid #E9E8E8;
+    border: 1px solid #E9E9E9;
     border-radius: 4px;
     margin-top: 12px;
 }
@@ -66,7 +68,8 @@
 }
 
 .taskToDo {
-    line-height: 1.2;
+    line-height: 1.4;
+    font-weight: 400;
 }
 
 
@@ -76,7 +79,11 @@
     z-index: 0;
     bottom: 0;
     padding: 12px;
-    background: #F2F2F2;
+}
+
+.taskMiniBanner {
+    /* background-color: #fff; */
+    padding: 12px;
 }
 
 .taskSettingInput {

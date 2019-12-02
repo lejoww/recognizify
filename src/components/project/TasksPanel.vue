@@ -1,10 +1,12 @@
 <template>
     <div class="tasksPanel">
+            <div class="taskMiniBanner bg-primary">
+                <svg class="feather-light">
+                    <use xlink:href="@/assets/svg/feather-sprite.svg#check-circle" />
+                </svg>
+                <span class="tasksPanelTitle text-white">Tareas de tu equipo</span>
+            </div>
         <div class="tasksPanelWrapper">
-            <svg class="feather-menu">
-                <use xlink:href="@/assets/svg/feather-sprite.svg#check-circle" />
-            </svg>
-            <span class="tasksPanelTitle"> Tareas de tu equipo</span>
             <div class="tasksPanelList" v-if="tasks.length > 0">
                 <Task :key="task" v-for="task in tasks" :todo="task.message" :publisher="`por ${task.name}`" :id="task.publisherId"/>
             </div>
