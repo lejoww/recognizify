@@ -24,6 +24,10 @@ const routes = [
     component: () => import('./views/surveys/Survey.vue')
   },
   {
+    path: '/register/heroes',
+    component: () => import('./views/surveys/Heroes.vue')
+  },
+  {
     path: '/register/info',
     name: 'welcome_account_complete',
     component: () => import('./views/account/config/CompleteAccountInfo.vue')
