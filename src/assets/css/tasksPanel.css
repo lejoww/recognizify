@@ -45,9 +45,13 @@
 .taskCard .taskPublisherProfile {
     width: 24px;
     height: 24px;
-    background-image: url('../ilustrations/profile.png');
-    background-size: cover;
     border-radius: 12px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.taskPublisherProfilePicture {
+    width: 100%;
 }
 
 .taskPublisher {

@@ -33,7 +33,8 @@
                             .collection('tasks')
                             .add({
                                 name: userdata.data()['name'],
-                                task: this.task.trim()
+                                task: this.task.trim(),
+                                publisherId: user.uid
                             }).then(() => window.location.reload());
                         })
                         .catch((err) => {

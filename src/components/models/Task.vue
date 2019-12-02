@@ -3,7 +3,9 @@
         <p class="taskToDo">{{this.todo}}</p>
         <div class="taskBottom">
             <div class="taskPublisher">
-                <div class="taskPublisherProfile" id="taskPublisherProfile"></div>
+                <div class="taskPublisherProfile">
+                    <img src="@/assets/ilustrations/profile.png" class="taskPublisherProfilePicture" id="taskPublisherProfilePicture">
+                </div>
                 <span class="">{{this.publisher}}</span>
             </div>
             <span>
@@ -20,11 +22,18 @@
 </template>
 <script>
     
+    import firebase from 'firebase';
     export default {
         props: [
             'todo',
-            'publisher'
+            'publisher',
+            'id'
         ],
+        created: function(){
+            console.log(this.id)
+            firebase.storage().ref(`/profile_photos/${this.id}`).getDownloadURL()
+                .then(url => document.getElementById('taskPublisherProfilePicture').setAttribute('src', url))
+        }
     }
 
 </script>

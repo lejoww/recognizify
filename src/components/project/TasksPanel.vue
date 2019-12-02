@@ -6,7 +6,7 @@
             </svg>
             <span class="tasksPanelTitle"> Tareas de tu equipo</span>
             <div class="tasksPanelList" v-if="tasks.length > 0">
-                <Task :key="task" v-for="task in tasks" :todo="task.message" :publisher="`por ${task.name}`"/>
+                <Task :key="task" v-for="task in tasks" :todo="task.message" :publisher="`por ${task.name}`" :id="task.publisherId"/>
             </div>
 
             <div class="tasksPanelList" v-if="tasks.length == 0">
@@ -54,7 +54,8 @@
                         tasks.forEach(task => {
                             this.tasks.push({
                                 name: task.data()['name'],
-                                message: task.data()['task']
+                                message: task.data()['task'],
+                                publisherId: task.data()['publisherId']
                             })
                         })
                     })
