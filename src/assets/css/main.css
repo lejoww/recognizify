@@ -224,3 +224,13 @@ a.router-link-exact-active:hover, a:hover {
     fill: none;
     margin-left: 7px;
 }
+
+.feather-mini-light {
+    width: 16px;
+    height: 16px;
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}

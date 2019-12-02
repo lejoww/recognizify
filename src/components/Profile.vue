@@ -3,7 +3,7 @@
         <div class="profileWrapper">
             <div class="profileData">
                 <div class="profileContent">
-                    <img class="profilePicture" v-bind:src="urlPhotoPath">
+                    <img class="profilePicture" id="profilePicture" src="@/assets/ilustrations/profile.png">
                 </div>
                 <div class="profileIdentity">
                     <span class="profileName text-white">Hola, {{this.currentAccount.nickname}}</span>
@@ -32,8 +32,7 @@
 
     export default {
         data: function(){
-            return {   
-                urlPhotoPath: '',
+            return {
                 currentAccount: {
                     nickname: '',
                     username: ''
@@ -49,7 +48,9 @@
             setProfilePicture: function(){
                 firebase.auth().onAuthStateChanged(user => {
                     firebase.storage().ref(`profile_photos/${user.uid}`).getDownloadURL()
-                    .then(path => this.urlPhotoPath = path)
+                    .then(path => {
+                        document.getElementById('profilePicture').setAttribute('src', path)
+                    })
                 })
             },
             setIdentityData: function(){

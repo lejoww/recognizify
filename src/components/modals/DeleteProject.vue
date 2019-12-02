@@ -52,7 +52,7 @@
                     .collection('members')
                     .doc(user.uid)
                     .delete()
-                    .then(() => window.location.reload())
+                    .then(() => window.location.replace = '/dashboard/select')
                     .catch((err) => console.log(err))
                 })
             },

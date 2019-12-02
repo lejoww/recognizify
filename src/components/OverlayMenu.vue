@@ -19,7 +19,15 @@
             <router-link class="overlayMenuLink" :to="`/dashboard/project/${routesPath}/feed`">Resumen</router-link>
         </div>
         <div class="overlayMenuOption" style="margin-top: 12px" @click="closeOverlayMenu">
-            <router-link class="overlayMenuLink" to="/account/notifications">Invitaciones</router-link>
+            <router-link class="overlayMenuLink" to="/account/notifications">
+                Invitaciones
+                <span class="badge badge-danger" v-if="invitations >= 1">
+                    <svg class="feather-mini-light">
+                        <use xlink:href="@/assets/svg/feather-sprite.svg#bell" />
+                    </svg>
+                    {{invitations}}
+                </span>
+            </router-link>
         </div>
         <br>
         <div class="overline">Módulos</div>
@@ -66,20 +74,35 @@
     import '@/assets/css/overlayMenu.css'
     import '@/assets/css/main.css'
     import Profile from '@/components/Profile.vue'
+    import firebase from 'firebase'
 
     export default {
         data: function(){
             return {
-                routesPath: ''
+                routesPath: '',
+                invitations: ''
             }
         },
         components: {
             Profile,
         },
-        mounted: function(){
+        created: function(){
+            this.getInvitations()
             this.routesPath = this.$route.params.projectId
         },
         methods: {
+            getInvitations: function(){
+                firebase.auth().onAuthStateChanged(user => {
+                    firebase.firestore()
+                    .collection('users')
+                    .doc(user.uid)
+                    .collection('invitations')
+                    .get()
+                    .then(invitations => {
+                        this.invitations = invitations.docs.length
+                    })
+                })
+            },
             closeOverlayMenu: function(){
                 document.getElementById('overlayMenu').classList.remove('show')
             }

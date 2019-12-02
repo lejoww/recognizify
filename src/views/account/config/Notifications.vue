@@ -6,12 +6,19 @@
                         <svg class="feather-dark">
                             <use xlink:href="@/assets/svg/feather-sprite.svg#arrow-left"/>
                         </svg>
-                        <h6>Volver atrás</h6>
+                        <span>Volver atrás</span>
                     </a>
 
                     <h2>Notificaciones</h2>
-                    <p style="text-align: left">Puede haber cosas aquí que no salgan muy bien. Recuerda que estamos en versión BETA.</p>
-                
+                    <p>Próximamente podrás ver quién de qué se trata el proyecto al que te invitaron, por el momento esta función no esta disponible.</p>
+                    <Invitation :key="invitation" v-for="invitation in invitationsList" :name="invitation.name" :id="invitation.id"/>
+
+                    <h6 v-if="invitationsList.length == 0">
+                        <svg class="feather-dark">
+                            <use xlink:href="@/assets/svg/feather-sprite.svg#alert-circle" />
+                        </svg>
+                        No tienes invitaciones por el momento.
+                    </h6>
                 </div>
             </div>
     </div>
@@ -19,9 +26,19 @@
 <script>
     
     import firebase from 'firebase'
+    import Invitation from '@/components/models/Invitation.vue'
+
     import '@/assets/css/feed.css'
 
     export default {
+        data: function(){
+            return {
+                invitationsList: []
+            }
+        },
+        components: {
+            Invitation
+        },
         mounted: function() {
             this.getInvitations()
         },
@@ -31,28 +48,14 @@
                     firebase.firestore().collection('users').doc(user.uid).collection('invitations').get()
                         .then(invitations => {
                             let notificationsContent = document.getElementById('notificationsContent')
-                            if(invitations.docs.length >= 1){
-                                invitations.forEach(invitation => {
-                                    notificationsContent.insertAdjacentHTML('beforeend', `
-                                        <div class="card w-75">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Te acaban de invitar a ${invitation.data()['pname']}</h5>
-                                                <p class="card-text" style="text-align: left">Esto es una solicitud hacia el proyecto de alguien que probablemente te conoce. Tu decides aceptarla o rechazarla</p>
-                                                <a href="/account/${invitation.id}/accept" class="btn btn-warning">Aceptar</a>
-                                            </div>
-                                        </div>
-                                    `)
+                            invitations.forEach(invitation => {
+                                this.invitationsList.push({
+                                    name: invitation.data()['pname'],
+                                    id: invitation.id
                                 })
-                            } else {
-                                notificationsContent.insertAdjacentHTML('beforeend', `
-                                    <p>Aún no tienes invitaciones a otros proyectos</p>
-                                `)
-                            }
+                            })
                         })
                 })
-            },
-            acceptInvitation: function(){
-                console.log('Hola mundo')
             }
         }
     }

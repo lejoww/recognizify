@@ -14,9 +14,10 @@
                                 {{this.projectName}}
                                 <span class="badge badge-secondary">Activo</span>
                             </h5>
-                            <span class="card-text text-muted projectLastActivity">
+                            <!-- <span class="card-text text-muted projectLastActivity">
                                 Última actividad hace {{this.lastActivity}}
-                            </span>
+                                Sin registro de la última actividad
+                            </span> -->
                         </div>
                     </div>
                 </div>

@@ -17,7 +17,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <span>Estas inscrito en nuestro programa de usuarios BETA y por eso eres importante. Porque gracias a tí y por tí mejoramos cada día más, nos adaptamos a tus necesidades porque eres importante para nosotros. Hoy tienes otra oportunidad de contarnos que te parece Recognizify ¿Te apuntas?</span>
+                    <span>Estas inscrito en nuestro programa de usuarios BETA y por eso eres importante. Porque gracias a tí y por tí mejoramos cada día más, nos adaptamos a tus necesidades porque eres importante para nosotros. Hoy tienes otra oportunidad de contarnos qué te parece Recognizify ¿Te apuntas?</span>
                 </div>
                 <div class="modal-footer" style="border: none">
                     <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
