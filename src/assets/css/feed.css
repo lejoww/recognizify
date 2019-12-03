@@ -18,7 +18,6 @@
     display: grid;
     grid-template-columns: 72% 28%;
     grid-template-rows: 312px 1fr;
-    /* overflow: hidden; */
 }
 
 .formLayout {

@@ -1,18 +1,30 @@
 
+.overlayMenuHidden {
+    width: 21%;
+    height: 100vh;
+    position: fixed;
+    right: -21%;
+    z-index: 10;
+}
+
 .overlayMenu {
     width: 21%;
     height: 100vh;
     position: fixed;
-    right: 0;
     padding: 2rem;
     background-color: #303841;
-    display: none;
     z-index: 10;
-    /* right: -21%; */
+    animation: showMenu 320ms forwards;
 }
 
-.show {
-    display: block;
+@keyframes showMenu {
+    80% {
+        right: 0;
+    }
+    100% {
+        box-shadow: -3px 0 142px rgba(0, 0, 0, 0.8);
+        right: 0;
+    }
 }
 
 .overline {
@@ -25,16 +37,16 @@
     margin-bottom: 1.4rem;
 }
 
-.overlayMenu .overlayMenuSearch {
+.overlayMenuSearch {
     display: none;
 }
 
-.overlayMenu .overlayMenuOption {
+.overlayMenuOption {
     display: flex;
     align-items: center;
 }
 
-.overlayMenu .overlayMenuOption .overlayMenuLink {
+.overlayMenuOption .overlayMenuLink {
     font-weight: 600;
     color: #F2F2F2;
 }
@@ -58,7 +70,7 @@
         width: 42%;
     }
 
-    .overlayMenu .overlayMenuSearch {
+    .overlayMenuSearch {
         display: block;
     }
 }

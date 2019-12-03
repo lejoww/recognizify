@@ -42,6 +42,8 @@
         created: function(){
             this.setProfilePicture()
             this.setIdentityData()
+        },
+        mounted: function(){
             this.checkExistentIdentity()
         },
         methods: {

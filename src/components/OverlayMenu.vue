@@ -1,5 +1,5 @@
 <template>
-    <div class="overlayMenu" id="overlayMenu">
+    <div class="overlayMenuHidden" id="overlayMenu">
         <div class="overlayMenuOption" style="cursor: pointer;" @click="closeOverlayMenu">
             <svg class="feather-menu">
                 <use xlink:href="@/assets/svg/feather-sprite.svg#arrow-left" />
@@ -104,7 +104,7 @@
                 })
             },
             closeOverlayMenu: function(){
-                document.getElementById('overlayMenu').classList.remove('show')
+                document.getElementById('overlayMenu').classList.toggle('overlayMenu')
             }
         }
     }

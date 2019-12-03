@@ -11,17 +11,17 @@
 }
 
 .tasksPanel::-webkit-scrollbar {
-    width: 12px;
+    width: 9px;
 }
 
 .tasksPanel::-webkit-scrollbar-thumb {
     background-color: #9C9CAA;
-    border: 2.5px solid rgb(212, 210, 219);
+    border: 2px solid rgb(212, 210, 219);
     border-radius: 6px;
 }
 
 .tasksPanel::-webkit-scrollbar-track {
-    background-color: rgb(212, 210, 219);
+    background-color: rgb(232, 231, 236);
 }
 
 .tasksPanelWrapper {

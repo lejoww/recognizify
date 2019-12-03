@@ -65,7 +65,7 @@
           })
         },
         openOverlayMenu: function(){
-          document.getElementById('overlayMenu').classList.toggle('show');
+          document.getElementById('overlayMenu').classList.toggle('overlayMenu');
         }
       }
     }
