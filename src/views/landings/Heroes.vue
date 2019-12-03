@@ -4,7 +4,7 @@
         <br><br>
         <div class="content">
             <h3>Ten paciencia</h3>
-            <span>Todavía estamos preparándonos, recuerda que estará disponible desde el 4 de diciembre a las 5:00 (Hora colombiana)</span>
+            <span>Todavía estamos preparándonos, recuerda que estará disponible desde el 4 de diciembre a las 5:00 PM (Hora colombiana)</span>
         </div>
     </div>
 </template>
