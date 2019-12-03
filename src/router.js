@@ -20,6 +20,11 @@ const routes = [
     component: () => import('./views/entry/Credits.vue')
   },
   {
+    path: '/heroes',
+    name: 'credits',
+    component: () => import('./views/landings/Heroes.vue')
+  },
+  {
     path: '/surveys/beta/last',
     component: () => import('./views/surveys/Survey.vue')
   },
