@@ -146,7 +146,7 @@ router-link, a, button {
 .instructCopy {
     left: 27px;
     bottom: 24px;
-    position: absolute;
+    position: fixed;
     color: #7c7788;
     text-align: center;
 }
