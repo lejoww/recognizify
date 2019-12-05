@@ -43,9 +43,6 @@
             this.setProfilePicture()
             this.setIdentityData()
         },
-        mounted: function(){
-            this.checkExistentIdentity()
-        },
         methods: {
             setProfilePicture: function(){
                 firebase.auth().onAuthStateChanged(user => {
@@ -61,25 +58,24 @@
                     .then(data => {
                         this.currentAccount.nickname = data.data()['nickname']
                         this.currentAccount.username = data.data()['user']
+                        if (this.currentAccount.nickname == '' ||
+                            this.currentAccount.nickname == undefined ||
+                            this.currentAccount.nickname == null
+                        ){
+                            this.$router.push('/register/nickname')
+                        }
+                        if(
+                            this.currentAccount.username == '' ||
+                            this.currentAccount.username == undefined ||
+                            this.currentAccount.username == null
+                        ){
+                            this.$router.push('/register/info')
+                        }     
+                    })
+                    .catch(() => {
+                        alert('Parece que no tienes conexión a internet o la operación es invalida.')
                     })
                 })
-            },
-            checkExistentIdentity: function(){
-                setTimeout(() => {
-                    if (this.currentAccount.nickname == '' ||
-                        this.currentAccount.nickname == undefined ||
-                        this.currentAccount.nickname == null
-                    ){
-                        this.$router.push('/register/nickname')
-                    }
-                    if(
-                        this.currentAccount.username == '' ||
-                        this.currentAccount.username == undefined ||
-                        this.currentAccount.username == null
-                    ){
-                        this.$router.push('/register/info')
-                    }
-                }, 4000)
             },
             closeSession: function(){
                 firebase.auth().signOut()

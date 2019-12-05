@@ -319,6 +319,15 @@ a:hover {
     font-weight: 700;
 }
 
+.projectCards {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
 /* mediaqueries  */
 @media screen and (max-width: 1284px) {
     .projectsField {

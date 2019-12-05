@@ -1,6 +1,7 @@
 <template>
   <div class="dashboardContent">
 
+    <CreateProjectLinkModal/>
     <!-- <div class="projectSummaryTitle">
       <h3 v-text="projectName"></h3>
     </div> -->
@@ -10,6 +11,17 @@
         <div class="rank">
           <ProjectUsers/>
           <Renewing/>
+        </div>
+        <br>
+        <h2 style="margin: 5px 10px">
+          Enlaces 
+          <button class="btn btn-success" data-toggle="modal" data-target="#projectCardModal">
+            Crear enlace
+          </button>
+        </h2>
+        <div class="projectCards">
+          <LinkCard :key="link" v-for="link in links" :title="link.title" :description="link.description" :link="link.url" :id="link.id"/>
+          <span v-if="links.length == 0" style="margin: 5px 10px">No hay enlaces aquí. Crea el primero ahí arriba</span>
         </div>
       </div>
       <TasksPanel/>
@@ -25,6 +37,8 @@
   import FeaturedGoal from "@/components/project/FeaturedGoal.vue";
   import Renewing from "@/components/offers/Renewing.vue"
   import TasksPanel from "@/components/project/TasksPanel.vue"
+  import LinkCard from "@/components/project/LinkCard.vue"
+  import CreateProjectLinkModal from "@/components/modals/CreateProjectLink.vue"
 
   import Vue from 'vue'
 
@@ -36,7 +50,8 @@
   export default {
     data() {
       return {
-        projectName: ''
+        projectName: '',
+        links: []
       }
     },
     components: {
@@ -44,13 +59,16 @@
       ProjectUsers,
       FeaturedGoal,
       Renewing,
-      TasksPanel
+      TasksPanel,
+      LinkCard,
+      CreateProjectLinkModal
     },
     created: function() {
       if (this.$route.params["projectId"] == 'undefined') {
         this.$router.push('/dashboard/select')
       } else {
         this.setProjectName()
+        this.getLinks()
       }
     },
     // mixins: [CheckProjectMember],
@@ -63,6 +81,23 @@
           .then(res => {
             this.projectName = res.data()["shortName"]
           })
+      },
+      getLinks: function(){
+        firebase.firestore()
+        .collection('projects')
+        .doc(this.$route.params.projectId)
+        .collection('links')
+        .get()
+        .then(links => {
+          links.forEach(link => {
+            this.links.push({
+              title: link.data()['title'],
+              description: link.data()['description'],
+              url: link.data()['url'],
+              id: link.id
+            })
+          })
+        })
       }
     }
   }

@@ -47,6 +47,10 @@ const routes = [
     component: () => import('./views/account/config/VerifyAccount.vue')
   },
   {
+    path: '/error/project',
+    component: () => import('./views/error/Project.vue')
+  },
+  {
     path: '/boards',
     component: () => import('./views/presentations/BoardsPresentation.vue')
   },
