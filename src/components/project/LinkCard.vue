@@ -13,7 +13,7 @@
             <svg class="feather-link">
                 <use xlink:href="@/assets/svg/feather-sprite.svg#link" />
             </svg>
-            {{this.link}}
+            {{`${this.link.slice(0, 40)}...`}}
         </a>
     </div>
 </template>
