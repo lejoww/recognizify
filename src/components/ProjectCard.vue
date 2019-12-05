@@ -1,9 +1,8 @@
 <template>
     <li class="project-el">
+        <ProjectOptionsDropdown :projectId="this.projectId" />
         <a :href="`/dashboard/project/${this.projectId}/feed`">
-        <!-- <a :href="`/dashboard/project/${this.projectId}/feed`">-->
             <div class="card projectCard mb-3">
-                <ProjectOptionsDropdown :projectId="this.projectId" />
                 <div class="row no-gutters">
                     <div class="col-md-4 projectImageContainer">
                         <img class="card-img projectImage" :src="this.projectPhotoUrl">
