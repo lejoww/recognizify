@@ -18,6 +18,68 @@
                 <h5>Puedes comenzar por aquí</h5><br>
                     <div class="form-container">
                         <div class="form-group">
+                            <label>¿Qué es el proyecto?</label>
+
+                            <div class="categories">
+                                <div class="categoryCard">
+                                    <div class="cardIcon">
+                                        <svg class="feather-blue">
+                                            <use xlink:href="@/assets/svg/feather-sprite.svg#briefcase" />
+                                        </svg>
+                                    </div>
+                                    <div class="cardHeader">
+                                        <span class="header">Servicio</span>
+                                    </div>
+                                </div>
+
+                                <div class="categoryCard">
+                                    <div class="cardIcon">
+                                        <svg class="feather-blue">
+                                            <use xlink:href="@/assets/svg/feather-sprite.svg#package" />
+                                        </svg>
+                                    </div>
+                                    <div class="cardHeader">
+                                        <span class="header">Producto</span>
+                                    </div>
+                                </div>
+                            
+                                <div class="categoryCard">
+                                    <div class="cardIcon">
+                                        <svg class="feather-blue">
+                                            <use xlink:href="@/assets/svg/feather-sprite.svg#star" />
+                                        </svg>
+                                    </div>
+                                    <div class="cardHeader">
+                                        <span class="header">Proyecto</span>
+                                    </div>
+                                </div>
+
+                                <div class="categoryCard">
+                                    <div class="cardIcon">
+                                        <svg class="feather-blue">
+                                            <use xlink:href="@/assets/svg/feather-sprite.svg#tool" />
+                                        </svg>
+                                    </div>
+                                    <div class="cardHeader">
+                                        <span class="header">Invento</span>
+                                    </div>
+                                </div>
+
+                                <div class="categoryCard">
+                                    <div class="cardIcon">
+                                        <svg class="feather-blue">
+                                            <use xlink:href="@/assets/svg/feather-sprite.svg#zap" />
+                                        </svg>
+                                    </div>
+                                    <div class="cardHeader">
+                                        <span class="header">Tarea</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            
+                        </div>
+                        <div class="form-group">
                             <label>Nombre completo del proyecto</label>
                             <input type="text" v-model="largeName" class="form-control" placeholder="Un nombre largo para el proyecto">
                         </div>

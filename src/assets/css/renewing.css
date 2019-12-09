@@ -1,6 +1,7 @@
 
 .renewingOfferContainer {
-    width: 46%;
+    width: 64%;
+    display: table;
     padding: 18px;
     margin: 7px 0 3rem 0;
     background: #FF524C;

@@ -52,33 +52,11 @@
                 .get()
                 .then(goals => {
                     goals.forEach(goal => {
-                        if (goal.data()['importance']) {
-                            this.importances.push({
-                                id: goal.id,
-                                importance: parseInt(goal.data()['importance'])
-                            })
+                        if (goal.data()['star'] != false) {
+                            this.featuredGoal.name = goal.data()['name']
+                            this.featuredGoal.motivation = goal.data()['motivation']
                         }
                     })
-
-                    this.setFeaturedGoal()
-                })
-            },
-            setFeaturedGoal: function(){
-                this.importances.forEach(importance => {
-                    if (this.highImportance < importance.importance) {
-                        this.highImportance = importance.id
-                    }
-                })
-
-                firebase.firestore()
-                .collection('projects')
-                .doc(this.$route.params.projectId)
-                .collection('goals')
-                .doc(this.highImportance)
-                .get()
-                .then(data => {
-                    this.featuredGoal.name = data.data()['name'],
-                    this.featuredGoal.motivation = data.data()['motivation']
                 })
             }
         }

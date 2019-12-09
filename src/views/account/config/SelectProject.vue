@@ -29,7 +29,7 @@
                           <img class="card-img projectIcon" src="@/assets/ilustrations/modules/AirplaneIcon.png">
                         </div>
                         <div class="card-body">
-                          <h5 class="card-title text-white" style="font-weight: 800">Crea un nuevo proyecto</h5>
+                          <h6 class="card-title text-white" style="font-weight: 800">Crea un nuevo proyecto</h6>
                           <p class="card-text"><small class="text-white">Deja ver tus ideas</small></p>
                         </div>
                       </div>

@@ -3,7 +3,7 @@
 .headerMenu {
     width: 100%;
     grid-row: 1 / 2;
-    background-color: #F2F2F2;
+    background-color: #1f1e2c;
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
     display: flex;
     justify-content: space-between;
@@ -30,7 +30,6 @@
 .headerMenu .headerSearch .inputSearch {
     width: 288px;
     margin: 0 1rem;
-    background-color: #f8f8f8;
 }
 
 .headerMenu .headerNav {

@@ -82,6 +82,10 @@ const routes = [
       {
         path: 'project/:projectId/tasks',
         component: () => import('./views/account/feeds/project/Tasks.vue')
+      },
+      {
+        path: 'project/:projectId/tasks/create',
+        component: () => import('./views/account/config/CreateTask.vue')
       }
     ]
   },

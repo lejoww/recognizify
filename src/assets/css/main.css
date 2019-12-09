@@ -33,7 +33,22 @@ nav {
 .scrollable {
     overflow: scroll;
     overflow-x: hidden;
-    max-height: 81%;
+    max-height: 212px;
+}
+
+.scrollable::-webkit-scrollbar {
+    width: 11px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+    background-color: rgb(177, 177, 192);
+    border: 2.5px solid rgb(232, 231, 236);
+    border-radius: 6px;
+}
+
+.scrollable::-webkit-scrollbar-track {
+    background-color: rgb(232, 231, 236);
+    border-radius: 6px;
 }
 
 /* .scrollable::-webkit-scrollbar-thumb {
@@ -240,6 +255,16 @@ a.router-link-exact-active:hover, a:hover {
     height: 16px;
     stroke: rgb(146, 146, 146);
     stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+.feather-blue {
+    width: 36px;
+    height: 36px;
+    stroke: #165fec;
+    stroke-width: 1;
     stroke-linecap: round;
     stroke-linejoin: round;
     fill: none;

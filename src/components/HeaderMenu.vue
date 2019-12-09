@@ -10,7 +10,7 @@
     </div>
     <div class="headerWrapperRight">
       <a class="headerMenuButton" @click="openOverlayMenu">
-        <svg class="feather-dark">
+        <svg class="feather-light">
           <use xlink:href="@/assets/svg/feather-sprite.svg#menu" />
         </svg>
       </a>

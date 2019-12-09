@@ -169,7 +169,7 @@ $sizes: map-merge(
 //
 // Settings for the `<body>` element.
 
-$body-bg:                   $white !default;
+$body-bg:                   #f1f2f7 !default;
 $body-color:                $gray-900 !default;
 
 
@@ -370,7 +370,7 @@ $table-head-bg:               $gray-200 !default;
 $table-head-color:            $gray-700 !default;
 
 $table-dark-color:            $white !default;
-$table-dark-bg:               $gray-800 !default;
+$table-dark-bg:               $gray-900 !default;
 $table-dark-accent-bg:        rgba($white, .05) !default;
 $table-dark-hover-color:      $table-dark-color !default;
 $table-dark-hover-bg:         rgba($white, .075) !default;
@@ -990,7 +990,7 @@ $alert-color-level:                 6 !default;
 
 // Progress bars
 
-$progress-height:                   1rem !default;
+$progress-height:                   0.7rem !default;
 $progress-font-size:                $font-size-base * .75 !default;
 $progress-bg:                       $gray-200 !default;
 $progress-border-radius:            $border-radius !default;

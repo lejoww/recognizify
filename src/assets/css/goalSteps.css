@@ -1,0 +1,35 @@
+
+.goalStepsBanner {
+    grid-row: 2 / 3;
+    background-color: #f8f8f8;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.goalStep {
+    width: 29%;
+    display: block;
+    display: flex;
+    flex-direction: column;
+}
+
+.goalStepTitle {
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.goalStepAbstract {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.goalStepNumber {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    background: #4420dc;
+    color: #fff;
+    text-align: center;
+}

@@ -1,40 +1,7 @@
 <template>
     <!-- <p>Las metas te ayudan a que todo lo que hagas en tu proyecto con Recognizify vaya entorno a ellas.</p><br> -->
     <div id="goals">
-        <div class="modal fade" id="addGoalModal" tabindex="-1" role="dialog" aria-labelledby="addGoalModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header" style="border: none;">
-                        <h2 class="modal-title">Crea una meta</h2>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-container">
-                            <div class="form-group">
-                                <label>¿Cuál es la meta?</label>
-                                <input type="text" class="form-control" placeholder="Ejm. Promocionar los productos por redes sociales" autocomplete="off" spellcheck="false" v-model="goal.name">
-                            </div>
-                            <div class="form-group">
-                                <label>Escribe una frase que te motive a hacerlo</label>
-                                <input type="text" class="form-control" placeholder='"A hombros de gigantes"' autocomplete="off" spellcheck="false" v-model="goal.motivation">
-                            </div>
-                            <div class="form-group">
-                                <label>De 1 a 100 ¿Qué grado de importancia crees que tiene esta meta?</label>
-                                <input type="number" class="form-control" placeholder="76" min="0" max="100" v-model="goal.importance">
-                            </div>
-                            <div class="form-group">
-                                <label>Si tuvieras que definir con una sola palabra tu meta, ¿Con cuál la harías?</label>
-                                <input type="text" class="form-control" placeholder="Productividad" v-model="goal.word">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer" style="border: none">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary" @click="saveGoal">Crear meta</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        <CreateGoal/>
             <div class="dashboardContent">
                 <div class="goalsLayout">
                     <div class="projectSummaryTitle">
@@ -50,6 +17,11 @@
                     </div>
                     <div class="goalsField" v-if="goals.length > 0">
                         <div class="card goalCard" style="width: 18rem;" :key="goalData['name']" v-for="(goalData, name, motivation) in goals">
+                            <a @click="setStar(goalData['id'])">
+                                <svg width="18" height="18" stroke="#000" stroke-width="2" fill="none">
+                                    <use xlink:href="@/assets/svg/feather-sprite.svg#star"/>
+                                </svg> 
+                            </a>
                             <div class="card-body">
                                 <h5 class="card-title" :key="name">{{goalData['name']}}</h5>
                                 <p class="card-text" :key="motivation">{{goalData['motivation']}}</p>
@@ -73,17 +45,16 @@
     import '@/assets/css/feed.css'
     import '@/assets/css/goals.css'
 
+    import CreateGoal from '@/components/modals/CreateGoal.vue'
+
     export default {
         data(){
             return {
-                goal: {
-                    name: '',
-                    motivation: '',
-                    importance: '',
-                    word: ''
-                },
                 goals: []
             }
+        },
+        components: {
+            CreateGoal
         },
         created: function(){
             if (this.$router.history.current.params["projectId"] == 'undefined') {
@@ -93,19 +64,6 @@
             }
         },
         methods: {
-            saveGoal: function(){
-                firebase.firestore()
-                .collection('projects')
-                .doc(this.$route.params.projectId)
-                .collection('goals')
-                .add({
-                    name: this.goal.name,
-                    motivation: this.goal.motivation,
-                    importance: this.goal.importance,
-                    word: this.goal.word
-                })
-                .then(() => window.location.reload())
-            },
             getGoals: function(){
                 firebase.firestore()
                 .collection('projects')
@@ -116,10 +74,23 @@
                     goals.forEach(goal => {
                         this.goals.push({
                             name: goal.data()['name'],
-                            motivation: goal.data()['motivation']
+                            motivation: goal.data()['motivation'],
+                            id: goal.id
                         })
                     })
                 })
+            },
+            setStar: function(id){
+                firebase.firestore()
+                .collection('projects')
+                .doc(this.$route.params.projectId)
+                .collection('goals')
+                .doc(id)
+                .update({
+                    star: true
+                })
+                .then(() => console.log('correcto'))
+                .catch(() => console.log('nope'))
             }
         }
     }

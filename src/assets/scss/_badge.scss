@@ -5,16 +5,16 @@
 
 .badge {
   display: inline-block;
-  padding: $badge-padding-y $badge-padding-x;
+  padding: 4px 9px;
   @include font-size($badge-font-size);
-  font-family: 'Lato';
-  font-weight: 800;
-  font-size: 12px;
+  font-family: "Source sans pro";
+  font-weight: 700;
+  font-size: 14px;
   line-height: 1;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  @include border-radius($badge-border-radius);
+  @include border-radius(3px);
   @include transition($badge-transition);
   letter-spacing: normal;
 

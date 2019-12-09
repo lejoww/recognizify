@@ -1,12 +1,8 @@
 <template>
     <div class="projectSummaryCard">
-        <div class="row" style="align-items:center; justify-content: space-between; padding: 0 1em">
-            <span class="muted-gray">Usuarios registrados</span>
-            <span>
-                <router-link class="text-warning stronger" :to="`/dashboard/project/${this.$route.params.projectId}/membership`">
-                    Administrar
-                </router-link>
-            </span>
+        <div style="display:flex; justify-content: space-between">
+            <span class="muted-gray">Usuarios</span>
+            <a :href="`dashboard/project/${this.$route.params.projectId}/membership`" class="text-warning">Administrar</a>
         </div>
         <br>
         <div class="scrollable">

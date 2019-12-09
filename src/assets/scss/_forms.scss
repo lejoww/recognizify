@@ -177,7 +177,7 @@ select.form-control {
   padding: $input-padding-y $input-padding-x;
   font-family: "Source Sans Pro";
   font-weight: 600;
-  @include font-size($input-font-size);
+  @include font-size(13px);
   line-height: $input-line-height;
   color: $input-color;
   background-color: rgba(237, 226, 248, 0.2);

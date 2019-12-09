@@ -47,6 +47,11 @@
         //   return event;
         // }
       })
+    },
+    updated: function(){
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
     }
   }
 

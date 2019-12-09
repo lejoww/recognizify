@@ -7,24 +7,25 @@
     </div> -->
     <div class="feedLayout">
       <FeaturedGoal/>
+      <GoalSteps/>
       <div class="projectSummaryData">
         <div class="rank">
           <ProjectUsers/>
           <Renewing/>
         </div>
         <br>
-        <h2 style="margin: 5px 10px">
+        <span class="linksSectionTitle">
           Enlaces 
           <button class="btn btn-success" data-toggle="modal" data-target="#projectCardModal">
             Crear enlace
           </button>
-        </h2>
+        </span>
         <div class="projectCards">
           <LinkCard :key="link" v-for="link in links" :title="link.title" :description="link.description" :link="link.url" :id="link.id"/>
           <span v-if="links.length == 0" style="margin: 5px 10px">No hay enlaces aquí. Crea el primero ahí arriba</span>
         </div>
       </div>
-      <TasksPanel/>
+      <AdsPanel/>
     </div>
   </div>
 </template>
@@ -36,9 +37,10 @@
   import ProjectUsers from "@/components/project/statistics/ProjectUsers.vue";
   import FeaturedGoal from "@/components/project/FeaturedGoal.vue";
   import Renewing from "@/components/offers/Renewing.vue"
-  import TasksPanel from "@/components/project/TasksPanel.vue"
+  import AdsPanel from "@/components/project/AdsPanel.vue"
   import LinkCard from "@/components/project/LinkCard.vue"
   import CreateProjectLinkModal from "@/components/modals/CreateProjectLink.vue"
+  import GoalSteps from '@/components/project/statistics/GoalSteps.vue'
 
   import Vue from 'vue'
 
@@ -59,9 +61,10 @@
       ProjectUsers,
       FeaturedGoal,
       Renewing,
-      TasksPanel,
+      AdsPanel,
       LinkCard,
-      CreateProjectLinkModal
+      CreateProjectLinkModal,
+      GoalSteps
     },
     created: function() {
       if (this.$route.params["projectId"] == 'undefined') {
