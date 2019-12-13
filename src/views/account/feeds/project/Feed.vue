@@ -7,7 +7,7 @@
     </div> -->
     <div class="feedLayout">
       <FeaturedGoal/>
-      <GoalSteps/>
+      <!-- <GoalSteps/> -->
       <div class="projectSummaryData">
         <div class="rank">
           <ProjectUsers/>
@@ -66,6 +66,7 @@
       CreateProjectLinkModal,
       GoalSteps
     },
+    mixins: [CheckProjectMember],
     created: function() {
       if (this.$route.params["projectId"] == 'undefined') {
         this.$router.push('/dashboard/select')
@@ -74,7 +75,6 @@
         this.getLinks()
       }
     },
-    // mixins: [CheckProjectMember],
     methods: {
       setProjectName: function() {
           firebase.firestore()

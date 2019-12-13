@@ -13,12 +13,16 @@
 <script>
 
     // import '@/assets/css/tasks.css';
+    import firebase from 'firebase';
+
     import TasksTable from '@/components/project/statistics/TasksTable.vue'
+    import CheckProjectMember from '@/assets/scripts/checkProjectMember.js'
 
     export default {
         components: {
             TasksTable
-        }
+        },
+        mixins: [CheckProjectMember]
     }
 
 </script>

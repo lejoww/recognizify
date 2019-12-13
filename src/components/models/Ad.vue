@@ -8,7 +8,7 @@
                 </div>
                 <span class="">{{this.publisher}}</span>
             </div>
-            <span>
+            <!-- <span>
                 <svg class="feather-like-options">
                     <use xlink:href="@/assets/svg/feather-sprite.svg#thumbs-up" />
                 </svg>
@@ -16,7 +16,7 @@
                 <svg class="feather-like-options">
                     <use xlink:href="@/assets/svg/feather-sprite.svg#thumbs-down" />
                 </svg>
-            </span>
+            </span> -->
         </div>
     </div>
 </template>

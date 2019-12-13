@@ -8,24 +8,25 @@
                     <th scope="col">Opciones</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
+            <tbody v-if="tasksList.length >= 1">
+                <tr :key="task" v-for="task in tasksList">
                     <td>
                         <div class="taskTableField">
-                            <span class="taskTitle">Agregar usuarios a la lista de compensación</span>
+                            <span class="taskTitle">{{task.task}}</span>
                         </div>
                     </td>
                     <td>
                         <div class="taskTableField">
-                            <div class="taskCreatorProfile" data-toggle="tooltip" data-placement="bottom" title="Ale Rodríguez">
-                                <img src="https://lh3.googleusercontent.com/a-/AAuE7mC2NIQ4xTmjrd04qP84O4rLumcqI1GyOPO8FwR0=s96-cc-rg" width="100%">
+                            <div class="taskCreatorProfile">
+                                <!-- data-toggle="tooltip" data-placement="bottom" title="Ale Rodríguez" -->
+                                <img :src="task.creatorPhoto" width="100%">
                             </div>
                         </div>
                     </td>
                     <td>
                         <div class="taskTableField">
                             <div class="taskOptions">
-                                <a href="">
+                                <a @click="deleteTask(task.id)" style="cursor: pointer">
                                     <svg class="feather-like-options">
                                         <use xlink:href="@/assets/svg/feather-sprite.svg#trash" />
                                     </svg>
@@ -34,6 +35,9 @@
                         </div>
                     </td>
                 </tr>
+            </tbody>
+            <tbody v-else>
+                <p style="margin: 25px">No hay tareas. Agrega una en el botón.</p>
             </tbody>
         </table>
     </div>
@@ -44,8 +48,51 @@
 
     import firebase from 'firebase'
     export default {
+        data: function (){
+            return {
+                tasksList: []
+            }
+        },
         created: function(){
-            // firebase
+            this.getTasks()
+        },
+        methods: {
+            getTasks: function (){
+                firebase.firestore()
+                .collection('projects')
+                .doc(this.$route.params.projectId)
+                .collection('tasks')
+                .get()
+                .then(tasks => this.putTasksOnTable(tasks))
+            },
+            putTasksOnTable: function(tasks){
+                tasks.forEach(task => {
+                    firebase.storage().ref(`profile_photos/${task.data()['creator']}`).getDownloadURL()
+                    .then(url => {
+                        this.tasksList.push({
+                            task: task.data()['task'],
+                            creatorPhoto: url,
+                            id: task.id
+                        })
+                    })
+                    .catch(() => {
+                       this.tasksList.push({
+                            task: task.data()['task'],
+                            creatorPhoto: '../../../../../assets/ilustrations/profile.png',
+                            id: task.id
+                       })
+                    })
+                })
+            },
+            deleteTask: function(id){
+                firebase.firestore()
+                .collection('projects')
+                .doc(this.$route.params.projectId)
+                .collection('tasks')
+                .doc(id)
+                .delete()
+                .then(() => window.location.reload())
+            }
         }
     }
 

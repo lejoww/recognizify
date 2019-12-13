@@ -73,7 +73,11 @@
                         }     
                     })
                     .catch(() => {
-                        alert('Parece que no tienes conexión a internet o la operación es invalida.')
+                        if(navigator.onLine){
+                            window.location = '/register/info'
+                        } else {
+                            alert('Parece que no tienes conexión a internet o la operación es invalida.')
+                        }
                     })
                 })
             },

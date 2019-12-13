@@ -2,7 +2,7 @@
     <div class="projectSummaryCard">
         <div style="display:flex; justify-content: space-between">
             <span class="muted-gray">Usuarios</span>
-            <a :href="`dashboard/project/${this.$route.params.projectId}/membership`" class="text-warning">Administrar</a>
+            <router-link :to="`/dashboard/project/${this.$route.params.projectId}/membership`" class="text-warning">Administrar</router-link>
         </div>
         <br>
         <div class="scrollable">

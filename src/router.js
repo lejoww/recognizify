@@ -21,7 +21,7 @@ const routes = [
   },
   {
     path: '/heroes',
-    name: 'credits',
+    name: 'heroes',
     component: () => import('./views/landings/Heroes.vue')
   },
   {

@@ -285,7 +285,7 @@ a:hover {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     text-align: center;
-    background-color: #0b1529;
+    background-color: #101018;
 }
 
 .formLayout .projectAd .projectAdWrapper {
@@ -423,6 +423,15 @@ a:hover {
     border-radius: 3px;
     margin-right: 12px;
     margin-bottom: 6px;
+    cursor: pointer
+}
+
+.categoryCard .cardIcon:hover {
+    background-color: #dce3f0;
+}
+
+.categoryCard .cardIcon:active {
+    background-color: #b3c1db;
 }
 
 .categoryCard .cardIcon {

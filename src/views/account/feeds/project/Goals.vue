@@ -46,6 +46,7 @@
     import '@/assets/css/goals.css'
 
     import CreateGoal from '@/components/modals/CreateGoal.vue'
+    import CheckProjectMember from '@/assets/scripts/checkProjectMember.js'
 
     export default {
         data(){
@@ -56,6 +57,7 @@
         components: {
             CreateGoal
         },
+        mixins: [CheckProjectMember],
         created: function(){
             if (this.$router.history.current.params["projectId"] == 'undefined') {
                 this.$router.push('/dashboard/select')

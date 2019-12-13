@@ -12,6 +12,7 @@
     import LateralPanel from '@/components/HeaderMenu.vue'
     import OverlayMenu from '@/components/OverlayMenu.vue'
 
+    import { CheckActiveSession } from '@/assets/scripts/checkActiveSession.js'
     import { CheckEmailVerification } from '@/assets/scripts/checkVerificatedEmail.js'
 
     export default {
@@ -19,7 +20,7 @@
             LateralPanel,
             OverlayMenu
         },
-        mixins: [CheckEmailVerification]
+        mixins: [CheckActiveSession, CheckEmailVerification]
     }
 
 </script>

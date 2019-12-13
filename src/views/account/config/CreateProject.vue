@@ -17,11 +17,11 @@
                 <h2>Crea un nuevo proyecto.</h2>
                 <h5>Puedes comenzar por aquí</h5><br>
                     <div class="form-container">
-                        <div class="form-group">
-                            <label>¿Qué es el proyecto?</label>
+                        <!-- <div class="form-group">
+                            <label>¿Qué es el proyecto?</label> -->
 
-                            <div class="categories">
-                                <div class="categoryCard">
+                            <!-- <div class="categories">
+                                <div class="categoryCard" @click="this.type = 'service'">
                                     <div class="cardIcon">
                                         <svg class="feather-blue">
                                             <use xlink:href="@/assets/svg/feather-sprite.svg#briefcase" />
@@ -32,7 +32,7 @@
                                     </div>
                                 </div>
 
-                                <div class="categoryCard">
+                                <div class="categoryCard" @click="this.type = 'product'">
                                     <div class="cardIcon">
                                         <svg class="feather-blue">
                                             <use xlink:href="@/assets/svg/feather-sprite.svg#package" />
@@ -43,7 +43,7 @@
                                     </div>
                                 </div>
                             
-                                <div class="categoryCard">
+                                <div class="categoryCard" @click="this.type = 'project'">
                                     <div class="cardIcon">
                                         <svg class="feather-blue">
                                             <use xlink:href="@/assets/svg/feather-sprite.svg#star" />
@@ -54,7 +54,7 @@
                                     </div>
                                 </div>
 
-                                <div class="categoryCard">
+                                <div class="categoryCard" @click="this.type = 'invent'">
                                     <div class="cardIcon">
                                         <svg class="feather-blue">
                                             <use xlink:href="@/assets/svg/feather-sprite.svg#tool" />
@@ -65,7 +65,7 @@
                                     </div>
                                 </div>
 
-                                <div class="categoryCard">
+                                <div class="categoryCard" @click="this.type = 'task'">
                                     <div class="cardIcon">
                                         <svg class="feather-blue">
                                             <use xlink:href="@/assets/svg/feather-sprite.svg#zap" />
@@ -76,9 +76,9 @@
                                     </div>
                                 </div>
 
-                            </div>
+                            </div> -->
                             
-                        </div>
+                        <!-- </div> -->
                         <div class="form-group">
                             <label>Nombre completo del proyecto</label>
                             <input type="text" v-model="largeName" class="form-control" placeholder="Un nombre largo para el proyecto">
@@ -117,7 +117,8 @@
                 largeName: '',
                 shortName: '',
                 description: '',
-                projectuid: ''
+                projectuid: '',
+                type: ''
             }
         },
         methods: {

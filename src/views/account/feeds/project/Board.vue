@@ -81,6 +81,7 @@
 
     import uuidv1 from 'uuid/v1'
     import { AddPoints } from '@/assets/scripts/addActivityPoints.js'
+    import CheckProjectMember from '@/assets/scripts/checkProjectMember.js'
 
     export default {
         data(){
@@ -93,7 +94,7 @@
                 notesData: []
             }
         },
-        mixins: [AddPoints],
+        mixins: [CheckProjectMember, AddPoints],
         created: function(){
             if (this.$router.history.current.params["projectId"] == 'undefined') {
                 this.$router.push('/dashboard/select')
