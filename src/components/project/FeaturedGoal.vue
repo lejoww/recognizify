@@ -1,6 +1,6 @@
 <template>
     <div class="projectSummaryGoalNotice">
-        <div class="goalNoticeContent">
+        <div class="goalNoticeContent bg-success">
             <div class="goalNoticeOpacity" v-if="featuredGoal.name != ''">
                 <h1><span class="badge badge-secondary">Tu principal objetivo</span></h1>
                 <h2 class="text-white" v-text="featuredGoal.name"></h2>

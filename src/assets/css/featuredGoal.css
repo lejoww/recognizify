@@ -27,16 +27,6 @@
 .projectSummaryGoalNotice .goalNoticeContent {
     width: 100%;
     height: 100%;
-    /* background-image: url('https://source.unsplash.com/featured/?productivity,desk,products,work');
-    background-size: cover;
-    background-position: center; */
-    background: linear-gradient(153deg, #5b00d1, #007dff, #f531a5, #f5b731);
-    background-size: 800% 800%;
-    
-    /* -webkit-animation: dynamicGradient 49s ease infinite;
-    animation: dynamicGradient 10s ease infinite; */
-
-    /* animation: showGoalNotice 2s forwards; */
 }
 
 .projectSummaryGoalNotice .goalNoticeContent .goalNoticeOpacity {

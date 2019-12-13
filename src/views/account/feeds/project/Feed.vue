@@ -11,7 +11,7 @@
       <div class="projectSummaryData">
         <div class="rank">
           <ProjectUsers/>
-          <Renewing/>
+          <!-- <Renewing/> -->
         </div>
         <br>
         <span class="linksSectionTitle">

@@ -22,7 +22,7 @@
         right: 0;
     }
     100% {
-        box-shadow: -3px 0 142px rgba(0, 0, 0, 0.8);
+        box-shadow: -1px 0 32px rgba(0, 0, 0, 0.3);
         right: 0;
     }
 }

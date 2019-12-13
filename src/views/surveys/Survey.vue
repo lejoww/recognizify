@@ -15,7 +15,7 @@
     export default {
         mounted: function(){
             let content = document.getElementById('content')
-            typeformEmbed.makeWidget(content, 'https://recognizifyio.typeform.com/c/OjFQj2?typeform-cui-avatar=https://images.typeform.com/images/DrWqUb3zkBQL', {
+            typeformEmbed.makeWidget(content, 'https://recognizifyio.typeform.com/c/OjFQj2?typeform-cui-avatar=https://images.typeform.com/images/Edr7smkSSWeT', {
                 hideHeaders: true,
                 hideFooter: true,
                 opacity: 75,

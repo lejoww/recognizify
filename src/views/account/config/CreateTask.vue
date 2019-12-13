@@ -21,7 +21,8 @@
                         <option :key="step" v-for="step in objectivesStepsAchieved">{{step}}</option>
                     </select>
                 </div>
-            </div>
+            </div><br>
+            <button class="btn btn-success" @click="saveTask">Guardar tarea</button>
         </div>
     </div>
 </template>
@@ -56,7 +57,7 @@
         methods: {
             getGoals: function(e){
                 this.objectivesAchieved.forEach(objective => {
-                    if(e.target.value == objective['name']){                        
+                    if(e.target.value == objective['name']){
                         firebase.firestore()
                         .collection('projects')
                         .doc(this.$route.params.projectId)
@@ -72,6 +73,9 @@
                         })
                     }
                 })
+            },
+            saveTask: function(){
+                
             }
         }
     }

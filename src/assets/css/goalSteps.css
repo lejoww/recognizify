@@ -33,3 +33,9 @@
     color: #fff;
     text-align: center;
 }
+
+.goalStepsBannerContent {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
