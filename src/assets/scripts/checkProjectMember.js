@@ -9,11 +9,18 @@ export const CheckProjectMember = {
         .collection('members')
         .get()
         .then((membership) => {
+            var state = false;
             membership.forEach(member => {
-                if (member.id != firebase.auth().currentUser.uid){
-                    this.$router.push('/error/project')
+                if (member.id == firebase.auth().currentUser.uid){
+                    state = true
                 }
             })
+
+            setInterval(() => {
+                if (state == false) {
+                    this.$router.push('/error/project')
+                }
+            }, 500)
         });
     }
 }
