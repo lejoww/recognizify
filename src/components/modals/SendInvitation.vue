@@ -6,9 +6,15 @@
             <h3 class="modal-title modalTitle">Invita a este usuario a un proyecto</h3>
           </div>
           <div class="modal-body">
-            <span>Enviar invitación para:</span>
-            <div class="card projectCard" :key="project" v-for="project in currentUserProjects">
-                <button v-on:click="sendInvitationToSelectedUser(project.id)">{{project.name}}</button>
+            <div v-if="currentUserProjects.length >= 1">
+                <span>Enviar invitación para:</span>
+                <div class="card projectCard" :key="project" v-for="project in currentUserProjects">
+                    <button v-on:click="sendInvitationToSelectedUser(project.id)">{{project.name}}</button>
+                </div>
+            </div>
+            <div v-else>
+                <p>Parece que aún no tienes proyectos o no has iniciado sesión</p>
+                <button class="btn btn-primary">Inicia sesión</button>
             </div>
           </div>
           <div class="modal-footer" style="border: none">
