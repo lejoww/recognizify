@@ -1,10 +1,10 @@
 <template>
     <div class="projectSummaryGoalNotice">
-        <div class="goalNoticeContent bg-success">
+        <div class="goalNoticeContent">
             <div class="goalNoticeOpacity" v-if="featuredGoal.name != ''">
-                <h1><span class="badge badge-secondary">Tu principal objetivo</span></h1>
-                <h2 class="text-white" v-text="featuredGoal.name"></h2>
-                <p class="text-white" v-text="featuredGoal.motivation"></p>
+                <h3><span class="badge badge-secondary">Tu principal objetivo</span></h3>
+                <h4 class="text-white" style="line-height: 1.2">{{featuredGoal.name}}</h4>
+                <!-- <p class="text-white" v-text="featuredGoal.motivation"></p> -->
             </div>
 
             <div class="goalNonNoticeOpacity" v-if="featuredGoal.name == ''">

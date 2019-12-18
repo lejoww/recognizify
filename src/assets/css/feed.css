@@ -57,12 +57,13 @@
 }
 
 .projectSummaryCard {
+    width: 36%;
     padding: 10px 15px;
     margin: 0.5em;
     background-color: #ffff;
-    /* border: 1px solid #e9e9e9; */
-    box-shadow: 0 0 13px 0 rgba(82,63,105,.05);
-    border-radius: 6px;
+    border: 1px solid #e9e9e9;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 3px;
 }
 
 .projectSummaryCard .usersList {
@@ -356,12 +357,12 @@ a:hover {
 
     .projectSummaryData { grid-row: 2 / 3; }
 
+    .projectSummaryCard { width: 50%; }
+
     .feedLayout {
         grid-template-columns: 100%;
-        grid-template-rows: 52% 48%;
+        grid-template-rows: 10% 48%;
     }
-
-    .projectSummaryGoalNotice { grid-column: 1 / 2; }
 
     .tasksPanel { display: none; }
 }
@@ -385,6 +386,10 @@ a:hover {
     .projectSummaryData .rank {
         flex-direction: column;
         padding: 5px;
+    }
+
+    .projectSummaryCard {
+        width: 100%;
     }
 }
 

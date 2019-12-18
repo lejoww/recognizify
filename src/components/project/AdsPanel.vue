@@ -1,6 +1,6 @@
 <template>
     <div class="tasksPanel">
-            <div class="taskMiniBanner bg-secondary">
+            <div class="taskMiniBanner">
                 <svg class="feather-light">
                     <use xlink:href="@/assets/svg/feather-sprite.svg#check-circle" />
                 </svg>

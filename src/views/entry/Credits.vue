@@ -17,6 +17,7 @@
                 <li>Cohete despegando. <a href="https://www.freepik.es/fotos-vectores-gratis/negocios">Vector de Negocios creado por pikisuperstar - www.freepik.es</a></li>
                 <li>Personas flotando <a href="https://www.freepik.es/fotos-vectores-gratis/fondo">Vector de Fondo creado por freepik - www.freepik.es</a></li>
                 <li>Computadora <a href="https://www.freepik.es/fotos-vectores-gratis/fondo">Vector de Fondo creado por freepik - www.freepik.es</a></li>
+                <li>Ilustración del espacio <a href="https://www.freepik.es/fotos-vectores-gratis/estrella">Vector de Estrella creado por vectorpouch - www.freepik.es</a></li>
             </ul>
         </div>
     </div>

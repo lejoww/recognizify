@@ -25,7 +25,7 @@
             <router-link class="overlayMenuLink" to="/account/notifications">
                 Invitaciones
                 <span class="badge badge-danger" v-if="invitations >= 1">
-                    <svg class="feather-mini-light">
+                    <svg class="feather-mini-red">
                         <use xlink:href="@/assets/svg/feather-sprite.svg#bell" />
                     </svg>
                     {{invitations}}

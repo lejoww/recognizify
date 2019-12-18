@@ -6,12 +6,13 @@
       <h3 v-text="projectName"></h3>
     </div> -->
     <div class="feedLayout">
-      <FeaturedGoal/>
+      <ProjectName/>
       <!-- <GoalSteps/> -->
+      <!-- <Renewing/> -->
       <div class="projectSummaryData">
         <div class="rank">
           <ProjectUsers/>
-          <!-- <Renewing/> -->
+          <FeaturedGoal/>
         </div>
         <br>
         <span class="linksSectionTitle">
@@ -33,6 +34,7 @@
 
   import firebase from 'firebase'
 
+  import ProjectName from '@/components/models/ProjectName.vue'
   import GeneralStatistic from "@/components/project/statistics/GeneralStatistic.vue";
   import ProjectUsers from "@/components/project/statistics/ProjectUsers.vue";
   import FeaturedGoal from "@/components/project/FeaturedGoal.vue";
@@ -64,7 +66,8 @@
       AdsPanel,
       LinkCard,
       CreateProjectLinkModal,
-      GoalSteps
+      GoalSteps,
+      ProjectName
     },
     mixins: [CheckProjectMember],
     created: function() {
