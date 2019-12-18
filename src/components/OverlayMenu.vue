@@ -16,6 +16,9 @@
         </div><br>
         <div class="overline">General</div>
         <div class="overlayMenuOption" @click="closeOverlayMenu">
+            <router-link class="overlayMenuLink" :to="`/@${currentProfileUsername}`">Tu perfil</router-link>
+        </div>
+        <div class="overlayMenuOption" style="margin-top: 12px" @click="closeOverlayMenu">
             <router-link class="overlayMenuLink" :to="`/dashboard/project/${routesPath}/feed`">Resumen</router-link>
         </div>
         <div class="overlayMenuOption" style="margin-top: 12px" @click="closeOverlayMenu">
@@ -77,10 +80,11 @@
     import firebase from 'firebase'
 
     export default {
-        data: function(){
+        data(){
             return {
                 routesPath: '',
-                invitations: ''
+                invitations: '',
+                currentProfileUsername: ''
             }
         },
         components: {
@@ -90,7 +94,19 @@
             this.getInvitations()
             this.routesPath = this.$route.params.projectId
         },
+        mounted: function(){
+            this.getCurrentUserProfile()
+        },
         methods: {
+            getCurrentUserProfile: function(){
+                firebase.firestore()
+                .collection('users')
+                .doc(firebase.auth().currentUser.uid)
+                .get()
+                .then(user => {
+                    this.currentProfileUsername = user.data()['user']
+                })
+            },
             getInvitations: function(){
                 firebase.auth().onAuthStateChanged(user => {
                     firebase.firestore()
