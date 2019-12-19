@@ -1,7 +1,7 @@
 <template>
     <div id="login">
         <div class="instructCopy">
-            <small class="text-gray">Las imagenes en la aplicación no son de nuestra autoría. Si deseas saber más, ingresa a <router-link to="/credits" style="color: #362f46">nuestro sitio de referencias.</router-link></small>
+            <span class="text-gray">Las imagenes en la aplicación no son de nuestra autoría. Si deseas saber más, ingresa a <router-link to="/credits" class="text-white">nuestro sitio de referencias.</router-link></span>
         </div>
         <div class="form-images">
             <img src="@/assets/ilustrations/leader-people.png" alt="Personas hablando y admirando estadísticas">

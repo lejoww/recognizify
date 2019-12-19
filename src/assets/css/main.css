@@ -159,10 +159,12 @@ router-link, a, button {
 }
 
 .instructCopy {
-    left: 27px;
-    top: 24px;
-    position: fixed;
-    color: #7c7788;
+    width: 100vw;
+    top: 0;
+    padding: 7px 12px;
+    background-color: #6510f1;
+    position: absolute;
+    color: #e2dfe9;
     text-align: center;
 }
 
