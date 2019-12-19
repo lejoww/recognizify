@@ -166,6 +166,7 @@ router-link, a, button {
     position: absolute;
     color: #e2dfe9;
     text-align: center;
+    font-size: 14px;
 }
 
 .navbar-toggler {
