@@ -1,32 +1,34 @@
 <template>
-    <div id="login">
+    <div>
         <div class="instructCopy">
             <span class="text-gray">Las imagenes en la aplicación no son de nuestra autoría. Si deseas saber más, ingresa a <router-link to="/credits" class="text-white">nuestro sitio de referencias.</router-link></span>
         </div>
-        <div class="form-images">
-            <img src="@/assets/ilustrations/leader-people.png" alt="Personas hablando y admirando estadísticas">
-        </div>
-        <div class="form-container">
-            <img src="@/assets/logo-common-cutted.png" alt="Logotipo de Recognizify" width="148px">
-            <h2 style="margin-top: 1em">Conéctate de nuevo.</h2>
-                <div class="form-group">
-                    <label>Correo electrónico</label>
-                    <input type="email" class="form-control form-control-lg form-control-login" v-on:keyup.enter="signInWithEmailAndPassword" v-model="email" aria-describedby="emailHelp" placeholder="alguien@recognizify.com" spellcheck="false">
-                </div>
-                <div class="form-group">
-                    <label>Contraseña</label>
-                    <input type="password" class="form-control form-control-lg form-control-login" v-on:keyup.enter="signInWithEmailAndPassword" v-model="password" placeholder="Tu clave personal e intransferible">
-                </div>
-            <button class="btn btn-success btn-login" id="dynamicButton" v-on:click="signInWithEmailAndPassword">Iniciar sesión</button>
-            <button class="btn btn-warning btn-login" style="margin-left: .7em">
-                <router-link to="/signup" class="text-white">
-                    Registrarse
-                </router-link>
-            </button>
-        </div>
+        <div id="login">
+            <div class="form-images">
+                <img src="@/assets/ilustrations/leader-people.png" alt="Personas hablando y admirando estadísticas">
+            </div>
+            <div class="form-container">
+                <img src="@/assets/logo-common-cutted.png" alt="Logotipo de Recognizify" width="148px">
+                <h2 style="margin-top: 1em">Conéctate de nuevo.</h2>
+                    <div class="form-group">
+                        <label>Correo electrónico</label>
+                        <input type="email" class="form-control form-control-lg form-control-login" v-on:keyup.enter="signInWithEmailAndPassword" v-model="email" aria-describedby="emailHelp" placeholder="alguien@recognizify.com" spellcheck="false">
+                    </div>
+                    <div class="form-group">
+                        <label>Contraseña</label>
+                        <input type="password" class="form-control form-control-lg form-control-login" v-on:keyup.enter="signInWithEmailAndPassword" v-model="password" placeholder="Tu clave personal e intransferible">
+                    </div>
+                <button class="btn btn-success btn-login" id="dynamicButton" v-on:click="signInWithEmailAndPassword">Iniciar sesión</button>
+                <button class="btn btn-warning btn-login" style="margin-left: .7em">
+                    <router-link to="/signup" class="text-white">
+                        Registrarse
+                    </router-link>
+                </button>
+            </div>
 
-        <div class="alert alert-warning" id="loginAlert" role="alert">
-            Parece que no ingresaste bien los datos. Vuelve a intentarlo.
+            <div class="alert alert-warning" id="loginAlert" role="alert">
+                Parece que no ingresaste bien los datos. Vuelve a intentarlo.
+            </div>
         </div>
     </div>
 </template>
