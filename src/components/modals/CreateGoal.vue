@@ -70,7 +70,8 @@
                         one: this.goal.steps.one,
                         two: this.goal.steps.two,
                         third: this.goal.steps.third
-                    }
+                    },
+                    active: false
                 })
                 .then(() => window.location.reload())
             },

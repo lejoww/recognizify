@@ -16,15 +16,15 @@
                         </h3><br>
                     </div>
                     <div class="goalsField" v-if="goals.length > 0">
-                        <div class="card goalCard" style="width: 18rem;" :key="goalData['name']" v-for="(goalData, name, motivation) in goals">
-                            <a @click="setStar(goalData['id'])">
-                                <svg width="18" height="18" stroke="#000" stroke-width="2" fill="none">
+                        <div class="card goalCard" style="width: 18rem;" :key="goalData" v-for="goalData in goals">
+                            <a class="goalCardStar" @click="setStar(goalData.id)" data-toggle="tooltip" data-placement="right" title="Marcar como importante">
+                                <svg :class="goalData.active ? 'starActive' : 'feather-dark'">
                                     <use xlink:href="@/assets/svg/feather-sprite.svg#star"/>
                                 </svg> 
                             </a>
                             <div class="card-body">
-                                <h5 class="card-title" :key="name">{{goalData['name']}}</h5>
-                                <p class="card-text" :key="motivation">{{goalData['motivation']}}</p>
+                                <h5 class="card-title">{{goalData.name}}</h5>
+                                <p class="card-text">{{goalData.motivation}}</p>
                             </div>
                         </div>
                     </div>
@@ -63,6 +63,7 @@
                 this.$router.push('/dashboard/select')
             } else {
                 this.getGoals()
+                this.setActiveStarGoal()
             }
         },
         methods: {
@@ -77,23 +78,32 @@
                         this.goals.push({
                             name: goal.data()['name'],
                             motivation: goal.data()['motivation'],
-                            id: goal.id
+                            id: goal.id,
+                            active: goal.data()['active']
                         })
                     })
                 })
             },
-            setStar: function(id){
+            setStar: function(id, e){
                 firebase.firestore()
                 .collection('projects')
                 .doc(this.$route.params.projectId)
                 .collection('goals')
                 .doc(id)
                 .update({
-                    star: true
+                    star: true,
+                    active: true
                 })
-                .then(() => console.log('correcto'))
-                .catch(() => console.log('nope'))
+                .then(() => {
+                    console.log('Bien')
+                })
+                .catch((err) => console.log(err))
             }
+        },
+        updated: function(){
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
         }
     }
 

@@ -25,6 +25,24 @@
     text-align: center;
 }
 
+.goalCardStar {
+    padding: 1rem 0 0 1rem;
+    display: block;
+}
+
+.goalCardStar svg:hover {
+    stroke: #facc00;
+    cursor: pointer;
+}
+
+.goalCardStar .starActive {
+    width: 24px;
+    height: 24px;
+    stroke-width: 2px;
+    stroke: #facc00;
+    fill: #facc00;
+}
+
 @media screen and (max-width: 991px) {
     .goalsField {
         grid-column: 1 / 19;

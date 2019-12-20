@@ -94,7 +94,7 @@
             this.getInvitations()
             this.routesPath = this.$route.params.projectId
         },
-        mounted: function(){
+        updated: function(){
             this.getCurrentUserProfile()
         },
         methods: {
