@@ -19,6 +19,9 @@
             <router-link class="overlayMenuLink" :to="`/@${currentProfileUsername}`">Tu perfil</router-link>
         </div>
         <div class="overlayMenuOption" style="margin-top: 12px" @click="closeOverlayMenu">
+            <router-link class="overlayMenuLink" :to="`/dashboard/select`">Tus proyectos</router-link>
+        </div>
+        <div class="overlayMenuOption" style="margin-top: 12px" @click="closeOverlayMenu">
             <router-link class="overlayMenuLink" :to="`/dashboard/project/${routesPath}/feed`">Resumen</router-link>
         </div>
         <div class="overlayMenuOption" style="margin-top: 12px" @click="closeOverlayMenu">

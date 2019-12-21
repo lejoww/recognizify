@@ -162,7 +162,7 @@ router-link, a, button {
     width: 100vw;
     top: 0;
     padding: 7px 12px;
-    background-color: #6510f1;
+    background-color: #6710f2;
     position: absolute;
     color: #e2dfe9;
     text-align: center;
@@ -248,6 +248,16 @@ a.router-link-exact-active:hover, a:hover {
     height: 16px;
     stroke: #d12b39;
     stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+.feather-mini-light {
+    width: 17px;
+    height: 17px;
+    stroke: #f2f2f2;
+    stroke-width: 3;
     stroke-linecap: round;
     stroke-linejoin: round;
     fill: none;

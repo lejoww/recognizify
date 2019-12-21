@@ -1,6 +1,12 @@
 <template>
     <div class="projectPresentationContainer">
         <span class="text-white">{{projectName}}</span>
+        <a href="/dashboard/select" class="backLink">
+            <svg class="feather-mini-light">
+                <use xlink:href="@/assets/svg/feather-sprite.svg#arrow-left" />
+            </svg>
+            Volver a tus proyectos
+        </a>
     </div>
 </template>
 <style>
@@ -9,6 +15,7 @@
         grid-row: 1 / 2;
         padding: 1rem;
         display: flex;
+        justify-content: space-between;
         align-items: center;
         background: #5e0be4;
     }
@@ -21,10 +28,14 @@
         font-weight: 800;
     }
 
-    @media screen and (max-width: 991px) {
-        .projectPresentationContainer {
-            /* padding: 0; */
-        }
+    .backLink {
+        font-weight: 700;
+        font-size: 14px;
+        color: #f2f2f2;
+    }
+
+    .backLink:hover {
+        color: #e6e6e6;
     }
 </style>
 <script>
