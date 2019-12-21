@@ -5,7 +5,7 @@ export const CheckActiveSession = {
       firebase.auth().onAuthStateChanged(user => {
          if (!user){ 
             console.log('No existe usuario actualmente')
-            if (window.location != '/'){ window.location = '/' }
+            if (window.location != '/signin'){ window.location = '/signin' }
          }
       })
    }
