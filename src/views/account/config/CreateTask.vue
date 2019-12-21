@@ -37,7 +37,8 @@
         data: function(){
             return {
                 task: {
-                    name: ''
+                    name: '',
+                    because: ''
                 },
                 objectivesAchieved: [],
                 objectivesStepsAchieved: []
@@ -86,6 +87,7 @@
                 .collection('tasks')
                 .add({
                     task: this.task.name,
+                    because: this.task.because,
                     for: taskFor,
                     creator: firebase.auth().currentUser.uid
                 })
