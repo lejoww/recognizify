@@ -3,7 +3,7 @@
         <div class="landingHeader">
             <img src="@/assets/logo-common-cutted.svg" width="148px">
             <div>
-                <a href="/signin" class="btn">Inicia sesión</a>
+                <a href="/signin" class="btn btn-outline-dark" style="margin-right: 12px">Inicia sesión</a>
                 <a href="/signup" class="btn btn-warning">Regístrate</a>
             </div>
         </div>
