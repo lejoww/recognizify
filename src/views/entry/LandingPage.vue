@@ -60,6 +60,7 @@
 <script>
 
     import '@/assets/css/landing.css'
+    import '@/assets/css/main.css'
     export default {}
 
 </script>
