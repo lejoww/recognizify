@@ -41,8 +41,17 @@
                         firebase.firestore().collection('users').doc(user.uid).collection('invitations').doc(projectCode).delete()
                             .then(() => {
                                 this.$router.push('/dashboard/select')
-                            })   
+                            })
+                            .catch(err => {
+                                console.log(err)
+                            })
                     })
+                    .catch(err => {
+                        console.log(err)
+                    })
+                })
+                .catch(err => {
+                    console.log(err)
                 })
             })
         }
