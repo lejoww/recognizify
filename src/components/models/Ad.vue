@@ -3,9 +3,9 @@
         <p class="taskToDo">{{this.todo}}</p>
         <div class="taskBottom">
             <div class="taskPublisher">
-                <div class="taskPublisherProfile">
+                <!-- <div class="taskPublisherProfile">
                     <img src="@/assets/ilustrations/profile.png" class="taskPublisherProfilePicture" id="taskPublisherProfilePicture">
-                </div>
+                </div> -->
                 <span class="">{{this.publisher}}</span>
             </div>
             <!-- <span>
