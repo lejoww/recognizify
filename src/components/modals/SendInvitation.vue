@@ -14,7 +14,7 @@
             </div>
             <div v-else>
                 <p>Parece que aún no tienes proyectos o no has iniciado sesión</p>
-                <button class="btn btn-primary">Inicia sesión</button>
+                <a href="/signin" class="btn btn-primary">Inicia sesión</a>
             </div>
           </div>
           <div class="modal-footer" style="border: none">
