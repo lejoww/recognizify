@@ -1,8 +1,12 @@
 <template>
-    <div class="baseLayout">
-        <LateralPanel/>
-        <OverlayMenu/>
-        <router-view></router-view>
+    <div>
+        <BannerNotice/>
+        <div class="baseLayout">
+            <LateralPanel/>
+            <OverlayMenu/>
+            <router-view>
+            </router-view>
+        </div>
     </div>
 </template>
 <script>
@@ -11,6 +15,7 @@
     import '@/assets/css/HeaderMenu.css'
     import LateralPanel from '@/components/HeaderMenu.vue'
     import OverlayMenu from '@/components/OverlayMenu.vue'
+    import BannerNotice from '@/components/models/BannerNotice.vue'
 
     import { CheckActiveSession } from '@/assets/scripts/checkActiveSession.js'
     import { CheckEmailVerification } from '@/assets/scripts/checkVerificatedEmail.js'
@@ -18,7 +23,8 @@
     export default {
         components: {
             LateralPanel,
-            OverlayMenu
+            OverlayMenu,
+            BannerNotice
         },
         mixins: [CheckActiveSession, CheckEmailVerification]
     }

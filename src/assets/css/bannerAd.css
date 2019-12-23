@@ -1,0 +1,104 @@
+.heroesBannerNotice {
+    width: 100%;
+    height: 68px;
+    background: rgb(235,232,252);
+    background: -moz-linear-gradient(90deg, rgba(235,232,252,1) 0%, rgba(216,212,240,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(235,232,252,1) 0%, rgba(216,212,240,1) 100%);
+    background: linear-gradient(90deg, rgba(235,232,252,1) 0%, rgba(216,212,240,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ebe8fc",endColorstr="#d8d4f0",GradientType=1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.heroesBannerTitle {
+    color: #5e01ff;
+    font-family: 'Poppins';
+    font-weight: 800;
+    font-size: 24px;
+    text-rendering: geometricPrecision;
+    text-transform: uppercase;
+    /* letter-spacing: 1px; */
+    vertical-align: middle;
+    margin-bottom: 0;
+}
+
+.heroesBannerMotivation {
+    color: #5e01ff;
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.heroesBannerTimer {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.heroesBrand {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.heroesBanner {
+    width: 100%;
+    text-align: center;
+    margin-top: 6rem;
+    padding: 0 20%;
+}
+
+.heroesBanner h1 {
+    line-height: 1.2;
+}
+
+.heroesBanner span {
+    font-size: 19px;
+}
+
+.heroesDescription {
+    width: 37%;
+    text-align: center;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 7px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    margin: 8rem auto 0 auto;
+}
+
+.heroesMinititle {
+    margin-bottom: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.7px;
+    font-size: 14px;
+    font-family: 'Open sans';
+}
+
+.heroesBannerTimerCount {
+    font-size: 24px;
+    font-weight: 800;
+    text-align: right;
+}
+
+@media screen and (max-width: 772px) {
+    .heroesBanner {
+        padding: 0 1rem;
+    }
+
+    .heroesBannerTitle {
+        font-size: 18px;
+    }
+
+    .heroesBannerMotivation {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 485px) {
+    .heroesBanner {
+        padding: 0rem;
+    }
+}

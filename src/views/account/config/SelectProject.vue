@@ -1,18 +1,5 @@
 <template>
       <div class="dashboardContent">
-          <div class="heroesBannerNotice">
-              <div style="display: flex; flex-direction: row; align-items: center">
-                <img class="heroesRobot" src="@/assets/ilustrations/robot-yellow.png" width="54px">
-                <div style="display: flex; flex-direction: column; margin-left: 1rem">
-                  <h2 class="heroesBannerTitle">Pronto tendrémos nuevas características</h2>
-                  <span class="heroesBannerMotivation">Si quieres ayudarnos a mejorar y ser parte activa de esta cultura, puedes hacerlo.</span>
-                </div>
-              </div>
-              <div class="heroesBannerTimer">
-                  <a href="/surveys/beta/last" class="btn btn-warning btn-sm">Ayúdanos aquí</a>
-              </div>
-          </div>
-          
           <NonProjectsBanner v-if="projects.length == 0"/>
           <div class="projectsField" id="projectsContent" v-if="projects.length >= 1">
             <div class="projectsBanner">
