@@ -1,6 +1,5 @@
 <template>
     <div>
-        <BannerNotice/>
         <div class="baseLayout">
             <LateralPanel/>
             <OverlayMenu/>

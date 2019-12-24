@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:600,700,800&display=swap');
+
+.christmasLandingLayout {
+    width: 100vw;
+    height: 100vh;
+}
+
+.christmasLandingBanner {
+    width: 100%;
+    height: 100%;
+    background-image: url('../bg-christmas.svg');
+    background-size: cover;
+    padding: 8rem;
+}
+
+.christmasLandingBanner .christmasBannerTitle {
+    width: 60%;
+    font-family: 'Poppins';
+    text-transform: uppercase;
+    font-size: 61px;
+    margin-top: 2rem;
+    color: #271e47;
+}
+
+.christmasLandingBanner .christmasBannerMessage {
+    width: 50%;
+    font-size: 21px;
+    color: #5f567e;
+}
+
+.christmasLandingFeatures {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.featureCardsContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.christmasLandingFeaturesTitle {
+    width: 60%;
+    margin: 0 auto;
+    font-family: 'Poppins';
+    text-transform: uppercase;
+    color: #271e47;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.featureCardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.featureCard {
+    width: 341px;
+    border: 1px solid #d8dee6;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(190, 200, 209, 0.5);
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.featureCardTitle {
+    font-weight: 900;
+    font-size: 17px;
+}
+
+.featureCardDescription {
+    font-size: 14px;
+}
+
+.christmasLandingCourse {
+    padding: 4rem;
+    text-align: center;
+    background: rgb(0,155,255);
+    background: -moz-linear-gradient(25deg, rgba(0,155,255,1) 0%, rgba(188,0,255,1) 69%);
+    background: -webkit-linear-gradient(25deg, rgba(0,155,255,1) 0%, rgba(188,0,255,1) 69%);
+    background: linear-gradient(25deg, rgba(0,155,255,1) 0%, rgba(188,0,255,1) 69%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#009bff",endColorstr="#bc00ff",GradientType=1);
+}
+
+.christmasLandingCourseTitle {
+    font-family: 'Poppins';
+    text-transform: uppercase;
+}
+
+.christmasLandingCourseMotivation {
+    font-size: 24px;
+}
+
+.courseCard {
+    width: 468px;
+    background: #f2f2f2;
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 0 auto;
+}
+
+.courseCard span{
+    font-weight: 900;
+}
+
+
+@media screen and (max-width: 991px){
+    body {
+        width: 100vw;
+    }
+    .christmasLandingBanner {
+        padding: 32px;
+    }
+
+    .christmasLandingBanner .christmasBannerTitle {
+        width: 100%;
+        font-size: 45px;
+        margin-top: 4rem;
+    }
+
+    .christmasLandingBanner .christmasBannerMessage {
+        width: 100%;
+    }
+
+    .christmasLandingCourse {
+        padding: 1rem;
+    }
+
+    .christmasLandingFeaturesTitle {
+        width: 100%;
+    }
+
+    .christmasLandingFeaturesMotivation {
+        padding: 21px 21px 0 21px;
+    }
+
+    .courseCard {
+        width: 100%;
+    }
+}

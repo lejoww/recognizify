@@ -10,6 +10,11 @@ const routes = [
     component: () => import('./views/entry/LandingPage.vue')
   },
   {
+    path: '/navidad',
+    name: 'christmas',
+    component: () => import('./views/landings/Christmas.vue')
+  },
+  {
     path: '/signin',
     name: 'login_entry',
     component: () => import('./views/entry/Login.vue')

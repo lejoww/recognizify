@@ -19,6 +19,7 @@
                 <li>Computadora <a href="https://www.freepik.es/fotos-vectores-gratis/fondo">Vector de Fondo creado por freepik - www.freepik.es</a></li>
                 <li>Ilustración del espacio <a href="https://www.freepik.es/fotos-vectores-gratis/estrella">Vector de Estrella creado por vectorpouch - www.freepik.es</a></li>
                 <li>Personas construyendo rompecabezas <a href="https://www.freepik.es/fotos-vectores-gratis/negocios">Vector de Negocios creado por freepik - www.freepik.es</a></li>
+                <li>Vector de navidad <a href="https://www.freepik.es/fotos-vectores-gratis/navidad">Vector de Navidad creado por pch.vector - www.freepik.es</a></li>
             </ul>
         </div>
     </div>
