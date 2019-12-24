@@ -5,7 +5,7 @@
     overflow: scroll;
     overflow-x: hidden;
     display: grid;
-    grid-template-rows: 8vh 92vh;
+    grid-template-rows: 18vh 82vh;
 }
 
 .dashboardContent {

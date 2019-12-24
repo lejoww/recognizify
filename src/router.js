@@ -10,6 +10,11 @@ const routes = [
     component: () => import('./views/entry/LandingPage.vue')
   },
   {
+    path: '/surveys/join/course',
+    name: 'course_inscription',
+    component: () => import('./views/surveys/CouseInscription.vue')
+  },
+  {
     path: '/navidad',
     name: 'christmas',
     component: () => import('./views/landings/Christmas.vue')

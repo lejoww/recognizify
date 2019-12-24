@@ -23,7 +23,7 @@
                     <p class="featureCardDescription">Más cómodo y flexible, útil en cualquier momento, en cualquier lugar, como nuestra filosofía.</p>
                 </div>
                 <div class="featureCard">
-                    <div class="icon">🧠</div>
+                    <div class="icon">🧠 <span class="badge badge-primary">En unos días</span></div>
                     <span class="featureCardTitle">Motor de ayuda para proyectos</span>
                     <p class="featureCardDescription">Cuando creas un proyecto, seleccionas de qué se trata. Así podemos ayudarte más.</p>
                 </div>
@@ -33,7 +33,7 @@
                     <p class="featureCardDescription">Un módulo interconectado a todos los demás. Entonces todo lo que hagas en él podrá influir y ayudarte con los demás.</p>
                 </div>
                 <div class="featureCard">
-                    <div class="icon">🎯</div>
+                    <div class="icon">🎯 <span class="badge badge-primary">En unos días</span></div>
                     <span class="featureCardTitle">Seguimiento de objetivos</span>
                     <p class="featureCardDescription">Conectamos el módulo de tareas (Tasks) con el de Metas (Goals). Ahora tus tareas siempre irán de la mano con tus objetivos, y podrás hacer seguimiento estadístico.</p>
                 </div>
@@ -71,10 +71,7 @@
                 <span>Cómo hacer un equipo productivo</span>
                 <div><small>Este curso saldrá en unos días.</small></div><br>
                 <div>
-                    <div class="form-inline">
-                        <input type="text" class="form-control" placeholder="Escribe tu correo electrónico para inscribirte al curso">
-                        <button class="btn btn-secondary btn-sm" style="margin: 0 0 0 12px">Inscribirse</button>
-                    </div>
+                    <a href="/surveys/join/course" class="btn btn-secondary btn-sm" style="margin: 0 0 0 12px">Inscribirse</a>
                 </div>
             </div>
         </div>

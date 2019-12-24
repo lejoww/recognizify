@@ -1,20 +1,23 @@
 <template>
-  <div class="headerMenu">
-    <div class="headerWrapper">
-      <div class="headerBrand">
-        <img src="@/assets/isotipe-color.svg" width="54px">
+  <div>
+    <div class="headerMenu">
+      <div class="headerWrapper">
+        <div class="headerBrand">
+          <img src="@/assets/isotipe-color.svg" width="54px">
+        </div>
+        <div class="headerSearch">
+          <input type="text" class="form-control-navbar inputSearch" placeholder="Buscar en tus proyectos...">
+        </div>
       </div>
-      <div class="headerSearch">
-        <input type="text" class="form-control-navbar inputSearch" placeholder="Buscar en tus proyectos...">
+      <div class="headerWrapperRight">
+        <a class="headerMenuButton" @click="openOverlayMenu">
+          <svg class="feather-light">
+            <use xlink:href="@/assets/svg/feather-sprite.svg#menu" />
+          </svg>
+        </a>
       </div>
     </div>
-    <div class="headerWrapperRight">
-      <a class="headerMenuButton" @click="openOverlayMenu">
-        <svg class="feather-light">
-          <use xlink:href="@/assets/svg/feather-sprite.svg#menu" />
-        </svg>
-      </a>
-    </div>
+    <BannerNotice/>
   </div>
 </template>
 <script>
@@ -24,6 +27,7 @@
 
     import Profile from '@/components/Profile.vue'
     import BurgerMenu from '@/components/BurgerMenu.vue'
+    import BannerNotice from '@/components/models/BannerNotice.vue'
 
     export default {
       data(){
@@ -39,7 +43,8 @@
       },
       components: {
         Profile,
-        BurgerMenu
+        BurgerMenu,
+        BannerNotice
       },
       methods: {
         getAndSetActiveProjects: function(){

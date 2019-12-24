@@ -10,9 +10,9 @@
         <div class="heroesBannerTimer">
             <span style="margin: 0; font-weight: 700" v-if="finalCount == false">Faltan solo</span>
             <h3 class="heroesBannerTimerCount text-success">{{this.count}}</h3>
-            <!-- <div v-if="finalCount == true">
-                <button class="btn btn-success btn-sm">Mira lo nuevo</button>
-            </div> -->
+            <div v-if="finalCount == true">
+                <a href="/navidad" class="btn btn-success btn-sm">Mira lo nuevo</a>
+            </div>
 
             <!-- <a href="/surveys/beta/last" class="btn btn-warning btn-sm">Ayúdanos aquí</a> -->
         </div>
@@ -58,7 +58,7 @@
                 }, 1000)
             };
 
-            countdown('Dec 24 2019 18:00:00 GMT-0500', 'clock', 'No cambies la hora');
+            countdown('Dec 24 2019 18:00:00 GMT-0500', 'clock', '');
 
         }
     }
