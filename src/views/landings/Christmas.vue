@@ -13,46 +13,52 @@
             
             <div class="featureCardsContainer">
                 <div class="featureCard">
+                    <div class="icon">📎</div>
                     <span class="featureCardTitle">Enlaces</span>
                     <p class="featureCardDescription">Crea enlaces de importancia para tus proyectos. Así siempre están ahí, al alcance de todos.</p>
                 </div>
                 <div class="featureCard">
+                    <div class="icon">🎨</div>
                     <span class="featureCardTitle">Nuevo diseño</span>
                     <p class="featureCardDescription">Más cómodo y flexible, útil en cualquier momento, en cualquier lugar, como nuestra filosofía.</p>
                 </div>
                 <div class="featureCard">
+                    <div class="icon">🧠</div>
                     <span class="featureCardTitle">Motor de ayuda para proyectos</span>
                     <p class="featureCardDescription">Cuando creas un proyecto, seleccionas de qué se trata. Así podemos ayudarte más.</p>
                 </div>
                 <div class="featureCard">
+                    <div class="icon">📚</div>
                     <span class="featureCardTitle">Módulo de tareas</span>
                     <p class="featureCardDescription">Un módulo interconectado a todos los demás. Entonces todo lo que hagas en él podrá influir y ayudarte con los demás.</p>
                 </div>
                 <div class="featureCard">
-                    <span class="featureCardTitle">Módulo de tareas</span>
-                    <p class="featureCardDescription">Un módulo interconectado a todos los demás. Entonces todo lo que hagas en él podrá influir y ayudarte con los demás.</p>
-                </div>
-                <div class="featureCard">
+                    <div class="icon">🎯</div>
                     <span class="featureCardTitle">Seguimiento de objetivos</span>
                     <p class="featureCardDescription">Conectamos el módulo de tareas (Tasks) con el de Metas (Goals). Ahora tus tareas siempre irán de la mano con tus objetivos, y podrás hacer seguimiento estadístico.</p>
                 </div>
                 <div class="featureCard">
+                    <div class="icon">🧔</div>
                     <span class="featureCardTitle">Perfiles</span>
                     <p class="featureCardDescription">Ahora puedes ver los perfiles de otra gente, e invitarlos a tus proyectos fácilmente.</p>
                 </div>
                 <div class="featureCard">
+                    <div class="icon">🔒</div>
                     <span class="featureCardTitle">Seguridad de tus proyectos</span>
                     <p class="featureCardDescription">Protegemos tus datos. Hacemos mantenimiento constante para protegerte.</p>
                 </div>
                 <div class="featureCard">
+                    <div class="icon">🚀</div>
                     <span class="featureCardTitle">RecognizifyHeroes</span>
                     <p class="featureCardDescription">Un programa para aquellos que quieren ser parte de nuestro equipo. Porque son importantes para nosotros y sabemos que los demás lo son para ellos.</p>
                 </div>
                 <div class="featureCard">
+                    <div class="icon">☕</div>
                     <span class="featureCardTitle">FocusedMode</span>
                     <p class="featureCardDescription">Puedes ponerle una estrellita a tus objetivos en Tasks. Así tu equipo se centrará en eso.</p>
                 </div>
                 <div class="featureCard">
+                    <div class="icon">🎙</div>
                     <span class="featureCardTitle">Anuncios</span>
                     <p class="featureCardDescription">No es un módulo. Pero es un espacio donde todo tu equipo puede saber qué esta pasando de entrada.</p>
                 </div>
@@ -62,8 +68,8 @@
             <h1 class="christmasLandingCourseTitle text-white">¿Pero sabes que es lo mejor de todo?</h1>
             <p class="christmasLandingCourseMotivation text-white">A partir de ahora, en Recognizify también enseñamos. Ahora entregamos <strong>cursos.</strong></p>
             <div class="courseCard">
-                <span>Cómo ser productivo dentro del equipo</span>
-                <div><small>Este curso saldrá en unos días tiempo.</small></div><br>
+                <span>Cómo hacer un equipo productivo</span>
+                <div><small>Este curso saldrá en unos días.</small></div><br>
                 <div>
                     <div class="form-inline">
                         <input type="text" class="form-control" placeholder="Escribe tu correo electrónico para inscribirte al curso">
