@@ -4,7 +4,7 @@
             <img class="heroesRobot" src="@/assets/ilustrations/robot.png" width="54px">
             <div style="display: flex; flex-direction: column; margin-left: 0.4rem">
                 <h2 class="heroesBannerTitle">Especial de <span class="text-danger">Navidad</span></h2>
-                <span class="heroesBannerMotivation">Todo para que tus proyectos esten más organizados</span>
+                <span class="heroesBannerMotivation">Descubre los lanzamientos de navidad.</span>
             </div>
         </div>
         <div class="heroesBannerTimer">

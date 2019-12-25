@@ -15,7 +15,7 @@ $gray-600: #4B4B66 !default;
 $gray-700: #303049 !default;
 $gray-800: #161628 !default;
 $gray-900: #0B0B14 !default;
-$black:    #07070C !default;
+$black:    #07070C !default; 
 
 $grays: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -278,8 +278,8 @@ $embed-responsive-aspect-ratios: join(
 // Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
-$font-family-headings:        "Open sans" !default;
+$font-family-headings:        "Source Sans Pro" !default;
+$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:            $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case

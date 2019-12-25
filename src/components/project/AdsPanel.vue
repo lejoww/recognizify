@@ -25,7 +25,7 @@
 </template>
 <script>
 
-    import '@/assets/css/tasksPanel.css'
+    import '@/assets/css/adsPanel.css'
     import Ad from '@/components/models/Ad.vue'
     import NewAd from '@/components/models/NewAd.vue'
 

@@ -9,10 +9,10 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h6 class="card-title">
+                            <span class="card-title projectTitle">
                                 {{this.projectName}}
                                 <span class="badge badge-secondary">Activo</span>
-                            </h6>
+                            </span>
                             <!-- <span class="card-text text-muted projectLastActivity">
                                 Última actividad hace {{this.lastActivity}}
                                 Sin registro de la última actividad

@@ -97,6 +97,12 @@ button.projectCardMenuOptions {
     margin-left: 21px;
 }
 
+.card-body .card-title{
+    color: #0B0B14;
+    font-weight: 700;
+    font-size: 15px;
+}
+
 @media screen and (max-width: 991px) {
     .projectsField {
         padding: 3rem;
@@ -136,5 +142,7 @@ button.projectCardMenuOptions {
     }
 }
 
-/* banner  */
-
+.projectsHeaderTitle {
+    font-weight: 900;
+    font-size: 27px;
+}

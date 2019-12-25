@@ -9,7 +9,7 @@
 </template>
 <script>
 
-    import '@/assets/css/tasksPanel.css'
+    import '@/assets/css/adsPanel.css'
     import firebase from 'firebase'
 
     export default {

@@ -208,3 +208,9 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+.loginTitle {
+    margin-top: 1em;
+    font-size: 34px;
+    font-weight: 700;
+}

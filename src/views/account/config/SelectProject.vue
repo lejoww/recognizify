@@ -1,15 +1,16 @@
 <template>
       <div class="dashboardContent">
+          <BannerAd/>
           <NonProjectsBanner v-if="projects.length == 0"/>
           <div class="projectsField" id="projectsContent" v-if="projects.length >= 1">
             <div class="projectsBanner">
               <div>
-                <h2>Tus proyectos</h2>
+                <h2 class="projectsHeaderTitle">Tus proyectos</h2>
                 <p class="muted-gray">¿En que idea trabajarás ahora? Selecciona uno de tus proyectos.</p>
               </div>
-              <a class="btn btn-success btn-lg">
+              <a class="btn btn-success btn-lg" style="display:flex; align-items:center">
                 <router-link to="/account/create/project">
-                  <svg class="feather-light">
+                  <svg width="24px" height="24px" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
                     <use xlink:href="@/assets/svg/feather-sprite.svg#plus" />
                   </svg>
                 </router-link>
@@ -36,7 +37,8 @@
 
     import firebase from "firebase";
     import ProjectCard from '@/components/ProjectCard.vue';
-    import NonProjectsBanner from '@/components/project/NonProjectsBanner.vue'
+    import NonProjectsBanner from '@/components/project/NonProjectsBanner.vue';
+    import BannerAd from '@/components/models/BannerNotice.vue';
 
     import '@/assets/css/select.css'
 
@@ -48,7 +50,8 @@
     },
     components: {
       ProjectCard,
-      NonProjectsBanner
+      NonProjectsBanner,
+      BannerAd
     },
     created: function() {
       this.getProjects()

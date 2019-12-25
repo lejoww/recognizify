@@ -10,8 +10,11 @@
       <!-- <GoalSteps/> -->
       <!-- <Renewing/> -->
       <div class="projectSummaryData">
+        <div class="rank" style="flex-direction: column;">
+          <span class="feedOverline">Accesos directos</span>
+          <Shortcuts/>
+        </div>
         <div class="rank">
-          <ProjectUsers/>
           <FeaturedGoal/>
         </div>
         <br>
@@ -38,11 +41,12 @@
   import GeneralStatistic from "@/components/project/statistics/GeneralStatistic.vue";
   import ProjectUsers from "@/components/project/statistics/ProjectUsers.vue";
   import FeaturedGoal from "@/components/project/FeaturedGoal.vue";
-  import Renewing from "@/components/offers/Renewing.vue"
-  import AdsPanel from "@/components/project/AdsPanel.vue"
-  import LinkCard from "@/components/project/LinkCard.vue"
-  import CreateProjectLinkModal from "@/components/modals/CreateProjectLink.vue"
-  import GoalSteps from '@/components/project/statistics/GoalSteps.vue'
+  import Renewing from "@/components/offers/Renewing.vue";
+  import AdsPanel from "@/components/project/AdsPanel.vue";
+  import LinkCard from "@/components/project/LinkCard.vue";
+  import CreateProjectLinkModal from "@/components/modals/CreateProjectLink.vue";
+  import GoalSteps from '@/components/project/statistics/GoalSteps.vue';
+  import Shortcuts from '@/components/project/Shortcuts.vue';
 
   import Vue from 'vue'
 
@@ -67,7 +71,8 @@
       LinkCard,
       CreateProjectLinkModal,
       GoalSteps,
-      ProjectName
+      ProjectName,
+      Shortcuts
     },
     mixins: [CheckProjectMember],
     created: function() {

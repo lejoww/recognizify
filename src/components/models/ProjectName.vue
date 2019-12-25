@@ -21,11 +21,10 @@
     }
 
     .projectPresentationContainer span {
-        font-family: 'Open sans';
-        font-size: 21px;
+        font-family: "Source sans pro";
+        font-size: 20px;
         vertical-align: middle;
-        letter-spacing: -0.5px;
-        font-weight: 800;
+        font-weight: 700;
     }
 
     .backLink {
