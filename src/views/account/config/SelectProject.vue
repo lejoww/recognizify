@@ -1,11 +1,10 @@
 <template>
       <div class="dashboardContent">
-          <BannerAd/>
           <NonProjectsBanner v-if="projects.length == 0"/>
           <div class="projectsField" id="projectsContent" v-if="projects.length >= 1">
             <div class="projectsBanner">
               <div>
-                <h2 class="projectsHeaderTitle">Tus proyectos</h2>
+                <h1 class="projectsHeaderTitle">Tus proyectos</h1>
                 <p class="muted-gray">¿En que idea trabajarás ahora? Selecciona uno de tus proyectos.</p>
               </div>
               <a class="btn btn-success btn-lg" style="display:flex; align-items:center">

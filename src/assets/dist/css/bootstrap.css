@@ -362,28 +362,20 @@ h1, h2, h3, h4, h5, h6,
   color: #0B0B14;
 }
 
-h1, h2, h3 {
-  letter-spacing: -1.5px;
-}
-
 h1, .h1 {
   font-size: 2.375rem;
-  letter-spacing: -1.2px;
 }
 
 h2, .h2 {
   font-size: 1.9rem;
-  letter-spacing: -1px;
 }
 
 h3, .h3 {
   font-size: 1.6625rem;
-  letter-spacing: -0.9px;
 }
 
 h4, .h4 {
   font-size: 1.425rem;
-  letter-spacing: -0.6px;
 }
 
 h5, .h5 {
@@ -1971,13 +1963,13 @@ select.form-control:focus::-ms-value {
 .form-control-navbar {
   display: block;
   width: 100%;
+  background-color: #0c0c1b;
   height: calc(1.5em + 0.75rem + 2px);
   padding: 0.375rem 0.75rem;
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   line-height: 1.5;
-  color: #0B0B14;
-  background-color: rgba(237, 226, 248, 0.2);
+  color: #F2F2F2;
   border: none;
   border-radius: 6px;
 }
@@ -1989,7 +1981,7 @@ select.form-control:focus::-ms-value {
   outline: 0;
 }
 .form-control-navbar::placeholder {
-  color: #B0B0C4;
+  color: #756d7e;
   opacity: 1;
 }
 .form-control-navbar:disabled, .form-control-navbar[readonly] {

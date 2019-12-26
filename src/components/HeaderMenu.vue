@@ -3,7 +3,7 @@
     <div class="headerMenu">
       <div class="headerWrapper">
         <div class="headerBrand">
-          <img src="@/assets/isotipe-color.svg" width="54px">
+          <img src="@/assets/logo-white-cutted.png" width="134px">
         </div>
         <div class="headerSearch">
           <input type="text" class="form-control-navbar inputSearch" placeholder="Buscar en tus proyectos...">

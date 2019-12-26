@@ -171,13 +171,13 @@ select.form-control {
 .form-control-navbar {
   display: block;
   width: 100%;
+  background-color: rgb(12, 12, 27);
   height: $input-height;
   padding: $input-padding-y $input-padding-x;
   font-weight: 600;
-  @include font-size(14px);
+  @include font-size(13px);
   line-height: $input-line-height;
-  color: $input-color;
-  background-color: rgba(237, 226, 248, 0.2);
+  color: $white;
   border: none;
   border-radius: 6px;
 
@@ -191,7 +191,7 @@ select.form-control {
   }
 
   &::placeholder {
-    color: $input-placeholder-color;
+    color: rgb(117, 109, 126);
     // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
     opacity: 1;
   }

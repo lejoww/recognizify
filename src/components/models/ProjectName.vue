@@ -1,30 +1,38 @@
 <template>
     <div class="projectPresentationContainer">
-        <span class="text-white">{{projectName}}</span>
-        <a href="/dashboard/select" class="backLink">
+        <div class="projectData">
+            <p class="text-white">{{projectName}}</p>
+            <span>{{projectDescription ? projectDescription : ''}}</span>
+        </div>
+        <!-- <a href="/dashboard/select" class="backLink">
             <svg class="feather-mini-light">
                 <use xlink:href="@/assets/svg/feather-sprite.svg#arrow-left" />
             </svg>
             Volver a tus proyectos
-        </a>
+        </a> -->
     </div>
 </template>
 <style>
     .projectPresentationContainer {
-        grid-column: 1 / 2;
-        grid-row: 1 / 2;
-        padding: 1rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background: #5e0be4;
+    }
+
+    .projectPresentationContainer p {
+        font-weight: 500;
+        font-size: 15px;
+        vertical-align: middle;
+        margin: 0;
     }
 
     .projectPresentationContainer span {
-        font-family: "Source sans pro";
-        font-size: 20px;
-        vertical-align: middle;
-        font-weight: 700;
+        color: #a5aab3;
+        font-size: 13px;
+    }
+
+    .projectData {
+        margin: 1.7rem;
     }
 
     .backLink {
@@ -43,7 +51,8 @@
     export default {
         data() {
             return {
-                projectName: ''
+                projectName: '',
+                projectDescription: ''
             }
         },
         created: function(){
@@ -53,6 +62,7 @@
             .get()
             .then(project => {
                 this.projectName = project.data()['shortName']
+                this.projectDescription = project.data()['description']
             })
         }
     }

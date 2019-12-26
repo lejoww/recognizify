@@ -143,6 +143,7 @@ button.projectCardMenuOptions {
 }
 
 .projectsHeaderTitle {
-    font-weight: 900;
-    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    font-kerning: normal;
 }

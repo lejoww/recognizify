@@ -29,7 +29,7 @@
           <span v-if="links.length == 0" style="margin: 5px 10px">No hay enlaces aquí. Crea el primero ahí arriba</span>
         </div>
       </div>
-      <AdsPanel/>
+      <ProjectPanel/>
     </div>
   </div>
 </template>
@@ -37,7 +37,6 @@
 
   import firebase from 'firebase'
 
-  import ProjectName from '@/components/models/ProjectName.vue'
   import GeneralStatistic from "@/components/project/statistics/GeneralStatistic.vue";
   import ProjectUsers from "@/components/project/statistics/ProjectUsers.vue";
   import FeaturedGoal from "@/components/project/FeaturedGoal.vue";
@@ -47,6 +46,7 @@
   import CreateProjectLinkModal from "@/components/modals/CreateProjectLink.vue";
   import GoalSteps from '@/components/project/statistics/GoalSteps.vue';
   import Shortcuts from '@/components/project/Shortcuts.vue';
+  import ProjectPanel from '@/components/project/ProjectPanel.vue';
 
   import Vue from 'vue'
 
@@ -71,8 +71,8 @@
       LinkCard,
       CreateProjectLinkModal,
       GoalSteps,
-      ProjectName,
-      Shortcuts
+      Shortcuts,
+      ProjectPanel
     },
     mixins: [CheckProjectMember],
     created: function() {

@@ -2,7 +2,7 @@
 
 .projectSummaryGoalNotice {
     width: 64%;
-    margin: 10px 5px;
+    margin: 0 1rem;
     background-image: url('../ilustrations/space.jpg');
     background-size: cover;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.08);

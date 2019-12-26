@@ -3,7 +3,7 @@
 .headerMenu {
     width: 100%;
     grid-row: 1 / 2;
-    background-color: #1f1e2c;
+    background-color: rgb(39, 38, 53);
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
     display: flex;
     justify-content: space-between;

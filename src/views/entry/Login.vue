@@ -47,6 +47,11 @@
                 account: true
             }
         },
+        beforeCreate: function (){
+            firebase.auth().onAuthStateChanged(user => {
+                if (user) { window.location = '/dashboard/select' }
+            })
+        },
         methods: {
             signInWithEmailAndPassword: function(){
                 var loginButton = document.getElementById('dynamicButton')

@@ -7,7 +7,7 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: () => import('./views/entry/LandingPage.vue')
+    redirect: '/signin'
   },
   {
     path: '/surveys/join/course',
