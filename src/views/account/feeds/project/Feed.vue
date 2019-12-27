@@ -10,12 +10,8 @@
       <!-- <GoalSteps/> -->
       <!-- <Renewing/> -->
       <div class="projectSummaryData">
-        <div class="rank" style="flex-direction: column;">
-          <span class="feedOverline">Accesos directos</span>
-          <Shortcuts/>
-        </div>
         <div class="rank">
-          <FeaturedGoal/>
+          <!-- <FeaturedGoal/> -->
         </div>
         <br>
         <span class="linksSectionTitle">

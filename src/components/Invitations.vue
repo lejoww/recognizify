@@ -13,7 +13,7 @@
 <style>
 
     .invitationsCounterContainer {
-        width: 42px;
+        width: auto;
         display: flex;
         justify-content: space-between;
         margin-right: 12px;
@@ -33,6 +33,7 @@
         font-weight: 600;
         vertical-align: middle;
         line-height: 1.2;
+        margin-left: 4px;
     }
 
 </style>

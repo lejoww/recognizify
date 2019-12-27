@@ -85,7 +85,7 @@
                         </div>
                         <div class="form-group">
                             <label>Apodo para el proyecto</label>
-                            <input type="text" v-model="shortName" class="form-control" placeholder="Un nombre más corto">
+                            <input type="text" v-model="shortName" class="form-control" placeholder="Un nombre más corto" maxlength="17">
                         </div>
                         <div class="form-group">
                             <label>¿De qué se trata el proyecto?</label>

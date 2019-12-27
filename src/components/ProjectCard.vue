@@ -1,7 +1,7 @@
 <template>
     <li class="project-el">
         <ProjectOptionsDropdown :projectId="this.projectId" />
-        <a :href="`/dashboard/project/${this.projectId}/feed`">
+        <router-link :to="`/dashboard/project/${this.projectId}/feed`">
             <div class="card projectCard mb-3">
                 <div class="row no-gutters">
                     <div class="col-md-4 projectImageContainer">
@@ -21,7 +21,7 @@
                     </div>
                 </div>
             </div>
-        </a>
+        </router-link>
     </li>
 
 </template>

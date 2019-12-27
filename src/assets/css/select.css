@@ -46,7 +46,8 @@
 
 .card.projectCard {
     background-color: #fff;
-    border: 1px solid #dbdbdb;
+    border: 1px solid #fff;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.08);
 }
 
 .projectImageContainer {
@@ -143,7 +144,7 @@ button.projectCardMenuOptions {
 }
 
 .projectsHeaderTitle {
-    font-weight: 700;
-    letter-spacing: -1px;
+    font-weight: 9S00;
+    letter-spacing: -0.7px;
     font-kerning: normal;
 }
