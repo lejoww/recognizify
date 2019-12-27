@@ -1,7 +1,7 @@
 
 .profileContent {
-    width: 40px;
-    height: 40px;
+    width: 34px;
+    height: 34px;
     border: 2px solid rgba(255, 255, 255, 0.3); 
     overflow: hidden;
     border-radius: 40px;
@@ -10,9 +10,13 @@
 .profileWrapper {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-.profileWrapper .profileData { display: flex; }
+.profileWrapper .profileData { 
+    display: flex; 
+    align-items: center;
+}
 
 .profileContent .profilePicture {
     width: 100%;

@@ -31,10 +31,6 @@
         font-size: 13px;
     }
 
-    .projectData {
-        margin: 1.7rem;
-    }
-
     .backLink {
         font-weight: 700;
         font-size: 14px;

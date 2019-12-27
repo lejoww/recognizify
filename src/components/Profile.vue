@@ -1,34 +1,41 @@
 <template>
-    <div class="headerProfile">
-        <div class="profileWrapper">
-            <div class="profileData">
-                <div class="profileContent">
-                    <img class="profilePicture" id="profilePicture" src="@/assets/ilustrations/profile.png">
+    <div>
+        <div class="headerProfile" data-toggle="modal" data-target="#exampleModal">
+            <div class="profileWrapper">
+                <Invitations/>
+                <div class="profileData">
+                    <div class="profileContent">
+                        <img class="profilePicture" id="profilePicture" src="@/assets/ilustrations/profile.png">
+                    </div>
+                    <!-- <div class="profileIdentity">
+                        <span class="profileName text-white">Hola, {{this.currentAccount.nickname}}</span>
+                        <span class="profileUsername">{{'@' + currentAccount.username}}</span>
+                    </div> -->
                 </div>
-                <div class="profileIdentity">
-                    <span class="profileName text-white">Hola, {{this.currentAccount.nickname}}</span>
-                    <!-- <span class="profileUsername">{{'@' + currentAccount.username}}</span> -->
-                </div>
-            </div>
-            <div class="profileOptions">
-                <router-link to="/account/configuration">
-                    <svg class="feather-menu">
-                        <use xlink:href="@/assets/svg/feather-sprite.svg#settings"/>
-                    </svg>
-                </router-link>
-                <a href="#" @click="closeSession" style="margin-left: 7px" data-toggle="tooltip" data-placement="top" title="Cerrar sesión">
-                    <svg class="feather-red">
-                        <use xlink:href="@/assets/svg/feather-sprite.svg#log-out"/>
-                    </svg>
-                </a>
+                <!-- <div class="profileOptions">
+                    <router-link to="/account/configuration">
+                        <svg class="feather-menu">
+                            <use xlink:href="@/assets/svg/feather-sprite.svg#settings"/>
+                        </svg>
+                    </router-link>
+                    <a href="#" @click="closeSession" style="margin-left: 7px" data-toggle="tooltip" data-placement="top" title="Cerrar sesión">
+                        <svg class="feather-red">
+                            <use xlink:href="@/assets/svg/feather-sprite.svg#log-out"/>
+                        </svg>
+                    </a>
+                </div> -->
             </div>
         </div>
+        <ProfileMenu/>
     </div>
 </template>
 <script>
 
     import firebase from 'firebase';
-    import '@/assets/css/profile.css'
+    import '@/assets/css/profile.css';
+
+    import Invitations from '@/components/Invitations.vue';
+    import ProfileMenu from '@/components/modals/ProfileMenu.vue';
 
     export default {
         data: function(){
@@ -38,6 +45,10 @@
                     username: ''
                 }
             }
+        },
+        components: {
+            Invitations,
+            ProfileMenu
         },
         created: function(){
             this.setProfilePicture()

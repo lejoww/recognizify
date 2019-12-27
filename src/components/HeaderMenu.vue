@@ -5,16 +5,14 @@
         <div class="headerBrand">
           <img src="@/assets/logo-white-cutted.png" width="134px">
         </div>
-        <div class="headerSearch">
-          <input type="text" class="form-control-navbar inputSearch" placeholder="Buscar en tus proyectos...">
-        </div>
       </div>
       <div class="headerWrapperRight">
-        <a class="headerMenuButton" @click="openOverlayMenu">
+        <Profile/>
+        <!-- <a class="headerMenuButton" @click="openOverlayMenu">
           <svg class="feather-light">
             <use xlink:href="@/assets/svg/feather-sprite.svg#menu" />
           </svg>
-        </a>
+        </a> -->
       </div>
     </div>
   </div>
