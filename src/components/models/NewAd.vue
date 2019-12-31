@@ -12,12 +12,15 @@
     import '@/assets/css/adsPanel.css'
     import firebase from 'firebase'
 
+    import { AddPoints } from '@/assets/scripts/addActivityPoints.js'
+
     export default {
         data(){
             return {
                 task: ''
             }
         },
+        mixins: [AddPoints],
         methods: {
             saveTask: function() {
                 if (this.checkTaskContent()) {
@@ -35,7 +38,10 @@
                                 name: userdata.data()['name'],
                                 ad: this.task.trim(),
                                 publisherId: user.uid
-                            }).then(() => window.location.reload());
+                            }).then(() => {
+                                this.addActivityPoint()
+                                window.location.reload()
+                            });
                         })
                         .catch((err) => {
                             console.log(err);

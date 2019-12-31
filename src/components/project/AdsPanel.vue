@@ -1,10 +1,10 @@
 <template>
     <div class="tasksPanel">
-            <div class="taskMiniBanner">
-                <svg class="feather-light">
+            <div class="taskMiniBanner bg-primary">
+                <svg class="feather-mini-light">
                     <use xlink:href="@/assets/svg/feather-sprite.svg#check-circle" />
                 </svg>
-                <span class="tasksPanelTitle" style="color: #fff">Anuncios de tu equipo</span>
+                <span class="tasksPanelTitle text-white">Anuncios de tu equipo</span>
             </div>
         <div class="tasksPanelWrapper">
             <div class="tasksPanelList" v-if="ads.length > 0">

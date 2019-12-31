@@ -32,6 +32,7 @@
 
     import firebase from 'firebase'
     import CheckProjectMember from '@/assets/scripts/checkProjectMember.js'
+    import { AddPoints } from '@/assets/scripts/addActivityPoints.js'
 
     export default {
         data: function(){
@@ -44,7 +45,7 @@
                 objectivesStepsAchieved: []
             }
         },
-        mixins: [CheckProjectMember],
+        mixins: [CheckProjectMember, AddPoints],
         mounted: function(){
             firebase.firestore()
             .collection('projects')
@@ -89,9 +90,13 @@
                     task: this.task.name,
                     because: this.task.because,
                     for: taskFor,
-                    creator: firebase.auth().currentUser.uid
+                    creator: firebase.auth().currentUser.uid,
+                    isDone: false
                 })
-                .then(() => this.$router.push(`/dashboard/project/${this.$route.params.projectId}/tasks`))
+                .then(() => {
+                    this.addActivityPoint()
+                    this.$router.push(`/dashboard/project/${this.$route.params.projectId}/tasks`)
+                })
             }
         }
     }

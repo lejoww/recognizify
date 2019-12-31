@@ -1,6 +1,7 @@
 
 
 .tasksPanel {
+    width: 32%;
     height: 100%;
     display: block;
     grid-column: 2 / 3;
@@ -28,7 +29,8 @@
 }
 
 .tasksPanelTitle {
-    font-size: 16px;
+    font-family: 'cooper_hewittsemibold';
+    font-size: 14px;
     font-weight: 600;
     margin-left: 7px;
     line-height: 1.2;
@@ -82,7 +84,6 @@
 }
 
 .taskMiniBanner {
-    background-color: #33323f;
     padding: 12px;
 }
 

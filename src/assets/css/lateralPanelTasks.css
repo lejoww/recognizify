@@ -1,0 +1,13 @@
+
+.lateralPanelTasksContainer {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    background: #fff;
+    margin: 8px;
+    border-radius: 6px;
+    max-height: 90%;
+}
+
+.lateralPanelTasksHeader {
+    padding: 21px;
+}

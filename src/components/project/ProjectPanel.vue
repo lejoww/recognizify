@@ -58,6 +58,14 @@
                         Users
                     </div>
                 </router-link>
+                <router-link class="projectShortcutLink" :to="`/dashboard/project/${this.$route.params.projectId}/ads`">
+                    <div class="projectShortcutButton">
+                        <svg class="feather-menu">
+                            <use xlink:href="@/assets/svg/feather-sprite.svg#mic" />
+                        </svg>
+                        Ads
+                    </div>
+                </router-link>
             </div>
         </div>
     </div>

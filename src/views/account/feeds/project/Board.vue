@@ -83,6 +83,7 @@
     import uuidv1 from 'uuid/v1'
     import CheckProjectMember from '@/assets/scripts/checkProjectMember.js'
     import ProjectPanel from '@/components/project/ProjectPanel.vue'
+    import { AddPoints } from '@/assets/scripts/addActivityPoints.js'
 
     export default {
         data(){
@@ -105,7 +106,7 @@
             }
         },
         mounted: function(){
-            this.currentProjectUid = this.$router.history.current.params["projectId"]
+            this.currentProjectUid = this.$route.params.projectId
             firebase.firestore().collection('projects').doc(this.currentProjectUid).collection('boards').doc('data').get()
             .then(res => { 
                 res.data()['boardName'] != undefined ? this.newBoardName = res.data()['boardName'] : this.newBoardName = '';
@@ -145,28 +146,29 @@
                 })
             },
             publishNote: function(){
-                this.newToastCode = uuidv1()
-
                 firebase.auth().onAuthStateChanged(user => {
-                    firebase.firestore().collection('users').doc(user.uid).get()
-                        .then(data => {
-                            firebase.firestore()
-                            .collection('projects')
-                            .doc(this.currentProjectUid)
-                            .collection('boards')
-                            .doc('data')
-                            .collection('notes')
-                            .doc(this.newToastCode)
-                            .set({
-                                userNamePublish: data.data()['name'],
-                                uidUserPublish: user.uid,
-                                notePublish: this.newMessage
-                            })
-                            .then(() => {
-                                this.addActivityPoint()
-                                window.location.reload()
-                            })
+                    firebase.firestore()
+                    .collection('users')
+                    .doc(user.uid)
+                    .get()
+                    .then(data => {
+                        firebase.firestore()
+                        .collection('projects')
+                        .doc(this.$route.params.projectId)
+                        .collection('boards')
+                        .doc('data')
+                        .collection('notes')
+                        .add({
+                            userNamePublish: data.data()['name'],
+                            uidUserPublish: user.uid,
+                            notePublish: this.newMessage
                         })
+                        .then(() => {
+                            this.addActivityPoint()
+                            window.location.reload()
+                        })
+                        .catch(err => console.log(err))
+                    })
                 })
             },
             updateNotes: function(){

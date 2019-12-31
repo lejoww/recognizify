@@ -13,6 +13,20 @@
                         </div>
                     </div>
                 </div>
+                <div class="rank">
+                    <a class="btn btn-outline-dark" href="/account/configuration">
+                        <svg class="feather-menu">
+                            <use xlink:href="@/assets/svg/feather-sprite.svg#settings" />
+                        </svg>
+                        <span style="margin-left: 6px">Configuración</span>
+                    </a>
+                    <a class="btn btn-outline-dark" href="/dashboard/select">
+                        <svg class="feather-menu">
+                            <use xlink:href="@/assets/svg/feather-sprite.svg#package" />
+                        </svg>
+                        <span style="margin-left: 6px">Tus proyectos</span>
+                    </a>
+                </div>
                 <div class="modal-footer" style="border: none">
                     <button type="button" class="btn btn-info btn-sm" data-dismiss="modal">Volver</button>
                     <button type="button" class="btn btn-danger btn-sm" @click="closeSession">Cerrar sesión</button>
@@ -37,6 +51,18 @@
     .userInfo {
         padding: 0.5rem;
         display: flex;
+    }
+
+    .rank {
+        display: flex;
+        padding: 0 1rem;
+        flex-wrap: wrap;
+    }
+
+    .btn-outline-dark {
+        display: flex; 
+        align-items: center;
+        margin-right: 3px;
     }
 
 </style>

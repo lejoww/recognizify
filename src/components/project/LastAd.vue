@@ -3,22 +3,65 @@
         <div class="lastAdContainer" v-if="ad.ad">
             <h4>Último aviso</h4>
             <p>{{ad.ad}}</p>
-            <small>- @{{ad.username}}</small>
+            <div style="display: flex; align-items: center">
+                <div class="photoContainer">
+                    <img :src="ad.photo != undefined ? ad.photo : '@/assets/ilustrations/profile.png'">
+                </div>
+                <small class="publisherUsername">- @{{ad.username}}</small>
+            </div>
         </div>
         <div class="lastAdContainer" v-else>
-            <h4>No hay último aviso</h4>
+            <div class="nonAdContainer">
+                <div>
+                    <h4 style="color: #9e95aa; display: flex; align-items: center">
+                        <svg class="feather-sketch" style="margin: 0 0.5em 0 0">
+                            <use xlink:href="@/assets/svg/feather-sprite.svg#mic" />
+                        </svg>
+                        No hay último aviso
+                    </h4>
+                    <span style="color: #9e95aa; font-size: 13px">Puede que no haya mucho que contar o simplemente tu equipo no es muy sociable.</span>
+                </div>
+            </div>
+            <a class="btn btn-primary" :href="`/dashboard/project/${this.$route.params.projectId}/ads`">Añade un anuncio</a>
         </div>
     </div>
 </template>
 <style>
 
     .lastAdContainer {
+        min-width: 60%;
+        display: block;
         padding: 18px;
         background: #fafafa;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
         border-radius: 6px;
         margin: 8px;
         border-bottom: 3px solid #8400ff;
+    }
+
+    .nonAdContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 21px;
+    }
+
+    .photoContainer {
+        width: 32px;
+        height: 32px;
+        border-radius: 21px;
+        overflow: hidden;
+        margin-right: 12px
+    }
+
+    .photoContainer img {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .publisherUsername {
+        font-weight: 700;
+        /* font-size: 12px */
     }
 
 </style>
@@ -48,18 +91,18 @@
                 .get()
                 .then((user) => {
                     firebase.storage()
-                    .ref(`/profile_photo/${ads.docs[0].data()['publisherId']}`)
+                    .ref(`/profile_photos/${ads.docs[0].data()['publisherId']}`)
                     .getDownloadURL()
                     .then((url) => {
                         this.ad = {
-                            ad: ads.docs[0].data()['ad'],
+                            ad: ads.docs[ads.docs.length - 1].data()['ad'],
                             username: user.data()['user'],
                             photo: url
                         }
                     })
                     .catch(() => {
                         this.ad = {
-                            ad: ads.docs[0].data()['ad'],
+                            ad: ads.docs[ads.docs.length - 1].data()['ad'],
                             username: user.data()['user']
                         }
                     })

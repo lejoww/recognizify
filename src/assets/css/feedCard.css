@@ -21,7 +21,7 @@
     line-height: 1.2;
 }
 
-@media screen and (max-width: 712px) {
+@media screen and (max-width: 776px) {
     .projectInfoCard {
         width: 100%;
     }
