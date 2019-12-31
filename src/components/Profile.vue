@@ -1,9 +1,9 @@
 <template>
     <div>
-        <div class="headerProfile" data-toggle="modal" data-target="#exampleModal">
+        <div class="headerProfile">
             <div class="profileWrapper">
                 <Invitations/>
-                <div class="profileData">
+                <div class="profileData" data-toggle="modal" data-target="#exampleModal">
                     <div class="profileContent">
                         <img class="profilePicture" id="profilePicture" src="@/assets/ilustrations/profile.png">
                     </div>

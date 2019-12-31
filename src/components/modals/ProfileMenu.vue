@@ -9,7 +9,7 @@
                             <small class="text-success userUsername">@{{user.user}}</small>
                         </div>
                         <div style="margin-left: 12px">
-                            <a :href="`@${user.user}`" class="btn btn-outline-dark btn-sm">Tu perfil</a>
+                            <a :href="`/@${user.user}`" class="btn btn-outline-dark btn-sm">Tu perfil</a>
                         </div>
                     </div>
                 </div>

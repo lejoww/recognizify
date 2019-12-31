@@ -211,6 +211,6 @@ input:checked + .slider:before {
 
 .loginTitle {
     margin-top: 1em;
-    font-weight: 900;
     letter-spacing: -0.7px;
+    margin-bottom: 0.5em;
 }

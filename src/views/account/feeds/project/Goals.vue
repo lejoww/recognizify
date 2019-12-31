@@ -36,6 +36,7 @@
                     </div>
                 </div>
             </div>
+            <ProjectPanel/>
     </div>
 </template>
 <script>
@@ -47,6 +48,7 @@
 
     import CreateGoal from '@/components/modals/CreateGoal.vue'
     import CheckProjectMember from '@/assets/scripts/checkProjectMember.js'
+    import ProjectPanel from '@/components/project/ProjectPanel.vue'
 
     export default {
         data(){
@@ -55,7 +57,8 @@
             }
         },
         components: {
-            CreateGoal
+            CreateGoal,
+            ProjectPanel
         },
         mixins: [CheckProjectMember],
         created: function(){

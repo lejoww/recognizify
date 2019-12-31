@@ -6,23 +6,25 @@
       <h3 v-text="projectName"></h3>
     </div> -->
     <div class="feedLayout">
-      <ProjectName/>
       <!-- <GoalSteps/> -->
       <!-- <Renewing/> -->
       <div class="projectSummaryData">
+        <!-- <GeneralStatistic/> -->
         <div class="rank">
           <!-- <FeaturedGoal/> -->
+          <ActivityPoints/>
+          <LastAd/>
         </div>
         <br>
         <span class="linksSectionTitle">
           Enlaces 
-          <button class="btn btn-success" data-toggle="modal" data-target="#projectCardModal">
+          <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#projectCardModal" style="margin-left: 0.3rem">
             Crear enlace
           </button>
         </span>
         <div class="projectCards">
           <LinkCard :key="link" v-for="link in links" :title="link.title" :description="link.description" :link="link.url" :id="link.id"/>
-          <span v-if="links.length == 0" style="margin: 5px 10px">No hay enlaces aquí. Crea el primero ahí arriba</span>
+          <span v-if="links.length == 0" style="margin: 5px 10px; font-size: 14px">No hay enlaces aquí. Crea el primero ahí arriba</span>
         </div>
       </div>
       <ProjectPanel/>
@@ -43,6 +45,8 @@
   import GoalSteps from '@/components/project/statistics/GoalSteps.vue';
   import Shortcuts from '@/components/project/Shortcuts.vue';
   import ProjectPanel from '@/components/project/ProjectPanel.vue';
+  import ActivityPoints from '@/components/project/ActivityPoints.vue';
+  import LastAd from '@/components/project/LastAd.vue';
 
   import Vue from 'vue'
 
@@ -68,7 +72,9 @@
       CreateProjectLinkModal,
       GoalSteps,
       Shortcuts,
-      ProjectPanel
+      ProjectPanel,
+      ActivityPoints,
+      LastAd
     },
     mixins: [CheckProjectMember],
     created: function() {

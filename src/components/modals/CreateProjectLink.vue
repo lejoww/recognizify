@@ -41,6 +41,8 @@
 <script>
 
     import firebase from 'firebase'
+
+    import { AddPoints } from '@/assets/scripts/addActivityPoints.js'
     export default {
         data: function(){
             return{
@@ -51,6 +53,7 @@
                 }
             }
         },
+        mixins: [AddPoints],
         methods: {
             saveLink: function(){
                 firebase.firestore()
@@ -62,7 +65,10 @@
                     description: this.link.description,
                     url: this.link.url
                 })
-                .then(() => window.location.reload())
+                .then(() => {
+                    this.addActivityPoint()
+                    window.location.reload()
+                })
                 .catch(err => console.log(err))
             }
         }

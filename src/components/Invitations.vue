@@ -1,6 +1,6 @@
 <template>
     <div>
-        <router-link class="invitationsCounterContainer" to="/account/notifications">
+        <router-link class="invitationsCounterContainer" to="/account/notifications" data-toggle="tooltip" data-placement="bottom" title="Menú del proyecto">
             <svg class="feather-menu icon">
                 <use xlink:href="@/assets/svg/feather-sprite.svg#mail"/>
             </svg>

@@ -4,7 +4,7 @@
             <img src="@/assets/ilustrations/MoonIcon.png" width="190px"/>
         </div><br>
         <div class="bannerInstructions">
-            <h2>Parece que aún no tienes proyectos nuevos</h2>
+            <h2 class="nonProjectsTitle">Parece que aún no tienes proyectos nuevos</h2>
             <p style="font-size: 14px">¿Qué esperas? Empieza de una vez.</p>
             <br>
 

@@ -75,25 +75,31 @@ export default {
             })
         },
         sendInvitationToSelectedUser: function(projectId) {
-            firebase.firestore()
-            .collection('projects')
-            .doc(projectId)
-            .get()
-            .then(project => {
-                firebase.firestore()
-                .collection('users')
-                .doc(this.profileId)
-                .collection('invitations')
-                .doc(projectId)
-                .set({
-                    pname: project.data()['shortName']
-                })
-                .then(() => {
-                    // this.addActivityPoint()
-                    $('#invitationModal').modal('hide')
-                    document.getElementById('successAlert').style.display = 'block'
-                })
-                .catch(err => console.log(err))
+            firebase.auth().onAuthStateChanged((user) => {
+                if(this.profileId == user.uid){
+                    alert('No puedes invitarte tu mismo a un proyecto')
+                } else {
+                    firebase.firestore()
+                    .collection('projects')
+                    .doc(projectId)
+                    .get()
+                    .then(project => {
+                        firebase.firestore()
+                        .collection('users')
+                        .doc(this.profileId)
+                        .collection('invitations')
+                        .doc(projectId)
+                        .set({
+                            pname: project.data()['shortName']
+                        })
+                        .then(() => {
+                            // this.addActivityPoint()
+                            $('#invitationModal').modal('hide')
+                            document.getElementById('successAlert').style.display = 'block'
+                        })
+                        .catch(err => console.log(err))
+                    })
+                }
             })
         }
     }

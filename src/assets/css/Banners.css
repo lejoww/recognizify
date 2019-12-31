@@ -18,6 +18,11 @@
     font-size: 17px;
 }
 
+.nonProjectsTitle {
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
 .actionButton {
     cursor: pointer;
 }

@@ -9,7 +9,7 @@
             </div>
             <div class="form-container">
                 <img src="@/assets/logo-common-cutted.png" alt="Logotipo de Recognizify" width="148px">
-                <h2 class="loginTitle">Conéctate de nuevo.</h2>
+                <h1 class="loginTitle">Conéctate de nuevo.</h1>
                     <div class="form-group">
                         <label>Correo electrónico</label>
                         <input type="email" class="form-control form-control-lg form-control-login" v-on:keyup.enter="signInWithEmailAndPassword" v-model="email" aria-describedby="emailHelp" placeholder="alguien@recognizify.com" spellcheck="false">

@@ -9,11 +9,11 @@
             </a>
         </div>
         <p>{{this.description}}</p>
-        <a :href="this.link" style="color: #0088FF; text-decoration-line: overline">
+        <a :href="this.link" style="color: #0088FF; text-decoration-line: overline; font-size: 13px; font-weight: 600">
             <svg class="feather-link">
                 <use xlink:href="@/assets/svg/feather-sprite.svg#link" />
             </svg>
-            {{`${this.link.slice(0, 40)}...`}}
+            {{`${this.link.slice(0, 37)}...`}}
         </a>
     </div>
 </template>

@@ -15,16 +15,16 @@
                 </div>
                 <div class="profileDescription">
                     <span class="publicProfileInd">Perfil de usuario</span>
-                    <h1>{{user.name}}</h1>
+                    <h1 style="letter-spacing: -1px">{{user.name}}</h1>
                     <span class="profileUsername">@{{user.user}}</span>
 
                     <div class="profileBiography">
-                        <strong>Biografía</strong>
+                        <span style="font-weight: 700">Biografía</span>
                         <p>{{user.bio}}</p>
                     </div>
                     
                     <br>
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#invitationModal">Invitar a un proyecto</button>
+                    <button v-if="invitationIsAvailable" class="btn btn-primary" data-toggle="modal" data-target="#invitationModal">Invitar a un proyecto</button>
                 </div>
             </div>
             <div class="publicProfileContentNotAvailable">
@@ -40,6 +40,7 @@
     import firebase from 'firebase'
 
     import '@/assets/css/publicProfile.css'
+    import '@/assets/css/main.css'
     import profilePhotoUser from '@/assets/ilustrations/profile.png'
 
     import SendInvitationModal from '@/components/modals/SendInvitation.vue'
@@ -52,7 +53,8 @@
                     user: '',
                     bio: '',
                     id: ''
-                }
+                },
+                invitationIsAvailable: false
             }
         },
         components: {
@@ -79,6 +81,8 @@
                                 url: url,
                                 id: user.docs[0].id
                             }
+
+                            this.checkIfInvitationIsAvailable()
                         })
                         .catch(() => {
                             this.user = {
@@ -88,7 +92,18 @@
                                 url: profilePhotoUser,
                                 id: user.docs[0].id
                             }
+
+                            this.checkIfInvitationIsAvailable()
                         })
+                    }
+                })
+            },
+            checkIfInvitationIsAvailable: function(){
+                firebase.auth().onAuthStateChanged((user) => {
+                    if (this.user.id == user.uid) {
+                        this.invitationIsAvailable = false
+                    } else {
+                        this.invitationIsAvailable = true
                     }
                 })
             }

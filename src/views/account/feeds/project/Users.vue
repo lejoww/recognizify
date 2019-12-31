@@ -3,6 +3,7 @@
         <div class="dashboardContent">
             <UserRegistry/>
         </div>
+        <ProjectPanel/>
     </div>
 </template>
 <script>
@@ -13,10 +14,12 @@
     import '@/assets/css/userRegistry.css'
 
     import CheckProjectMember from '@/assets/scripts/checkProjectMember.js'
+    import ProjectPanel from '@/components/project/ProjectPanel.vue'
 
     export default {
         components: {
             UserRegistry,
+            ProjectPanel
         },
         mixins: [CheckProjectMember],
         created: function(){

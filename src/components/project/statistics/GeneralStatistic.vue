@@ -1,9 +1,9 @@
 <template>
     <div class="projectSummaryPurpleCard">
-        <!-- <canvas width="800" height="240" id="canvas" v-if="activityDates.length > 1"></canvas> -->
-        <div class="nonActivityPoints"> <!--  v-if="activityDates.length == 0 || activityDates.length == 1" -->
+        <canvas width="800" height="240" id="canvas"></canvas>
+        <!-- <div class="nonActivityPoints" v-if="activityDates.length == 0 || activityDates.length == 1">
             <p class="text-white">Aquí aparece la actividad de tu proyecto en estadísticas, comienza a usar más la app y poco a poco aparecerán nuevos puntos</p>
-        </div>
+        </div> -->
     </div>
 </template>
 <script>
@@ -15,7 +15,7 @@
         data: function(){
             return {
                 projectName: '',
-                projectUid: this.$route.params["projectId"],
+                projectUid: this.$route.params.projectId,
                 activityPoints: [],
                 activityDates: []
             }
@@ -32,7 +32,7 @@
                         labels: this.activityDates,
                         datasets: [{
                             data: this.activityPoints,
-                            borderColor: 'rgb(0, 194, 255)',
+                            borderColor: '#00bfFF',
                             borderWidth: 3
                         }]
                     },
@@ -41,7 +41,7 @@
                         legend: {
                             display: false,
                             labels: {
-                                display: false
+                                display: true
                             }
                         },
                         scales: {
@@ -70,22 +70,22 @@
             },
             setChartData: function(){
                 firebase.firestore()
-                    .collection("projects")
-                    .doc(this.projectUid)
-                    .collection("dates")
-                    .get()
-                    .then(dates => {
-                        for(let i = 0; i <= dates.docs.length; i++) {
-                            this.activityDates.push(i)
-                        }
+                .collection('projects')
+                .doc(this.projectUid)
+                .collection('dates')
+                .get()
+                .then(dates => {
+                    for(let i = 0; i <= dates.docs.length; i++) {
+                        this.activityDates.push(i)
+                    }
 
-                        this.activityPoints.push(0)
-                        dates.forEach(date => {
-                            this.activityPoints.push(date.data()['activityPoints'])
-                        })
-
-                        this.setChart()
+                    this.activityPoints.push(0)
+                    dates.forEach(date => {
+                        this.activityPoints.push(date.data()['activityPoints'])
                     })
+
+                    this.setChart()
+                })
             }
         }
     }
