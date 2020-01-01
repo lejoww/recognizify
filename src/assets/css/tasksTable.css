@@ -57,7 +57,8 @@
 .taskCreatorProfile {
     width: 26px;
     height: 26px;
-    border-radius: 13px;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 664px){

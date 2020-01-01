@@ -83,7 +83,24 @@
                         user: this.user,
                         // betaAccess: localStorage.betaAccess
                     })
-                    .then(() => this.$router.push('/dashboard/select'))
+                    .then(() => {
+                        // firebase.storage()
+                        // .ref(`profile_photos/${user.uid}`)
+                        // .getDownloadURL()
+                        // .then(() => {
+                        //     this.$router.push('/dashboard/select')
+                        // })
+                        // .catch(() => {
+                        //     firebase.storage()
+                        //     .ref(`profile_photos/${user.uid}`)
+                        //     .put('../../../assets/ilustrations/profile.png')
+                        //     .then(() => {
+                        //         this.$router.push('/dashboard/select')
+                        //     })
+                        // })
+
+                        this.$router.push('/dashboard/select')
+                    })
                     .catch((err) => console.log(err))
                     // .catch(err => console.log(err))
                 })

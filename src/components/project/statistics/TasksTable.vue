@@ -19,7 +19,7 @@
                         <div class="taskTableField">
                             <div class="taskCreatorProfile">
                                 <!-- data-toggle="tooltip" data-placement="bottom" title="Ale Rodríguez" -->
-                                <img :src="task.creatorPhoto" width="100%">
+                                <img :src="task.creatorPhoto ? task.creatorPhoto : require('../../../assets/ilustrations/profile.png')" width="100%">
                             </div>
                         </div>
                     </td>
@@ -45,6 +45,7 @@
 <script>
 
     import '@/assets/css/tasksTable.css'
+    import alternativeProfilePicture from '@/assets/ilustrations/profile.png'
 
     import firebase from 'firebase'
     export default {
@@ -78,7 +79,6 @@
                     .catch(() => {
                        this.tasksList.push({
                             task: task.data()['task'],
-                            creatorPhoto: '../../../../../assets/ilustrations/profile.png',
                             id: task.id
                        })
                     })

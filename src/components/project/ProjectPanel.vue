@@ -8,7 +8,7 @@
                 <p class="projectCardIndicator">Creador del proyecto</p>
                 <div class="projectFounderFlow">
                     <div class="projectFounderProfile">
-                        <img class="projectFounderProfilePicture" :src="admin.profilePicture ? admin.profilePicture : '@/assets/ilustrations/profile.png'"/>
+                        <img class="projectFounderProfilePicture" id="projectFounderProfilePicture" src="@/assets/ilustrations/profile.png"/>
                     </div>
                     <div style="display: flex; flex-direction: column">
                         <span class="projectFounderName">{{admin.name}}</span>
@@ -104,10 +104,13 @@
                 .then(admin => {
                     this.admin.name = admin.data()['name']
                     this.admin.user = admin.data()['user']
+
                 })
 
                 firebase.storage().ref(`profile_photos/${project.data()['admin'][0]}`).getDownloadURL()
-                .then(url => this.admin.profilePicture = url)
+                .then(url => {
+                    document.getElementById('projectFounderProfilePicture').setAttribute('src', url)
+                })
             })
         },
         methods: {
