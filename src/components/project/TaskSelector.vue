@@ -2,7 +2,7 @@
     <div class="taskSelectorContainer">
         <button :class="isDone ? 'taskSelectorDone taskSelectorDoneConfirmed' : 'taskSelectorDone'" id="taskSelectorDone" @click="setDoneTask"></button>
         <span class="taskName">{{task}}</span>
-        <p class="taskStatus">{{isDone ? 'Completada' : publisher}}</p>
+        <p :class="isDone ? 'taskStatus taskStatusDone' : 'taskStatus' ">{{isDone ? 'Completada' : publisher}}</p>
     </div>
 </template>
 <style scoped>
@@ -40,6 +40,10 @@
     .taskSelectorDoneConfirmed {
         background: #00c954;
         border: none
+    }
+
+    .taskStatusDone {
+        color: #00c954
     }
 
 </style>

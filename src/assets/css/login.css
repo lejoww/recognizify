@@ -1,7 +1,7 @@
 
 
 div#login {
-    height: 100vh;
+    height: calc(100vh - 56px - 68px);
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;

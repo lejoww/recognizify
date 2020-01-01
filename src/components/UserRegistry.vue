@@ -1,48 +1,5 @@
 <template>
   <div id="usersRegistry">
-    
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header" style="border: none">
-            <h5 class="modal-title">¿Quién trabaja contigo?</h5>
-          </div>
-          <div class="modal-body">
-            <p>Para añadir un miembro a tu proyecto, ya debe de estar registrado en la plataforma: escribe su nombre de usuario</p>
-            <br><br>
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">@</span>
-              </div>
-              <input type="text" class="form-control form-control-lg" placeholder="Escribe el @user del usuario" v-model="search" aria-describedby="basic-addon1">
-            </div>
-          </div>
-          <div class="modal-footer" style="border: none">
-            <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary" @click="proposeAnUserWithSearch" data-toggle="modal" data-target="#invitationModal">Buscar usuario</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="modal fade" id="invitationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header" style="border: none">
-            <h5 class="modal-title">Enviar invitación</h5>
-          </div>
-          <div class="modal-body">
-            <p>Asegúrate de que conoces a esta persona antes de enviarle una invitación a participar de tu idea.</p><br>
-            <h4 style="text-align: center" v-text="UserNameInvited"></h4>
-          </div>
-          <div class="modal-footer" style="border: none">
-            <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary" @click="sendInvitationToSelectedUser">Enviar invitación</button>
-          </div>
-        </div>
-      </div>
-    </div>
 
       <div class="usersListTable" id="usersListTable">
         <h6>Usuarios en tu proyecto</h6>
@@ -61,8 +18,7 @@
       <div class="bannerNonUsers" id="bannerNonUsers">
         <div>
           <h3>Invita a más personas a tu proyecto</h3>
-          <p>Puedes agregar a más usuarios en el proyecto si conoces su nombre de usuario.</p>
-          <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModal">Invitar a alguien</button>
+          <p>Puedes agregar a más usuarios en el proyecto si conoces su nombre de usuario. Para añadir un miembro a tu proyecto, ya debe de estar registrado en la plataforma. Solo debes acceder a https://recognizify.netlify.com/@ y agregarle a esa dirección el nombre de usuario de la persona.</p>
         </div>
       </div>
     </div>

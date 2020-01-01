@@ -1,18 +1,18 @@
 <template>
     <div class="heroesBannerNotice">
-        <div style="display: flex; flex-direction: row; align-items: center">
-            <img class="heroesRobot" src="@/assets/ilustrations/robot.png" width="54px">
+        <div style="width: 80%;display: flex; flex-direction: row; align-items: center">
+            <!-- <img class="heroesRobot" src="@/assets/ilustrations/robot.png" width="54px"> -->
             <div style="display: flex; flex-direction: column; margin-left: 0.4rem">
-                <h2 class="heroesBannerTitle">Especial de <span class="text-danger">Navidad</span></h2>
-                <span class="heroesBannerMotivation">Descubre los lanzamientos de navidad.</span>
+                <h2 class="heroesBannerTitle">Creadores<span class="text-blue">2020 </span><span class="badge badge-success">Disponible ahora mismo, inicia sesión.</span></h2>
+                <span class="heroesBannerMotivation">Una versión renovada que conserva el honor de los creadores que quieren cambiar la forma de ver la vida.</span>
             </div>
         </div>
         <div class="heroesBannerTimer">
-            <span style="margin: 0; font-weight: 700" v-if="finalCount == false">Faltan solo</span>
+            <!-- <span style="margin: 0; font-weight: 700" v-if="finalCount == false">Faltan solo</span>
             <h3 class="heroesBannerTimerCount text-success">{{this.count}}</h3>
             <div v-if="finalCount == true">
-                <a href="/navidad" class="btn btn-success btn-sm">Mira lo nuevo</a>
-            </div>
+                <button class="btn btn-success btn-sm" aria-disabled="on">Mira lo nuevo</a>
+            </div> -->
 
             <!-- <a href="/surveys/beta/last" class="btn btn-warning btn-sm">Ayúdanos aquí</a> -->
         </div>
