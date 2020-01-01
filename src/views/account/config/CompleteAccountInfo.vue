@@ -36,7 +36,7 @@
                     </div>
                 </div>
             </div>
-            <button v-on:click="saveInfoOnDatabase" class="btn btn-secondary" style="margin-bottom: 2rem">Continuar</button>
+            <button @click="saveInfoOnDatabase" class="btn btn-secondary" style="margin-bottom: 2rem">Continuar</button>
         </div>
     </div>
 </template>
@@ -82,7 +82,9 @@
                         bio: this.bio,
                         user: this.user,
                         // betaAccess: localStorage.betaAccess
-                    }).then(() => this.$router.push('/dashboard/select'))
+                    })
+                    .then(() => this.$router.push('/dashboard/select'))
+                    .catch((err) => console.log(err))
                     // .catch(err => console.log(err))
                 })
             }
