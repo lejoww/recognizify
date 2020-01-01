@@ -62,7 +62,7 @@
                 .catch((err) => console.error(err))
             },
             checkVerificationProccess: function(){
-                this.$router.push('/dashboard/select')
+                window.location = '/dashboard/select'
             }
         }
     }
