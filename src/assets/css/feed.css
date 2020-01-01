@@ -21,6 +21,7 @@
     grid-template-columns: 72% 28%;
     grid-template-rows: 100%;
     overflow: hidden;
+    overflow-y: scroll;
 }
 
 .formLayout {
