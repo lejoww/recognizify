@@ -1,6 +1,9 @@
 <template>
     <div class="verifyScreen">
         <div class="alert alert-success alertSending" id="sendingAlert" role="alert" style="display:none">
+            Correo enviado correctamente
+        </div>
+        <div class="alert alert-success alertSending" id="errorAlert" role="alert" style="display:none">
             No ha verificado su cuenta aún.
         </div>
 
@@ -55,6 +58,8 @@
             },
             sendEmailVerification: function(){
                 firebase.auth().currentUser.sendEmailVerification()
+                .then(() => document.getElementById('sendingAlert').style.display = 'block')
+                .catch((err) => console.error(err))
             },
             checkVerificationProccess: function(){
                 this.$router.push('/dashboard/select')
