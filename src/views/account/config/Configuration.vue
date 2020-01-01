@@ -1,5 +1,5 @@
 <template>
-    <div id="configuration">
+    <div id="configuration" style="overflow-y: scroll">
             <div class="dashboardContent">
                     <div class="alert alert-secondary" role="alert" style="display: none" id="alert-success">
                         Bien! Tus datos han sido correctamente cambiados.
