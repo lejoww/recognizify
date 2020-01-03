@@ -81,6 +81,11 @@
                         name: this.username,
                         bio: this.bio,
                         user: this.user,
+                        roles: {
+                            admin: false,
+                            creator: false,
+                            user: true
+                        }
                         // betaAccess: localStorage.betaAccess
                     })
                     .then(() => {

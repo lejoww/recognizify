@@ -1,7 +1,9 @@
 <template>
       <div class="dashboardContent">
+
           <NonProjectsBanner v-if="projects.length == 0"/>
           <div class="projectsField" id="projectsContent" v-if="projects.length >= 1">
+            <WeeklyArticleCard/>
             <div class="projectsBanner">
               <div>
                 <h1 class="projectsHeaderTitle">Tus proyectos</h1>
@@ -37,7 +39,7 @@
     import firebase from "firebase";
     import ProjectCard from '@/components/ProjectCard.vue';
     import NonProjectsBanner from '@/components/project/NonProjectsBanner.vue';
-    import BannerAd from '@/components/models/BannerNotice.vue';
+    import WeeklyArticleCard from '@/components/offers/WeeklyArticleCard.vue';
 
     import '@/assets/css/select.css'
 
@@ -50,7 +52,7 @@
     components: {
       ProjectCard,
       NonProjectsBanner,
-      BannerAd
+      WeeklyArticleCard
     },
     created: function() {
       this.getProjects()

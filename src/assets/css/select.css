@@ -5,7 +5,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 6rem;
+    padding: 3rem;
 }
 
 .projectsField .projectsBanner {
@@ -30,6 +30,7 @@
 }
 
 .project-el {
+    width: 31%;
     margin-right: 7px;
 }
 
@@ -66,7 +67,7 @@
 }
 
 .projectCard {
-    width: 380px;
+    width: 100%;
 }
 
 .projectLastActivity {
@@ -114,7 +115,7 @@ button.projectCardMenuOptions {
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 867px) {
     .project-el {
         width: 100%;
     }

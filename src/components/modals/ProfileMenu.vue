@@ -27,6 +27,17 @@
                         <span style="margin-left: 6px">Tus proyectos</span>
                     </a>
                 </div>
+                <div class="padding-rank" v-if="user.roles.admin == true">
+                    <h6>Opciones de administrador</h6>
+                    <div class="rank">
+                        <a class="btn btn-outline-dark" href="/account/admin/articles/new/article">
+                            <svg class="feather-menu">
+                                <use xlink:href="@/assets/svg/feather-sprite.svg#book" />
+                            </svg>
+                            <span style="margin-left: 6px">Articulos</span>
+                        </a>
+                    </div>
+                </div>
                 <div class="modal-footer" style="border: none">
                     <button type="button" class="btn btn-info btn-sm" data-dismiss="modal">Volver</button>
                     <button type="button" class="btn btn-danger btn-sm" @click="closeSession">Cerrar sesión</button>
@@ -65,6 +76,10 @@
         margin-right: 3px;
     }
 
+    .padding-rank {
+        padding: 1rem;
+    }
+
 </style>
 <script>
 
@@ -75,7 +90,12 @@
                 user: {
                     name: '',
                     user: '',
-                    photo: ''
+                    photo: '',
+                    roles: {
+                        admin: false,
+                        creator: false,
+                        user: true
+                    }
                 }
             }
         },
@@ -88,6 +108,9 @@
                 .then((user) => {
                     this.user.name = user.data()['nickname'];
                     this.user.user = user.data()['user'];
+                    this.user.roles.admin = user.data()['roles']['admin']
+                    this.user.roles.creator = user.data()['roles']['creator']
+                    this.user.roles.user = user.data()['roles']['user']
                 })
             })
         },

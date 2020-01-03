@@ -3,7 +3,6 @@
         <div class="instructCopy">
             <span class="text-gray">Las imagenes en la aplicación no son de nuestra autoría. Si deseas saber más, ingresa a <router-link to="/credits" class="text-white">nuestro sitio de referencias.</router-link></span>
         </div>
-        <BannerNotice/>
         <div id="login">
             <div class="form-images">
                 <img src="@/assets/ilustrations/leader-people.png" alt="Personas hablando y admirando estadísticas">

@@ -10,6 +10,11 @@ const routes = [
     redirect: '/signin'
   },
   {
+    path: '/articles/weekly',
+    name: 'weekly_article',
+    component: () => import('./views/articles/WeeklyArticlePage.vue')
+  },
+  {
     path: '/surveys/join/course',
     name: 'course_inscription',
     component: () => import('./views/surveys/CouseInscription.vue')
@@ -133,6 +138,14 @@ const routes = [
       {
         path: 'configuration',
         component: () => import('./views/account/config/Configuration.vue')
+      },
+      {
+        path: 'admin/articles/panel',
+        component: () => import('./views/articles/ArticlesPanel.vue')
+      },
+      {
+        path: 'admin/articles/new/article',
+        component: () => import('./views/articles/NewArticle.vue')
       }
     ]
   }
