@@ -20,14 +20,14 @@ const routes = [
     component: () => import('./views/surveys/CouseInscription.vue')
   },
   {
-    path: '/navidad',
-    name: 'christmas',
-    component: () => import('./views/landings/Christmas.vue')
-  },
-  {
     path: '/signin',
     name: 'login_entry',
     component: () => import('./views/entry/Login.vue')
+  },
+  {
+    path: '/forgot',
+    name: 'forgot_password',
+    component: () => import('./views/entry/ForgotPassword.vue')
   },
   {
     path: '/@:username',
@@ -74,10 +74,6 @@ const routes = [
   {
     path: '/error/project',
     component: () => import('./views/error/Project.vue')
-  },
-  {
-    path: '/boards',
-    component: () => import('./views/presentations/BoardsPresentation.vue')
   },
   {
     path: '/dashboard',

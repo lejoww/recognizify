@@ -1,51 +1,33 @@
 <template>
     <div class="dashboardContent">
-        <div class="modal fade in" id="helpingModal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header" style="border-bottom: 0">
-                        <div style="width: 100%; margin: 0 auto; text-align: center">
-                            <h1 class="modal-title">Boards</h1>
-                            <p class="text-muted">Una nueva forma de transmitir ideas</p>
-                        </div>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p><strong>Boards</strong> es un módulo más de la familia de Recognizify. Permite que todo tu equipo pueda aportar ideas y mantenerlas frescas, en todo momento. Podrás convertirlas en tareas, objetivos, crear listas con ellas y más. Explora y descubre.</p>
-                        <img src="@/assets/ilustrations/meeting.png" width="100%">
-                    </div>
-                    <div class="modal-footer" style="border-top: 0">
-                        <button type="button" class="btn btn-success" data-dismiss="modal">Continuar</button>
-                    </div>
-                </div>
+        <BoardsInfo/>
+        <div class="projectBoard">
+            <div>
+                <input type="text" v-model="newBoardName" class="form-control-special form-control-xl form-control-variable" spellcheck="false" placeholder="Escribe el nombre del tablero" @click="showSaveButtonForBoardNameInput">
+                <h6 style="margin: -0.5em 1em 1em 1em; color: #A9A8C3">Tablero de ideas</h6>
+                <button class="btn btn-danger btn-sm btn-save" @click="saveNewBoardName">Guardar nombre del tablero</button>
             </div>
-        </div>
-            <div class="projectBoard">
-                <div>
-                    <input type="text" v-model="newBoardName" class="form-control-special form-control-xl form-control-variable" spellcheck="false" placeholder="Escribe el nombre del tablero" @click="showSaveButtonForBoardNameInput">
-                    <button class="btn btn-danger btn-sm btn-save" @click="saveNewBoardName">Guardar nombre del tablero</button>
+
+            <div class="toast toast-info" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <img src="@/assets/isotipe-color.svg" class="rounded mr-2" width="32px" height="32px" alt="...">
+                    <strong class="mr-auto">Recognizify</strong>
+                    <!-- <small class="text-muted">11 mins ago</small> -->
+                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close" id="toastClose" @click="closeToast">
+                        <svg class="feather-menu">
+                            <use xlink:href="@/assets/svg/feather-sprite.svg#x"/>
+                        </svg>
+                    </button>
                 </div>
-                <div class="toast toast-info" role="alert" aria-live="assertive" aria-atomic="true">
-                    <div class="toast-header">
-                        <img src="@/assets/isotipe-color.svg" class="rounded mr-2" width="32px" height="32px" alt="...">
-                        <strong class="mr-auto">Recognizify</strong>
-                        <!-- <small class="text-muted">11 mins ago</small> -->
-                        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close" id="toastClose" @click="closeToast">
-                            <svg class="feather-menu">
-                                <use xlink:href="@/assets/svg/feather-sprite.svg#x"/>
-                            </svg>
-                        </button>
-                    </div>
                     <div class="toast-body">
                         Hola, bienvenido al módulo de Boards de Recognizify. Aquí todo tu equipo puede dejar notas y contribuir.
                         <a href="#" data-toggle="modal" data-target="#helpingModal">Da click aquí para saber más</a>
                     </div>
                 </div>
+
                 <div class="notes">
                     <div class="toast toast-special" role="alert" aria-live="assertive" aria-atomic="true">
-                        <div class="toast-header" style="padding: 6px 12px">
+                        <div class="toast-header">
                             <strong class="mr-auto">Escribe una nota para tu equipo</strong>
                         </div>
                         <div class="toast-body">
@@ -61,11 +43,11 @@
 
                     <!-- public notes -->
                     <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" :key="name" v-for="(noteData, name, message) in notesData">
-                        <div class="toast-header" style="padding: 6px 12px">
-                            <strong class="mr-auto" :key="name">{{noteData['name']}}</strong>
+                        <div class="toast-header">
+                            <strong class="mr-auto" :key="name">{{noteData.name}}</strong>
                         </div>
                         <div class="toast-body" :key="message">
-                            {{noteData['message']}}
+                            {{noteData.message}}
                         </div>
                     </div>
                 </div>
@@ -80,9 +62,9 @@
     import '@/assets/css/feed.css'
     import '@/assets/css/board.css'
 
-    import uuidv1 from 'uuid/v1'
     import CheckProjectMember from '@/assets/scripts/checkProjectMember.js'
     import ProjectPanel from '@/components/project/ProjectPanel.vue'
+    import BoardsInfo from '@/components/modals/BoardsInfo.vue'
     import { AddPoints } from '@/assets/scripts/addActivityPoints.js'
 
     export default {
@@ -91,25 +73,24 @@
                 newBoardName: '',
                 newToastCode: '',
                 currentProfilePhoto: '',
-                currentProjectUid: '',
                 newMessage: '',
                 notesData: []
             }
         },
         components: {
-            ProjectPanel
+            ProjectPanel,
+            BoardsInfo
         },
         mixins: [CheckProjectMember, AddPoints],
-        created: function(){
-            if (this.$router.history.current.params["projectId"] == 'undefined') {
-                this.$router.push('/dashboard/select')
-            }
-        },
         mounted: function(){
-            this.currentProjectUid = this.$route.params.projectId
-            firebase.firestore().collection('projects').doc(this.currentProjectUid).collection('boards').doc('data').get()
-            .then(res => { 
-                res.data()['boardName'] != undefined ? this.newBoardName = res.data()['boardName'] : this.newBoardName = '';
+            firebase.firestore()
+            .collection('projects')
+            .doc(this.$route.params.projectId)
+            .collection('boards')
+            .doc('data')
+            .get()
+            .then((res) => { 
+                if (res.data()['boardName'] != undefined) { this.newBoardName = res.data()['boardName'] }
             })
 
             firebase.auth().onAuthStateChanged(user => {
@@ -131,7 +112,12 @@
                 $saveBoardNameButton.style.display = 'flex'
             },
             saveNewBoardName: function(){
-                firebase.firestore().collection('projects').doc(this.currentProjectUid).collection('boards').doc('data').set({
+                firebase.firestore()
+                .collection('projects')
+                .doc(this.$route.params.projectId)
+                .collection('boards')
+                .doc('data')
+                .set({
                     boardName: this.newBoardName
                 })
                 .then(() => {
@@ -174,7 +160,7 @@
             updateNotes: function(){
                 firebase.firestore()
                 .collection('projects')
-                .doc(this.currentProjectUid)
+                .doc(this.$route.params.projectId)
                 .collection('boards')
                 .doc('data')
                 .collection('notes')

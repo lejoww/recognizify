@@ -27,6 +27,9 @@
   // import '@/assets/css/main.css'
   import '@/assets/scripts/firebase-init.js'
 
+  import '@/assets/css/root.css'
+  import '@/assets/css/feather.css'
+
   // sentry js 
   import Vue from 'vue'
   import * as Sentry from '@sentry/browser';

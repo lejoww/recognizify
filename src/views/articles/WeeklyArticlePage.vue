@@ -119,7 +119,6 @@
 
     import firebase from 'firebase'
     import '@/assets/css/feed.css'
-    import '@/assets/css/main.css'
 
     export default {
         data(){

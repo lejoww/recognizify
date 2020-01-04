@@ -1,19 +1,18 @@
 <template>
-        <!-- Modal -->
-        <div class="modal fade" id="projectCardModal" tabindex="-1" role="dialog" aria-labelledby="projectCardModalTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
+    <div class="modal fade" id="projectCardModal" tabindex="-1" role="dialog" aria-labelledby="projectCardModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
                 <div class="modal-header bg-success" style="border: none">
                     <div>
                         <h3 class="modal-title text-white" id="exampleModalLongTitle">Agrega un enlace</h3>
                         <span style="font-weight: 600; color: #DACBF2">Sirven para mostrar direcciones importantantes en el resumen</span>
                     </div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">
-                        <svg class="feather-light">
-                            <use xlink:href="@/assets/svg/feather-sprite.svg#x" />
-                        </svg>
-                    </span>
+                        <span aria-hidden="true">
+                            <svg class="feather-light">
+                                <use xlink:href="@/assets/svg/feather-sprite.svg#x" />
+                            </svg>
+                        </span>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -34,15 +33,17 @@
                     <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
                     <button type="button" class="btn btn-success" @click="saveLink">Agregar enlace</button>
                 </div>
-                </div>
             </div>
         </div>
+    </div>
 </template>
 <script>
 
     import firebase from 'firebase'
 
+    // mixins 
     import { AddPoints } from '@/assets/scripts/addActivityPoints.js'
+
     export default {
         data: function(){
             return{

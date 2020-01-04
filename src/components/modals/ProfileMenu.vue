@@ -46,44 +46,11 @@
         </div>
     </div>
 </template>
-<style>
-
-    .userCompleteName {
-        letter-spacing: -0.5px;
-        font-weight: 700;
-        margin: 0;
-    }
-
-    .userUsername {
-        font-size: 13px;
-        font-weight: 700;
-    }
-
-    .userInfo {
-        padding: 0.5rem;
-        display: flex;
-    }
-
-    .rank {
-        display: flex;
-        padding: 0 1rem;
-        flex-wrap: wrap;
-    }
-
-    .btn-outline-dark {
-        display: flex; 
-        align-items: center;
-        margin-right: 3px;
-    }
-
-    .padding-rank {
-        padding: 1rem;
-    }
-
-</style>
 <script>
 
     import firebase from 'firebase';
+
+    import '@/assets/css/modals.css';
     export default {
         data(){
             return {

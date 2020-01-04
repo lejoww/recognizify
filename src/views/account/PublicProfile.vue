@@ -40,7 +40,6 @@
     import firebase from 'firebase'
 
     import '@/assets/css/publicProfile.css'
-    import '@/assets/css/main.css'
     import profilePhotoUser from '@/assets/ilustrations/profile.png'
 
     import SendInvitationModal from '@/components/modals/SendInvitation.vue'

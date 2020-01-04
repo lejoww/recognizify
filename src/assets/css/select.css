@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
 
 .projectsField {
     width: 100%;
@@ -63,7 +62,6 @@
 
 .projectIcon {
     width: 70px;
-    /* height: 78px; */
 }
 
 .projectCard {

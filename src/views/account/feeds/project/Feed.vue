@@ -2,12 +2,7 @@
   <div class="dashboardContent">
 
     <CreateProjectLinkModal/>
-    <!-- <div class="projectSummaryTitle">
-      <h3 v-text="projectName"></h3>
-    </div> -->
     <div class="feedLayout">
-      <!-- <GoalSteps/> -->
-      <!-- <Renewing/> -->
       <div class="projectSummaryData">
         <div class="rank headerRank" style="padding: 24px">
           <div>
@@ -50,11 +45,6 @@
 
   import firebase from 'firebase'
 
-  import GeneralStatistic from "@/components/project/statistics/GeneralStatistic.vue";
-  import ProjectUsers from "@/components/project/statistics/ProjectUsers.vue";
-  import FeaturedGoal from "@/components/project/FeaturedGoal.vue";
-  import Renewing from "@/components/offers/Renewing.vue";
-  import AdsPanel from "@/components/project/AdsPanel.vue";
   import LinkCard from "@/components/project/LinkCard.vue";
   import CreateProjectLinkModal from "@/components/modals/CreateProjectLink.vue";
   import GoalSteps from '@/components/project/statistics/GoalSteps.vue';
@@ -64,11 +54,10 @@
   import LastAd from '@/components/project/LastAd.vue';
   import LateralPanelTasks from '@/components/project/LateralPanelTasks.vue';
 
-  import Vue from 'vue'
-
-  import "@/assets/css/main.css";
+  import Vue from 'vue';
   import "@/assets/css/feed.css";
 
+  // mixins 
   import CheckProjectMember from '@/assets/scripts/checkProjectMember.js'
 
   export default {
@@ -79,11 +68,6 @@
       }
     },
     components: {
-      GeneralStatistic,
-      ProjectUsers,
-      FeaturedGoal,
-      Renewing,
-      AdsPanel,
       LinkCard,
       CreateProjectLinkModal,
       GoalSteps,
@@ -95,11 +79,11 @@
     },
     mixins: [CheckProjectMember],
     created: function() {
-      if (this.$route.params["projectId"] == 'undefined') {
-        this.$router.push('/dashboard/select')
+      if (this.$route.params.projectId == 'undefined') {
+        this.$router.push('/dashboard/select');
       } else {
-        this.setProjectName()
-        this.getLinks()
+        this.setProjectName();
+        this.getLinks();
       }
     },
     methods: {
@@ -109,8 +93,8 @@
           .doc(this.$route.params.projectId)
           .get()
           .then(res => {
-            this.projectName = res.data()["shortName"]
-          })
+            this.projectName = res.data()["shortName"];
+          });
       },
       getLinks: function(){
         firebase.firestore()
@@ -125,9 +109,9 @@
               description: link.data()['description'],
               url: link.data()['url'],
               id: link.id
-            })
-          })
-        })
+            });
+          });
+        });
       }
     }
   }

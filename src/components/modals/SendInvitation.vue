@@ -26,7 +26,7 @@
 </template>
 <script>
 
-import '@/assets/css/invitationModal.css'
+import '@/assets/css/modals.css'
 
 import { AddPoints } from '@/assets/scripts/addActivityPoints.js'
 import firebase from 'firebase'

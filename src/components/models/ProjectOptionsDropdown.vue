@@ -16,7 +16,6 @@
 </template>
 <script>
 
-    import '@/assets/css/main.css'
     import DeleteProject from '@/components/modals/DeleteProject.vue'
 
     export default {

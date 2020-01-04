@@ -43,7 +43,6 @@
 <script>
 
     import '@/assets/css/login.css'
-    import '@/assets/css/main.css'
     import firebase from 'firebase'
 
     import { setInterval } from 'timers';

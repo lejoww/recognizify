@@ -1,5 +1,6 @@
 <template>
       <div class="dashboardContent">
+          <!-- <Preloader/> -->
 
           <NonProjectsBanner v-if="projects.length == 0"/>
           <div class="projectsField" id="projectsContent" v-if="projects.length >= 1">
@@ -40,60 +41,59 @@
     import ProjectCard from '@/components/ProjectCard.vue';
     import NonProjectsBanner from '@/components/project/NonProjectsBanner.vue';
     import WeeklyArticleCard from '@/components/offers/WeeklyArticleCard.vue';
+    import Preloader from '@/components/Preloader.vue';
 
     import '@/assets/css/select.css'
 
     export default {
-    data() {
-      return {
-        projects: []
-      }
-    },
-    components: {
-      ProjectCard,
-      NonProjectsBanner,
-      WeeklyArticleCard
-    },
-    created: function() {
-      this.getProjects()
-    },
-    methods: {
-      getProjects: function() {
-          firebase.firestore()
+      data() {
+        return {
+          projects: []
+        }
+      },
+      components: {
+        ProjectCard,
+        NonProjectsBanner,
+        WeeklyArticleCard,
+        Preloader
+      },
+      mounted: function() {
+        firebase.firestore()
           .collection("projects")
           .get()
           .then((projects) => {
             this.checkProjectsProperty(projects)
-          })
+        })
       },
-      checkProjectsProperty: function(data){
-        let count = 0;
-        data.forEach(project => {
-          firebase.firestore()
-          .collection("projects")
-          .doc(project.id)
-          .collection("members")
-          .get()
-          .then(members => {
-            members.forEach(member => {
-              if (member.id == firebase.auth().currentUser.uid) {
-                firebase.storage().ref(`projects/${project.id}/project_photo`).getDownloadURL()
-                .then(url => this.setProjectOnArray(project.data()["shortName"], project.id, url))
-                .catch(() => this.setProjectOnArray(project.data()["shortName"], project.id, 'https://source.unsplash.com/800x500/?work,innovation,idea'))
-                count += 1;
-              }
+      methods: {
+        checkProjectsProperty: function(data){
+          let count = 0;
+          data.forEach(project => {
+            firebase.firestore()
+            .collection("projects")
+            .doc(project.id)
+            .collection("members")
+            .get()
+            .then((members) => {
+              members.forEach(member => {
+                if (member.id == firebase.auth().currentUser.uid) {
+                  firebase.storage().ref(`projects/${project.id}/project_photo`).getDownloadURL()
+                  .then(url => this.setProjectOnArray(project.data()["shortName"], project.id, url))
+                  .catch(() => this.setProjectOnArray(project.data()["shortName"], project.id, 'https://source.unsplash.com/800x500/?work,innovation,idea'))
+                  count += 1;
+                }
+              })
             })
+            .catch(() => window.location.reload())
           })
-          .catch(() => window.location.reload())
-        })
-      },
-      setProjectOnArray: function(name, id, url){
-        this.projects.push({
-          name: name,
-          id: id,
-          photoUrl: url
-        })
+        },
+        setProjectOnArray: function(name, id, url){
+          this.projects.push({
+            name: name,
+            id: id,
+            photoUrl: url
+          })
+        }
       }
     }
-  }
 </script>

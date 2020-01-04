@@ -24,6 +24,9 @@
                         Registrarse
                     </router-link>
                 </button>
+                <div style="margin-top: 12px">
+                    <a href="/forgot"><small class="form-text forgot-password">Restablece tu contraseña</small></a>
+                </div>
             </div>
 
             <div class="alert alert-warning" id="loginAlert" role="alert">
@@ -36,7 +39,6 @@
 
     import firebase from 'firebase'
     import '@/assets/css/login.css'
-    import '@/assets/css/main.css'
 
     import BannerNotice from '@/components/models/BannerNotice.vue'
 

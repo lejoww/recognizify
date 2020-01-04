@@ -67,7 +67,6 @@
 <script>
 
     import '@/assets/css/heroes.css';
-    import '@/assets/css/main.css';
     export default {
         
     }
