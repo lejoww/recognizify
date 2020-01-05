@@ -3,7 +3,14 @@
     <div class="headerMenu">
       <div class="headerWrapper">
         <div class="headerBrand">
-          <img src="@/assets/logo-white-cutted.png" width="134px">
+          <img src="@/assets/logo-common-cutted.png" width="134px">
+          <input type="text" 
+          class="form-control-navbar inputSearch" 
+          placeholder="Busca aquí usuarios" 
+          spellcheck="false" 
+          autocomplete="off" 
+          v-model="searchWord" 
+          @keyup.enter="searchWordOnApp">
         </div>
       </div>
       <div class="headerWrapperRight">
@@ -35,7 +42,8 @@
           feedPath: '',
           boardPath: '',
           goalsPath: '',
-          invitations: ''
+          invitations: '',
+          searchWord: ''
         }
       },
       components: {
@@ -68,6 +76,9 @@
         },
         openOverlayMenu: function(){
           document.getElementById('overlayMenu').classList.toggle('overlayMenu');
+        },
+        searchWordOnApp: function(){
+          window.location = `/dashboard/search/q=${this.searchWord}`;
         }
       }
     }

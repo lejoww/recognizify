@@ -111,6 +111,10 @@ const routes = [
       {
         path: 'project/:projectId/ads',
         component: () => import('./views/account/feeds/project/Ads.vue')
+      },
+      {
+        path: 'search/q=:search',
+        component: () => import('./views/account/config/Search.vue')
       }
     ]
   },

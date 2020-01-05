@@ -77,37 +77,42 @@
             saveInfoOnDatabase() {
                 firebase.auth().onAuthStateChanged(user => {
                     firebase.firestore().collection('users').doc(user.uid).set({
-                        name: this.username,
+                        name: this.normalizeString(this.username),
                         bio: this.bio,
                         user: this.user,
                         roles: {
                             admin: false,
                             creator: false,
                             user: true
-                        }
+                        },
+                        visibilityMode: 'public'
                         // betaAccess: localStorage.betaAccess
                     })
                     .then(() => {
-                        // firebase.storage()
-                        // .ref(`profile_photos/${user.uid}`)
-                        // .getDownloadURL()
-                        // .then(() => {
-                        //     this.$router.push('/dashboard/select')
-                        // })
-                        // .catch(() => {
-                        //     firebase.storage()
-                        //     .ref(`profile_photos/${user.uid}`)
-                        //     .put('../../../assets/ilustrations/profile.png')
-                        //     .then(() => {
-                        //         this.$router.push('/dashboard/select')
-                        //     })
-                        // })
-
                         this.$router.push('/dashboard/select')
                     })
                     .catch((err) => console.log(err))
-                    // .catch(err => console.log(err))
                 })
+            },
+            normalizeString: function() {
+                const from = "ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç";
+                const to = "AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc";
+                let mapping = {};
+                
+                for(let i = 0, j = from.length; i < j; i++)
+                    mapping[ from.charAt( i ) ] = to.charAt( i );
+                
+                // return function() {
+                    let ret = [];
+                    for(let i = 0, j = this.username.length; i < j; i++) {
+                        var c = this.username.charAt(i);
+                        if(mapping.hasOwnProperty(this.username.charAt( i )))
+                            ret.push(mapping[ c ]);
+                        else
+                            ret.push(c);
+                    }      
+                    return ret.join('');
+                // }
             }
         }
     }

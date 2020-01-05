@@ -172,15 +172,15 @@ select.form-control {
 .form-control-navbar {
   display: block;
   width: 100%;
-  background-color: rgb(12, 12, 27);
+  background-color: rgba(12, 12, 27, 0.04);
   height: $input-height;
   padding: $input-padding-y $input-padding-x;
   font-weight: 600;
   @include font-size(13px);
   line-height: $input-line-height;
-  color: $white;
+  color: $gray-700;
   border: none;
-  border-radius: 6px;
+  border-radius: 3px;
 
   &::-ms-expand {
     background-color: transparent;
@@ -189,10 +189,11 @@ select.form-control {
 
   &:focus {
     outline: 0;
+    background-color: rgba(12, 12, 27, 0.08);
   }
 
   &::placeholder {
-    color: rgb(117, 109, 126);
+    color: rgba(0, 0, 49, 0.267);
     // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
     opacity: 1;
   }

@@ -69,7 +69,8 @@
     box-sizing: border-box;
 }
 
-router-link, a, button {
+a, button {
+    color: #000;
     text-decoration: none !important;
 }
 
