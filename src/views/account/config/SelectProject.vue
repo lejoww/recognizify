@@ -1,6 +1,7 @@
 <template>
       <div class="dashboardContent">
           <!-- <Preloader/> -->
+          <Features/>
 
           <NonProjectsBanner v-if="projects.length == 0"/>
           <div class="projectsField" id="projectsContent" v-if="projects.length >= 1">
@@ -38,10 +39,12 @@
 <script>
 
     import firebase from "firebase";
+
     import ProjectCard from '@/components/ProjectCard.vue';
     import NonProjectsBanner from '@/components/project/NonProjectsBanner.vue';
     import WeeklyArticleCard from '@/components/offers/WeeklyArticleCard.vue';
     import Preloader from '@/components/Preloader.vue';
+    import Features from '@/components/modals/Features.vue';
 
     import '@/assets/css/select.css'
 
@@ -55,7 +58,8 @@
         ProjectCard,
         NonProjectsBanner,
         WeeklyArticleCard,
-        Preloader
+        Preloader,
+        Features
       },
       mounted: function() {
         firebase.firestore()
