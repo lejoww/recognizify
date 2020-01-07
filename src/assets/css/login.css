@@ -217,7 +217,7 @@ input:checked + .slider:before {
 
 .forgot-password {
     font-weight: 700;
-    font-size: 12px;
+    font-size: 13px;
     color: #6710F2;
     margin-top: 3px;
 }

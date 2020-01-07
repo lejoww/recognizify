@@ -57,7 +57,7 @@
     width: 100%;
     height: 100%;
     display: grid;  
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 100%;
     grid-template-rows: 100%;
 }
 
@@ -76,7 +76,7 @@ a, button {
 
 label {
     font-weight: 600;
-    font-size: 14px
+    font-size: 13px
 }
 
 nav {

@@ -30,7 +30,6 @@
     import '@/assets/css/HeaderMenu.css'
 
     import Profile from '@/components/Profile.vue'
-    import BurgerMenu from '@/components/BurgerMenu.vue'
     import BannerNotice from '@/components/models/BannerNotice.vue'
 
     export default {
@@ -48,7 +47,6 @@
       },
       components: {
         Profile,
-        BurgerMenu,
         BannerNotice
       },
       methods: {

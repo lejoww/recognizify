@@ -1,21 +1,17 @@
 <template>
     <div class="dashboardContent">
         <div class="formLayout">
-            <div class="projectAd">
-                <div class="projectAdWrapper">
-                    <img src="@/assets/ilustrations/office-work.png"><br>
-                    <h3 class="text-white">Es hora de ser el <span class="text-secondary">mejor</span>.</h3>
-                </div>
-            </div>
             <div class="projectForm">
-                <a href="javascript: history.go(-1)" style="display: flex; align-items: center">
-                    <svg class="feather-dark">
-                        <use xlink:href="@/assets/svg/feather-sprite.svg#arrow-left"/>
-                    </svg>
-                    <span class="backButton text-dark">Volver atrás</span>
-                </a><br>
-                <h2>Crea un nuevo proyecto.</h2>
-                <h5>Puedes comenzar por aquí</h5><br>
+                <div class="robotDialog">
+                    <img src="@/assets/ilustrations/robot-wink.png" width="78px">
+                    <div class="dialogFlow">
+                        Fabuloso! Aquí es donde decides ejecutar tu creatividad, no solo tu proyecto, 
+                        sino también tu capacidad de emprender lo que te imaginas. Responde con detalle, 
+                        para que podamos ayudarte más. Bienvenido al camino de crear.
+                    </div>
+                </div>
+                <h2 class="projectFormTitle">Crea un nuevo proyecto.</h2>
+                <h6 class="projectFormSubtitle">Puedes comenzar por aquí</h6><br>
                     <div class="form-container">
                         <!-- <div class="form-group">
                             <label>¿Qué es el proyecto?</label> -->
@@ -81,11 +77,11 @@
                         <!-- </div> -->
                         <div class="form-group">
                             <label>Nombre completo del proyecto</label>
-                            <input type="text" v-model="largeName" class="form-control" placeholder="Un nombre largo para el proyecto">
+                            <input type="text" v-model="largeName" class="form-control" placeholder="El nombre real y legítimo para el proyecto">
                         </div>
                         <div class="form-group">
                             <label>Apodo para el proyecto</label>
-                            <input type="text" v-model="shortName" class="form-control" placeholder="Un nombre más corto" maxlength="17">
+                            <input type="text" v-model="shortName" class="form-control" placeholder="Un nombre más corto y entendible" maxlength="17">
                         </div>
                         <div class="form-group">
                             <label>¿De qué se trata el proyecto?</label>
@@ -96,7 +92,7 @@
                             <input type="file" class="form-control-file" id="file" @change="uploadImageToServer">
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-success" @click="createProjectOnDatabase">Listo, crear proyecto</button>
+                            <button class="btn btn-success" @click="createProjectOnDatabase">Comenzar la aventura</button>
                         </div>
                     </div>
                 </div>

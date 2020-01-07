@@ -269,23 +269,22 @@ a:hover {
     grid-column: 1 / 20;
 }
 
-.formLayout .projectAd {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-    text-align: center;
-    background-color: #101018;
-}
-
-.formLayout .projectAd .projectAdWrapper {
-    margin: 6rem 1em 1em 1em;
-}
-
 .formLayout .projectForm {
     /* height: 103%; */
-    grid-column: 2 / 3;
+    width: 60%;
+    grid-column: 1 / 2;
     grid-row: 1 / 2;
     overflow-y: scroll;
     padding: 2rem;
+    margin: 0 auto;
+}
+
+.formLayout .projectForm .projectFormTitle {
+    letter-spacing: -0.6px;
+}
+
+.formLayout .projectForm .projectFormSubtitle {
+    font-family: 'cooper_hewittsemibold';
 }
 
 .projectForm::-webkit-scrollbar {
@@ -293,13 +292,27 @@ a:hover {
 }
 
 .projectForm::-webkit-scrollbar-thumb {
-    background-color: #9C9CAA;
-    border: 2.5px solid rgb(212, 210, 219);
+    background-color: rgb(212, 212, 219);
+    border: 2.5px solid #f2f2f2;
     border-radius: 6px;
 }
 
 .projectForm::-webkit-scrollbar-track {
-    background-color: rgb(212, 210, 219);
+    background-color: #f2f2f2;
+}
+
+.robotDialog {
+    padding: 12px 21px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.04);
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.robotDialog .dialogFlow {
+    font-size: 13px;
+    margin-left: 1rem;
 }
 
 .backButton {
