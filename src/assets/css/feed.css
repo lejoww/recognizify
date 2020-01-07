@@ -384,6 +384,11 @@ a:hover {
     .feedLayout {
         grid-template-columns: 100%;
     }
+
+    .formLayout .projectForm {
+        width: 100%;
+        margin: 0;
+    }
 }
 
 @media screen and (max-width: 787px) {
