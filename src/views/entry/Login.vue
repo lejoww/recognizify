@@ -1,12 +1,10 @@
 <template>
     <div>
+        <img class="loginSpaceBackground" src="@/assets/ilustrations/space.png">
         <div class="instructCopy">
-            <span class="text-gray">Las imagenes en la aplicación no son de nuestra autoría. Si deseas saber más, ingresa a <router-link to="/credits" class="text-white">nuestro sitio de referencias.</router-link></span>
+            <span class="text-gray">Las imagenes en la aplicación no son de nuestra autoría. Si deseas saber más, ingresa a <router-link to="/credits" class="text-dark">nuestro sitio de referencias.</router-link></span>
         </div>
         <div id="login">
-            <div class="form-images">
-                <img src="@/assets/ilustrations/leader-people.png" alt="Personas hablando y admirando estadísticas">
-            </div>
             <div class="form-container">
                 <img src="@/assets/logo-common-cutted.png" alt="Logotipo de Recognizify" width="148px">
                 <h1 class="loginTitle">Conéctate de nuevo.</h1>
@@ -25,7 +23,7 @@
                     </router-link>
                 </button>
                 <div style="margin-top: 12px">
-                    <a href="/forgot"><small class="form-text forgot-password">Restablece tu contraseña</small></a>
+                    <a href="/forgot" class="btn btn-outline-dark btn-sm forgot-password">Restablece tu contraseña</a>
                 </div>
             </div>
 

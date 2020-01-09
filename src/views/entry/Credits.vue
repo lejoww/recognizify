@@ -21,6 +21,8 @@
                 <li>Personas construyendo rompecabezas <a href="https://www.freepik.es/fotos-vectores-gratis/negocios">Vector de Negocios creado por freepik - www.freepik.es</a></li>
                 <li>Vector de navidad <a href="https://www.freepik.es/fotos-vectores-gratis/navidad">Vector de Navidad creado por pch.vector - www.freepik.es</a></li>
                 <li>Herramientas sobre mesa <a href="https://www.freepik.es/fotos-vectores-gratis/edificio">Foto de Edificio creado por freepik - www.freepik.es</a></li>
+                <li>Personas flotando en el espacio <a href="https://www.freepik.es/fotos-vectores-gratis/fondo">Vector de Fondo creado por freepik - www.freepik.es</a></li>
+                <li>Fondo del espacio <a href="https://www.freepik.es/fotos-vectores-gratis/negocios">Vector de Negocios creado por coolvector - www.freepik.es</a></li>
             </ul>
         </div>
     </div>

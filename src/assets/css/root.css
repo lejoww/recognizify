@@ -112,11 +112,10 @@ nav {
     width: 100vw;
     top: 0;
     padding: 7px 12px;
-    background-color: #6710f2;
     position: relative;
-    color: #e2dfe9;
+    color: #9a97a3;
     text-align: center;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 /* dropdown  */
