@@ -2,21 +2,13 @@
     <div class="view-content">
         <div id="welcomeAccountComplete" class="account-complete">
             <img src="@/assets/logo-common-cutted.svg" alt="Logotipo de Recognizify" width="148px"><br>
-            <h3 style="width: 100%">Solo falta que completes algunos datos</h3>
-            <p style="width: 100%">Comenzarás a hacer de tu proyecto un éxito, queremos conocerte.</p><br><br>
-<!-- 
-            <div class="account-image">
-                <div class="photo-container">
-                    <img v-bind:src="urlPhotoPath" class="photo-profile">    
-                </div>
-            </div> -->
 
-            <div class="form-content">
+            <div class="form-content complete-account-form">
+                <h2 style="width: 100%; letter-spacing: -0.7px">Ahora solo falta que completes algunos datos.</h2><br>
                 <div class="form-row">
                     <label for="file">Tu foto de perfil (selecciona un archivo)</label>
                     <input class="form-control-file" type="file" v-on:change="checkUrlPath" id="file">
                 </div><br>
-                <div class="form-row">
                     <div class="form-group">
                         <label>¿Cuál es tu nombre?</label>
                         <input type="text" v-model="username" class="form-control" placeholder="Ejm. Pepito Gonzáles" spellcheck="false" autocomplete="off">
@@ -34,9 +26,8 @@
                             <input type="text" class="form-control" v-model="user" placeholder="Escribe un nombre de usuario" spellcheck="false" autocomplete="off">
                         </div>
                     </div>
-                </div>
+                <button @click="saveInfoOnDatabase" class="btn btn-warning btn-save" style="margin-bottom: 2rem">Continuar</button>
             </div>
-            <button @click="saveInfoOnDatabase" class="btn btn-secondary" style="margin-bottom: 2rem">Continuar</button>
         </div>
     </div>
 </template>
