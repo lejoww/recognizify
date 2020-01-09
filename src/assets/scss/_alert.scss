@@ -4,8 +4,8 @@
 
 .alert {
   position: absolute;
-  right: 10px;
-  bottom: 10px;
+  top: 10px;
+  left: 10px;
   padding: $alert-padding-y $alert-padding-x;
   font-weight: $font-weight-bold;
   font-size: 14px;

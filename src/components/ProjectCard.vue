@@ -2,14 +2,11 @@
     <li class="project-el">
         <ProjectOptionsDropdown :projectId="this.projectId" />
         <router-link :to="`/dashboard/project/${this.projectId}/feed`">
-            <div class="card projectCard mb-3">
+            <div class="card projectCard mb-3" :style="`background-image: url('${this.projectPhotoUrl}');`">
                 <div class="row no-gutters">
-                    <div class="col-md-4 projectImageContainer">
-                        <img class="card-img projectImage" :src="this.projectPhotoUrl">
-                    </div>
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <div class="card-body">
-                            <span class="card-title projectTitle">
+                            <span class="card-title projectTitle text-white">
                                 {{this.projectName}}
                                 <span class="badge badge-secondary">Activo</span>
                             </span>

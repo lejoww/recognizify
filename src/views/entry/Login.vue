@@ -27,7 +27,7 @@
                 </div>
             </div>
 
-            <div class="alert alert-warning" id="loginAlert" role="alert">
+            <div class="alert alert-danger" id="loginAlert" role="alert">
                 Parece que no ingresaste bien los datos. Vuelve a intentarlo.
             </div>
         </div>
@@ -82,26 +82,12 @@
                 .catch(err => {
                     let $loginAlert = document.querySelector('#loginAlert')
                     $loginAlert.style.display = 'block'
+                    setTimeout(() => { 
+                        $loginAlert.style.display = 'none' 
+                    }, 3000)
                     loginButton.innerHTML = 'Iniciar sesión'
                 })
-            },
-            // signInWithEmailAndPasswordofTest: function(){
-            //     firebase.auth().signInWithEmailAndPassword('test@recognizify.com', 'test123')
-            //         .then(() => {
-            //             firebase.auth().onAuthStateChanged(user => {
-            //                 firebase.firestore().collection('users').doc(user.uid).get()
-            //                     .then(res => {
-            //                         if (res.data() == null | res.data() == undefined){
-            //                             console.log('Accediendo a configuración de cuenta')
-            //                             this.$router.push('/welcome/account')
-            //                         } else {
-            //                             console.log('Sin función de configuración')
-            //                             this.$router.push('/select')
-            //                         }
-            //                     })
-            //             })
-            //         })
-            // }
+            }
         }
     }
 
