@@ -1,6 +1,5 @@
 <template>
   <div class="dashboardContent">
-
     <CreateProjectLinkModal/>
     <div class="feedLayout">
       <div class="projectSummaryData">
