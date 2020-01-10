@@ -6,7 +6,6 @@
 
 #usersRegistry .usersListTable {
     width: 100%;
-    display: none;
 }
 
 #usersRegistry .bannerNonUsers {
@@ -20,7 +19,35 @@
 
 .table {
     width: 56%;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
+
+#projectUsersField {
+    background: #fff;
+}
+
+.nameField {
+    display: flex;
+}
+
+.userProfilePhoto {
+    border-radius: 30px;
+    margin-right: 10px;
+}
+
+td {
+    border-top: 1px solid #e9e9e9 !important;
+    font-size: 14px;
+    font-weight: 500;
+    vertical-align: middle;
+}
+/* 
+tr {
+    display: flex;
+    align-items: center;
+} */
 
 @media screen and (max-width: 991px) {
     .dashboardContent {
