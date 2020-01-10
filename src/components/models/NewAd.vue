@@ -1,6 +1,20 @@
 <template>
     <div class="taskSetting">
-        <input type="text" class="form-control-special taskSettingInput" placeholder="Escribe aqui una nueva tarea para tu equipo..." v-model="task" v-on:keyup.enter="saveTask">
+        <div class="taskSettingContainer">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="El mensaje que quieres anunciar a tu equipo" v-model="task" v-on:keyup.enter="saveTask">
+            </div>
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Ubicación (opcional)" v-model="location" v-on:keyup.enter="saveTask">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Hora (opcional)" v-model="hour" v-on:keyup.enter="saveTask">
+                    </div>
+                </div>
+            </div>
+        </div>
         <div style="display: flex; align-items: center;">
             <button class="btn btn-success btn-sm" style="margin-top: 7px" @click="saveTask">Publicar</button>
             <small class="text-muted" style="margin-left: 7px">o presiona ENTER</small>
@@ -17,7 +31,9 @@
     export default {
         data(){
             return {
-                task: ''
+                task: '',
+                location: '',
+                hour: ''
             }
         },
         mixins: [AddPoints],
@@ -37,6 +53,8 @@
                             .add({
                                 name: userdata.data()['name'],
                                 ad: this.task.trim(),
+                                location: this.location,
+                                hour: this.hour,
                                 publisherId: user.uid
                             }).then(() => {
                                 this.addActivityPoint()

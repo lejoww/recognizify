@@ -3,6 +3,20 @@
         <div class="lastAdContainer" v-if="ad.ad">
             <h4>Último aviso</h4>
             <p>{{ad.ad}}</p>
+            <div class="lastAdMetaInfo">
+                <span v-if="ad.location != ''">
+                    <svg class="feather-menu">
+                        <use xlink:href="@/assets/svg/feather-sprite.svg#map-pin" />
+                    </svg>
+                    {{ad.location}}
+                </span>
+                <span v-if="ad.hour != ''">
+                    <svg class="feather-menu">
+                        <use xlink:href="@/assets/svg/feather-sprite.svg#clock" />
+                    </svg>
+                    {{ad.hour}}
+                </span>
+            </div>
             <div style="display: flex; align-items: center">
                 <div class="photoContainer">
                     <img :src="ad.photo != undefined ? ad.photo : '@/assets/ilustrations/profile.png'">
@@ -64,6 +78,19 @@
         /* font-size: 12px */
     }
 
+    .lastAdMetaInfo {
+        display: flex;
+        margin-bottom: 1em;
+    }
+
+    .lastAdMetaInfo span {
+        color: #A9A8C1;
+        font-weight: 600;
+        font-size: 12px;
+        margin-right: 12px;
+        vertical-align: middle;
+    }
+
 </style>
 <script>
 
@@ -96,6 +123,8 @@
                     .then((url) => {
                         this.ad = {
                             ad: ads.docs[ads.docs.length - 1].data()['ad'],
+                            location: ads.docs[ads.docs.length - 1].data()['location'],
+                            hour: ads.docs[ads.docs.length - 1].data()['hour'],
                             username: user.data()['user'],
                             photo: url
                         }

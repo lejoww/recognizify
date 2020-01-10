@@ -77,10 +77,14 @@
 
 .taskSetting {
     width: 100%;
-    position: fixed;
+    position: sticky;
     z-index: 0;
     bottom: 0;
-    padding: 12px;
+    padding: 7px;
+}
+
+.taskSettingContainer {
+    max-width: 100%;
 }
 
 .taskMiniBanner {
