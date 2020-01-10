@@ -1,7 +1,7 @@
 <template>
         <div class="weeklyArticleCardContainer" v-if="article.exists == true">
             <router-link to="/articles/weekly">
-                <h3 class="text-white">{{article.title}} <span class="badge badge-warning">Artículo semanal</span></h3>
+                <h3 class="text-white">{{article.title}} <span class="badge badge-success">Artículo semanal</span></h3>
                 <p class="text-white">{{article.abstract}}</p>
 
                 <div class="weeklyArticleCardPublisher">
@@ -11,7 +11,7 @@
                     <small class="text-white">{{article.publisherName}}</small>
                 </div>
             </router-link>
-            <div v-if="admin == true" @click="deleteArticle">
+            <div v-if="admin == true" @click="deleteArticle" style="width: 130px">
                 <br>
                 <button class="btn btn-secondary">Eliminar artículo</button>
             </div>
@@ -20,12 +20,14 @@
 <style scoped>
 
     .weeklyArticleCardContainer {
-        width: 92%;
+        width: 100%;
         padding: 1rem;
         background: rgb(111, 0, 255);
         border-radius: 4px;
         margin-bottom: 2rem;
-        cursor: pointer
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between
     }
 
     .weeklyArticleCardContainer h3 {
