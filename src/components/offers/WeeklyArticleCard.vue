@@ -13,7 +13,7 @@
             </router-link>
             <div v-if="admin == true" @click="deleteArticle" style="width: 130px">
                 <br>
-                <button class="btn btn-secondary">Eliminar artículo</button>
+                <button class="btn btn-danger">Eliminar artículo</button>
             </div>
         </div>
 </template>
