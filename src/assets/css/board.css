@@ -53,16 +53,11 @@
 
 @media screen and (max-width: 991px) {
     .projectBoard {
-        margin: 1em;
-        grid-column: 1 / 19;
-    }
-
-    .projectBoard {
-        margin: 1em;
         grid-column: 1 / 19;
     }
 
     .form-control-variable {
-        font-size: 24px;
+        font-size: 27px;
+        font-family: 'cooper_hewittsemibold';
     }
 }

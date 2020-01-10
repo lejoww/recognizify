@@ -4,7 +4,7 @@
         <div class="projectBoard">
             <div>
                 <input type="text" v-model="newBoardName" class="form-control-special form-control-xl form-control-variable" spellcheck="false" placeholder="Escribe el nombre del tablero" @click="showSaveButtonForBoardNameInput">
-                <h6 style="margin: -0.5em 1em 1em 1em; color: #A9A8C3">Tablero de ideas</h6>
+                <h6 style="margin: -0.5em 1em 1em 1em; color: #A9A8C3; font-family: 'cooper_hewittsemibold'">Tablero de Boards</h6>
                 <button class="btn btn-danger btn-sm btn-save" @click="saveNewBoardName">Guardar nombre del tablero</button>
             </div>
 

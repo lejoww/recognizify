@@ -5,15 +5,18 @@
             <div class="dashboardContent">
                 <div class="goalsLayout">
                     <div class="projectSummaryTitle">
-                        <h3>
-                            Metas
+                        <h2>
+                            <div style="letter-spacing: -0.8x">
+                                Metas
+                                <h6 style="color: #A9A8C3; font-family: 'cooper_hewittsemibold'">Panel de Goals</h6>
+                            </div>
                             <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addGoalModal">
                                 <svg width="18" height="18" stroke="#ffffff" stroke-width="2">
                                     <use xlink:href="@/assets/svg/feather-sprite.svg#plus"/>
                                 </svg>
                                 Crear una meta
                             </button>
-                        </h3><br>
+                        </h2><br>
                     </div>
                     <div class="goalsField" v-if="goals.length > 0">
                         <div class="card goalCard" style="width: 18rem;" :key="goalData" v-for="goalData in goals">

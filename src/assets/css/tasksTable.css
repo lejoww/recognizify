@@ -32,7 +32,7 @@
 .tasksLayout {
     display: grid;
     height: 100vh;
-    grid-template-columns: 72% 28%;
+    grid-template-columns: 67% 32%;
     grid-template-rows: auto auto 1fr; 
 }
 
@@ -44,9 +44,19 @@
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.048);
 }
 
+.tasksModuleHeader {
+    grid-row: 1 / 2;
+    margin: 1rem 1rem 0 1rem;
+}
+
+.tasksModuleHeader h2 {
+    letter-spacing: -0.8px;
+}
+
 .tasksContent {
     grid-column: 1 / 2;
-    margin: 2rem;
+    grid-row: 2 / 3;
+    margin: 1rem;
 }
 
 .taskTitle {
