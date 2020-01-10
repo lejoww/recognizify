@@ -79,7 +79,7 @@
                 })
             })
             .catch(() => {
-                this.searchState = 'Puede que tengas problemas de conexión o la app se volvió desertica.'
+                this.searchState = 'No hay ningún usuario que coincida con tu búsqueda. Prueba otra vez.'
             })
         }
     }
