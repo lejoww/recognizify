@@ -9,9 +9,13 @@
                         <span>Volver atrás</span>
                     </a>
 
-                    <h2>Notificaciones</h2>
-                    <p>Próximamente podrás ver quién de qué se trata el proyecto al que te invitaron, por el momento esta función no esta disponible.</p>
-                    <Invitation :key="invitation" v-for="invitation in invitationsList" :name="invitation.name" :id="invitation.id"/>
+                    <h2>
+                        Notificaciones
+                        <svg class="feather-dark">
+                            <use xlink:href="@/assets/svg/feather-sprite.svg#mail"/>
+                        </svg>
+                    </h2>
+                    <Invitation :key="invitation" v-for="invitation in invitationsList" :name="invitation.name" :id="invitation.id" :description="invitation.description" :invite="invitation.inviteBy" />
 
                     <h6 v-if="invitationsList.length == 0">
                         <svg class="feather-dark">
@@ -51,6 +55,8 @@
                             invitations.forEach(invitation => {
                                 this.invitationsList.push({
                                     name: invitation.data()['pname'],
+                                    description: invitation.data()['pdescription'],
+                                    inviteBy: invitation.data()['pinvite'],
                                     id: invitation.id
                                 })
                             })

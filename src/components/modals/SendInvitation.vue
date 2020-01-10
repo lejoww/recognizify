@@ -86,18 +86,26 @@ export default {
                     .then(project => {
                         firebase.firestore()
                         .collection('users')
-                        .doc(this.profileId)
-                        .collection('invitations')
-                        .doc(projectId)
-                        .set({
-                            pname: project.data()['shortName']
+                        .doc(user.uid)
+                        .get()
+                        .then((current) => {
+                            firebase.firestore()
+                            .collection('users')
+                            .doc(this.profileId)
+                            .collection('invitations')
+                            .doc(projectId)
+                            .set({
+                                pname: project.data()['shortName'],
+                                pdescription: project.data()['description'],
+                                pinvite: current.data()['name']
+                            })
+                            .then(() => {
+                                // this.addActivityPoint()
+                                $('#invitationModal').modal('hide')
+                                document.getElementById('successAlert').style.display = 'block'
+                            })
+                            .catch(err => console.log(err))
                         })
-                        .then(() => {
-                            // this.addActivityPoint()
-                            $('#invitationModal').modal('hide')
-                            document.getElementById('successAlert').style.display = 'block'
-                        })
-                        .catch(err => console.log(err))
                     })
                 }
             })

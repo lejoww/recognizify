@@ -11,10 +11,10 @@
             <div v-if="usersFound.length >= 1">
                 <UserProfileSelector :name="user.name" :bio="user.bio" :picture="user.picture" :user="user.user" :key="user" v-for="user in usersFound"/>
             </div>
-            <div v-else>
+            <p v-else>
                 <br>
-                Espera mientras consultamos. Pero si en un momento no hay nada aqui entonces no hay usuarios que coincidan
-            </div>
+                {{this.searchState}}
+            </p>
         </div>
     </div>
 </template>
@@ -39,7 +39,8 @@
         data(){
             return {
                 search: this.$route.params.search.toLowerCase(),
-                usersFound: []
+                usersFound: [],
+                searchState: 'Espera mientras consultamos...'
             }
         },
         components: {
@@ -76,6 +77,9 @@
                         })
                     }
                 })
+            })
+            .catch(() => {
+                this.searchState = 'Puede que tengas problemas de conexión o la app se volvió desertica.'
             })
         }
     }
