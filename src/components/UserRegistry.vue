@@ -14,7 +14,7 @@
           <tbody id="projectUsersField">
             <tr :key="user.name" v-for="user in users">
               <td scope="col">
-                <img class="userProfilePhoto" :src="user.picture" width="25px">
+                <img class="userProfilePhoto" :src="user.picture ? user.picture : require('@/assets/ilustrations/profile.png')" width="25px">
                 {{user.name}}
               </td>
               <td scope="col">@{{user.user}}</td>
@@ -58,6 +58,13 @@
                 user: user.data()['user'],
                 role: user.data()['role']
               })
+            })
+            .catch(() => {
+              this.users.push({
+                name: user.data()['name'],
+                user: user.data()['user'],
+                role: user.data()['role']
+              })   
             })
           })
         })
