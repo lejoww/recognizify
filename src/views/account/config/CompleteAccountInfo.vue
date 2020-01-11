@@ -11,11 +11,11 @@
                 </div><br>
                     <div class="form-group">
                         <label>¿Cuál es tu nombre?</label>
-                        <input type="text" v-model="username" class="form-control" placeholder="Ejm. Pepito Gonzáles" spellcheck="false" autocomplete="off">
+                        <input type="text" v-model="username" class="form-control" placeholder="Ejm. Pepito Gonzáles" spellcheck="false" autocomplete="off" required>
                     </div>
                     <div class="form-group">
                         <label>Descríbete tal y como eres</label>
-                        <input type="text" v-model="bio" class="form-control" placeholder="Autentico" spellcheck="false" autocomplete="off">
+                        <input type="text" v-model="bio" class="form-control" placeholder="Autentico" spellcheck="false" autocomplete="off" required>
                     </div>
                     <div class="form-group">
                         <label>Escoge un nombre de usuario</label>
@@ -23,7 +23,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">@</span>
                             </div>
-                            <input type="text" class="form-control" v-model="user" placeholder="Escribe un nombre de usuario" spellcheck="false" autocomplete="off">
+                            <input type="text" class="form-control" v-model="user" placeholder="Escribe un nombre de usuario" spellcheck="false" autocomplete="off" required>
                         </div>
                     </div>
                 <button @click="saveInfoOnDatabase" class="btn btn-warning btn-save" style="margin-bottom: 2rem">Continuar</button>
