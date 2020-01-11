@@ -1,5 +1,5 @@
 .projectFeedPanel {
-    max-width: 23%;
+    width: 23%;
     height: calc(100vh - 55px);
     background-color: #1f1e29;
     overflow-x: hidden;
