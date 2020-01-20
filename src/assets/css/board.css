@@ -14,6 +14,9 @@
 .toast {
     margin: 0 6px;
     display: table;
+    overflow: visible !important;
+    position: relative;
+    z-index: 1 !important;
 }
 
 .toast .toast-body .profileImageContainer {
@@ -60,4 +63,23 @@
         font-size: 27px;
         font-family: 'cooper_hewittsemibold';
     }
+}
+
+.dropdown-menu {
+    position: relative;
+    z-index: 3;
+}
+
+.toast-outstanding {
+    background: rgb(93, 0, 170);
+}
+
+.toast-outstanding .toast-body {
+    color: #fff;
+    font-weight: 600;
+}
+
+.dropdown-item {
+    display: flex;
+    justify-content: space-between;
 }

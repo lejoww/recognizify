@@ -13,7 +13,7 @@ export const CheckEmailVerification = {
         },
         checkEmailState: function(user){
             if (user.emailVerified == false) {
-                this.$router.push('/verify');
+                window.location = '/verify';
             }
         }
     }

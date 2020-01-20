@@ -42,9 +42,27 @@
                     </div>
 
                     <!-- public notes -->
-                    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" :key="name" v-for="(noteData, name, message) in notesData">
+                    <div v-bind:class="`toast ${noteData.outstanding == true ? 'toast-outstanding' : ''}`" role="alert" aria-live="assertive" aria-atomic="true" :key="name" v-for="(noteData, name, message) in notesData">
                         <div class="toast-header">
                             <strong class="mr-auto" :key="name">{{noteData.name}}</strong>
+                            <div class="dropdown">
+                                <a style="cursor: pointer; margin: 0 0 0 18px" class="projectCardMenuOptions" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <small>Opciones</small>
+                                    <svg class="feather-menu">
+                                        <use xlink:href="@/assets/svg/feather-sprite.svg#chevron-down" />
+                                    </svg>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" @click="setToastOutstanding(noteData.id, noteData.outstanding)">
+                                        <b>Destacar</b>               
+                                        <div v-if="noteData.outstanding == true">
+                                            <svg class="feather-menu">
+                                                <use xlink:href="@/assets/svg/feather-sprite.svg#check" />
+                                            </svg>                                
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                         <div class="toast-body" :key="message">
                             {{noteData.message}}
@@ -58,6 +76,7 @@
 <script>
 
     import firebase from 'firebase'
+    import Vue from 'vue'
 
     import '@/assets/css/feed.css'
     import '@/assets/css/board.css'
@@ -102,10 +121,11 @@
                     }
                 })
             })
-
-            this.updateNotes()
             this.setProfilePhotoOnToastBody()
+            Vue.nextTick()
+            .then(() => this.updateNotes())
         },
+
         methods: {
             showSaveButtonForBoardNameInput: function(){
                 let $saveBoardNameButton = document.querySelector('.btn-save')
@@ -147,7 +167,8 @@
                         .add({
                             userNamePublish: data.data()['name'],
                             uidUserPublish: user.uid,
-                            notePublish: this.newMessage
+                            notePublish: this.newMessage,
+                            isOutstanding: false
                         })
                         .then(() => {
                             this.addActivityPoint()
@@ -155,6 +176,7 @@
                         })
                         .catch(err => console.log(err))
                     })
+                    .catch((err) => console.log(err))
                 })
             },
             updateNotes: function(){
@@ -169,7 +191,9 @@
                     notes.docs.forEach(note => {
                         this.notesData.push({
                             name: note.data()['userNamePublish'],
-                            message: note.data()['notePublish']
+                            message: note.data()['notePublish'],
+                            outstanding: note.data()['isOutstanding'] ? note.data()['isOutstanding'] : false,
+                            id: note.id
                         })
                     })
                 })
@@ -186,6 +210,33 @@
             },
             closeOverlayMenu: function (){
                 document.getElementById('projectFeedPanel').classList.toggle('show')
+            },
+            setToastOutstanding: function (id, state){
+                if (state == true) {
+                    firebase.firestore()
+                    .collection('projects')
+                    .doc(this.$route.params.projectId)
+                    .collection('boards')
+                    .doc('data')
+                    .collection('notes')
+                    .doc(id)
+                    .update({
+                        isOutstanding: false
+                    })
+                    .then(() => window.location.reload())
+                } else {
+                    firebase.firestore()
+                    .collection('projects')
+                    .doc(this.$route.params.projectId)
+                    .collection('boards')
+                    .doc('data')
+                    .collection('notes')
+                    .doc(id)
+                    .update({
+                        isOutstanding: true
+                    })
+                    .then(() => window.location.reload())
+                }
             }
         }
     }
