@@ -94,30 +94,30 @@
 
 @media screen and (max-width: 786px){
     .projectFeedPanel {
-        max-width: 43%;
+        width: 43%;
     }
 }
 
 @media screen and (max-width: 692px){
     .projectFeedPanel {
-        max-width: 51%;
+        width: 51%;
     }
 }
 
 @media screen and (max-width: 598px){
     .projectFeedPanel {
-        max-width: 58%;
+        width: 58%;
     }
 }
 
 @media screen and (max-width: 502px){
     .projectFeedPanel {
-        max-width: 65%;
+        width: 65%;
     }
 }
 
 @media screen and (max-width: 439px){
     .projectFeedPanel {
-        max-width: 81%;
+        width: 81%;
     }
 }
