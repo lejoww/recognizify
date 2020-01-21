@@ -3,75 +3,90 @@
         <BoardsInfo/>
         <div class="projectBoard">
             <div>
-                <input type="text" v-model="newBoardName" class="form-control-special form-control-xl form-control-variable" spellcheck="false" placeholder="Escribe el nombre del tablero" @click="showSaveButtonForBoardNameInput">
-                <h6 style="margin: -0.5em 1em 1em 1em; color: #A9A8C3; font-family: 'cooper_hewittsemibold'">Tablero de Boards</h6>
-                <button class="btn btn-danger btn-sm btn-save" @click="saveNewBoardName">Guardar nombre del tablero</button>
+                <input  type="text" 
+                        v-model="newBoardName" 
+                        class="form-control-special form-control-xl form-control-variable" 
+                        spellcheck="false" 
+                        placeholder="Escribe el nombre del tablero" 
+                        @click="showSaveButtonForBoardNameInput">
+
+                <h6 class="moduleIndicator">Tablero de Boards</h6>
+                <button class="btn btn-danger btn-sm btn-save" 
+                        @click="saveNewBoardName">
+                        Guardar nombre del tablero
+                </button>
             </div>
 
             <div class="toast toast-info" role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="toast-header">
-                    <img src="@/assets/isotipe-color.svg" class="rounded mr-2" width="32px" height="32px" alt="...">
+                    <img src="@/assets/isotipe-color.svg" class="rounded mr-2" width="32px" height="32px">
                     <strong class="mr-auto">Recognizify</strong>
-                    <!-- <small class="text-muted">11 mins ago</small> -->
+
                     <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close" id="toastClose" @click="closeToast">
                         <svg class="feather-menu">
                             <use xlink:href="@/assets/svg/feather-sprite.svg#x"/>
                         </svg>
                     </button>
                 </div>
+                <div class="toast-body">
+                    Hola, bienvenido al módulo de Boards de Recognizify. Aquí todo tu equipo puede dejar notas y contribuir.
+                    <a data-toggle="modal" data-target="#helpingModal"><i>Da click aquí para saber más</i></a>
+                </div>
+            </div>
+
+            <div class="notes">
+                <div class="toast toast-special" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <strong class="mr-auto">Escribe una idea para tu equipo</strong>
+                    </div>
                     <div class="toast-body">
-                        Hola, bienvenido al módulo de Boards de Recognizify. Aquí todo tu equipo puede dejar notas y contribuir.
-                        <a href="#" data-toggle="modal" data-target="#helpingModal">Da click aquí para saber más</a>
+                        <div class="toast-row">
+                            <div class="profileImageContainer">
+                                <img :src="currentProfilePhoto" class="profilePhoto">
+                            </div>
+                            <input type="text" class="form-control form-control-sm" placeholder="Tu idea" v-model="newMessage">
+                        </div>
+                        <button class="btn btn-success btn-sm button-send" @click="publishNote">Publicar</button>
                     </div>
                 </div>
 
-                <div class="notes">
-                    <div class="toast toast-special" role="alert" aria-live="assertive" aria-atomic="true">
-                        <div class="toast-header">
-                            <strong class="mr-auto">Escribe una nota para tu equipo</strong>
-                        </div>
-                        <div class="toast-body">
-                            <div class="toast-row">
-                                <div class="profileImageContainer">
-                                    <img :src="currentProfilePhoto" class="profilePhoto">
-                                </div>
-                                <input type="text" class="form-control form-control-sm" placeholder="Tu mensaje..." v-model="newMessage">
+                <!-- public notes -->
+                <div    :class="`toast ${noteData.outstanding == true ? 'toast-outstanding' : ''}`" 
+                        role="alert" 
+                        aria-live="assertive" 
+                        aria-atomic="true" 
+                        :key="name" 
+                        v-for="(noteData, name, message) in notesData">
+
+                    <div class="toast-header">
+                        <strong class="mr-auto" :key="name">{{noteData.name}}</strong>
+                        <div class="dropdown">
+                            <a class="boardCardMenuOptions" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <small>Opciones</small>
+                                <svg class="feather-menu">
+                                    <use xlink:href="@/assets/svg/feather-sprite.svg#chevron-down" />
+                                </svg>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" @click="setToastOutstanding(noteData.id, noteData.outstanding)">
+                                    <b>Destacar</b>               
+                                    <div v-if="noteData.outstanding == true">
+                                        <svg class="feather-menu">
+                                            <use xlink:href="@/assets/svg/feather-sprite.svg#check" />
+                                        </svg>                                
+                                    </div>
+                                </a>
                             </div>
-                            <button class="btn btn-success btn-sm button-send" @click="publishNote">Publicar</button>
                         </div>
                     </div>
-
-                    <!-- public notes -->
-                    <div v-bind:class="`toast ${noteData.outstanding == true ? 'toast-outstanding' : ''}`" role="alert" aria-live="assertive" aria-atomic="true" :key="name" v-for="(noteData, name, message) in notesData">
-                        <div class="toast-header">
-                            <strong class="mr-auto" :key="name">{{noteData.name}}</strong>
-                            <div class="dropdown">
-                                <a style="cursor: pointer; margin: 0 0 0 18px" class="projectCardMenuOptions" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <small>Opciones</small>
-                                    <svg class="feather-menu">
-                                        <use xlink:href="@/assets/svg/feather-sprite.svg#chevron-down" />
-                                    </svg>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" @click="setToastOutstanding(noteData.id, noteData.outstanding)">
-                                        <b>Destacar</b>               
-                                        <div v-if="noteData.outstanding == true">
-                                            <svg class="feather-menu">
-                                                <use xlink:href="@/assets/svg/feather-sprite.svg#check" />
-                                            </svg>                                
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="toast-body" :key="message">
-                            {{noteData.message}}
-                        </div>
+                    <div class="toast-body" :key="message">
+                        {{noteData.message}}
                     </div>
                 </div>
             </div>
-            <ProjectPanel/>
         </div>
+        <ProjectPanel/>
+    </div>
 </template>
 <script>
 
@@ -127,11 +142,11 @@
         },
 
         methods: {
-            showSaveButtonForBoardNameInput: function(){
+            showSaveButtonForBoardNameInput (){
                 let $saveBoardNameButton = document.querySelector('.btn-save')
                 $saveBoardNameButton.style.display = 'flex'
             },
-            saveNewBoardName: function(){
+            saveNewBoardName (){
                 firebase.firestore()
                 .collection('projects')
                 .doc(this.$route.params.projectId)
@@ -145,13 +160,13 @@
                     $saveBoardNameButton.style.display = 'none'
                 })
             },
-            setProfilePhotoOnToastBody: function(){
+            setProfilePhotoOnToastBody (){
                 firebase.auth().onAuthStateChanged(user => {
                     firebase.storage().ref(`/profile_photos/${user.uid}`).getDownloadURL()
                         .then(photo => this.currentProfilePhoto = photo)
                 })
             },
-            publishNote: function(){
+            publishNote (){
                 firebase.auth().onAuthStateChanged(user => {
                     firebase.firestore()
                     .collection('users')
@@ -179,7 +194,7 @@
                     .catch((err) => console.log(err))
                 })
             },
-            updateNotes: function(){
+            updateNotes (){
                 firebase.firestore()
                 .collection('projects')
                 .doc(this.$route.params.projectId)
@@ -188,7 +203,7 @@
                 .collection('notes')
                 .get()
                 .then(notes => {
-                    notes.docs.forEach(note => {
+                    notes.forEach(note => {
                         this.notesData.push({
                             name: note.data()['userNamePublish'],
                             message: note.data()['notePublish'],
@@ -198,7 +213,7 @@
                     })
                 })
             },
-            closeToast: function(){
+            closeToast (){
                 firebase.auth().onAuthStateChanged(user => {
                     firebase.firestore().collection('users').doc(user.uid).update({
                         recognizifyHelpToastOnBoardDesactivated: true 
@@ -208,35 +223,21 @@
                     })
                 })
             },
-            closeOverlayMenu: function (){
+            closeOverlayMenu (){
                 document.getElementById('projectFeedPanel').classList.toggle('show')
             },
-            setToastOutstanding: function (id, state){
-                if (state == true) {
-                    firebase.firestore()
-                    .collection('projects')
-                    .doc(this.$route.params.projectId)
-                    .collection('boards')
-                    .doc('data')
-                    .collection('notes')
-                    .doc(id)
-                    .update({
-                        isOutstanding: false
-                    })
-                    .then(() => window.location.reload())
-                } else {
-                    firebase.firestore()
-                    .collection('projects')
-                    .doc(this.$route.params.projectId)
-                    .collection('boards')
-                    .doc('data')
-                    .collection('notes')
-                    .doc(id)
-                    .update({
-                        isOutstanding: true
-                    })
-                    .then(() => window.location.reload())
-                }
+            setToastOutstanding (id, state){
+                firebase.firestore()
+                .collection('projects')
+                .doc(this.$route.params.projectId)
+                .collection('boards')
+                .doc('data')
+                .collection('notes')
+                .doc(id)
+                .update({
+                    isOutstanding: !state
+                })
+                .then(() => window.location.reload())
             }
         }
     }

@@ -28,6 +28,7 @@ export const AddPoints = {
                 activityPoints: (point + 1),
                 date: firebase.firestore.Timestamp.fromDate(new Date())
             })
+            .then(() => window.location.reload())
         }
     }
 }

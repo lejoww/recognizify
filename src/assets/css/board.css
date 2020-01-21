@@ -54,6 +54,16 @@
     flex-wrap: wrap;
 }
 
+.moduleIndicator {
+    margin: -0.5em 1em 1em 1em; 
+    color: #A9A8C3; 
+    font-family: 'cooper_hewittsemibold'
+}
+
+a {
+    cursor: pointer;
+}
+
 @media screen and (max-width: 991px) {
     .projectBoard {
         grid-column: 1 / 19;
@@ -82,4 +92,9 @@
 .dropdown-item {
     display: flex;
     justify-content: space-between;
+}
+
+.boardCardMenuOptions {
+    cursor: pointer; 
+    margin: 0 0 0 18px
 }
