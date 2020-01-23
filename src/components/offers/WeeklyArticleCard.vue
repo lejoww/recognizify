@@ -1,8 +1,9 @@
 <template>
         <div class="weeklyArticleCardContainer" v-if="article.exists == true">
             <router-link to="/articles/weekly">
-                <h3 class="text-white">{{article.title}} <span class="badge badge-success">Artículo semanal</span></h3>
-                <p class="text-white">{{article.abstract}}</p>
+                <small class="text-warning" style="font-weight: 900; letter-spacing: -0.4px">ÚLTIMO ARTÍCULO DEL BLOG</small>
+                <h4 class="text-white" style="margin: 0.4rem 0 0 0">{{article.title}} <span class="badge badge-success">Artículo semanal</span></h4>
+                <p class="muted-gray">{{article.abstract}}</p>
 
                 <div class="weeklyArticleCardPublisher">
                     <div class="profilePictureContainer">
@@ -22,7 +23,7 @@
     .weeklyArticleCardContainer {
         width: 100%;
         padding: 1rem;
-        background: rgb(111, 0, 255);
+        background: rgb(52, 18, 131);
         border-radius: 4px;
         margin-bottom: 2rem;
         cursor: pointer;
@@ -108,7 +109,7 @@
                     firebase.storage()
                     .ref(`/profile_photos/${this.article.publisher}`)
                     .getDownloadURL()
-                    .then((url) => this.publisherPhoto = url)
+                    .then((url) => this.article.publisherPhoto = url)
                 })
                 .catch((err) => console.log(err))
 
