@@ -1,6 +1,6 @@
 <template>
     <div class="dropdown">
-        <DeleteProject :projectId="this.projectId"/>
+        <DeleteProject :projectId="this.projectId" :projectName="this.selectedProject.name"/>
         <button class="projectCardMenuOptions" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <svg class="feather-menu">
                 <use xlink:href="@/assets/svg/feather-sprite.svg#more-vertical" />
@@ -19,9 +19,27 @@
     import DeleteProject from '@/components/modals/DeleteProject.vue'
 
     export default {
-        props: ['projectId'],
+        data(){
+            return {
+                selectedProject: {
+                    name: ''
+                }
+            }
+        },
+        props: ['projectId', 'projectName'],
         components: {
             DeleteProject
+        },
+        methods: {
+            getProjectInfo(){
+                firebase.firestore()
+                .collection('projects')
+                .doc(this.projectId)
+                .get()
+                .then((project) => {
+                    this.selectedProject.name = project.data()['name']
+                })
+            }
         }
     }
 

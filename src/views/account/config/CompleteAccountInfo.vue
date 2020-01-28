@@ -23,7 +23,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">@</span>
                             </div>
-                            <input type="text" class="form-control" v-model="user" placeholder="Escribe un nombre de usuario" spellcheck="false" autocomplete="off" required>
+                            <input type="text" class="form-control" pattern="|^[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]*$|" v-model="user" placeholder="Escribe un nombre de usuario sin espacios" spellcheck="false" autocomplete="off" required>
                         </div>
                     </div>
                 <button @click="saveInfoOnDatabase" class="btn btn-warning btn-save" style="margin-bottom: 2rem">Continuar</button>
@@ -70,7 +70,7 @@
                     firebase.firestore().collection('users').doc(user.uid).set({
                         name: this.normalizeString(this.username),
                         bio: this.bio,
-                        user: this.user,
+                        user: this.user.replace(/ /g, ""),
                         roles: {
                             admin: false,
                             creator: false,

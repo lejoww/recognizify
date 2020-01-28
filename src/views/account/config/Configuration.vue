@@ -45,7 +45,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1">@</span>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Escribe un nombre de usuario" aria-label="Username" aria-describedby="basic-addon1" v-model="user">
+                                    <input type="text" class="form-control" placeholder="Escribe un nombre de usuario sin espacios" aria-label="Username" aria-describedby="basic-addon1" v-model="user">
                                 </div>
                                 <button class="btn btn-secondary" @click="saveNewDataConfig">Guardar cambios</button>
                             </div>
@@ -86,7 +86,7 @@
                     firebase.firestore().collection('users').doc(user.uid).update({
                         name: this.normalizeString(this.name),
                         bio: this.description,
-                        user: this.user
+                        user: this.user.replace(/ /g, "")
                     }).then(() => {
                         let alert = document.getElementById('alert-success')
                         alert.style.display = 'block'

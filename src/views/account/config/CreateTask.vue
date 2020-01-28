@@ -1,6 +1,6 @@
 <template>
     <div class="formCuttedLayout">
-        <input type="text" v-model="task.name" class="form-control-special form-control-xl form-control-variable" spellcheck="false" placeholder="Un nombre para la tarea">
+        <input type="text" v-model="task.name" class="form-control-special form-control-xl form-control-variable" spellcheck="false" placeholder="Escribe un nombre para la tarea">
         <br>
         <div class="formContent">
             <span class="formSubtitle">Información de la tarea</span>
