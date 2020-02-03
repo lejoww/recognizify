@@ -329,6 +329,12 @@ a:hover {
     margin: 0 1em;
 }
 
+.linksSection {
+    width: 100%;
+    background: rgb(255, 34, 100);
+    padding: 2rem 0;
+}
+
 .linksSectionTitle {
     font-family: 'cooper_hewittbold';
     font-size: 24px;

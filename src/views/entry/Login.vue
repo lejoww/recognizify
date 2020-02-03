@@ -9,12 +9,10 @@
                 <img src="@/assets/logo-common-cutted.png" alt="Logotipo de Recognizify" width="148px">
                 <h1 class="loginTitle">Conéctate de nuevo.</h1>
                     <div class="form-group">
-                        <label>Correo electrónico</label>
-                        <input type="email" class="form-control form-control-lg form-control-login" v-on:keyup.enter="signInWithEmailAndPassword" v-model="email" aria-describedby="emailHelp" placeholder="alguien@recognizify.com" spellcheck="false">
+                        <input type="email" class="form-control form-control-lg form-control-login" v-on:keyup.enter="signInWithEmailAndPassword" v-model="email" aria-describedby="emailHelp" placeholder="Correo electrónico" spellcheck="false">
                     </div>
                     <div class="form-group">
-                        <label>Contraseña</label>
-                        <input type="password" class="form-control form-control-lg form-control-login" v-on:keyup.enter="signInWithEmailAndPassword" v-model="password" placeholder="Tu clave personal e intransferible">
+                        <input type="password" class="form-control form-control-lg form-control-login" v-on:keyup.enter="signInWithEmailAndPassword" v-model="password" placeholder="Tu contraseña personal">
                     </div>
                 <button class="btn btn-success btn-login" id="dynamicButton" v-on:click="signInWithEmailAndPassword">Iniciar sesión</button>
                 <button class="btn btn-warning btn-login" style="margin-left: .7em">
@@ -23,7 +21,9 @@
                     </router-link>
                 </button>
                 <div style="margin-top: 12px">
-                    <a href="/forgot" class="btn btn-outline-dark btn-sm forgot-password">Restablece tu contraseña</a>
+                    <span style="font-size: 13px">También puedes
+                        <a href="/forgot" class="forgot-password">restablecer tu contraseña</a>
+                    </span>
                 </div>
             </div>
 

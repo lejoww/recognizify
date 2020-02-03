@@ -251,6 +251,8 @@ input:checked + .slider:before {
 
 .forgot-password {
     font-weight: 600;
+    font-size: 13px;
+    color: #8100d8;
 }
 
 .loginSpaceBackground {
@@ -258,4 +260,8 @@ input:checked + .slider:before {
     z-index: -1;
     bottom: 0;
     right: 0;
+}
+
+.form-control-login {
+    font-weight: 600 !important;
 }

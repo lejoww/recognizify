@@ -24,15 +24,19 @@
           <LastAd/>
         </div>
         <br>
-        <span class="linksSectionTitle">
-          Enlaces 
-          <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#projectCardModal" style="margin-left: 0.3rem">
-            Crear enlace
-          </button>
-        </span>
-        <div class="projectCards">
-          <LinkCard :key="link" v-for="link in links" :title="link.title" :description="link.description" :link="link.url" :id="link.id"/>
-          <span v-if="links.length == 0" style="margin: 5px 10px; font-size: 14px">No hay enlaces aquí. Crea el primero ahí arriba</span>
+        <div class="linksSection">
+          <span class="linksSectionTitle text-white">
+            Enlaces 
+            <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#projectCardModal" style="margin-left: 0.3rem">
+              Crear enlace
+            </button>
+          </span>
+          <div class="projectCards">
+            <LinkCard :key="link" v-for="link in links" :title="link.title" :description="link.description" :link="link.url" :id="link.id"/>
+            <span v-if="links.length == 0" style="margin: 5px 10px; font-size: 13px; font-weight: 600; color: rgb(255, 197, 215)">
+              No hay enlaces aquí. Crea el primero ahí arriba
+            </span>
+          </div>
         </div>
       </div>
       <LateralPanelTasks/>
