@@ -7,6 +7,13 @@
         <div class="publicProfileBrand">
             <img src="@/assets/logo-common-cutted.png" width="189px">
         </div>
+
+        <a href="javascript: history.go(-1)" style="display: flex; margin: 0.5rem 0 0 1.5rem">
+            <svg class="feather-dark">
+                <use xlink:href="@/assets/svg/feather-sprite.svg#arrow-left"/>
+            </svg>
+            <span style="font-weight: 900; letter-spacing: -0.6px">Volver atrás</span>
+        </a>
         
         <div class="publicProfileBase">
             <div class="publicProfileContent">
