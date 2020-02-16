@@ -8,6 +8,11 @@
             <div class="form-container">
                 <img src="@/assets/logo-common-cutted.png" alt="Logotipo de Recognizify" width="148px">
                 <h1 class="loginTitle">Conéctate de nuevo.</h1>
+                <p class="text-success" 
+                    style="font-weight: 800; letter-spacing: -0.5px; font-size: 14px; margin-bottom: 1rem">
+                    Estamos en periodo de mantenimiento, 
+                    así que puede <br> que no veas muchas novedades por estos días.
+                </p>
                     <div class="form-group">
                         <input type="email" class="form-control form-control-lg form-control-login" v-on:keyup.enter="signInWithEmailAndPassword" v-model="email" aria-describedby="emailHelp" placeholder="Correo electrónico" spellcheck="false">
                     </div>
@@ -15,7 +20,7 @@
                         <input type="password" class="form-control form-control-lg form-control-login" v-on:keyup.enter="signInWithEmailAndPassword" v-model="password" placeholder="Tu contraseña personal">
                     </div>
                 <button class="btn btn-success btn-login" id="dynamicButton" v-on:click="signInWithEmailAndPassword">Iniciar sesión</button>
-                <button class="btn btn-warning btn-login" style="margin-left: .7em">
+                <button class="btn btn-primary btn-login" style="margin-left: .7em">
                     <router-link to="/signup" class="text-white">
                         Registrarse
                     </router-link>
