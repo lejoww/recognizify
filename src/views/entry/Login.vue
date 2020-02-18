@@ -7,28 +7,31 @@
         <div id="login">
             <div class="form-container">
                 <img src="@/assets/logo-common-cutted.png" alt="Logotipo de Recognizify" width="148px">
-                <h1 class="loginTitle">Conéctate de nuevo.</h1>
-                <p class="text-success" 
-                    style="font-weight: 800; letter-spacing: -0.5px; font-size: 14px; margin-bottom: 1rem">
-                    Estamos en periodo de mantenimiento, 
-                    así que puede <br> que no veas muchas novedades por estos días.
-                </p>
+                <div v-if="login == false">
+                    <h1 class="loginTitle">Donde los creadores unen sus fuerzas para innovar.</h1>
+                    <div class="column">
+                        <button class="btn btn-primary btn-option-login" @click="() => this.login = true">Iniciar sesión</button>
+                        <button class="btn btn-secondary btn-option-login">
+                            <router-link to="/signup" class="text-white">
+                                Registrarse
+                            </router-link>
+                        </button>
+                    </div>
+                </div>
+                <div v-if="login == true">
+                    <br>
                     <div class="form-group">
                         <input type="email" class="form-control form-control-lg form-control-login" v-on:keyup.enter="signInWithEmailAndPassword" v-model="email" aria-describedby="emailHelp" placeholder="Correo electrónico" spellcheck="false">
                     </div>
                     <div class="form-group">
                         <input type="password" class="form-control form-control-lg form-control-login" v-on:keyup.enter="signInWithEmailAndPassword" v-model="password" placeholder="Tu contraseña personal">
                     </div>
-                <button class="btn btn-success btn-login" id="dynamicButton" v-on:click="signInWithEmailAndPassword">Iniciar sesión</button>
-                <button class="btn btn-primary btn-login" style="margin-left: .7em">
-                    <router-link to="/signup" class="text-white">
-                        Registrarse
-                    </router-link>
-                </button>
-                <div style="margin-top: 12px">
-                    <span style="font-size: 13px">También puedes
-                        <a href="/forgot" class="forgot-password">restablecer tu contraseña</a>
-                    </span>
+                    <button class="btn btn-primary btn-login" id="dynamicButton" v-on:click="signInWithEmailAndPassword">Iniciar sesión</button>
+                    <div style="margin-top: 12px">
+                        <span style="font-size: 13px">También puedes
+                            <a href="/forgot" class="forgot-password">restablecer tu contraseña</a>
+                        </span>
+                    </div>
                 </div>
             </div>
 
@@ -51,7 +54,8 @@
             return {
                 email: '',
                 password: '',
-                account: true
+                account: true,
+                login: false
             }
         },
         components: {

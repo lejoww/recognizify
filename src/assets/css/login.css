@@ -244,8 +244,10 @@ input:checked + .slider:before {
 }
 
 .loginTitle {
+    font-family: 'cooper_hewittbold';
+    line-height: 1.1;
     margin-top: 1em;
-    letter-spacing: -0.5px;
+    letter-spacing: -1px;
     margin-bottom: 0.5em;
 }
 
@@ -264,4 +266,18 @@ input:checked + .slider:before {
 
 .form-control-login {
     font-weight: 600 !important;
+}
+
+.btn-option-login {
+    width: 234px;
+    /* font-size: 15px; */
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.column button {
+    margin-bottom: 7px;
 }

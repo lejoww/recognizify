@@ -8,7 +8,7 @@
                         <div class="card-body">
                             <span class="card-title projectTitle text-white">
                                 {{this.projectName}}
-                                <span class="badge badge-secondary">Activo</span>
+                                <!-- <span class="badge badge-warning">Activo</span> -->
                             </span>
                             <!-- <span class="card-text text-muted projectLastActivity">
                                 Última actividad hace {{this.lastActivity}}

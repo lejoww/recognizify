@@ -47,9 +47,9 @@ $cyan:    #17a2b8 !default;
 
 $purple:    #5900C6 !default;
 $bright-purple:  #6610F2 !default;
-$yellow:  #FFD138 !default;
-$pink:  #FF4C6D !default;
+$infra-red:  #FF4C6D !default;
 $red:     #FF524C !default;
+$red-purple: #1D0F31 !default;
 
 
 $colors: () !default;
@@ -73,13 +73,13 @@ $colors: map-merge(
   $colors
 );
 
-$primary:       $purple !default;
-$secondary:     $yellow !default;
-$success:       $bright-purple !default;
+$primary:       $bright-purple !default;
+$secondary:     $red-purple !default;
+$success:       $purple !default;
 $info:          $gray-200 !default;
-$warning:       $pink !default;
+$warning:       $infra-red !default;
 $danger:        $red !default;
-$light:         $gray-100 !default;
+$light:         $gray-200 !default;
 $dark:          $gray-900 !default;
 
 $theme-colors: () !default;
