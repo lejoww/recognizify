@@ -10,7 +10,7 @@
     .activityPointsContainer {
         padding: 18px;
         background: #fafafa;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        border: 1px solid #eeeeee;
         border-radius: 6px;
         margin: 8px;
         border-bottom: 3px solid #8400ff;

@@ -113,6 +113,7 @@ nav {
     top: 0;
     padding: 7px 12px;
     position: relative;
+    z-index: 1;
     color: #9a97a3;
     text-align: center;
     font-size: 12px;

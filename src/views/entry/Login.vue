@@ -1,5 +1,11 @@
 <template>
     <div>
+        <div class="loginLoader" v-if="loading == true">
+            <div>
+                <div class="loaderSpinner"></div><br>
+                <h4 style="letter-spacing: -1px">Procesando tus datos...</h4>
+            </div>
+        </div>
         <img class="loginSpaceBackground" src="@/assets/ilustrations/space.png">
         <div class="instructCopy">
             <span class="text-gray">Las imagenes en la aplicación no son de nuestra autoría. Si deseas saber más, ingresa a <router-link to="/credits" class="text-dark">nuestro sitio de referencias.</router-link></span>
@@ -55,7 +61,8 @@
                 email: '',
                 password: '',
                 account: true,
-                login: false
+                login: false,
+                loading: false
             }
         },
         components: {
@@ -68,6 +75,7 @@
         },
         methods: {
             signInWithEmailAndPassword: function(){
+                this.loading = true;
                 var loginButton = document.getElementById('dynamicButton')
                 loginButton.innerHTML = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>`
 
@@ -95,6 +103,7 @@
                         $loginAlert.style.display = 'none' 
                     }, 3000)
                     loginButton.innerHTML = 'Iniciar sesión'
+                    this.loading = false;
                 })
             }
         }
