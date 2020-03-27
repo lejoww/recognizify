@@ -4,35 +4,48 @@
           <!-- <Features/> -->
 
           <NonProjectsBanner v-if="projects.length == 0"/>
-          <div class="projectsField" id="projectsContent" v-if="projects.length >= 1">
-            <WeeklyArticleCard/>
-            <div class="projectsBanner">
-              <div>
-                <h1 class="projectsHeaderTitle">Tus proyectos</h1>
-                <p class="muted-gray">¿En que idea trabajarás ahora? Selecciona uno de tus proyectos.</p>
+          <div class="rowStructure">
+            <div class="helperCard">
+              <WeeklyArticleCard/>
+              <div class="asesor">
+                <img src="@/assets/ilustrations/person-working.png" alt="">
+                <div style="width: 64%">
+                  <h5 style="font-weight: 800; text-transform: uppercase; font-size: 14px; color: #645B8C">
+                    ¿Necesitas asesoramiento para tu proyecto?
+                  </h5>
+                  <p style="font-size: 21px; font-weight: 900">Estamos para ayudarte, dentro de poco tiempo ofreceremos servicio al ciente para tu proyecto.</p>
+                  <button class="btn btn-primary" @click="() => {this.notification = true}">{{this.notification == true ? 'Te notificaremos' : 'Notificarme'}}</button>
+                </div>
               </div>
-              <a class="btn btn-success btn-lg" style="display:flex; align-items:center">
-                <router-link to="/account/create/project">
-                  <svg width="24px" height="24px" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
-                    <use xlink:href="@/assets/svg/feather-sprite.svg#plus" />
-                  </svg>
-                </router-link>
-              </a>
             </div>
+            <div class="projectsField" id="projectsContent" v-if="projects.length >= 1">
+              <div class="projectsBanner">
+                <div>
+                  <h2 class="projectsHeaderTitle">Proyectos</h2>
+                </div>
+                <a class="btn btn-success btn-lg" style="display:flex; align-items:center">
+                  <router-link to="/account/create/project">
+                    <svg width="24px" height="24px" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                      <use xlink:href="@/assets/svg/feather-sprite.svg#plus" />
+                    </svg>
+                  </router-link>
+                </a>
+              </div>
 
-            <br>
-            <div class="projectsList">
-              <ul class="projectListElements" style="list-style: none">
-                <ProjectCard 
-                  :key="project" 
-                  v-for="project in projects"
-                  :projectName="project['name']"
-                  :projectPhotoUrl="project['photoUrl']"
-                  :projectId="project['id']"
-                  lastActivity="7 minutos"
-                />
-              </ul>
-            </div>
+              <br>
+              <div class="projectsList">
+                <ul class="projectListElements" style="list-style: none">
+                  <ProjectCard 
+                    :key="project" 
+                    v-for="project in projects"
+                    :projectName="project['name']"
+                    :projectPhotoUrl="project['photoUrl']"
+                    :projectId="project['id']"
+                    lastActivity="7 minutos"
+                  />
+                </ul>
+              </div>
+          </div>
         </div>
       </div>
 </template>
@@ -51,7 +64,8 @@
     export default {
       data() {
         return {
-          projects: []
+          projects: [],
+          notification: false
         }
       },
       components: {
@@ -95,7 +109,7 @@
           this.projects.push({
             name: name,
             id: id,
-            photoUrl: url
+            photoUrl: url,
           })
         }
       }

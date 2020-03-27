@@ -46,8 +46,8 @@
         min-width: 60%;
         display: block;
         padding: 18px;
-        background: #fafafa;
-        border: 1px solid #eeeeee;
+        background: #fff;
+        border: 1px solid #f6f6f6;
         border-radius: 6px;
         margin: 8px;
         border-bottom: 3px solid #8400ff;

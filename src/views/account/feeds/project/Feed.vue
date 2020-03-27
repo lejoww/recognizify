@@ -1,21 +1,18 @@
 <template>
-  <div class="dashboardContent">
+  <div class="dashboardContent" style="background: #FAFAFA">
     <CreateProjectLinkModal/>
     <div class="feedLayout">
       <div class="projectSummaryData">
-        <div class="rank headerRank" style="padding: 24px">
-          <div>
-            <h4 style="font-family: 'cooper_hewittbold'; letter-spacing: -0.5px">{{projectName}}</h4>
-            <span style="font-family: 'cooper_hewittsemibold'; color: #A9A8C1">Resumen de tu proyecto</span>
-          </div>
-          <div>
+        <div class="headerRank" style="padding: 24px">
+          <h4 style="letter-spacing: -0.2px">{{projectName}}</h4>
+          <div style="margin-left: 1rem">
             <div class="projectState">
-              <svg class="feather-green">
-                <use xlink:href="@/assets/svg/feather-sprite.svg#check" />
-              </svg>
               Activo
             </div>
           </div>
+        </div>
+        <div class="rank">
+          <ProjectBalance/>
         </div>
         <!-- <GeneralStatistic/> -->
         <div class="rank" style="display: flex">
@@ -27,7 +24,7 @@
         <div class="linksSection">
           <span class="linksSectionTitle text-white">
             Enlaces 
-            <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#projectCardModal" style="margin-left: 0.3rem">
+            <button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#projectCardModal" style="margin-left: 0.3rem">
               Crear enlace
             </button>
           </span>
@@ -39,7 +36,7 @@
           </div>
         </div>
       </div>
-      <LateralPanelTasks/>
+      <!-- <LateralPanelTasks/> -->
     </div>
     <ProjectPanel/>
   </div>
@@ -56,6 +53,7 @@
   import ActivityPoints from '@/components/project/ActivityPoints.vue';
   import LastAd from '@/components/project/LastAd.vue';
   import LateralPanelTasks from '@/components/project/LateralPanelTasks.vue';
+  import ProjectBalance from '@/components/project/statistics/ProjectBalance.vue';
 
   import Vue from 'vue';
   import "@/assets/css/feed.css";
@@ -78,7 +76,8 @@
       ProjectPanel,
       ActivityPoints,
       LastAd,
-      LateralPanelTasks
+      LateralPanelTasks,
+      ProjectBalance
     },
     mixins: [CheckProjectMember],
     created: function() {

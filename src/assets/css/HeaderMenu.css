@@ -4,12 +4,13 @@
     width: 100%;
     height: 55px;
     grid-row: 1 / 2;
-    background-color: rgb(250, 250, 250);
+    background-color: rgb(255, 255, 255);
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
     display: flex;
     justify-content: space-between;
     position: relative;
     top: 0;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
 }
 
 .headerWrapper {
@@ -71,7 +72,7 @@
 
 @media screen and (max-width: 586px) {
     .headerMenu .headerBrand {
-        padding: 0.5rem;
+        padding: 0.5rem 0.8rem;
     }
 
     .headerWrapperRight {

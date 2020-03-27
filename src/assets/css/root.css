@@ -1,10 +1,10 @@
 /* Dashboard order */
 /* imports */
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap'); */
 
 /* fonts */
-@font-face {
+/* @font-face {
     font-family: 'cooper_hewittbold';
     src: url('../fonts/cooperhewitt-bold-webfont.woff2') format('woff2'),
          url('../fonts/cooperhewitt-bold-webfont.woff') format('woff');
@@ -26,31 +26,34 @@
          url('../fonts/cooperhewitt-semibold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-}
+} */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Muli:wght@400;700;800;900&display=swap'); */
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap');
 
 .baseLayout {
     width: 100%;
     height: 100vh;
-    max-height: 100vh;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    /* overflow-x: hidden;
+    overflow-y: hidden; */
     display: grid;
     grid-template-rows: 55px calc(100vh - 55px);
 }
 
 .dashboardContent {
     grid-row: 2 / 3;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 
 .feedLayout {
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 55px);
     display: grid;
     grid-template-columns: 72% 28%;
     grid-template-rows: 100%;
     overflow: hidden;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 
 .formLayout {

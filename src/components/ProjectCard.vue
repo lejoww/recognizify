@@ -1,24 +1,38 @@
 <template>
     <li class="project-el">
-        <ProjectOptionsDropdown :projectId="this.projectId" />
-        <router-link :to="`/dashboard/project/${this.projectId}/feed`">
-            <div class="card projectCard mb-3" :style="`background-image: url('${this.projectPhotoUrl}');`">
+            <div class="card projectCard mb-3">
                 <div class="row no-gutters">
                     <div class="col-md-12">
                         <div class="card-body">
-                            <span class="card-title projectTitle text-white">
-                                {{this.projectName}}
-                                <!-- <span class="badge badge-warning">Activo</span> -->
+                            <div style="display: flex; justify-content: space-between">
+                                <router-link :to="`/dashboard/project/${this.projectId}/feed`">
+                                    <div style="display: flex; flex-direction: column">
+                                        <span class="card-title projectTitle">
+                                            {{this.projectName}}
+                                        </span>
+                                        <small class="projectAutor muted-gray" style="font-weight: 600">Participas en él</small>
+                                    </div>
+                                </router-link>
+                                <div>
+                                    <a data-toggle="tooltip" data-placement="right" title="Característica inhabilitada.">
+                                        <svg class="feather-like-options">
+                                            <use xlink:href="@/assets/svg/feather-sprite.svg#star" />
+                                        </svg>
+                                    </a>
+                                    <ProjectOptionsDropdown :projectId="this.projectId" />
+                                </div>
+                            </div>
+                        <br><br>
+                        <div style="display: flex; justify-content: space-between; align-items: center">
+                            <span class="card-text text-muted projectLastActivity">
+                                Activo hace {{this.lastActivity}}
                             </span>
-                            <!-- <span class="card-text text-muted projectLastActivity">
-                                Última actividad hace {{this.lastActivity}}
-                                Sin registro de la última actividad
-                            </span> -->
+                            <span class="state-badge-success">Activo</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </router-link>
+        </div>
     </li>
 
 </template>
@@ -32,10 +46,16 @@
             'projectName',
             'projectPhotoUrl',
             'projectId',
+            'projectAutor',
             'lastActivity'
         ],
         components: {
             ProjectOptionsDropdown
+        },
+        mounted () {
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
         }
     }
 

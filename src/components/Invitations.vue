@@ -1,7 +1,7 @@
 <template>
     <div>
-        <router-link class="invitationsCounterContainer" to="/account/notifications" data-toggle="tooltip" data-placement="bottom" title="Invitaciones a otros proyectos">
-            <svg class="feather-menu icon">
+        <router-link class="invitationsCounterContainer" to="/account/notifications" data-toggle="tooltip" data-placement="bottom" title="Notificaciones">
+            <svg class="feather-like-options icon">
                 <use xlink:href="@/assets/svg/feather-sprite.svg#mail"/>
             </svg>
             <div class="invitationsCounter" v-if="invitations > 0">

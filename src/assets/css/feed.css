@@ -16,11 +16,13 @@
 }
 
 .projectSummaryData {
+    height: calc(100vh - 55px);
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .projectSummaryData::-webkit-scrollbar {
@@ -122,18 +124,11 @@
 
 .projectSummaryPurpleCard {
     /* grid-column: 10 / 18; */
+    width: 50%;
     border-radius: 7px;
     display: flex;
     align-items: flex-end;
     margin: 16px 8px;
-    background: #6610f2;
-    background: -moz-linear-gradient(-45deg, #6610f2 0%, #5900c6 100%);
-    background: -webkit-gradient(left top, right bottom, color-stop(0%, #6610f2), color-stop(100%, #5900c6));
-    background: -webkit-linear-gradient(-45deg, #6610f2 0%, #5900c6 100%);
-    background: -o-linear-gradient(-45deg, #6610f2 0%, #5900c6 100%);
-    background: -ms-linear-gradient(-45deg, #6610f2 0%, #5900c6 100%);
-    background: linear-gradient(135deg, #6610f2 0%, #5900c6 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6610f2', endColorstr='#5900c6', GradientType=1 );
 }
 
 
@@ -336,7 +331,7 @@ a:hover {
 }
 
 .linksSectionTitle {
-    font-family: 'cooper_hewittbold';
+    font-family: 'Inter';
     font-size: 24px;
     margin: 0 1em;
     letter-spacing: -0.1px;
@@ -345,11 +340,18 @@ a:hover {
 }
 
 .projectState {
-    color: #00c954;
-    font-size: 12px;
-    padding: 1px 4px;
-    border: 1px solid #00c954;
+    display: flex;
+    color: #4C5137;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 9px;
+    background: #C5F2CE;
     border-radius: 12px;
+    align-items: center;
+}
+
+.headerRank {
+    display: flex;
 }
 
 /* mediaqueries  */

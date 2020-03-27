@@ -3,7 +3,7 @@
     <div class="headerMenu">
       <div class="headerWrapper">
         <div class="headerBrand">
-          <img src="@/assets/logo-common-cutted.png" width="134px">
+          <img src="@/assets/isotipe-color.svg" width="48px">
           <input type="text" 
           class="form-control-navbar inputSearch" 
           placeholder="Busca aquí usuarios" 

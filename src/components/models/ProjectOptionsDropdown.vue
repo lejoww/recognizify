@@ -1,11 +1,11 @@
 <template>
     <div class="dropdown">
         <DeleteProject :projectId="this.projectId" :projectName="this.selectedProject.name"/>
-        <button class="projectCardMenuOptions" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <svg class="feather-menu">
-                <use xlink:href="@/assets/svg/feather-sprite.svg#more-vertical" />
+        <a class="projectCardMenuOptions" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <svg class="feather-like-options">
+                <use xlink:href="@/assets/svg/feather-sprite.svg#more-horizontal" />
             </svg>
-        </button>
+        </a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <div class="dropdownOverline">Opciones</div>
             <a class="dropdown-item text-danger" data-toggle="modal" data-target="#exampleModalCenter">

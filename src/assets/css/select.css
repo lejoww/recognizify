@@ -1,16 +1,17 @@
 
 .projectsField {
-    width: 100%;
-    height: 100%;
+    width: 30%;
+    max-height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 3rem;
+    padding: 2rem;
 }
 
 .projectsField .projectsBanner {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding: 0 12px;
 }
 
@@ -24,28 +25,53 @@
     flex-wrap: wrap;
 }
 
+.projectsField .projectsList::-webkit-scrollbar {
+    width: 10px;
+}
+  
+.projectsField .projectsList::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+.projectsField .projectsList::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+  
+.projectsField .projectsList::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+  }
+
+.projectsField .projectsList {
+    overflow-y: scroll;
+}
+
 .projectsField .projectsList ul {
     margin: 0 auto;
 }
 
 .project-el {
-    width: 31%;
+    width: 100%;
     margin-right: 7px;
 }
 
 .card.projectCard:hover {
     animation: toBorder 400ms forwards;
+    text-decoration: none !important;
 }
 
 @keyframes toBorder {
     to {
-        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 15px 16px rgba(0, 0, 0, 0.08);
+        border: 2px solid #5900C6;
     }
 }
 
 .card.projectCard {
+    width: 100%;
     background-color: #fff;
-    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgb(233, 233, 240);
+    box-shadow: 0 9px 7px rgba(0, 0, 0, 0.02);
+    border-radius: 7px;
 }
 
 .projectImageContainer {
@@ -73,12 +99,14 @@
     font-weight: 700;
 }
 
-button.projectCardMenuOptions {
+a.projectCardMenuOptions {
     position: absolute;
     right: 0;
-    z-index: 1;
+    z-index: 12;
     background: transparent;
     border: none;
+    padding: 7px 0;
+    cursor: pointer;
 }
 
 .dropdown-item {
@@ -87,7 +115,7 @@ button.projectCardMenuOptions {
 }
 
 .card-body {
-    background: rgba(0, 0, 0, 0.5);
+    /* background: rgba(0, 0, 0, 0.5); */
     border-radius: 4px;
 }
 
@@ -103,27 +131,53 @@ button.projectCardMenuOptions {
 }
 
 .card-body .card-title{
-    color: #0B0B14;
+    color: rgb(57, 57, 71);
+    font-family: 'Inter';
     font-weight: 700;
-    font-size: 15px;
+    font-size: 19px;
+}
+
+.helperCard {
+    width: 70%;
+    height: calc(100vh - 55px);
+    padding: 2rem;
+    overflow-y: scroll;
+}
+
+.rowStructure {
+    display: flex; 
+    flex-direction: row-reverse;
+    max-height: 100%;
+}
+
+.asesor {
+    display: flex; 
+    justify-content: space-around; 
+    align-items:center;
+    margin-bottom: 21px
 }
 
 @media screen and (max-width: 991px) {
-    .projectsField {
-        padding: 3rem;
+    .rowStructure {
+        flex-direction: column;
     }
 
-    .projectCard {
-        width: 320px;
+    .helperCard {
+        width: 100%;
+        overflow-y: visible;
+    }
+
+    .projectsField {
+        width: 100%;
+    }
+
+    .asesor {
+        display: none;
     }
 }
 
 @media screen and (max-width: 867px) {
     .project-el {
-        width: 100%;
-    }
-
-    .projectCard {
         width: 100%;
     }
 
@@ -143,12 +197,25 @@ button.projectCardMenuOptions {
     }
 
     .projectCard {
-        box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     }
 }
 
 .projectsHeaderTitle {
-    font-weight: 900;
     letter-spacing: -0.7px;
-    font-kerning: normal;
+}
+
+.projectAutor {
+    font-size: 13px;
+}
+
+/* states */
+
+.state-badge-success {
+    background: rgba(42, 207, 78, 0.274);
+    padding: 2px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 12px;
+    color: rgba(0, 0, 0, 0.733);
 }

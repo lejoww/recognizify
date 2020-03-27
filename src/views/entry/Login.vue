@@ -15,13 +15,17 @@
                 <img src="@/assets/logo-common-cutted.png" alt="Logotipo de Recognizify" width="148px">
                 <div v-if="login == false">
                     <h1 class="loginTitle">Donde los creadores unen sus fuerzas para innovar.</h1>
-                    <div class="column">
-                        <button class="btn btn-primary btn-option-login" @click="() => this.login = true">Iniciar sesión</button>
-                        <button class="btn btn-secondary btn-option-login">
-                            <router-link to="/signup" class="text-white">
-                                Registrarse
-                            </router-link>
-                        </button>
+                    <div class="button-row">
+                        <div>
+                            <button class="btn btn-primary btn-option-login" @click="() => this.login = true">Iniciar sesión</button>
+                        </div>
+                        <div>
+                            <button class="btn btn-secondary btn-option-login">
+                                <router-link to="/signup" class="text-white">
+                                    Registrarse
+                                </router-link>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div v-if="login == true">
@@ -34,7 +38,7 @@
                     </div>
                     <button class="btn btn-primary btn-login" id="dynamicButton" v-on:click="signInWithEmailAndPassword">Iniciar sesión</button>
                     <div style="margin-top: 12px">
-                        <span style="font-size: 13px">También puedes
+                        <span style="font-size: 14px">También puedes
                             <a href="/forgot" class="forgot-password">restablecer tu contraseña</a>
                         </span>
                     </div>
