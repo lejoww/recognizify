@@ -1,14 +1,14 @@
 <template>
     <div class="lateralPanelTasksContainer">
         <div class="lateralPanelTasksHeader">
-            <h6 style="font-family: 'cooper_hewittsemibold'">Tareas en tu proyecto</h6>
+            <h6 style="font-weight: 800">Tareas en tu proyecto</h6>
             <a class="btn btn-outline-dark" :href="`/dashboard/project/${this.$route.params.projectId}/tasks`" style="width: 92px">Administrar</a>
         </div>
         <div v-if="tasks.length >= 1">
             <TaskSelector :task="task.todo" :publisher="task.creator" :id="task.id" :isDone="task.isDone" :key="task" v-for="task in tasks"/>
         </div>
         <div v-else class="nonTasksContent">
-            <h6 style="font-family: 'cooper_hewittsemibold'; color: #9e95aa; margin: 0">No hay tareas aquí</h6>
+            <h6 style="font-weight: 600; color: #9e95aa; margin: 0">No hay tareas aquí</h6>
             <small style="color: #9e95aa">Pero calma, con paciencia se logra.</small>
         </div>
     </div>

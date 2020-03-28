@@ -4,11 +4,11 @@
             <div class="modal-content">
                 <div class="modal-body" style="border: none">
                     <span class="subtitleOverline text-primary">Últimas novedades</span>
-                    <h4>Destacar ideas en Boards</h4><br>
+                    <h4>Envio de correos automático</h4><br>
 
-                    <p>En el  menú de opciones de las ideas de Boards puedes destacar ideas que puedan
-                        ser relevantes para tu proyecto. Pronto tendremos otras opciones para uno de los
-                        módulos más importantes de la familia. </p>
+                    <p>Ahora Recognizify es más inteligente, dependiendo de las acciones
+                        en tus proyectos, se te enviarán correos con información a detalle
+                        que siempre pueden resultarte útiles.</p>
                     
                 </div>
                 <div class="modal-footer" style="border: none">

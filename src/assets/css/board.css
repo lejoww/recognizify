@@ -56,8 +56,8 @@
 
 .moduleIndicator {
     margin: -0.5em 1em 1em 1em; 
-    color: #A9A8C3; 
-    font-family: 'cooper_hewittsemibold'
+    color: #A9A8C3;
+    font-weight: 600;
 }
 
 a {
@@ -71,7 +71,6 @@ a {
 
     .form-control-variable {
         font-size: 27px;
-        font-family: 'cooper_hewittsemibold';
     }
 }
 

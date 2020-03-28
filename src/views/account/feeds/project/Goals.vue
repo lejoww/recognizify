@@ -8,7 +8,7 @@
                         <h2>
                             <div style="letter-spacing: -0.8x">
                                 Metas
-                                <h6 style="color: #A9A8C3; font-family: 'cooper_hewittsemibold'">Panel de Goals</h6>
+                                <h6 style="color: #A9A8C3; font-weight: 600">Panel de Goals</h6>
                             </div>
                             <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addGoalModal">
                                 <svg width="18" height="18" stroke="#ffffff" stroke-width="2">

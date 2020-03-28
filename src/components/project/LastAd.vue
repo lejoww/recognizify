@@ -36,7 +36,9 @@
                     <span style="color: #9e95aa; font-size: 13px">Puede que no haya mucho que contar o simplemente tu equipo no es muy sociable.</span>
                 </div>
             </div>
-            <a class="btn btn-primary" :href="`/dashboard/project/${this.$route.params.projectId}/ads`">Añade un anuncio</a>
+            <div>
+                <a class="btn btn-primary" :href="`/dashboard/project/${this.$route.params.projectId}/ads`">Añade un anuncio</a>
+            </div>
         </div>
     </div>
 </template>

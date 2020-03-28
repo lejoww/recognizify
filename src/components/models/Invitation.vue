@@ -26,7 +26,6 @@
     }
 
     .card-title {
-        font-family: 'cooper_hewittsemibold';
         margin-bottom: 4px !important;
     }
 

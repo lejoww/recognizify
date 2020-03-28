@@ -1,9 +1,9 @@
 <template>
     <div class="projectSummaryPurpleCard">
-        <canvas id="canvas"></canvas>
-        <!-- <div class="nonActivityPoints" v-if="activityDates.length == 0 || activityDates.length == 1">
-            <p class="text-white">Aquí aparece la actividad de tu proyecto en estadísticas, comienza a usar más la app y poco a poco aparecerán nuevos puntos</p>
+        <!-- <div class="nonActivityPoints" v-if="activityPoints.length == 0 || activityPoints.length == 1">
+            <p class="text-dark">Aquí aparece la actividad de tu proyecto en estadísticas, comienza a usar más la app y poco a poco aparecerán nuevos puntos</p>
         </div> -->
+        <canvas id="canvas"></canvas>
     </div>
 </template>
 <style>
@@ -11,6 +11,10 @@
     #canvas {
         width: 100% !important;
         height: 100% !important;
+    }
+
+    .nonActivityPoints {
+        width: 100%;
     }
 
 </style>
@@ -98,6 +102,7 @@
                         this.activityPoints.push(date.data()['activityPoints'])
                     })
 
+                    console.log(this.activityDates)
                     this.setChart()
                 })
             }

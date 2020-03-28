@@ -187,7 +187,6 @@
                         })
                         .then(() => {
                             this.addActivityPoint()
-                            window.location.reload()
                         })
                         .catch(err => console.log(err))
                     })

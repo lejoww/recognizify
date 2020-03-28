@@ -1,7 +1,7 @@
 <template>
       <div class="dashboardContent">
           <!-- <Preloader/> -->
-          <!-- <Features/> -->
+          <Features/>
 
           <NonProjectsBanner v-if="projects.length == 0"/>
           <div class="rowStructure">
@@ -41,7 +41,7 @@
                     :projectName="project['name']"
                     :projectPhotoUrl="project['photoUrl']"
                     :projectId="project['id']"
-                    lastActivity="7 minutos"
+                    lastActivity="un tiempo"
                   />
                 </ul>
               </div>

@@ -4,7 +4,7 @@
         <div class="tasksLayout">
             <div class="tasksModuleHeader">
                 <h2>Tareas</h2>
-                <h6 style="color: #A9A8C3; font-family: 'cooper_hewittsemibold'">Panel de Tasks</h6>
+                <h6 style="color: #A9A8C3; font-weight: 600">Panel de Tasks</h6>
             </div>
             <div class="tasksContent">
                 <TasksTable/>

@@ -279,7 +279,7 @@ a:hover {
 }
 
 .formLayout .projectForm .projectFormSubtitle {
-    font-family: 'cooper_hewittsemibold';
+    font-weight: 600;
 }
 
 .projectForm::-webkit-scrollbar {

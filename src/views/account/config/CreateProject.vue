@@ -132,7 +132,8 @@
                         shortName: this.shortName,
                         description: this.description,
                         admin: [ user.uid ],
-                        creation: firebase.firestore.Timestamp.fromDate(new Date())
+                        creation: firebase.firestore.Timestamp.fromDate(new Date()),
+                        adminEmail: user.email
                     })
                     .then(() => {
                         firebase.firestore()

@@ -36,7 +36,7 @@
           </div>
         </div>
       </div>
-      <!-- <LateralPanelTasks/> -->
+      <LateralPanelTasks/>
     </div>
     <ProjectPanel/>
   </div>

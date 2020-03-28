@@ -1929,7 +1929,7 @@ select.form-control:focus::-ms-value {
   font-weight: 800;
   font-size: 0.83125rem;
   line-height: 1.5;
-  font-family: "cooper_hewittbold";
+  font-family: "Inter";
   color: #0B0B14;
   background-color: transparent;
   background-clip: padding-box;
@@ -2427,8 +2427,7 @@ input.form-control {
   font-size: 1rem;
   line-height: 100%;
   border-radius: 6px;
-  display: flex;
-  align-items: center;
+  line-height: 1;
   letter-spacing: 0.2px;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-bottom-width 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
