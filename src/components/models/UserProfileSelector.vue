@@ -1,11 +1,11 @@
 <template>
     <div class="userProfileSelectorContainer">
-        <div style="display: flex;">
+        <div style="display: flex; align-items: center">
             <div class="userProfileSelectorPicture">
                 <img :src="picture ? picture : require('@/assets/ilustrations/profile.png')" alt="">
             </div>
-            <div>
-                <h6 style="margin: 0; font-family: 'cooper_hewittsemibold">{{name}}</h6>
+            <div style="display: flex; flex-direction: column">
+                <span style="margin: 0; font-family: 'Inter'">{{name}}</span>
                 <span class="userProfileSelectorBio">{{bio.length < 35 ? `${bio}` : `${bio.slice(0, 35)}...`}}</span>
             </div>
         </div>

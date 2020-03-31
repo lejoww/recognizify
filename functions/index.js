@@ -20,7 +20,7 @@ exports.sendNewProjectMail = functions.firestore
 .document('projects/{projectId}')
 .onCreate((project, context) => {
     const mail = {
-        from: 'Recognizify',
+        from: 'Recognizify <mailer.recognizify@gmail.com>',
         to: project.data().adminEmail,
         subject: `En tus manos está ${project.data().shortName}`,
         html: `
