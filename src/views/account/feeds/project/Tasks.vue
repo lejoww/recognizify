@@ -2,19 +2,19 @@
 <template>
     <div class="dashboardContent">
         <div class="tasksLayout">
-            <div class="tasksModuleHeader">
-                <h2>Tareas</h2>
-                <h6 style="color: #A9A8C3; font-weight: 600">Panel de Tasks</h6>
+            <div class="tasksModuleHeader bg-gradient">
+                <div>
+                    <h2 class="text-white" style="font-weight: 800; margin-bottom: 4px">Tasks</h2>
+                    <span style="color: #A9A8C3; font-weight: 700">Panel de tareas</span>
+                </div>
+                <a :href="`/dashboard/project/${this.$route.params.projectId}/tasks/create`" 
+                class="btn btn-success" style="margin-left: 2rem">Nueva tarea</a>
             </div>
             <div class="tasksContent">
                 <TasksTable/>
-                <div style="grid-column: 2 / 3; margin: 2rem 0">
-                    <a :href="`/dashboard/project/${this.$route.params.projectId}/tasks/create`" 
-                    class="btn btn-success">Nueva tarea</a>
-                </div>
             </div>
-            <ProjectPanel/>
         </div>
+        <ProjectPanel/>
     </div>
 </template>
 <script>
