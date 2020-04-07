@@ -36,12 +36,12 @@
                             </svg>
                             <span style="margin-left: 6px">Articulos</span>
                         </a>
-                        <!-- <a class="btn btn-outline-dark" href="/account/admin/users/ban">
+                        <a class="btn btn-outline-dark" href="/account/admin/users/ban">
                             <svg class="feather-menu">
                                 <use xlink:href="@/assets/svg/feather-sprite.svg#alert-octagon" />
                             </svg>
                             <span style="margin-left: 6px">Prohibiciones</span>
-                        </a> -->
+                        </a>
                     </div>
                 </div>
                 <div class="modal-footer" style="border: none">
