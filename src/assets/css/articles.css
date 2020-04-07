@@ -6,3 +6,18 @@
 .articlesHeader h2 {
     letter-spacing: -0.8px;
 }
+
+.articleCard {
+    padding: 1rem;
+    background: #fefefe;
+    border-radius: 6px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    margin-top: 12px;
+    display: flex;
+}
+
+.articleCardTitle {
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 17px;
+}

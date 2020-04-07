@@ -54,7 +54,7 @@
 <style scoped>
 
     .editorSubtitle {
-        font-family: 'cooper_hewittsemibold';
+        font-weight: 700;
         font-size: 14px;
         margin: 0;
     }
@@ -102,6 +102,7 @@
     import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
     import firebase, { firestore } from 'firebase';
+    import { checkAdmin } from '@/assets/scripts/checkAdminPermissions.js'
 
     export default {
         data() {
@@ -120,8 +121,12 @@
                 }
             }
         },
+        mixins: [checkAdmin],
         components: {
             ckeditor: CKEditor.component
+        },
+        created(){
+            this.checkAdminProperties()
         },
         methods: {
             saveArticleImage: function(e){

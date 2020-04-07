@@ -146,6 +146,10 @@ const routes = [
       {
         path: 'admin/articles/new/article',
         component: () => import('./views/articles/NewArticle.vue')
+      },
+      {
+        path: 'admin/users/ban',
+        component: () => import('./views/bans/Form.vue')
       }
     ]
   }

@@ -30,12 +30,18 @@
                 <div class="padding-rank" v-if="user.roles.admin == true">
                     <h6>Opciones de administrador</h6>
                     <div class="rank">
-                        <a class="btn btn-outline-dark" href="/account/admin/articles/new/article">
+                        <a class="btn btn-outline-dark" href="/account/admin/articles/panel">
                             <svg class="feather-menu">
                                 <use xlink:href="@/assets/svg/feather-sprite.svg#book" />
                             </svg>
                             <span style="margin-left: 6px">Articulos</span>
                         </a>
+                        <!-- <a class="btn btn-outline-dark" href="/account/admin/users/ban">
+                            <svg class="feather-menu">
+                                <use xlink:href="@/assets/svg/feather-sprite.svg#alert-octagon" />
+                            </svg>
+                            <span style="margin-left: 6px">Prohibiciones</span>
+                        </a> -->
                     </div>
                 </div>
                 <div class="modal-footer" style="border: none">
