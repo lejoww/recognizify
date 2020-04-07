@@ -11,7 +11,7 @@
                         <div class="profilePictureContainer">
                             <img :src="article.publisherPhoto ? article.publisherPhoto : require('@/assets/ilustrations/profile.png')" alt="">
                         </div>
-                        <span class="text-white autor">{{article.publisherName}}</span>
+                        <span class="text-white autor">{{article.publisherName}}  <span class="badge badge-secondary">Miembro del equipo</span></span>
                     </div>
                 </router-link>
                 <div v-if="admin == true" @click="deleteArticle">
