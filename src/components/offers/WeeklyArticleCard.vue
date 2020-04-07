@@ -5,7 +5,7 @@
                     <span class="badge badge-primary">Artículo semanal</span>
                     <!-- <small class="text-warning" style="font-weight: 900; letter-spacing: -0.4px">ÚLTIMO ARTÍCULO DEL BLOG</small> -->
                     <h2 class="text-white" style="font-family: 'Inter'; font-weight: 800; margin-top: 12px; line-height: 1.2">{{article.title}}</h2>
-                    <p class="text-warning" style="font-weight: 600">{{article.abstract}}</p>
+                    <p class="text-warning" style="font-weight: 600; letter-spacing: 0.4px">{{article.abstract}}</p>
 
                     <div class="weeklyArticleCardPublisher">
                         <div class="profilePictureContainer">
@@ -28,7 +28,7 @@
 
     .weeklyArticleCardContainer {
         width: 100%;
-        height: 262px;
+        /* height: 262px; */
         /* max-height: 312px; */
         border-radius: 7px;
         /* background: #1D0F31; */

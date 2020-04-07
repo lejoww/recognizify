@@ -43,7 +43,6 @@
     .weeklyArticlePageBackButton {
         padding: 7px 12px;
         background: rgba(0, 0, 0, 0.5);
-        font-family: 'cooper_hewittsemibold';
         font-size: 16px;
         color: #f2f2f2;
         border-radius: 3px
@@ -55,6 +54,7 @@
         align-items: center;
         margin: 0 auto;
         margin-top: 4rem;
+        margin-bottom: 2rem;
     }
     
     .weeklyArticlePublisherPicture {

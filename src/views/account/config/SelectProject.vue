@@ -1,7 +1,7 @@
 <template>
       <div class="dashboardContent">
           <!-- <Preloader/> -->
-          <Features/>
+          <!-- <Features/> -->
 
           <NonProjectsBanner v-if="projects.length == 0"/>
           <div class="rowStructure">
