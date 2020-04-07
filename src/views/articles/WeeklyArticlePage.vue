@@ -63,6 +63,8 @@
         border-radius: 21px;
         overflow: hidden;
         margin-right: 12px;
+        display: flex;
+        align-items: center;
 
     }
 
