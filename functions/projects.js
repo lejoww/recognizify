@@ -3,7 +3,7 @@ const admin = require('firebase-admin');
 const uuidv1 = require('uuid').v1;
 
 exports.createProject = functions.https.onCall((req, contx) => {
-    const uid = uuidv1()
+    const uid = uuidv1();
     return admin.firestore()
     .collection('projects')
     .doc(uid)
@@ -31,9 +31,11 @@ exports.createProject = functions.https.onCall((req, contx) => {
                 user: userdata.data()['user'],
                 member: true,
                 role: ''
-            })
-        })
-
-        return {status: 'ok'}
+            });
+        });
+        return { status: 'ok' };
     })
+    .catch(() => {
+        throw new functions.https.HttpsError('invalid-error', 'Unable to add project to database.');
+    });
 })

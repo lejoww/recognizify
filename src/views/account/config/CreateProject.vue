@@ -1,5 +1,6 @@
 <template>
     <div class="dashboardContent">
+        <Loading v-if="this.loading != false"/>
         <div class="formLayout">
             <div class="projectForm">
                 <div class="robotDialog">
@@ -106,6 +107,7 @@
     
     import '@/assets/css/feed.css'
     import '@/assets/scripts/checkActiveSession.js'
+    import Loading from '../../Loading.vue';
 
     export default {
         data() {
@@ -114,11 +116,16 @@
                 shortName: '',
                 description: '',
                 projectuid: '',
-                type: ''
+                type: '',
+                loading: false
             }
+        },
+        components: {
+            Loading
         },
         methods: {
             createProjectOnDatabase: function(){
+                this.loading = true;
                 firebase.auth().onAuthStateChanged(user => {
                     if (user) {
                         const projectParams = {
