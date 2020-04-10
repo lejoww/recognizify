@@ -120,45 +120,21 @@
         methods: {
             createProjectOnDatabase: function(){
                 firebase.auth().onAuthStateChanged(user => {
-                    if(this.projectuid == undefined || this.projectuid == ''){
-                        this.projectuid = uuidv1()
+                    if (user) {
+                        const projectParams = {
+                            largeName: this.largeName,
+                            shortName: this.shortName,
+                            description: this.description,
+                        }
+                        var createProject = firebase.functions().httpsCallable('createProject');
+                        createProject(projectParams).then(res => {
+                            if (res.data.status == 'ok') {
+                                this.$router.push('/dashboard/select')
+                            } else { 
+                                alert('No se ha podido crear el proyecto')
+                            }
+                        }).catch((err) => console.log(err))
                     }
-
-                    firebase.firestore()
-                    .collection('projects')
-                    .doc(this.projectuid)
-                    .set({
-                        name: this.largeName,
-                        shortName: this.shortName,
-                        description: this.description,
-                        admin: [ user.uid ],
-                        creation: firebase.firestore.Timestamp.fromDate(new Date()),
-                        adminEmail: user.email
-                    })
-                    .then(() => {
-                        firebase.firestore()
-                        .collection('users')
-                        .doc(user.uid)
-                        .get()
-                        .then(userdata => {
-                            firebase.firestore()
-                            .collection('projects')
-                            .doc(this.projectuid)
-                            .collection('members')
-                            .doc(user.uid)
-                            .set({
-                                name: userdata.data()['name'],
-                                user: userdata.data()['user'],
-                                member: true,
-                                role: ''
-                            })
-                            .then(() => this.$router.push('/dashboard/select'))
-                            .catch(err => console.error(err))
-                        })
-                        .catch(err => console.error(err))
-
-                    })
-                    .catch(err => console.error(err))
                 })
             },
             uploadImageToServer: function(e, code){
