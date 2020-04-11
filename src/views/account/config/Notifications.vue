@@ -11,17 +11,14 @@
 
                     <h2>
                         Notificaciones
-                        <svg class="feather-dark">
-                            <use xlink:href="@/assets/svg/feather-sprite.svg#mail"/>
-                        </svg>
                     </h2>
                     <Invitation :key="invitation" v-for="invitation in invitationsList" :name="invitation.name" :id="invitation.id" :description="invitation.description" :invite="invitation.inviteBy" />
 
-                    <h6 v-if="invitationsList.length == 0">
+                    <h6 v-if="invitationsList.length == 0" style="font-weight: 400">
                         <svg class="feather-dark">
                             <use xlink:href="@/assets/svg/feather-sprite.svg#alert-circle" />
                         </svg>
-                        No tienes invitaciones por el momento.
+                        No tienes nada por el momento.
                     </h6>
                 </div>
             </div>

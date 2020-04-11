@@ -3,7 +3,7 @@
     <CreateProjectLinkModal/>
     <div class="feedLayout">
       <div class="feedBackground">
-        <div class="headerRank" style="padding: 24px">
+        <div class="headerRank">
           <h4 class="text-white" style="letter-spacing: -0.2px">{{projectName}}</h4>
           <div style="margin-left: 1rem">
             <!-- <div class="projectState">
@@ -35,7 +35,7 @@
           </span>
           <div class="projectCards">
             <LinkCard :key="link" v-for="link in links" :title="link.title" :description="link.description" :link="link.url" :id="link.id"/>
-            <p v-if="links.length == 0" style="font-size: 13px; font-weight: 600; color: #cecece;">
+            <p v-if="links.length == 0" style="font-size: 13px; font-weight: 600; color: #cecece; margin-left: 1rem; text-align: center; width: 100%">
               No hay enlaces aquí. Crea el primero ahí arriba
             </p>
           </div>
