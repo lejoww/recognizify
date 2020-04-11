@@ -1,5 +1,5 @@
 <template>
-    <div class="activityPointsContainer" data-toggle="tooltip" data-placement="bottom" title="Son puntos recolectados de las acciones de tu equipo dentro de la app">
+    <div class="activityPointsContainer" data-toggle="tooltip" data-placement="right" title="Son puntos recolectados de las acciones de tu equipo dentro de la app">
         <h1 class="activityPointsNumber">{{activityPoints}}</h1>
         <span class="activityPointsTitle">Puntos de actividad</span>
         <p class="activityPointsInstruct">Mientras más consigas, puedes ser uno de los mejores proyectos en el listado.</p>
@@ -10,10 +10,10 @@
     .activityPointsContainer {
         padding: 18px;
         background: #fff;
-        border: 1px solid #f6f6f6;
+        border: 1px solid #e4e4e4;
         border-radius: 6px;
         margin: 8px;
-        border-bottom: 3px solid #8400ff;
+        /* border-bottom: 3px solid #8400ff; */
     }
 
     .activityPointsNumber {

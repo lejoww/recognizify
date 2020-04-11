@@ -16,7 +16,7 @@
         border: none;
         background: rgb(132, 0, 255);
         position: absolute;
-        top: 65px;
+        top: 114px;
         right: 14px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         z-index: 2;

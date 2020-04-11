@@ -8,7 +8,7 @@
                 <button class="btn btn-info" style="margin-left: 7px" disabled>Alertar al equipo</button>
             </div>
         </div>
-        <GeneralStatistic/>
+        <!-- <GeneralStatistic/> -->
     </div>
 </template>
 <style>

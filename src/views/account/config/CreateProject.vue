@@ -133,7 +133,7 @@
                             shortName: this.shortName,
                             description: this.description,
                         }
-                        var createProject = firebase.functions().httpsCallable('createProject');
+                        const createProject = firebase.functions().httpsCallable('createProject');
                         createProject(projectParams).then(res => {
                             if (res.data.status == 'ok') {
                                 this.$router.push('/dashboard/select')

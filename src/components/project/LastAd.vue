@@ -49,10 +49,9 @@
         display: block;
         padding: 18px;
         background: #fff;
-        border: 1px solid #f6f6f6;
+        border: 1px solid #e4e4e4;
         border-radius: 6px;
         margin: 8px;
-        border-bottom: 3px solid #8400ff;
     }
 
     .nonAdContainer {

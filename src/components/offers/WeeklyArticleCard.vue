@@ -14,10 +14,6 @@
                         <span class="text-white autor">{{article.publisherName}}  <span class="badge badge-secondary">Miembro del equipo</span></span>
                     </div>
                 </router-link>
-                <div v-if="admin == true" @click="deleteArticle">
-                    <br>
-                    <button class="btn btn-danger">Eliminar artículo</button>
-                </div>
             </div>
             <div class="bg-success postImageContainer" style="width: 50%; height: 100%;">
                 <img src="@/assets/ilustrations/meeting.png" class="postImage" style="position:relative; right: -82px">
@@ -106,6 +102,12 @@
     @media screen and (max-width: 1258px) {
         .weeklyArticleCardContainer {
             height: 312px;
+        }
+    }
+
+    @media screen and (max-width: 536px) {
+        .weeklyArticleCardContainer {
+            border-radius: 0;
         }
     }
 

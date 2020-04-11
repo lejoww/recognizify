@@ -2,41 +2,47 @@
   <div class="dashboardContent" style="background: #FAFAFA">
     <CreateProjectLinkModal/>
     <div class="feedLayout">
-      <div class="projectSummaryData">
+      <div class="feedBackground">
         <div class="headerRank" style="padding: 24px">
-          <h4 style="letter-spacing: -0.2px">{{projectName}}</h4>
+          <h4 class="text-white" style="letter-spacing: -0.2px">{{projectName}}</h4>
           <div style="margin-left: 1rem">
-            <div class="projectState">
+            <!-- <div class="projectState">
               Activo
-            </div>
+            </div> -->
           </div>
+
         </div>
-        <div class="rank">
-          <ProjectBalance/>
+      </div>
+      <div class="feedDivider">
+        <div class="projectSummaryData">
+            <div class="rank">
+              <ProjectBalance/>
+            </div>
+          <!-- <GeneralStatistic/> -->
+          <div class="rank" style="display: flex">
+            <!-- <FeaturedGoal/> -->
+            <ActivityPoints/>
+            <LastAd/>
+          </div>
+          <br>
         </div>
-        <!-- <GeneralStatistic/> -->
-        <div class="rank" style="display: flex">
-          <!-- <FeaturedGoal/> -->
-          <ActivityPoints/>
-          <LastAd/>
-        </div>
-        <br>
-        <div class="linksSection">
+        <div class="linksSection bg-secondary">
           <span class="linksSectionTitle text-white">
             Enlaces 
-            <button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#projectCardModal" style="margin-left: 0.3rem">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#projectCardModal" style="margin-left: 0.3rem">
               Crear enlace
             </button>
           </span>
           <div class="projectCards">
             <LinkCard :key="link" v-for="link in links" :title="link.title" :description="link.description" :link="link.url" :id="link.id"/>
-            <span v-if="links.length == 0" style="margin: 5px 10px; font-size: 13px; font-weight: 600; color: rgb(255, 197, 215)">
+            <p v-if="links.length == 0" style="font-size: 13px; font-weight: 600; color: #cecece;">
               No hay enlaces aquí. Crea el primero ahí arriba
-            </span>
+            </p>
           </div>
         </div>
       </div>
-      <LateralPanelTasks/>
+        <!-- <LateralPanelTasks/> -->
+
     </div>
     <ProjectPanel/>
   </div>

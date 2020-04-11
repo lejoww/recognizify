@@ -61,7 +61,7 @@ body {
   line-height: 1.5;
   color: #0B0B14;
   text-align: left;
-  background-color: #f1f2f7;
+  background-color: white;
 }
 
 [tabindex="-1"]:focus {
@@ -477,7 +477,7 @@ mark,
 
 .img-thumbnail {
   padding: 0.25rem;
-  background-color: #f1f2f7;
+  background-color: white;
   border: 1px solid #B0B0C4;
   border-radius: 0.25rem;
   max-width: 100%;
@@ -3544,13 +3544,13 @@ input[type=button].btn-block {
   outline: none;
 }
 .custom-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #f1f2f7, none;
+  box-shadow: 0 0 0 1px white, none;
 }
 .custom-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #f1f2f7, none;
+  box-shadow: 0 0 0 1px white, none;
 }
 .custom-range:focus::-ms-thumb {
-  box-shadow: 0 0 0 1px #f1f2f7, none;
+  box-shadow: 0 0 0 1px white, none;
 }
 .custom-range::-moz-focus-outer {
   border: 0;
@@ -3718,8 +3718,8 @@ input[type=button].btn-block {
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
   color: #303049;
-  background-color: #f1f2f7;
-  border-color: #B0B0C4 #B0B0C4 #f1f2f7;
+  background-color: white;
+  border-color: #B0B0C4 #B0B0C4 white;
 }
 .nav-tabs .dropdown-menu {
   margin-top: -1px;

@@ -9,7 +9,7 @@
             </a>
         </div>
         <p>{{this.description}}</p>
-        <a :href="this.link" style="color: #0088FF; text-decoration-line: overline; font-size: 13px; font-weight: 600">
+        <a :href="this.link" style="color: #0041AA; font-weight: 900; text-decoration-line: overline; font-size: 13px;">
             <svg class="feather-link">
                 <use xlink:href="@/assets/svg/feather-sprite.svg#link" />
             </svg>

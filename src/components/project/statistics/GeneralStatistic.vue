@@ -47,7 +47,7 @@
                             data: this.activityPoints,
                             borderColor: '#6610F2',
                             borderWidth: 3,
-                            backgroundColor: '#fafafa'
+                            backgroundColor: '#fff'
                         }]
                     },
                     options: {
