@@ -40,7 +40,8 @@
 
     @media screen and (max-width: 662px) {
         .projectBalanceContainer {
-            flex-direction: column-reverse;
+            /* flex-direction: column-reverse; */
+            height: 189px;
         }
     }
 
