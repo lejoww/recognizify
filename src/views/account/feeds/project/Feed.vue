@@ -26,18 +26,20 @@
           </div>
           <br>
         </div>
-        <div class="linksSection bg-secondary">
-          <span class="linksSectionTitle text-white">
-            Enlaces 
-            <button class="btn btn-primary" data-toggle="modal" data-target="#projectCardModal" style="margin-left: 0.3rem">
-              Crear enlace
-            </button>
-          </span>
-          <div class="projectCards">
-            <LinkCard :key="link" v-for="link in links" :title="link.title" :description="link.description" :link="link.url" :id="link.id"/>
-            <!-- <p v-if="links.length == 0" style="font-size: 13px; font-weight: 600; color: #cecece; margin-left: 1rem; text-align: center; width: 100%">
-              No hay enlaces aquí. Crea el primero ahí arriba
-            </p> -->
+        <div>
+          <div class="linksSection bg-secondary">
+            <span class="linksSectionTitle text-white">
+              Enlaces 
+              <button class="btn btn-primary" data-toggle="modal" data-target="#projectCardModal" style="margin-left: 0.3rem">
+                Crear enlace
+              </button>
+            </span>
+            <div class="projectCards">
+              <LinkCard :key="link" v-for="link in links" :title="link.title" :description="link.description" :link="link.url" :id="link.id"/>
+              <!-- <p v-if="links.length == 0" style="font-size: 13px; font-weight: 600; color: #cecece; margin-left: 1rem; text-align: center; width: 100%">
+                No hay enlaces aquí. Crea el primero ahí arriba
+              </p> -->
+            </div>
           </div>
         </div>
       </div>
