@@ -3,9 +3,8 @@
           <!-- <Preloader/> -->
           <!-- <Features/> -->
 
-          <NonProjectsBanner /> 
-          <!-- v-if="projects.length == 0" -->
-          <div class="rowStructure">
+          <NonProjectsBanner v-if="projects.length == 0"/> 
+          <div class="rowStructure" v-else>
             <div class="helperCard">
               <WeeklyArticleCard/>
               <div class="asesor">
