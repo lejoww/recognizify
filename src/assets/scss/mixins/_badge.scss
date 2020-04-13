@@ -1,6 +1,6 @@
 @mixin badge-variant($bg) {
-  color: darken($bg, 6%);
-  background-color: lighten($bg, 35%);
+  color: lighten($bg, 35%);
+  background-color: darken($bg, 6%);
 
   @at-root a#{&} {
     @include hover-focus {

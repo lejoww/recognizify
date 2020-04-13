@@ -1,11 +1,10 @@
 
 
 .projectSummaryGoalNotice {
-    width: 64%;
-    margin: 0 1rem;
-    background-size: cover;
+    width: 100%;
+    background: rgb(55, 0, 144);
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.08);
-    border-radius: 4px;
+    border-radius: 7px 7px 0 0;
     overflow: hidden;
     display: flex;
     align-items: flex-end;
@@ -39,16 +38,27 @@
     text-align: center;
 }
 
+.profilePhotoContainer {
+    width: 27px;
+    height: 27px;
+    border-radius: 27px;
+    overflow: hidden;
+}
+
+.goalNoticeLastTask {
+    display: flex;
+    align-items: center;
+}
+
+.goalNoticeLastTask span {
+    margin-left: 10px;
+}
+
+.profilePhotoContainer img {
+    width: 100%;
+}
+
 @keyframes showGoalNotice {
     0% { opacity: 0; }
     100% { opacity: 1; }
-}
-
-@media screen and (max-width: 991px){
-    .projectSummaryGoalNotice { width: 50%; }
-}
-
-
-@media screen and (max-width: 786px){
-    .projectSummaryGoalNotice { width: 100%; }
 }

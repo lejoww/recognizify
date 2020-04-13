@@ -15,23 +15,25 @@
       </div>
       <div class="feedDivider">
         <div class="projectSummaryData">
-            <div class="rank">
-              <ProjectBalance/>
-            </div>
+          <div class="rank" style="padding: 0">
+            <FeaturedGoal/>
+          </div>
+          <div class="rank">
+            <ProjectBalance/>
+          </div>
           <!-- <GeneralStatistic/> -->
           <div class="rank" style="display: flex">
-            <!-- <FeaturedGoal/> -->
             <ActivityPoints/>
             <LastAd/>
           </div>
           <br>
         </div>
-        <div>
+        <div class="linkSectionContainer">
           <div class="linksSection bg-secondary">
             <span class="linksSectionTitle text-white">
               Enlaces 
-              <button class="btn btn-primary" data-toggle="modal" data-target="#projectCardModal" style="margin-left: 0.3rem">
-                Crear enlace
+              <button class="btn btn-warning" data-toggle="modal" data-target="#projectCardModal" style="margin-left: 0.3rem">
+                Añade enlaces
               </button>
             </span>
             <div class="projectCards">
@@ -62,6 +64,7 @@
   import LastAd from '@/components/project/LastAd.vue';
   import LateralPanelTasks from '@/components/project/LateralPanelTasks.vue';
   import ProjectBalance from '@/components/project/statistics/ProjectBalance.vue';
+  import FeaturedGoal from '@/components/project/FeaturedGoal.vue';
 
   import Vue from 'vue';
   import "@/assets/css/feed.css";
@@ -85,7 +88,8 @@
       ActivityPoints,
       LastAd,
       LateralPanelTasks,
-      ProjectBalance
+      ProjectBalance,
+      FeaturedGoal
     },
     mixins: [CheckProjectMember],
     created: function() {

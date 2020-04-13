@@ -4404,16 +4404,15 @@ input[type=button].btn-block {
 
 .badge {
   display: inline-block;
-  padding: 4px 9px;
+  padding: 6px 12px;
   font-size: 75%;
-  font-family: "Source sans pro";
+  font-family: "Nunito Sans";
   font-weight: 700;
   font-size: 14px;
-  line-height: 1;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  border-radius: 3px;
+  border-radius: 47px;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-bottom-width 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   letter-spacing: normal;
 }
@@ -4442,8 +4441,8 @@ a.badge:hover, a.badge:focus {
 }
 
 .badge-primary {
-  color: #590cd8;
-  background-color: #d2b9fb;
+  color: #d2b9fb;
+  background-color: #590cd8;
 }
 a.badge-primary:hover, a.badge-primary:focus {
   color: #F2F2F2;
@@ -4455,8 +4454,8 @@ a.badge-primary:focus, a.badge-primary.focus {
 }
 
 .badge-secondary {
-  color: #0f081a;
-  background-color: #6e39ba;
+  color: #6e39ba;
+  background-color: #0f081a;
 }
 a.badge-secondary:hover, a.badge-secondary:focus {
   color: #F2F2F2;
@@ -4468,8 +4467,8 @@ a.badge-secondary:focus, a.badge-secondary.focus {
 }
 
 .badge-success {
-  color: #6138ac;
-  background-color: #d5c8ed;
+  color: #d5c8ed;
+  background-color: #6138ac;
 }
 a.badge-success:hover, a.badge-success:focus {
   color: #F2F2F2;
@@ -4481,8 +4480,8 @@ a.badge-success:focus, a.badge-success.focus {
 }
 
 .badge-info {
-  color: #babad1;
-  background-color: white;
+  color: white;
+  background-color: #babad1;
 }
 a.badge-info:hover, a.badge-info:focus {
   color: #0B0B14;
@@ -4494,8 +4493,8 @@ a.badge-info:focus, a.badge-info.focus {
 }
 
 .badge-warning {
-  color: #ff2d54;
-  background-color: white;
+  color: white;
+  background-color: #ff2d54;
 }
 a.badge-warning:hover, a.badge-warning:focus {
   color: #F2F2F2;
@@ -4507,8 +4506,8 @@ a.badge-warning:focus, a.badge-warning.focus {
 }
 
 .badge-danger {
-  color: #cf2434;
-  background-color: #f6cdd1;
+  color: #f6cdd1;
+  background-color: #cf2434;
 }
 a.badge-danger:hover, a.badge-danger:focus {
   color: #F2F2F2;
@@ -4520,8 +4519,8 @@ a.badge-danger:focus, a.badge-danger.focus {
 }
 
 .badge-light {
-  color: #babad1;
-  background-color: white;
+  color: white;
+  background-color: #babad1;
 }
 a.badge-light:hover, a.badge-light:focus {
   color: #0B0B14;
@@ -4533,8 +4532,8 @@ a.badge-light:focus, a.badge-light.focus {
 }
 
 .badge-dark {
-  color: black;
-  background-color: #4a4a87;
+  color: #4a4a87;
+  background-color: black;
 }
 a.badge-dark:hover, a.badge-dark:focus {
   color: #F2F2F2;
@@ -4546,8 +4545,8 @@ a.badge-dark:focus, a.badge-dark.focus {
 }
 
 .badge-nav {
-  color: #182931;
-  background-color: #669ab5;
+  color: #669ab5;
+  background-color: #182931;
 }
 a.badge-nav:hover, a.badge-nav:focus {
   color: #F2F2F2;
@@ -4738,7 +4737,7 @@ a.badge-nav:focus, a.badge-nav.focus {
   overflow: hidden;
   font-size: 0.7125rem;
   background-color: #CCCCDD;
-  border-radius: 0.25rem;
+  border-radius: 1rem;
 }
 
 .progress-bar {
