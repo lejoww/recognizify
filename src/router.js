@@ -10,6 +10,10 @@ const routes = [
     redirect: '/signin'
   },
   {
+    path: '*',
+    component: () => import('./views/error/404.vue')
+  },
+  {
     path: '/articles/weekly',
     name: 'weekly_article',
     component: () => import('./views/articles/WeeklyArticlePage.vue')
