@@ -24,6 +24,8 @@
                 <li>Personas flotando en el espacio <a href="https://www.freepik.es/fotos-vectores-gratis/fondo">Vector de Fondo creado por freepik - www.freepik.es</a></li>
                 <li>Fondo del espacio <a href="https://www.freepik.es/fotos-vectores-gratis/negocios">Vector de Negocios creado por coolvector - www.freepik.es</a></li>
                 <li>Aviso de atención <a href="https://www.freepik.com/free-photos-vectors/template">Template vector created by freepik - www.freepik.com</a></li>
+                <li>Computadora con estadísticas <a href="https://www.freepik.com/free-photos-vectors/design">Design vector created by upklyak - www.freepik.com</a></li>
+                <li>Celular con datos de cuenta <a href="https://www.freepik.com/free-photos-vectors/design">Design vector created by upklyak - www.freepik.com</a></li>
             </ul>
         </div>
     </div>

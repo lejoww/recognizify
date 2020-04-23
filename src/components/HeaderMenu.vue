@@ -3,7 +3,9 @@
     <div class="headerMenu">
       <div class="headerWrapper">
         <div class="headerBrand">
-          <img src="@/assets/isotipe-color.svg" width="48px">
+          <router-link to="/dashboard/select">
+            <img src="@/assets/isotipe-color.svg" width="48px">
+          </router-link>
           <input type="text" 
           class="form-control-navbar inputSearch" 
           placeholder="Busca aquí usuarios" 

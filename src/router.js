@@ -156,6 +156,10 @@ const routes = [
         component: () => import('./views/bans/Form.vue')
       }
     ]
+  },
+  {
+    path: '/help',
+    component: () => import('./views/help/Home.vue')
   }
 ]
 
