@@ -23,7 +23,7 @@
 <script>
 
   import '@/assets/dist/css/bootstrap.css'
-  import '@/assets/dist/js/bootstrap.js'
+  import '@/assets/dist/js/bootstrap.min.js'
   // import '@/assets/css/main.css'
   import '@/assets/scripts/firebase-init.js'
 

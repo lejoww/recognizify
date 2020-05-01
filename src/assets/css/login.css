@@ -3,6 +3,8 @@
 div#login {
     height: calc(100vh - 56px - 68px);
     display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
     align-items: center;
     padding: 0 7rem;
 }
@@ -24,7 +26,7 @@ div#register .form-images img {
 }
 
 div#login .form-container {
-    width: 42%;
+    width: 50%;
 }
 
 div#login .form-content .login-small {
@@ -273,9 +275,9 @@ input:checked + .slider:before {
     /* font-weight: 700; */
 }
 
-.button-row {
+.button-column {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .button-row button {
@@ -328,4 +330,37 @@ input:checked + .slider:before {
 .ml6 .letter {
     display: inline-block;
     line-height: 1em;
+}
+
+.slideshow {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+[data-component="slideshow"] .slide {
+	display: none;
+}
+
+[data-component="slideshow"] .slide.active {
+    display: block;
+    text-align: center;
+    animation: showSlide 1s forwards;
+}
+
+[data-component="slideshow"] .slide.active h4 {
+    font-weight: 400;
+}
+
+.carouselImage {
+    width: 90%;
+}
+
+@keyframes showSlide {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

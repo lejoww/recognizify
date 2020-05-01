@@ -6,23 +6,43 @@
                 <h4 style="letter-spacing: -1px">Procesando tus datos...</h4>
             </div>
         </div>
-        <img class="loginSpaceBackground" src="@/assets/ilustrations/space.png">
         <div class="instructCopy">
             <span class="text-gray">Las imagenes en la aplicación no son de nuestra autoría. Si deseas saber más, ingresa a <router-link to="/credits" class="text-dark">nuestro sitio de referencias.</router-link></span>
         </div>
         <div id="login">
+            <div class="slideshow" id="slideshow-example" data-component="slideshow">
+                <div role="list">
+                    <div class="slide active">
+                        <img class="carouselImage" src="@/assets/ilustrations/people.png" alt="">
+                        <h4 class="carouselTitle">Conecta con tu equipo</h4>
+                        <span>Tu equipo en comunicación constante</span>
+                    </div>
+                    <div class="slide">
+                        <img class="carouselImage" src="@/assets/ilustrations/professionals.png" alt="">
+                        <br>
+                        <h4 class="carouselTitle" style="margin-top: 2rem">Sé un profesional en tu área</h4>
+                        <span>También capacitamos en gestión de proyectos</span>
+                    </div>
+                </div>
+            </div>
             <div class="form-container">
                 <img src="@/assets/logo-common-cutted.png" alt="Logotipo de Recognizify" width="148px">
                 <div v-if="login == false">
                     <h1 class="loginTitle">Donde los creadores unen sus fuerzas para innovar.</h1>
-                    <div class="button-row">
+                    <div class="button-column">
                         <div>
-                            <button class="btn btn-primary btn-option-login" @click="() => this.login = true">Iniciar sesión</button>
+                            <button class="btn btn-primary btn-option-login" @click="() => this.login = true" style="margin-bottom: 12px">
+                                Continuar con correo electrónico
+                                <svg class="feather-menu">
+                                    <use xlink:href="@/assets/svg/feather-sprite.svg#arrow-right" stroke="#fff" />
+                                </svg>
+                            </button>
                         </div>
                         <div>
-                            <button class="btn btn-secondary btn-option-login">
-                                <router-link to="/signup" class="text-white">
-                                    Registrarse
+                            <button class="btn btn-outline-dark btn-option-login">
+                                <router-link to="/404" class="text-dark">
+                                    Continuar con Google
+                                    <img src="@/assets/ilustrations/google.png" width="19">
                                 </router-link>
                             </button>
                         </div>
@@ -72,10 +92,22 @@
         components: {
             BannerNotice
         },
-        created: function (){
+        mounted(){
             firebase.auth().onAuthStateChanged(user => {
                 if (user) { window.location = '/dashboard/select' }
             })
+            const slideshows = document.querySelectorAll('[data-component="slideshow"]');
+            slideshows.forEach((slideshow) => {
+                let slides = document.querySelectorAll(`#${slideshow.id} [role="list"] .slide`);
+                var index = 0, time = 5000;
+                slides[index].classList.add('active');
+                setInterval( () => {
+                    slides[index].classList.remove('active');
+                    index++;
+                    if (index === slides.length) index = 0;
+                    slides[index].classList.add('active');
+                }, time);
+            });
         },
         methods: {
             signInWithEmailAndPassword: function(){

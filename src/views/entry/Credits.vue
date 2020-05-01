@@ -26,6 +26,8 @@
                 <li>Aviso de atención <a href="https://www.freepik.com/free-photos-vectors/template">Template vector created by freepik - www.freepik.com</a></li>
                 <li>Computadora con estadísticas <a href="https://www.freepik.com/free-photos-vectors/design">Design vector created by upklyak - www.freepik.com</a></li>
                 <li>Celular con datos de cuenta <a href="https://www.freepik.com/free-photos-vectors/design">Design vector created by upklyak - www.freepik.com</a></li>
+                <li>Equipo chocando la mano <a href="https://www.freepik.com/free-photos-vectors/people">People vector created by stories - www.freepik.com</a></li>
+                <li>Profesionales <a href="https://www.freepik.com/free-photos-vectors/design">Design vector created by stories - www.freepik.com</a></li>
             </ul>
         </div>
     </div>

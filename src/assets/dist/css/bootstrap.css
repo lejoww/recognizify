@@ -2731,17 +2731,18 @@ input[type=button].btn-block {
 
 .btn-outline-dark {
   display: inline-block;
-  font-size: 12.5px;
+  font-size: 16px;
   font-family: "Nunito Sans";
-  font-weight: 500;
+  font-weight: 700;
   color: #303049;
   text-align: center;
   vertical-align: middle;
   user-select: none;
   background-color: transparent;
   border: 1px solid #dbdbdb;
-  padding: 4px 11px;
-  border-radius: 3px;
+  padding: 7px 17px;
+  border-radius: 6px;
+  line-height: 1.6;
 }
 .btn-outline-dark:hover {
   transition: all 0.2s ease;
