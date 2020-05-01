@@ -119,8 +119,8 @@ div#login .form-container .form-group input {
 
 @media screen and (max-width: 991px){
     div#login {
-        padding: 2rem;
-        flex-direction: column;
+        padding: 1rem;
+        flex-direction: row;
     }
 
     div#login .form-container{
@@ -157,14 +157,35 @@ div#login .form-container .form-group input {
 }
 
 @media screen and (max-width: 812px){
+    div#login {
+        flex-direction: column;
+    }
+
+    .slideshow {
+        width: 60% !important;
+    }
+
     .loginSpaceBackground {
         display: none;
     }
 }
 
 @media screen and (max-width: 680px) {
+    .slideshow {
+        width: 100% !important;
+    }
+
     div#login .form-container{
         width: 100%;
+        padding: 0 1em;
+    }
+
+    .loginTitle {
+        display: none;
+    }
+
+    .form-logo {
+        margin-bottom: 2rem;
     }
 
     .account-complete {

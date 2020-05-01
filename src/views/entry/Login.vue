@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="form-container">
-                <img src="@/assets/logo-common-cutted.png" alt="Logotipo de Recognizify" width="148px">
+                <img class="form-logo" src="@/assets/logo-common-cutted.png" alt="Logotipo de Recognizify" width="148px">
                 <div v-if="login == false">
                     <h1 class="loginTitle">Donde los creadores unen sus fuerzas para innovar.</h1>
                     <div class="button-column">
@@ -46,6 +46,7 @@
                                 </router-link>
                             </button>
                         </div>
+                        <br>
                     </div>
                 </div>
                 <div v-if="login == true">
