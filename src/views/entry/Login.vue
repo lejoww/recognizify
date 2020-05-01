@@ -39,11 +39,9 @@
                             </button>
                         </div>
                         <div>
-                            <button class="btn btn-outline-dark btn-option-login">
-                                <router-link to="/404" class="text-dark">
-                                    Continuar con Google
-                                    <img src="@/assets/ilustrations/google.png" width="19">
-                                </router-link>
+                            <button class="btn btn-outline-dark btn-option-login" @click="signInWithGoogle">
+                                Continuar con Google
+                                <img src="@/assets/ilustrations/google.png" width="19">
                             </button>
                         </div>
                         <br>
@@ -142,6 +140,14 @@
                     loginButton.innerHTML = 'Iniciar sesión'
                     this.loading = false;
                 })
+            },
+            signInWithGoogle: function() {
+                let provider = new firebase.auth.GoogleAuthProvider();
+                firebase.auth().signInWithPopup(provider)
+                .then((res) => {
+                    this.$router.push('/dashboard/select')
+                })
+                .catch((err) => alert('No se pudo autorizar la autenticación, comuníquese con soporte'))
             }
         }
     }

@@ -8,13 +8,7 @@ Vue.use(VueRouter)
     {
       path: '/',
       name: 'home',
-      redirect: firebase.auth().onAuthStateChanged(user => {
-        if(!user){
-          '/signin'
-        } else {
-          '/dashboard/select'
-        }
-      })
+      redirect: '/signin'
     },
     {
       path: '*',
