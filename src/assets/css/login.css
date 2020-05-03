@@ -291,11 +291,6 @@ input:checked + .slider:before {
     font-weight: 400 !important;
 }
 
-.btn-option-login {
-    /* font-size: 16px; */
-    /* font-weight: 700; */
-}
-
 .button-column {
     display: flex;
     flex-direction: column;
