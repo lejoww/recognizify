@@ -252,3 +252,7 @@ a.projectCardMenuOptions {
     border-radius: 12px;
     color: rgba(0, 0, 0, 0.733);
 }
+
+video {
+    width: 100%;
+}

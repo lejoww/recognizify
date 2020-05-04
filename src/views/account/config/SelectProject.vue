@@ -7,7 +7,10 @@
           <div class="rowStructure" v-else>
             <div class="helperCard">
               <WeeklyArticleCard/>
-              <div class="asesor">
+              <video controls style="outline: none">
+                <source src="@/assets/videos/RecognizifyAtHome.mp4" type="video/mp4">
+              </video>
+              <div class="asesor" style="margin-top: 2rem">
                 <img src="@/assets/ilustrations/person-working.png" alt="">
                 <div style="width: 64%">
                   <h5 style="font-weight: 800; text-transform: uppercase; font-size: 14px; color: #645B8C">
