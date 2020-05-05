@@ -218,7 +218,10 @@ div#login .form-container .form-group input {
 }
 
 .betacheckbox p { width: 87%; }
-/* .betacheckbox label { margin-right: 12px; } */
+label { 
+    font-weight: 700;
+    font-size: 15px;
+}
 
 .betaswitch input {
     display: none;

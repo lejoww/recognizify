@@ -56,6 +56,7 @@
                         <input type="password" class="form-control form-control-lg form-control-login" v-on:keyup.enter="signInWithEmailAndPassword" v-model="password" placeholder="Tu contraseña personal">
                     </div>
                     <button class="btn btn-primary btn-login" id="dynamicButton" v-on:click="signInWithEmailAndPassword">Iniciar sesión</button>
+                    <button class="btn"><router-link to="/signup">Registrarse</router-link></button>
                     <div style="margin-top: 12px">
                         <span style="font-size: 14px">También puedes
                             <a href="/forgot" class="forgot-password">restablecer tu contraseña</a>
