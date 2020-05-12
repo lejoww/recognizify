@@ -5,9 +5,11 @@ admin.initializeApp();
 
 // branchs 
 const projects = require('./projects');
+const auth = require('./auth');
 
 // exports 
 exports.createProject = projects.createProject;
+exports.getUser = auth.getUser;
 
 // mailer transporter
 const transporter = nodemailer.createTransport({
