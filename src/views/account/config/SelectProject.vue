@@ -4,50 +4,66 @@
           <!-- <Features/> -->
 
           <NonProjectsBanner v-if="projects.length == 0"/> 
-          <div class="rowStructure" v-else>
-            <div class="helperCard">
-              <WeeklyArticleCard/>
-              <video controls style="outline: none">
-                <source src="@/assets/videos/RecognizifyAtHome.mp4" type="video/mp4">
-              </video>
-              <div class="asesor" style="margin-top: 2rem">
-                <img src="@/assets/ilustrations/person-working.png" alt="">
-                <div style="width: 64%">
-                  <h5 style="font-weight: 800; text-transform: uppercase; font-size: 14px; color: #645B8C">
-                    ¿Necesitas asesoramiento para tu proyecto?
-                  </h5>
-                  <p style="font-size: 21px; font-weight: 900">Estamos para ayudarte, dentro de poco tiempo ofreceremos servicio al ciente para tu proyecto.</p>
-                  <button class="btn btn-primary" @click="() => {this.notification = true}">{{this.notification == true ? 'Te notificaremos' : 'Notificarme'}}</button>
+          <div v-else>
+            <div class="featuresBannerContainer">
+              <div class="featuresBannerWrapper">
+                <h1 class="text-white">Asesoramiento <br> <span class="text-primary">digital</span> para proyectos</h1>
+                <p class="text-white">Cada vez estamos más cerca</p>
+                <div>
+                  <a class="btn btn-primary" href="/404">
+                    Más información
+                    <svg class="feather-mini-light">
+                      <use xlink:href="@/assets/svg/feather-sprite.svg#arrow-right" />
+                    </svg>
+                  </a>
                 </div>
               </div>
             </div>
-            <div class="projectsField" id="projectsContent" v-if="projects.length >= 1">
-              <div class="projectsBanner">
-                <div>
-                  <h2 class="projectsHeaderTitle">Proyectos</h2>
+            <div class="rowStructure">
+              <div class="helperCard">
+                <WeeklyArticleCard/>
+                <video controls style="outline: none">
+                  <source src="@/assets/videos/RecognizifyAtHome.mp4" type="video/mp4">
+                </video>
+                <div class="asesor" style="margin-top: 2rem">
+                  <img src="@/assets/ilustrations/person-working.png" alt="">
+                  <div style="width: 64%">
+                    <h5 style="font-weight: 800; text-transform: uppercase; font-size: 14px; color: #645B8C">
+                      ¿Necesitas asesoramiento para tu proyecto?
+                    </h5>
+                    <p style="font-size: 21px; font-weight: 900">Estamos para ayudarte, dentro de poco tiempo ofreceremos servicio al ciente para tu proyecto.</p>
+                    <button class="btn btn-primary" @click="() => {this.notification = true}">{{this.notification == true ? 'Te notificaremos' : 'Notificarme'}}</button>
+                  </div>
                 </div>
-                <a class="btn btn-success btn-lg" style="display:flex; align-items:center">
-                  <router-link to="/account/create/project">
-                    <svg width="24px" height="24px" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
-                      <use xlink:href="@/assets/svg/feather-sprite.svg#plus" />
-                    </svg>
-                  </router-link>
-                </a>
               </div>
+              <div class="projectsField" id="projectsContent" v-if="projects.length >= 1">
+                <div class="projectsBanner">
+                  <div>
+                    <h2 class="projectsHeaderTitle" style="font-weight: 800;">Proyectos</h2>
+                  </div>
+                  <a class="btn btn-success btn-lg" style="display:flex; align-items:center">
+                    <router-link to="/account/create/project">
+                      <svg width="24px" height="24px" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                        <use xlink:href="@/assets/svg/feather-sprite.svg#plus" />
+                      </svg>
+                    </router-link>
+                  </a>
+                </div>
 
-              <br>
-              <div class="projectsList">
-                <ul class="projectListElements" style="list-style: none">
-                  <ProjectCard 
-                    :key="project" 
-                    v-for="project in projects"
-                    :projectName="project['name']"
-                    :projectPhotoUrl="project['photoUrl']"
-                    :projectId="project['id']"
-                    lastActivity="un tiempo"
-                  />
-                </ul>
-              </div>
+                <br>
+                <div class="projectsList">
+                  <ul class="projectListElements" style="list-style: none">
+                    <ProjectCard 
+                      :key="project" 
+                      v-for="project in projects"
+                      :projectName="project['name']"
+                      :projectPhotoUrl="project['photoUrl']"
+                      :projectId="project['id']"
+                      lastActivity="un tiempo"
+                    />
+                  </ul>
+                </div>
+            </div>
           </div>
         </div>
       </div>

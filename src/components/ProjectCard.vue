@@ -4,25 +4,23 @@
                 <div class="row no-gutters">
                     <div class="col-md-12">
                         <div class="card-body">
-                            <div style="display: flex; justify-content: space-between">
-                                <router-link :to="`/dashboard/project/${this.projectId}/feed`">
-                                    <div style="display: flex; flex-direction: column">
+                            <div style="display: flex; justify-content: space-between; width: 100%">
+                                <router-link :to="`/dashboard/project/${this.projectId}/feed`" style="width: 100%">
+                                    <div style="width: 100%; display: flex; justify-content: space-between;">
                                         <span class="card-title projectTitle">
                                             {{this.projectName}}
                                         </span>
-                                        <div style="margin-top: 1rem">
+                                        <!-- <div style="margin-top: 1rem">
                                             <span class="state-badge-success">Activo</span>
-                                        </div>
+                                        </div> -->
+                                        <a data-toggle="tooltip" data-placement="right" title="Característica inhabilitada.">
+                                            <svg class="feather-like-options">
+                                                <use xlink:href="@/assets/svg/feather-sprite.svg#star" />
+                                            </svg>
+                                        </a>
+                                        <!-- <ProjectOptionsDropdown :projectId="this.projectId" /> -->
                                     </div>
                                 </router-link>
-                                <div>
-                                    <a data-toggle="tooltip" data-placement="right" title="Característica inhabilitada.">
-                                        <svg class="feather-like-options">
-                                            <use xlink:href="@/assets/svg/feather-sprite.svg#star" />
-                                        </svg>
-                                    </a>
-                                    <ProjectOptionsDropdown :projectId="this.projectId" />
-                                </div>
                             </div>
                     </div>
                 </div>
