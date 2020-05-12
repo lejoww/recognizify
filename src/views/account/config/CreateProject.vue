@@ -134,7 +134,8 @@
                             description: this.description,
                         }
                         const createProject = firebase.functions().httpsCallable('createProject');
-                        createProject(projectParams).then(res => {
+                        createProject(projectParams)
+                        .then(res => {
                             if (res.data.status == 'ok') {
                                 this.$router.push('/dashboard/select')
                             } else { 

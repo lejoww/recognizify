@@ -10,7 +10,9 @@
                                         <span class="card-title projectTitle">
                                             {{this.projectName}}
                                         </span>
-                                        <small class="projectAutor muted-gray" style="font-weight: 600">Participas en él</small>
+                                        <div style="margin-top: 1rem">
+                                            <span class="state-badge-success">Activo</span>
+                                        </div>
                                     </div>
                                 </router-link>
                                 <div>
@@ -22,13 +24,6 @@
                                     <ProjectOptionsDropdown :projectId="this.projectId" />
                                 </div>
                             </div>
-                        <br><br>
-                        <div style="display: flex; justify-content: space-between; align-items: center">
-                            <span class="card-text text-muted projectLastActivity">
-                                Activo hace {{this.lastActivity}}
-                            </span>
-                            <span class="state-badge-success">Activo</span>
-                        </div>
                     </div>
                 </div>
             </div>

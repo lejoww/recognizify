@@ -2,9 +2,9 @@
     <div>
         <div class="headerProfile">
             <div class="profileWrapper">
-                <Invitations/>
+                <Invitations v-if="invitations"/>
                 <div class="profileData" data-toggle="modal" data-target="#exampleModal">
-                    <div class="profileContent">
+                    <div class="profileContent" style="cursor: pointer">
                         <img class="profilePicture" id="profilePicture" src="@/assets/ilustrations/profile.png">
                     </div>
                     <!-- <div class="profileIdentity">
@@ -46,6 +46,7 @@
                 }
             }
         },
+        props: ['invitations'],
         components: {
             Invitations,
             ProfileMenu

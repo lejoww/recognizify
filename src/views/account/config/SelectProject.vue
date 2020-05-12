@@ -1,6 +1,6 @@
 <template>
       <div class="dashboardContent">
-          <!-- <Preloader/> -->
+          <Loading v-if="loading"/>
           <!-- <Features/> -->
 
           <NonProjectsBanner v-if="projects.length == 0"/> 
@@ -61,6 +61,7 @@
     import WeeklyArticleCard from '@/components/offers/WeeklyArticleCard.vue';
     import Preloader from '@/components/Preloader.vue';
     import Features from '@/components/modals/Features.vue';
+    import Loading from '@/views/Loading.vue';
 
     import '@/assets/css/select.css'
 
@@ -68,14 +69,15 @@
       data() {
         return {
           projects: [],
-          notification: false
+          notification: false,
+          loading: true
         }
       },
       components: {
         ProjectCard,
         NonProjectsBanner,
         WeeklyArticleCard,
-        Preloader,
+        Loading,
         Features
       },
       mounted: function() {
@@ -107,6 +109,7 @@
             })
             .catch(() => window.location.reload())
           })
+          this.loading = false;
         },
         setProjectOnArray: function(name, id, url){
           this.projects.push({

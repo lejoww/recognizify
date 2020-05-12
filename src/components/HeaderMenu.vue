@@ -16,7 +16,7 @@
         </div>
       </div>
       <div class="headerWrapperRight">
-        <Profile/>
+        <Profile :invitations="true"/>
         <!-- <a class="headerMenuButton" @click="openOverlayMenu">
           <svg class="feather-light">
             <use xlink:href="@/assets/svg/feather-sprite.svg#menu" />

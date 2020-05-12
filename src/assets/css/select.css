@@ -140,7 +140,6 @@ a.projectCardMenuOptions {
 
 .helperCard {
     width: 70%;
-    height: calc(100vh - 104px);
     padding: 2rem;
     overflow-y: scroll;
 }
@@ -168,7 +167,6 @@ a.projectCardMenuOptions {
     flex-direction: row-reverse;
     padding-left: 4rem;
     padding-right: 4rem;
-    max-height: 100vh;
 }
 
 .asesor {
