@@ -1,5 +1,6 @@
 <template>
     <div>
+        <Features/>
         <div class="loginLoader" v-if="loading == true">
             <div>
                 <div class="loaderSpinner"></div><br>
@@ -31,7 +32,7 @@
                     <h1 class="loginTitle">Donde los creadores unen sus fuerzas para innovar.</h1>
                     <div class="button-column">
                         <div>
-                            <button class="btn btn-primary btn-option-login" @click="() => this.login = true" style="margin-bottom: 12px">
+                            <button class="btn btn-primary btn-option-login" @click="() => this.login = true" style="margin-bottom: 12px" disabled>
                                 Continuar con correo electrónico
                                 <svg class="feather-menu">
                                     <use xlink:href="@/assets/svg/feather-sprite.svg#arrow-right" stroke="#fff" />
@@ -39,7 +40,7 @@
                             </button>
                         </div>
                         <div>
-                            <button class="btn btn-outline-dark btn-option-login" @click="signInWithGoogle">
+                            <button class="btn btn-outline-dark btn-option-login" @click="signInWithGoogle" disabled>
                                 Continuar con Google
                                 <img src="@/assets/ilustrations/google.png" width="19">
                             </button>
@@ -55,8 +56,8 @@
                     <div class="form-group">
                         <input type="password" class="form-control form-control-lg form-control-login" v-on:keyup.enter="signInWithEmailAndPassword" v-model="password" placeholder="Tu contraseña personal">
                     </div>
-                    <button class="btn btn-primary btn-login" id="dynamicButton" v-on:click="signInWithEmailAndPassword">Iniciar sesión</button>
-                    <button class="btn"><router-link to="/signup">Registrarse</router-link></button>
+                    <!-- <button class="btn btn-primary btn-login" id="dynamicButton" v-on:click="signInWithEmailAndPassword">Iniciar sesión</button> -->
+                    <!-- <button class="btn"><router-link to="/signup">Registrarse</router-link></button> -->
                     <div style="margin-top: 12px">
                         <span style="font-size: 14px">También puedes
                             <a href="/forgot" class="forgot-password">restablecer tu contraseña</a>
@@ -77,6 +78,7 @@
     import '@/assets/css/login.css'
 
     import BannerNotice from '@/components/models/BannerNotice.vue'
+    import Features from '@/components/modals/Features.vue'
 
     export default {
         name: 'login_entry',
@@ -90,7 +92,8 @@
             }
         },
         components: {
-            BannerNotice
+            BannerNotice,
+            Features
         },
         mounted(){
             firebase.auth().onAuthStateChanged(user => {

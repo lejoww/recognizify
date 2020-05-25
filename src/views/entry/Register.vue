@@ -21,12 +21,12 @@
                     </label>
                     <p>Deseas participar en el programa BETA de Recognizify para darnos retroalimentación de la aplicación.</p>
                 </div> -->
-            <button class="btn btn-success btn-login" id="dynamicButton" @click="createAccountWithEmailAndPassword">Crear cuenta</button>
+            <!-- <button class="btn btn-success btn-login" id="dynamicButton" @click="createAccountWithEmailAndPassword">Crear cuenta</button>
             <button class="btn">
                 <router-link class="text-dark" to="/">
                     Cancelar
                 </router-link>
-            </button>
+            </button> -->
             <!-- <button class="btn btn-warning btn-login" v-on:click="signInWithEmailAndPasswordofTest">Iniciar con cuenta de prueba</button> -->
         </div>
 

@@ -76,7 +76,6 @@
     import NonProjectsBanner from '@/components/project/NonProjectsBanner.vue';
     import WeeklyArticleCard from '@/components/offers/WeeklyArticleCard.vue';
     import Preloader from '@/components/Preloader.vue';
-    import Features from '@/components/modals/Features.vue';
     import Loading from '@/views/Loading.vue';
 
     import '@/assets/css/select.css'
@@ -93,8 +92,7 @@
         ProjectCard,
         NonProjectsBanner,
         WeeklyArticleCard,
-        Loading,
-        Features
+        Loading
       },
       mounted: function() {
         firebase.firestore()

@@ -3,16 +3,18 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-body" style="border: none">
-                    <span class="subtitleOverline text-primary">Últimas novedades</span>
-                    <h4>Envio de correos automático</h4><br>
+                    <!-- <span class="subtitleOverline text-primary">Últimas novedades</span> -->
+                    <h4>Bloqueo de aplicación</h4><br>
 
-                    <p>Ahora Recognizify es más inteligente, dependiendo de las acciones
-                        en tus proyectos, se te enviarán correos con información a detalle
-                        que siempre pueden resultarte útiles.</p>
+                    <p>Hasta nueva orden (unos días), la aplicación estará cerrada
+                        debido a distintas razones. Perdone los inconvenientes y no
+                        dude en comunicarse con un administrador en caso de algún
+                        problema.
+                    </p>
                     
                 </div>
                 <div class="modal-footer" style="border: none">
-                    <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal" @click="setModalChecked">Continuar</button>
+                    <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Aceptar</button>
                 </div>
             </div>
         </div>
@@ -34,12 +36,7 @@
             // if (localStorage.getItem('featuresModalChecked') != 'checked'){
                 $("#featuresModal").modal("show");
             // }
-        },
-        // methods: {
-        //     setModalChecked: function(){
-        //         localStorage.setItem('featuresModalChecked', 'checked')
-        //     }
-        // }
+        }
     }
 
 </script>
