@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Features/>
+        <!-- <Features/> -->
         <div class="loginLoader" v-if="loading == true">
             <div>
                 <div class="loaderSpinner"></div><br>
@@ -32,7 +32,7 @@
                     <h1 class="loginTitle">Donde los creadores unen sus fuerzas para innovar.</h1>
                     <div class="button-column">
                         <div>
-                            <button class="btn btn-primary btn-option-login" @click="() => this.login = true" style="margin-bottom: 12px" disabled>
+                            <button class="btn btn-primary btn-option-login" @click="() => this.login = true" style="margin-bottom: 12px">
                                 Continuar con correo electrónico
                                 <svg class="feather-menu">
                                     <use xlink:href="@/assets/svg/feather-sprite.svg#arrow-right" stroke="#fff" />
@@ -40,7 +40,7 @@
                             </button>
                         </div>
                         <div>
-                            <button class="btn btn-outline-dark btn-option-login" @click="signInWithGoogle" disabled>
+                            <button class="btn btn-outline-dark btn-option-login" @click="signInWithGoogle">
                                 Continuar con Google
                                 <img src="@/assets/ilustrations/google.png" width="19">
                             </button>
