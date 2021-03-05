@@ -40,7 +40,7 @@
         </div>
         <footer class="landingFooter">
             <div class="landingFooterBrand">
-                <img src="@/assets/logo-white-cutted.png" width="150px">
+                <img src="@/assets/logo-white-cutted.svg" width="150px">
                 <p class="text-white">Más que una app. Recognizify ayuda a administrar las ideas en los equipos de trabajo en cualquier lugar.</p>
             </div>
             <div class="landingFooterLinks">
@@ -60,7 +60,7 @@
 <script>
 
     import '@/assets/css/landing.css'
-    import '@/assets/css/main.css'
+    import '@/assets/css/root.css'
     export default {}
 
 </script>
