@@ -8,7 +8,7 @@ Vue.use(VueRouter)
     {
       path: '/',
       name: 'home',
-      redirect: '/signin'
+      component: () => import('./views/entry/LandingPage.vue')
     },
     {
       path: '*',
